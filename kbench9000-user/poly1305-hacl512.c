@@ -1993,7 +1993,6 @@ Hacl_Poly1305_512_poly1305_update(
     for (uint32_t i = (uint32_t)0U; i < nb; i++)
     {
       uint8_t *block = text1 + i * bs;
-      KRML_CHECK_SIZE(sizeof (Lib_IntVector_Intrinsics_vec512), (uint32_t)5U);
       Lib_IntVector_Intrinsics_vec512 b1 = Lib_IntVector_Intrinsics_vec512_load_le(block);
       Lib_IntVector_Intrinsics_vec512
       b2 = Lib_IntVector_Intrinsics_vec512_load_le(block + (uint32_t)64U);
@@ -2225,7 +2224,6 @@ Hacl_Poly1305_512_poly1305_update(
   for (uint32_t i = (uint32_t)0U; i < nb; i++)
   {
     uint8_t *block = t1 + i * (uint32_t)16U;
-    KRML_CHECK_SIZE(sizeof (Lib_IntVector_Intrinsics_vec512), (uint32_t)5U);
     Lib_IntVector_Intrinsics_vec512 e[5U];
     for (uint32_t _i = 0U; _i < (uint32_t)5U; ++_i)
       e[_i] = Lib_IntVector_Intrinsics_vec512_zero;

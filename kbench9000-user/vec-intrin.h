@@ -349,7 +349,7 @@ typedef __m256i Lib_IntVector_Intrinsics_vec256;
 typedef __m512i Lib_IntVector_Intrinsics_vec512;
 
 #define Lib_IntVector_Intrinsics_vec512_zero  \
-  (_mm512_set1_epi16((uint16_t)0))
+  (_mm512_setzero_epi32())
 
 #define Lib_IntVector_Intrinsics_vec512_load32s(x15,x14,x13,x12,x11,x10,x9,x8,x7,x6,x5,x4,x3,x2,x1,x0) \
   (_mm512_set_epi32(x15,x14,x13,x12,x11,x10,x9,x8,x7,x6,x5,x4,x3,x2,x1,x0)) /* hi lo */

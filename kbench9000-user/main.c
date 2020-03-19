@@ -79,12 +79,12 @@ static inline int name(size_t len) \
 	fprintf(stderr, "\n"); \
 } while (0)
 
-enum { WARMUP = 50000, TRIALS = 100000, IDLE = 1 * 1000, STARTING_SIZE = 128, DOUBLING_STEPS = 5 };
+enum { WARMUP = 50000, TRIALS = 100000, IDLE = 1 * 1000, STARTING_SIZE = 1024, DOUBLING_STEPS = 5 };
 u8 dummy_out[POLY1305_MAC_SIZE];
 u8 input_key[POLY1305_KEY_SIZE];
 u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 
-declare_it(ref)
+//declare_it(ref)
 declare_it(ossl_c)
 //declare_it(ossl_amd64)
 //declare_it(ossl_avx)
@@ -106,7 +106,7 @@ static bool verify(void)
 	u8 out[POLY1305_MAC_SIZE];
 
 	for (i = 0; i < ARRAY_SIZE(poly1305_testvecs); ++i) {
-		test_it(ref, {}, {});
+	  //		test_it(ref, {}, {});
 		test_it(ossl_c, {}, {});
 		test_it(donna32, {}, {});
 		test_it(donna64, {}, {});
@@ -154,7 +154,7 @@ int main()
 		input_key[i] = i;
 	
 
-	do_it(ref);
+	//	do_it(ref);
 	do_it(ossl_c);
 	do_it(donna32);
 	do_it(donna64);
@@ -172,7 +172,7 @@ int main()
 	fprintf(stderr,"%lu:             ", stamp);
 //	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
 //		printk(KERN_CONT " \x1b[4m%6zu\x1b[24m", s);
-	report_it(ref);
+//	report_it(ref);
 	report_it(ossl_c);
 	report_it(donna32);
 	report_it(donna64);
