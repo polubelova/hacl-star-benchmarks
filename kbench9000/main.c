@@ -81,6 +81,7 @@ declare_it(hacl64)
 declare_it(hacl32x1)
 declare_it(hacl128)
 declare_it(hacl256)
+declare_it(hacl512)
 
 static bool verify(void)
 {
@@ -107,6 +108,9 @@ static bool verify(void)
 			test_it(ossl_avx2, kernel_fpu_begin(), kernel_fpu_end());
 		if (boot_cpu_has(X86_FEATURE_AVX) && boot_cpu_has(X86_FEATURE_AVX2) && boot_cpu_has(X86_FEATURE_AVX512F) && cpu_has_xfeatures(XFEATURE_MASK_SSE | XFEATURE_MASK_YMM | XFEATURE_MASK_AVX512, NULL))
 			test_it(ossl_avx512, kernel_fpu_begin(), kernel_fpu_end());
+		if (boot_cpu_has(X86_FEATURE_AVX) && boot_cpu_has(X86_FEATURE_AVX2) && boot_cpu_has(X86_FEATURE_AVX512F) && cpu_has_xfeatures(XFEATURE_MASK_SSE | XFEATURE_MASK_YMM | XFEATURE_MASK_AVX512, NULL))
+			test_it(hacl512, kernel_fpu_begin(), kernel_fpu_end());
+
 	}
 	return true;
 }
@@ -124,10 +128,11 @@ static int __init mod_init(void)
 	cycles_t start_donna32[DOUBLING_STEPS + 1], end_donna32[DOUBLING_STEPS + 1];
 	cycles_t start_donna64[DOUBLING_STEPS + 1], end_donna64[DOUBLING_STEPS + 1];
 	cycles_t start_hacl32[DOUBLING_STEPS + 1], end_hacl32[DOUBLING_STEPS + 1];
-	
+
 	cycles_t start_hacl32x1[DOUBLING_STEPS + 1], end_hacl32x1[DOUBLING_STEPS + 1];
 	cycles_t start_hacl128[DOUBLING_STEPS + 1], end_hacl128[DOUBLING_STEPS + 1];
 	cycles_t start_hacl256[DOUBLING_STEPS + 1], end_hacl256[DOUBLING_STEPS + 1];
+	cycles_t start_hacl512[DOUBLING_STEPS + 1], end_hacl512[DOUBLING_STEPS + 1];
 	cycles_t start_hacl64[DOUBLING_STEPS + 1], end_hacl64[DOUBLING_STEPS + 1];
 	unsigned long flags;
 	DEFINE_SPINLOCK(lock);
@@ -139,7 +144,7 @@ static int __init mod_init(void)
 		input_data[i] = i;
 	for (i = 0; i < sizeof(input_key); ++i)
 		input_key[i] = i;
-	
+
 	msleep(IDLE);
 
 	kernel_fpu_begin();
@@ -164,12 +169,14 @@ static int __init mod_init(void)
 		do_it(ossl_avx2);
 	if (boot_cpu_has(X86_FEATURE_AVX) && boot_cpu_has(X86_FEATURE_AVX2) && boot_cpu_has(X86_FEATURE_AVX512F) && cpu_has_xfeatures(XFEATURE_MASK_SSE | XFEATURE_MASK_YMM | XFEATURE_MASK_AVX512, NULL))
 		do_it(ossl_avx512);
+	if (boot_cpu_has(X86_FEATURE_AVX) && boot_cpu_has(X86_FEATURE_AVX2) && boot_cpu_has(X86_FEATURE_AVX512F) && cpu_has_xfeatures(XFEATURE_MASK_SSE | XFEATURE_MASK_YMM | XFEATURE_MASK_AVX512, NULL))
+		do_it(hacl512);
 
 	spin_unlock_irqrestore(&lock, flags);
 
 
 	kernel_fpu_end();
-	
+
 	pr_err("%lu:             ", stamp);
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
 		printk(KERN_CONT " \x1b[4m%6zu\x1b[24m", s);
@@ -191,10 +198,12 @@ static int __init mod_init(void)
 		report_it(ossl_avx2);
 	if (boot_cpu_has(X86_FEATURE_AVX) && boot_cpu_has(X86_FEATURE_AVX2) && boot_cpu_has(X86_FEATURE_AVX512F) && cpu_has_xfeatures(XFEATURE_MASK_SSE | XFEATURE_MASK_YMM | XFEATURE_MASK_AVX512, NULL))
 		report_it(ossl_avx512);
+	if (boot_cpu_has(X86_FEATURE_AVX) && boot_cpu_has(X86_FEATURE_AVX2) && boot_cpu_has(X86_FEATURE_AVX512F) && cpu_has_xfeatures(XFEATURE_MASK_SSE | XFEATURE_MASK_YMM | XFEATURE_MASK_AVX512, NULL))
+		report_it(hacl512);
 
 	/* Don't let compiler be too clever. */
 	dummy = ret;
-	
+
 	/* We should never actually agree to insert the module. Choosing
 	 * -0x1000 here is an amazing hack. It causes the kernel to not
 	 * actually load the module, while the standard userspace tools
