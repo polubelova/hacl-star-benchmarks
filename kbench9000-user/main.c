@@ -97,6 +97,7 @@ declare_it(hacl64)
 declare_it(hacl32x1)
 declare_it(hacl128)
 declare_it(hacl256)
+declare_it(hacl512)
 
 static bool verify(void)
 {
@@ -114,6 +115,7 @@ static bool verify(void)
 		test_it(hacl64, {}, {});
 		test_it(hacl128, {}, {});
 		test_it(hacl256, {}, {});
+		test_it(hacl512, {}, {});
 //		test_it(ossl_amd64, {}, {});
 //		test_it(ossl_avx, {}, {});
 //		test_it(ossl_avx2, {}, {});
@@ -139,6 +141,7 @@ int main()
 	cycles_t start_hacl32x1[DOUBLING_STEPS + 1], end_hacl32x1[DOUBLING_STEPS + 1];
 	cycles_t start_hacl128[DOUBLING_STEPS + 1], end_hacl128[DOUBLING_STEPS + 1];
 	cycles_t start_hacl256[DOUBLING_STEPS + 1], end_hacl256[DOUBLING_STEPS + 1];
+	cycles_t start_hacl512[DOUBLING_STEPS + 1], end_hacl512[DOUBLING_STEPS + 1];
 	cycles_t start_hacl64[DOUBLING_STEPS + 1], end_hacl64[DOUBLING_STEPS + 1];
 	unsigned long flags;
 
@@ -159,6 +162,7 @@ int main()
 	do_it(hacl32x1);
 	do_it(hacl128);
 	do_it(hacl256);
+	do_it(hacl512);
 	do_it(hacl64);
 //	do_it(ossl_amd64);
 //	do_it(ossl_avx);
@@ -177,6 +181,7 @@ int main()
 	report_it(hacl64);
 	report_it(hacl128);
 	report_it(hacl256);
+	report_it(hacl512);
 //	report_it(ossl_amd64);
 //	report_it(ossl_avx);
 //	report_it(ossl_avx2);
