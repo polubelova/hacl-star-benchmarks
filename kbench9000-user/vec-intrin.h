@@ -388,16 +388,16 @@ typedef __m512i Lib_IntVector_Intrinsics_vec512;
   (_mm512_sub_epi64(x0, x1))
 
 #define Lib_IntVector_Intrinsics_vec512_mul32(x0, x1) \
-  (_mm512_mullo_epi32(x0, x1))
+  (_mm512_mul_epu32(x0, x1))
 
 #define Lib_IntVector_Intrinsics_vec512_mul64(x0, x1) \
-  (_mm512_mullo_epi64(x0, x1))
+  (_mm512_mul_epu32(x0, x1))
 
 #define Lib_IntVector_Intrinsics_vec512_smul32(x0, x1) \
-  (_mm512_mullo_epi32(x0, _mm512_set1_epi32(x1)))
+  (_mm512_mul_epu32(x0, _mm512_set1_epi32(x1)))
 
 #define Lib_IntVector_Intrinsics_vec512_smul64(x0, x1) \
-  (_mm512_mullo_epi64(x0, _mm512_set1_epi64(x1)))
+  (_mm512_mul_epu32(x0, _mm512_set1_epi64(x1)))
 
 #define Lib_IntVector_Intrinsics_vec512_xor(x0, x1) \
   (_mm512_xor_si512(x0, x1))
