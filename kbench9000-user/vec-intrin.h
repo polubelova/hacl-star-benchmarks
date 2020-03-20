@@ -279,7 +279,7 @@ typedef __m256i Lib_IntVector_Intrinsics_vec256;
   (_mm256_extract_epi64(x0, x1))
 
 #define Lib_IntVector_Intrinsics_vec256_zero  \
-  (_mm256_set1_epi16((uint16_t)0))
+  (_mm256_setzero_si256())
 
 #define Lib_IntVector_Intrinsics_vec256_add64(x0, x1) \
   (_mm256_add_epi64(x0, x1))
@@ -453,11 +453,12 @@ typedef __m512i Lib_IntVector_Intrinsics_vec512;
 #define Lib_IntVector_Intrinsics_vec512_interleave_high64(x1, x2) \
   (_mm512_unpackhi_epi64(x1, x2))
 
-#define Lib_IntVector_Intrinsics_vec512_interleave_low128(x1, x2) \
-  (_mm512_shuffle_i32x4(_mm512_shuffle_i32x4(x1, x2, 0x88), _mm512_shuffle_i32x4(x1, x2, 0x88), 0xd8)) //TODO : FIX!
+
+#define Lib_IntVector_Intrinsics_vec512_interleave_low128(x1, x2)	\
+  (_mm512_permutex2var_epi64(x1, _mm512_set_epi64(13,12,5,4,9,8,1,0), x2))
 
 #define Lib_IntVector_Intrinsics_vec512_interleave_high128(x1, x2) \
-  (_mm512_shuffle_i32x4(_mm512_shuffle_i32x4(x1, x2, 0xdd), _mm512_shuffle_i32x4(x1, x2, 0xdd), 0xd8)) //TODO : FIX!
+  (_mm512_permutex2var_epi64(x1, _mm512_set_epi64(15,14,7,6,11,10,3,2), x2))
 
 #define Lib_IntVector_Intrinsics_vec512_interleave_low256(x1, x2) \
   (_mm512_shuffle_i32x4(x1, x2, 0x44))
