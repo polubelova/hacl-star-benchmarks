@@ -63,7 +63,7 @@ static __always_inline int name(size_t len) \
 	printk(KERN_CONT "\n"); \
 } while (0)
 
-enum { WARMUP = 50000, TRIALS = 100000, IDLE = 1 * 1000, STARTING_SIZE = 128, DOUBLING_STEPS = 5 };
+enum { WARMUP = 50000, TRIALS = 100000, IDLE = 1 * 1000, STARTING_SIZE = 1024, DOUBLING_STEPS = 5 };
 u8 dummy_out[POLY1305_MAC_SIZE];
 u8 input_key[POLY1305_KEY_SIZE];
 u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
@@ -191,6 +191,8 @@ static int __init mod_init(void)
 	  report_it(hacl128);
 	if (boot_cpu_has(X86_FEATURE_AVX) && boot_cpu_has(X86_FEATURE_AVX2) && cpu_has_xfeatures(XFEATURE_MASK_SSE | XFEATURE_MASK_YMM, NULL))
 	  report_it(hacl256);
+	if (boot_cpu_has(X86_FEATURE_AVX) && boot_cpu_has(X86_FEATURE_AVX2) && boot_cpu_has(X86_FEATURE_AVX512F) && cpu_has_xfeatures(XFEATURE_MASK_SSE | XFEATURE_MASK_YMM | XFEATURE_MASK_AVX512, NULL))
+		report_it(hacl512);
 	report_it(ossl_amd64);
 	if (boot_cpu_has(X86_FEATURE_AVX) && cpu_has_xfeatures(XFEATURE_MASK_SSE | XFEATURE_MASK_YMM, NULL))
 		report_it(ossl_avx);
@@ -198,8 +200,6 @@ static int __init mod_init(void)
 		report_it(ossl_avx2);
 	if (boot_cpu_has(X86_FEATURE_AVX) && boot_cpu_has(X86_FEATURE_AVX2) && boot_cpu_has(X86_FEATURE_AVX512F) && cpu_has_xfeatures(XFEATURE_MASK_SSE | XFEATURE_MASK_YMM | XFEATURE_MASK_AVX512, NULL))
 		report_it(ossl_avx512);
-	if (boot_cpu_has(X86_FEATURE_AVX) && boot_cpu_has(X86_FEATURE_AVX2) && boot_cpu_has(X86_FEATURE_AVX512F) && cpu_has_xfeatures(XFEATURE_MASK_SSE | XFEATURE_MASK_YMM | XFEATURE_MASK_AVX512, NULL))
-		report_it(hacl512);
 
 	/* Don't let compiler be too clever. */
 	dummy = ret;
