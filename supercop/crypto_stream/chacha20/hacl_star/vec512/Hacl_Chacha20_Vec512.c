@@ -447,22 +447,22 @@ chacha20_init_512(Lib_IntVector_Intrinsics_vec512 *ctx, uint8_t *k, uint8_t *n1,
   }
   Lib_IntVector_Intrinsics_vec512
   ctr1 =
-    Lib_IntVector_Intrinsics_vec512_load32s((uint32_t)15U,
-      (uint32_t)14U,
-      (uint32_t)13U,
-      (uint32_t)12U,
-      (uint32_t)11U,
-      (uint32_t)10U,
-      (uint32_t)9U,
-      (uint32_t)8U,
-      (uint32_t)7U,
-      (uint32_t)6U,
-      (uint32_t)5U,
-      (uint32_t)4U,
-      (uint32_t)3U,
-      (uint32_t)2U,
+    Lib_IntVector_Intrinsics_vec512_load32s((uint32_t)0U,
       (uint32_t)1U,
-      (uint32_t)0U);
+      (uint32_t)2U,
+      (uint32_t)3U,
+      (uint32_t)4U,
+      (uint32_t)5U,
+      (uint32_t)6U,
+      (uint32_t)7U,
+      (uint32_t)8U,
+      (uint32_t)9U,
+      (uint32_t)10U,
+      (uint32_t)11U,
+      (uint32_t)12U,
+      (uint32_t)13U,
+      (uint32_t)14U,
+      (uint32_t)15U);
   Lib_IntVector_Intrinsics_vec512 c12 = ctx[12U];
   ctx[12U] = Lib_IntVector_Intrinsics_vec512_add32(c12, ctr1);
 }
