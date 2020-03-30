@@ -1,7 +1,12 @@
 #ifndef __Vec_Intrin_H
 #define __Vec_Intrin_H
 
-#include <sys/types.h>
+#pragma GCC push_options
+#pragma GCC target ("mmx", "avx", "avx2")
+#define  _MM_MALLOC_H_INCLUDED
+#include <x86intrin.h>
+#undef _MM_MALLOC_H_INCLUDED
+#pragma GCC pop_options
 
 #define Lib_IntVector_Intrinsics_bit_mask64(x) -((x) & 1)
 
