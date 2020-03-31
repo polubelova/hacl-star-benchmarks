@@ -97,6 +97,9 @@ declare_it(hacl64)
 declare_it(hacl32x1)
 declare_it(hacl128)
 declare_it(hacl256)
+declare_it(hacl256_52)
+declare_it(hacl256_53)
+declare_it(hacl256_55)
 //declare_it(hacl512)
 
 static bool verify(void)
@@ -115,6 +118,9 @@ static bool verify(void)
 		test_it(hacl64, {}, {});
 		test_it(hacl128, {}, {});
 		test_it(hacl256, {}, {});
+		test_it(hacl256_52, {}, {});
+		test_it(hacl256_53, {}, {});
+		test_it(hacl256_55, {}, {});
 //		test_it(hacl512, {}, {});
 //		test_it(ossl_amd64, {}, {});
 //		test_it(ossl_avx, {}, {});
@@ -137,11 +143,14 @@ int main()
 	cycles_t start_donna32[DOUBLING_STEPS + 1], end_donna32[DOUBLING_STEPS + 1];
 	cycles_t start_donna64[DOUBLING_STEPS + 1], end_donna64[DOUBLING_STEPS + 1];
 	cycles_t start_hacl32[DOUBLING_STEPS + 1], end_hacl32[DOUBLING_STEPS + 1];
-	
+
 	cycles_t start_hacl32x1[DOUBLING_STEPS + 1], end_hacl32x1[DOUBLING_STEPS + 1];
 	cycles_t start_hacl128[DOUBLING_STEPS + 1], end_hacl128[DOUBLING_STEPS + 1];
 	cycles_t start_hacl256[DOUBLING_STEPS + 1], end_hacl256[DOUBLING_STEPS + 1];
-	cycles_t start_hacl512[DOUBLING_STEPS + 1], end_hacl512[DOUBLING_STEPS + 1];
+	cycles_t start_hacl256_52[DOUBLING_STEPS + 1], end_hacl256_52[DOUBLING_STEPS + 1];
+	cycles_t start_hacl256_53[DOUBLING_STEPS + 1], end_hacl256_53[DOUBLING_STEPS + 1];
+	cycles_t start_hacl256_55[DOUBLING_STEPS + 1], end_hacl256_55[DOUBLING_STEPS + 1];	
+	cycles_t start_hacl512[DOUBLING_STEPS + 1], end_hacl512[DOUBLING_STEPS + 1];       
 	cycles_t start_hacl64[DOUBLING_STEPS + 1], end_hacl64[DOUBLING_STEPS + 1];
 	unsigned long flags;
 
@@ -152,7 +161,7 @@ int main()
 		input_data[i] = i;
 	for (i = 0; i < sizeof(input_key); ++i)
 		input_key[i] = i;
-	
+
 
 	//	do_it(ref);
 	do_it(ossl_c);
@@ -162,7 +171,10 @@ int main()
 	do_it(hacl32x1);
 	do_it(hacl128);
 	do_it(hacl256);
-	do_it(hacl64);	
+	do_it(hacl256_52);
+	do_it(hacl256_53);
+	do_it(hacl256_55);	
+	do_it(hacl64);
 //	do_it(hacl512);
 //	do_it(ossl_amd64);
 //	do_it(ossl_avx);
@@ -181,6 +193,9 @@ int main()
 	report_it(hacl64);
 	report_it(hacl128);
 	report_it(hacl256);
+	report_it(hacl256_52);
+	report_it(hacl256_53);
+	report_it(hacl256_55);	
 //	report_it(hacl512);
 //	report_it(ossl_amd64);
 //	report_it(ossl_avx);
@@ -196,4 +211,3 @@ int main()
 	 * don't return an error, because it's too big. */
 	return -0x1000;
 }
-
