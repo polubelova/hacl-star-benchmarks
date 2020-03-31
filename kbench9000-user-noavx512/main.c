@@ -95,6 +95,10 @@ declare_it(hacl64)
 declare_it(hacl32x1)
 declare_it(hacl128)
 declare_it(hacl256)
+declare_it(jazz256)
+declare_it(hacl256_55)
+declare_it(hacl256_52)
+declare_it(hacl256_53)
 //declare_it(hacl512)
 
 static int compare_cycles(const void *a, const void *b)
@@ -118,6 +122,10 @@ static bool verify(void)
 		test_it(hacl64, {}, {});
 		test_it(hacl128, {}, {});
 		test_it(hacl256, {}, {});
+		test_it(jazz256, {}, {});
+		test_it(hacl256_55, {}, {});
+		test_it(hacl256_52, {}, {});
+		test_it(hacl256_53, {}, {});
 //		test_it(hacl512, {}, {});
 //		test_it(ossl_amd64, {}, {});
 //		test_it(ossl_avx, {}, {});
@@ -143,6 +151,10 @@ int main()
 	cycles_t median_hacl32x1[DOUBLING_STEPS + 1];
 	cycles_t median_hacl128[DOUBLING_STEPS + 1];
 	cycles_t median_hacl256[DOUBLING_STEPS + 1];
+	cycles_t median_jazz256[DOUBLING_STEPS + 1];
+	cycles_t median_hacl256_55[DOUBLING_STEPS + 1];
+	cycles_t median_hacl256_52[DOUBLING_STEPS + 1];
+	cycles_t median_hacl256_53[DOUBLING_STEPS + 1];
 //	cycles_t median_hacl512[DOUBLING_STEPS + 1];
 	cycles_t median_hacl64[DOUBLING_STEPS + 1];
 	unsigned long flags;
@@ -164,6 +176,10 @@ int main()
 	do_it(hacl32x1);
 	do_it(hacl128);
 	do_it(hacl256);
+	do_it(jazz256);
+	do_it(hacl256_55);
+	do_it(hacl256_53);
+	do_it(hacl256_52);
 //	do_it(hacl512);
 	do_it(hacl64);
 //	do_it(ossl_amd64);
@@ -182,6 +198,10 @@ int main()
 	report_it(hacl64);
 	report_it(hacl128);
 	report_it(hacl256);
+	report_it(jazz256);
+	report_it(hacl256_55);
+	report_it(hacl256_53);
+	report_it(hacl256_52);
 //	report_it(hacl512);
 //	report_it(ossl_amd64);
 //	report_it(ossl_avx);
