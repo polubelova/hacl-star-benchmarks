@@ -30,7 +30,7 @@ inline void store32_le(u64 o, u8* b) {
 }
 
 #define KRML_CHECK_SIZE(a,b) {}
-//#define __always_inline inline
+#define __always_inline inline
 #define __aligned(x) __attribute__((aligned(x)))
 
 __always_inline static uint64_t FStar_UInt64_eq_mask(uint64_t a, uint64_t b)

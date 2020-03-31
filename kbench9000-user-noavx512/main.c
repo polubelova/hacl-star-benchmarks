@@ -22,7 +22,6 @@ typedef unsigned long long cycles_t;
   ((sizeof(a) / sizeof(*(a))) /                     \
    (size_t)(!(sizeof(a) % sizeof(*(a)))))
 
-static unsigned long stamp = 0;
 int dummy;
 
 enum { POLY1305_MAC_SIZE = 16, POLY1305_KEY_SIZE = 32 };
@@ -46,10 +45,14 @@ static inline int name(size_t len) \
 	for (i = 0; i < WARMUP; ++i) \
 		ret |= name(sizeof(input_data)); \
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) { \
-		start_ ## name[j] = get_cycles(); \
-		for (i = 0; i < TRIALS; ++i) \
+	        trial_times[0] = get_cycles(); \
+		for (i = 1; i <= TRIALS; ++i) { \
 			ret |= name(s); \
-		end_ ## name[j] = get_cycles(); \
+		        trial_times[i] = get_cycles(); } \
+		for (i = 0; i < TRIALS; ++i) \
+		        trial_times[i] = trial_times[i+1] - trial_times[i]; \
+		qsort(trial_times, TRIALS, sizeof(cycles_t), compare_cycles); \
+		median_ ## name[j] = trial_times[TRIALS/2]; \
 	} \
 } while (0)
 
@@ -67,19 +70,14 @@ static inline int name(size_t len) \
 #define report_it(name) do { \
 	char dec[20]; \
 	size_t l; \
-	fprintf(stderr,"%lu: %11s:", stamp, #name); \
+	fprintf(stderr,"%11s",#name); \
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) { \
-		memset(dec, 0, sizeof(dec)); \
-		l = snprintf(dec, sizeof(dec) - 2, "%llu", 100ULL * (end_ ## name[j] - start_ ## name[j]) / TRIALS / s); \
-		dec[l] = dec[l - 1]; \
-		dec[l - 1] = dec[l - 2]; \
-		dec[l - 2] = '.'; \
-	        fprintf(stderr, " %6s", dec); \
+	        fprintf(stderr, " %6.2f", (double)(median_ ## name[j]) / s); \
 	} \
 	fprintf(stderr, "\n"); \
 } while (0)
 
-enum { WARMUP = 50000, TRIALS = 100000, IDLE = 1 * 1000, STARTING_SIZE = 1024, DOUBLING_STEPS = 5 };
+enum { WARMUP = 50000, TRIALS = 10000, IDLE = 1 * 1000, STARTING_SIZE = 1024, DOUBLING_STEPS = 5 };
 u8 dummy_out[POLY1305_MAC_SIZE];
 u8 input_key[POLY1305_KEY_SIZE];
 u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
@@ -97,11 +95,12 @@ declare_it(hacl64)
 declare_it(hacl32x1)
 declare_it(hacl128)
 declare_it(hacl256)
-declare_it(hacl256_52)
-declare_it(hacl256_53)
-declare_it(hacl256_55)
-declare_it(jazz256)
 //declare_it(hacl512)
+
+static int compare_cycles(const void *a, const void *b)
+{
+	return *((cycles_t *)a) - *((cycles_t *)b);
+}
 
 static bool verify(void)
 {
@@ -119,10 +118,6 @@ static bool verify(void)
 		test_it(hacl64, {}, {});
 		test_it(hacl128, {}, {});
 		test_it(hacl256, {}, {});
-		test_it(hacl256_52, {}, {});
-		test_it(hacl256_53, {}, {});
-		test_it(hacl256_55, {}, {});
-		test_it(jazz256, {}, {});
 //		test_it(hacl512, {}, {});
 //		test_it(ossl_amd64, {}, {});
 //		test_it(ossl_avx, {}, {});
@@ -136,26 +131,22 @@ int main()
 {
 	size_t s;
 	int ret = 0, i, j;
-	cycles_t start_ref[DOUBLING_STEPS + 1], end_ref[DOUBLING_STEPS + 1];
-	cycles_t start_ossl_c[DOUBLING_STEPS + 1], end_ossl_c[DOUBLING_STEPS + 1];
-	cycles_t start_ossl_amd64[DOUBLING_STEPS + 1], end_ossl_amd64[DOUBLING_STEPS + 1];
-	cycles_t start_ossl_avx[DOUBLING_STEPS + 1], end_ossl_avx[DOUBLING_STEPS + 1];
-	cycles_t start_ossl_avx2[DOUBLING_STEPS + 1], end_ossl_avx2[DOUBLING_STEPS + 1];
-	cycles_t start_ossl_avx512[DOUBLING_STEPS + 1], end_ossl_avx512[DOUBLING_STEPS + 1];
-	cycles_t start_donna32[DOUBLING_STEPS + 1], end_donna32[DOUBLING_STEPS + 1];
-	cycles_t start_donna64[DOUBLING_STEPS + 1], end_donna64[DOUBLING_STEPS + 1];
-	cycles_t start_hacl32[DOUBLING_STEPS + 1], end_hacl32[DOUBLING_STEPS + 1];
-
-	cycles_t start_hacl32x1[DOUBLING_STEPS + 1], end_hacl32x1[DOUBLING_STEPS + 1];
-	cycles_t start_hacl128[DOUBLING_STEPS + 1], end_hacl128[DOUBLING_STEPS + 1];
-	cycles_t start_hacl256[DOUBLING_STEPS + 1], end_hacl256[DOUBLING_STEPS + 1];
-	cycles_t start_hacl256_52[DOUBLING_STEPS + 1], end_hacl256_52[DOUBLING_STEPS + 1];
-	cycles_t start_hacl256_53[DOUBLING_STEPS + 1], end_hacl256_53[DOUBLING_STEPS + 1];
-	cycles_t start_hacl256_55[DOUBLING_STEPS + 1], end_hacl256_55[DOUBLING_STEPS + 1];
-	cycles_t start_hacl512[DOUBLING_STEPS + 1], end_hacl512[DOUBLING_STEPS + 1];
-	cycles_t start_hacl64[DOUBLING_STEPS + 1], end_hacl64[DOUBLING_STEPS + 1];
-	cycles_t start_jazz256[DOUBLING_STEPS + 1], end_jazz256[DOUBLING_STEPS + 1];
+	cycles_t median_ref[DOUBLING_STEPS+1];
+	cycles_t median_ossl_c[DOUBLING_STEPS + 1];
+	cycles_t median_ossl_amd64[DOUBLING_STEPS + 1];
+	cycles_t median_ossl_avx[DOUBLING_STEPS + 1];
+	cycles_t median_ossl_avx2[DOUBLING_STEPS + 1];
+	cycles_t median_ossl_avx512[DOUBLING_STEPS + 1];
+	cycles_t median_donna32[DOUBLING_STEPS + 1];
+	cycles_t median_donna64[DOUBLING_STEPS + 1];
+	cycles_t median_hacl32[DOUBLING_STEPS + 1];
+	cycles_t median_hacl32x1[DOUBLING_STEPS + 1];
+	cycles_t median_hacl128[DOUBLING_STEPS + 1];
+	cycles_t median_hacl256[DOUBLING_STEPS + 1];
+//	cycles_t median_hacl512[DOUBLING_STEPS + 1];
+	cycles_t median_hacl64[DOUBLING_STEPS + 1];
 	unsigned long flags;
+	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
 
 	if (!verify())
 		return -1;
@@ -165,7 +156,6 @@ int main()
 	for (i = 0; i < sizeof(input_key); ++i)
 		input_key[i] = i;
 
-
 	//	do_it(ref);
 	do_it(ossl_c);
 	do_it(donna32);
@@ -174,21 +164,16 @@ int main()
 	do_it(hacl32x1);
 	do_it(hacl128);
 	do_it(hacl256);
-	do_it(hacl256_52);
-	do_it(hacl256_53);
-	do_it(hacl256_55);
-	do_it(hacl64);
-	do_it(jazz256);
 //	do_it(hacl512);
+	do_it(hacl64);
 //	do_it(ossl_amd64);
 //	do_it(ossl_avx);
 //	do_it(ossl_avx2);
 //	do_it(ossl_avx512);
-
-	fprintf(stderr,"%lu:             ", stamp);
-//	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
-//		printk(KERN_CONT " \x1b[4m%6zu\x1b[24m", s);
-//	report_it(ref);
+	fprintf(stderr,"%11s","");
+	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
+		fprintf(stderr, " \x1b[4m%6zu\x1b[24m", s);
+	fprintf(stderr,"\n");
 	report_it(ossl_c);
 	report_it(donna32);
 	report_it(donna64);
@@ -197,10 +182,6 @@ int main()
 	report_it(hacl64);
 	report_it(hacl128);
 	report_it(hacl256);
-	report_it(hacl256_52);
-	report_it(hacl256_53);
-	report_it(hacl256_55);
-	report_it(jazz256);
 //	report_it(hacl512);
 //	report_it(ossl_amd64);
 //	report_it(ossl_avx);
@@ -214,5 +195,7 @@ int main()
 	 * -0x1000 here is an amazing hack. It causes the kernel to not
 	 * actually load the module, while the standard userspace tools
 	 * don't return an error, because it's too big. */
+	free(trial_times);
 	return -0x1000;
 }
+

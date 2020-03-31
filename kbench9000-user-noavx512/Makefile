@@ -1,7 +1,7 @@
 objs := main.o poly1305-openssl.c poly1305-hacl32x1.o poly1305-hacl128.o poly1305-hacl256.o poly1305-hacl256_52.o poly1305-hacl256_53.o poly1305-hacl256_55.o poly1305-hacl32.o poly1305-hacl64.o poly1305-ref.o poly1305-donna32.o poly1305-donna64.o poly1305-jazz256-asm.o poly1305-jazz256.o
 
-CFLAGS += -O3 -pg -march=native -mtune=native
-ASFLAGS += -O3 -pg -march=native -mtune=native
+CFLAGS += -O3 -g -march=native -mtune=native
+ASFLAGS += -O3 -g -march=native -mtune=native
 poly1305-hacl128.o: CFLAGS +=
 poly1305-hacl256.o: CFLAGS +=
 poly1305-hacl256_52.o: CFLAGS +=
