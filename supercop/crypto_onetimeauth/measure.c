@@ -8,7 +8,7 @@ const char *implementationversion = crypto_onetimeauth_VERSION;
 const char *sizenames[] = { "outputbytes", "keybytes", 0 };
 const long long sizes[] = { crypto_onetimeauth_BYTES, crypto_onetimeauth_KEYBYTES };
 
-#define MAXTEST_BYTES 4096
+#define MAXTEST_BYTES 16384
 #ifdef SUPERCOP
 #define MGAP 8192
 #else
