@@ -1,3 +1,0 @@
-#define crypto_dh_claus_ntl_SECRETKEYBYTES 256
-#define crypto_dh_claus_ntl_PUBLICKEYBYTES 128
-#define crypto_dh_claus_ntl_BYTES 128

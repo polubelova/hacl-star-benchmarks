@@ -1,3 +1,0 @@
-#define crypto_dh_claus_gmp_SECRETKEYBYTES 256
-#define crypto_dh_claus_gmp_PUBLICKEYBYTES 128
-#define crypto_dh_claus_gmp_BYTES 128

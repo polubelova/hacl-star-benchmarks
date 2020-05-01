@@ -1,2 +1,0 @@
-#define crypto_stream_aes128estream_e_bernstein_amd64_1_KEYBYTES 16
-#define crypto_stream_aes128estream_e_bernstein_amd64_1_NONCEBYTES 16
