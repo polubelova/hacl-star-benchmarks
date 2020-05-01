@@ -83,6 +83,7 @@ u8 input_key[1000];
 u8 input_data[1000 * (1ULL << DOUBLING_STEPS)];
 
 declare_it(hacl)
+declare_it(nacl)
 
 static int compare_cycles(const void *a, const void *b)
 {
@@ -121,7 +122,7 @@ int main()
 		input_key[i] = i;
 
 	do_it(hacl);
-	// do_it(nacl);
+	do_it(nacl);
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \

@@ -10,7 +10,7 @@ blake2b_nacl(
   uint8_t *k
 )
 {
-	crypto_generichash(output, nn,
+  crypto_generichash(output, nn,
                    d, ll,
                    k, kk);
 }

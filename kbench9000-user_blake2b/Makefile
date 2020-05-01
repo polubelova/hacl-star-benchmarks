@@ -3,7 +3,7 @@ objs := main.o blake2b_hacl.c blake2b_nacl.c
 CFLAGS += -O3 -g -march=native -mtune=native
 ASFLAGS += -O3 -g -march=native -mtune=native
 blake2b_hacl.o: CFLAGS +=
-blake2b_ref.o: 
+blake2b_nacl.o: CFLAGS += 
 # poly1305-hacl128.o: CFLAGS +=
 # poly1305-hacl256.o: CFLAGS +=
 # poly1305-hacl256_52.o: CFLAGS +=
