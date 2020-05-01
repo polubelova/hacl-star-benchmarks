@@ -1,7 +1,9 @@
-objs := main.o blake2b_hacl.c
+objs := main.o blake2b_hacl.c blake2b_nacl.c
 
 CFLAGS += -O3 -g -march=native -mtune=native
 ASFLAGS += -O3 -g -march=native -mtune=native
+blake2b_hacl.o: CFLAGS +=
+blake2b_ref.o: 
 # poly1305-hacl128.o: CFLAGS +=
 # poly1305-hacl256.o: CFLAGS +=
 # poly1305-hacl256_52.o: CFLAGS +=
@@ -15,7 +17,7 @@ run: build
 	sudo ./run.sh blake2b_bench.exe
 
 build: $(objs)
-	$(CC) $(CFLAGS) -o blake2b_bench.exe $(objs)
+	$(CC) $(CFLAGS) -o blake2b_bench.exe $(objs) -lsodium
 
 clean:
 	rm -f *.o *~ *.exe

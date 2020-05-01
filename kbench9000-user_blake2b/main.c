@@ -97,6 +97,7 @@ static bool verify(void)
 
 	// NB: Test is done using only one test vector, so I deleted the loop
 	test_it(hacl, {}, {});
+	test_it(nacl, {}, {});
 
 	return true;
 }
@@ -106,6 +107,7 @@ int main()
 	size_t s;
 	int ret = 0, i, j;
 	cycles_t median_hacl[DOUBLING_STEPS+1];
+	cycles_t median_nacl[DOUBLING_STEPS+1];
 
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
@@ -119,6 +121,7 @@ int main()
 		input_key[i] = i;
 
 	do_it(hacl);
+	// do_it(nacl);
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
@@ -126,6 +129,7 @@ int main()
 	fprintf(stderr,"\n");
 
 	report_it(hacl);
+	report_it(nacl);
 
 	/* Don't let compiler be too clever. */
 	// Why not? 
