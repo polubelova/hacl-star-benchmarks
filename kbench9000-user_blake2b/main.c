@@ -84,6 +84,7 @@ u8 input_data[1000 * (1ULL << DOUBLING_STEPS)];
 
 declare_it(hacl)
 declare_it(nacl)
+declare_it(ref)
 
 static int compare_cycles(const void *a, const void *b)
 {
@@ -99,6 +100,7 @@ static bool verify(void)
 	// NB: Test is done using only one test vector, so I deleted the loop
 	test_it(hacl, {}, {});
 	test_it(nacl, {}, {});
+	test_it(ref, {}, {});
 
 	return true;
 }
@@ -109,6 +111,7 @@ int main()
 	int ret = 0, i, j;
 	cycles_t median_hacl[DOUBLING_STEPS+1];
 	cycles_t median_nacl[DOUBLING_STEPS+1];
+	cycles_t median_ref[DOUBLING_STEPS+1];
 
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
@@ -123,6 +126,7 @@ int main()
 
 	do_it(hacl);
 	do_it(nacl);
+	do_it(ref);
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
@@ -131,6 +135,7 @@ int main()
 
 	report_it(hacl);
 	report_it(nacl);
+	report_it(ref);
 
 	/* Don't let compiler be too clever. */
 	// Why not? 

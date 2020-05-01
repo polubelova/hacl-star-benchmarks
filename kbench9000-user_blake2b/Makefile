@@ -1,4 +1,4 @@
-objs := main.o blake2b_hacl.c blake2b_nacl.c
+objs := main.o blake2b_hacl.c blake2b_nacl.c blake2b_ref.c
 
 CFLAGS += -O3 -g -march=native -mtune=native
 ASFLAGS += -O3 -g -march=native -mtune=native
