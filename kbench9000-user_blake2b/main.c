@@ -83,6 +83,7 @@ u8 input_key[1000];
 u8 input_data[1000 * (1ULL << DOUBLING_STEPS)];
 
 declare_it(hacl)
+declare_it(hacl256)
 declare_it(nacl)
 declare_it(ref)
 
@@ -99,6 +100,7 @@ static bool verify(void)
 
 	// NB: Test is done using only one test vector, so I deleted the loop
 	test_it(hacl, {}, {});
+	test_it(hacl256, {}, {});
 	test_it(nacl, {}, {});
 	test_it(ref, {}, {});
 
@@ -110,6 +112,7 @@ int main()
 	size_t s;
 	int ret = 0, i, j;
 	cycles_t median_hacl[DOUBLING_STEPS+1];
+	cycles_t median_hacl256[DOUBLING_STEPS+1];
 	cycles_t median_nacl[DOUBLING_STEPS+1];
 	cycles_t median_ref[DOUBLING_STEPS+1];
 
@@ -125,6 +128,7 @@ int main()
 		input_key[i] = i;
 
 	do_it(hacl);
+	do_it(hacl256);
 	do_it(nacl);
 	do_it(ref);
 
@@ -134,6 +138,7 @@ int main()
 	fprintf(stderr,"\n");
 
 	report_it(hacl);
+	report_it(hacl256);
 	report_it(nacl);
 	report_it(ref);
 
