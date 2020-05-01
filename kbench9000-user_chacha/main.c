@@ -45,7 +45,6 @@ static inline int name(size_t len) \
 #define do_it(name) do { \
 	for (i = 0; i < WARMUP; ++i) \
 		ret |= name(sizeof(LEN)); \
-	printf("%s\n", "Arrived to t"); \
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) { \
 	        trial_times[0] = get_cycles(); \
 		for (i = 1; i <= TRIALS; ++i) { \
@@ -88,6 +87,9 @@ u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 
 declare_it(hacl)
 declare_it(hacl32)
+declare_it(hacl128)
+declare_it(hacl256)
+// declare_it(vec256)
 
 static int compare_cycles(const void *a, const void *b)
 {
@@ -102,6 +104,9 @@ static bool verify(void)
 
 	test_it(hacl, {}, {});
 	test_it(hacl32, {}, {});
+	test_it(hacl128, {}, {});
+	test_it(hacl256, {}, {});
+	
 
 	return true;
 }
@@ -113,9 +118,9 @@ int main()
 	int ret = 0, i, j;
 	cycles_t median_hacl[DOUBLING_STEPS+1];
 	cycles_t median_hacl32[DOUBLING_STEPS+1];
-	// cycles_t median_nacl[DOUBLING_STEPS+1];
-	// cycles_t median_ref[DOUBLING_STEPS+1];
-
+	cycles_t median_hacl128[DOUBLING_STEPS+1];
+	cycles_t median_hacl256[DOUBLING_STEPS+1];
+	
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
 
@@ -130,9 +135,9 @@ int main()
 
 	do_it(hacl);
 	do_it(hacl32);
+	do_it(hacl128);
+	do_it(hacl256);
 
-
-	printf("%s\n", "DTO");
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
 		fprintf(stderr, " \x1b[4m%6zu\x1b[24m", s);
@@ -140,6 +145,8 @@ int main()
 
 	report_it(hacl);
 	report_it(hacl32);
+	report_it(hacl128);
+	report_it(hacl256);
 	
 
 	/* Don't let compiler be too clever. */

@@ -23,6 +23,7 @@
 
 
 #include "Hacl_Chacha20_Vec256.h"
+#include "kbench-common.h"
 
 static inline void double_round_256(Lib_IntVector_Intrinsics_vec256 *st)
 {
@@ -891,3 +892,16 @@ Hacl_Chacha20_Vec256_chacha20_decrypt_256(
   }
 }
 
+
+void chacha20_hacl256(
+  uint32_t len,
+  uint8_t *out,
+  uint8_t *text,
+  uint8_t *key,
+  uint8_t *n1,
+  uint32_t ctr
+)
+{
+  
+  Hacl_Chacha20_Vec256_chacha20_encrypt_256 (len, out, text, key, n1, ctr);
+}
