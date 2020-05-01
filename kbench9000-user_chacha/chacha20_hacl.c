@@ -207,9 +207,7 @@ Hacl_Chacha20_chacha20_encrypt(
 )
 {
   uint32_t ctx[16U] = { 0U };
-
   chacha20_init(ctx, key, n1, ctr);
-  printf("test3");
   chacha20_update(ctx, len, out, text);
 }
 
@@ -238,12 +236,5 @@ void chacha20_hacl(
   uint32_t ctr
 )
 {
-
-  uint8_t out1[10000000] = {0};
-  uint8_t text1[10000000] = {0};
-  uint8_t key1[10000000] = {0};
-  uint8_t nonce1[10000000] = {0};
-
-  Hacl_Chacha20_chacha20_encrypt (len, out1, text1, key1, nonce1, ctr);
-
+  Hacl_Chacha20_chacha20_encrypt (len, out, text, key, n1, ctr);
 }
