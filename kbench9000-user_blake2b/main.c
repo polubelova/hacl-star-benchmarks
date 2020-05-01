@@ -24,7 +24,6 @@ typedef unsigned long long cycles_t;
 
 int dummy;
 
-enum { POLY1305_MAC_SIZE = 16, POLY1305_KEY_SIZE = 32 };
 #include "test_vectors.h"
 
 static __inline__ cycles_t get_cycles(void)
@@ -34,11 +33,12 @@ static __inline__ cycles_t get_cycles(void)
   return (rdx << 32) + rax;
 }
 
+
 #define declare_it(name) \
 void blake2b_ ## name(const u32 nn,  u8 *output, const u32 ll, const u8 *d, const u32 kk, const u8 *k); \
 static inline int name(size_t len) \
 { \
-	blake2b_ ## name(len, dummy_out, len, input_data, len, input_key); \
+	blake2b_ ## name(44, dummy_out, 64, input_data, 64, input_key); \
 }
 
 #define do_it(name) do { \
@@ -57,11 +57,11 @@ static inline int name(size_t len) \
 } while (0)
 
 #define test_it(name, before, after) do { \
-	memset(out, __LINE__, POLY1305_MAC_SIZE); \
+	memset(out, __LINE__, vectors2b[i].expected_len); \
 	before; \
 	blake2b_ ## name(vectors2b[i].expected_len, out, vectors2b[i].input_len, vectors2b[i].input, vectors2b[i].key_len, vectors2b[i].key); \
 	after; \
-	if (memcmp(out, vectors2b[i].expected, POLY1305_MAC_SIZE)) { \
+	if (memcmp(out, vectors2b[i].expected, vectors2b[i].expected_len)) { \
 		fprintf(stderr,#name " self-test %zu: FAIL\n", i + 1); \
 		return false; \
 	} \
@@ -78,9 +78,9 @@ static inline int name(size_t len) \
 } while (0)
 
 enum { WARMUP = 50000, TRIALS = 10000, IDLE = 1 * 1000, STARTING_SIZE = 1024, DOUBLING_STEPS = 5 };
-u8 dummy_out[32];
-u8 input_key[32];
-u8 input_data[32 * (1ULL << DOUBLING_STEPS)];
+u8 dummy_out[1000];
+u8 input_key[1000];
+u8 input_data[1000 * (1ULL << DOUBLING_STEPS)];
 
 declare_it(hacl)
 
@@ -93,17 +93,11 @@ static bool verify(void)
 {
 	int ret;
 	size_t i = 0;
-	u8 out[POLY1305_MAC_SIZE];
+	u8 out[1000];
 
-	for (i = 0; i < ARRAY_SIZE(vectors2b); ++i) {
-	  //		test_it(ref, {}, {});
-		test_it(hacl, {}, {});
-//		test_it(hacl512, {}, {});
-//		test_it(ossl_amd64, {}, {});
-//		test_it(ossl_avx, {}, {});
-//		test_it(ossl_avx2, {}, {});
-//		test_it(ossl_avx512, {}, {});
-	}
+	// NB: Test is done using only one test vector, so I deleted the loop
+	test_it(hacl, {}, {});
+
 	return true;
 }
 
@@ -124,25 +118,7 @@ int main()
 	for (i = 0; i < sizeof(input_key); ++i)
 		input_key[i] = i;
 
-	//	do_it(ref);
-// 	do_it(ossl_c);
 	do_it(hacl);
-// 	do_it(donna32);
-// 	do_it(donna64);
-// 	do_it(hacl32);
-// 	do_it(hacl32x1);
-// 	do_it(hacl128);
-// 	do_it(hacl256);
-// 	do_it(jazz256);
-// 	do_it(hacl256_55);
-// 	do_it(hacl256_53);
-// 	do_it(hacl256_52);
-// //	do_it(hacl512);
-// 	do_it(hacl64);
-//	do_it(ossl_amd64);
-//	do_it(ossl_avx);
-//	do_it(ossl_avx2);
-//	do_it(ossl_avx512);
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
@@ -150,13 +126,9 @@ int main()
 	fprintf(stderr,"\n");
 
 	report_it(hacl);
-//	report_it(hacl512);
-//	report_it(ossl_amd64);
-//	report_it(ossl_avx);
-//	report_it(ossl_avx2);
-//	report_it(ossl_avx512);
 
 	/* Don't let compiler be too clever. */
+	// Why not? 
 	dummy = ret;
 
 	/* We should never actually agree to insert the module. Choosing
