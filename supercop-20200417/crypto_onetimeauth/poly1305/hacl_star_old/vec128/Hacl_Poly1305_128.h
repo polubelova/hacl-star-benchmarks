@@ -24,30 +24,34 @@
 #include <string.h>
 #include <inttypes.h>
 #include "lowstar_endianness.h"
+#include <stdbool.h>
+#include "libintvector.h"
 
-#ifndef __Hacl_Chacha20_Vec32_H
-#define __Hacl_Chacha20_Vec32_H
+#ifndef __Hacl_Poly1305_128_H
+#define __Hacl_Poly1305_128_H
 
-void
-Hacl_Chacha20_Vec32_chacha20_encrypt_32(
-  uint32_t len,
-  uint8_t *out,
-  uint8_t *text,
-  uint8_t *key,
-  uint8_t *n1,
-  uint32_t ctr
-);
 
+typedef Lib_IntVector_Intrinsics_vec128 *Hacl_Poly1305_128_poly1305_ctx;
+
+void Hacl_Poly1305_128_poly1305_init(Lib_IntVector_Intrinsics_vec128 *ctx, uint8_t *key);
+
+void Hacl_Poly1305_128_poly1305_update1(Lib_IntVector_Intrinsics_vec128 *ctx, uint8_t *text);
 
 void
-Hacl_Chacha20_Vec32_chacha20_decrypt_32(
+Hacl_Poly1305_128_poly1305_update(
+  Lib_IntVector_Intrinsics_vec128 *ctx,
   uint32_t len,
-  uint8_t *out,
-  uint8_t *cipher,
-  uint8_t *key,
-  uint8_t *n1,
-  uint32_t ctr
+  uint8_t *text
 );
 
-#define __Hacl_Chacha20_Vec32_H_DEFINED
+void
+Hacl_Poly1305_128_poly1305_finish(
+  uint8_t *tag,
+  uint8_t *key,
+  Lib_IntVector_Intrinsics_vec128 *ctx
+);
+
+void Hacl_Poly1305_128_poly1305_mac(uint8_t *tag, uint32_t len, uint8_t *text, uint8_t *key);
+
+#define __Hacl_Poly1305_128_H_DEFINED
 #endif

@@ -28,6 +28,10 @@
 #ifndef __Hacl_Chacha20_Vec32_H
 #define __Hacl_Chacha20_Vec32_H
 
+
+
+/* SNIPPET_START: Hacl_Chacha20_Vec32_chacha20_encrypt_32 */
+
 void
 Hacl_Chacha20_Vec32_chacha20_encrypt_32(
   uint32_t len,
@@ -38,6 +42,9 @@ Hacl_Chacha20_Vec32_chacha20_encrypt_32(
   uint32_t ctr
 );
 
+/* SNIPPET_END: Hacl_Chacha20_Vec32_chacha20_encrypt_32 */
+
+/* SNIPPET_START: Hacl_Chacha20_Vec32_chacha20_decrypt_32 */
 
 void
 Hacl_Chacha20_Vec32_chacha20_decrypt_32(
@@ -48,6 +55,8 @@ Hacl_Chacha20_Vec32_chacha20_decrypt_32(
   uint8_t *n1,
   uint32_t ctr
 );
+
+/* SNIPPET_END: Hacl_Chacha20_Vec32_chacha20_decrypt_32 */
 
 #define __Hacl_Chacha20_Vec32_H_DEFINED
 #endif

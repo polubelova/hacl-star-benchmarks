@@ -24,12 +24,13 @@
 #include <string.h>
 #include <inttypes.h>
 #include "lowstar_endianness.h"
+#include "libintvector.h"
 
-#ifndef __Hacl_Chacha20_Vec32_H
-#define __Hacl_Chacha20_Vec32_H
+#ifndef __Hacl_Chacha20_Vec256_H
+#define __Hacl_Chacha20_Vec256_H
 
 void
-Hacl_Chacha20_Vec32_chacha20_encrypt_32(
+Hacl_Chacha20_Vec256_chacha20_encrypt_256(
   uint32_t len,
   uint8_t *out,
   uint8_t *text,
@@ -38,9 +39,8 @@ Hacl_Chacha20_Vec32_chacha20_encrypt_32(
   uint32_t ctr
 );
 
-
 void
-Hacl_Chacha20_Vec32_chacha20_decrypt_32(
+Hacl_Chacha20_Vec256_chacha20_decrypt_256(
   uint32_t len,
   uint8_t *out,
   uint8_t *cipher,
@@ -49,5 +49,5 @@ Hacl_Chacha20_Vec32_chacha20_decrypt_32(
   uint32_t ctr
 );
 
-#define __Hacl_Chacha20_Vec32_H_DEFINED
+#define __Hacl_Chacha20_Vec256_H_DEFINED
 #endif

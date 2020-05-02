@@ -89,12 +89,6 @@ typedef __m128i Lib_IntVector_Intrinsics_vec128;
 #define Lib_IntVector_Intrinsics_vec128_shuffle64(x0, x1, x2) \
   (_mm_shuffle_epi32(x0, _MM_SHUFFLE(2*x1+1,2*x1,2*x2+1,2*x2)))
 
-#define Lib_IntVector_Intrinsics_vec128_rotate_right_lanes32(x0, x1)	\
-  (_mm_shuffle_epi32(x0, _MM_SHUFFLE((x1+3)%4,(x1+2)%4,(x1+1)%4,x1%4)))
-
-#define Lib_IntVector_Intrinsics_vec128_rotate_right_lanes64(x0, x1)	\
-  (_mm_shuffle_epi32(x0, _MM_SHUFFLE((2*x1+3)%4,(2*x1+2)%4,(2*x1+1)%4,(2*x1)%4)))
-
 #define Lib_IntVector_Intrinsics_vec128_load_le(x0) \
   (_mm_loadu_si128((__m128i*)(x0)))
 
@@ -141,7 +135,7 @@ typedef __m128i Lib_IntVector_Intrinsics_vec128;
   (_mm_extract_epi64(x0, x1))
 
 #define Lib_IntVector_Intrinsics_vec128_zero  \
-  (_mm_setzero_si128())
+  (_mm_set1_epi16((uint16_t)0))
 
 
 #define Lib_IntVector_Intrinsics_vec128_add64(x0, x1) \
@@ -282,31 +276,11 @@ typedef __m256i Lib_IntVector_Intrinsics_vec256;
 #define Lib_IntVector_Intrinsics_vec256_shuffle32(x0, x1, x2, x3, x4, x5, x6, x7, x8)	\
   (_mm256_permutevar8x32_epi32(x0, _mm256_set_epi32(x8,x7,x6,x5,x4,x3,x2,x1)))
 
-#define Lib_IntVector_Intrinsics_vec256_rotate_right_lanes32(x0, x1)	\
-  (_mm256_permutevar8x32_epi32(x0, _mm256_set_epi32((x1+7)%8,(x1+6)%8,(x1+5)%8,(x1+4)%8,(x1+3%8),(x1+2)%8,(x1+1)%8,x1%8)))
-
-#define Lib_IntVector_Intrinsics_vec256_rotate_right_lanes64(x0, x1)	\
-  (_mm256_permute4x64_epi64(x0, _MM_SHUFFLE((x1+3)%4,(x1+2)%4,(x1+1)%4,x1%4)))
-
 #define Lib_IntVector_Intrinsics_vec256_load_le(x0) \
   (_mm256_loadu_si256((__m256i*)(x0)))
 
-#define Lib_IntVector_Intrinsics_vec256_load32_be(x0)		\
-  (_mm256_shuffle_epi8(_mm256_loadu_si256((__m256i*)(x0)), _mm256_set_epi8(12, 13, 14, 15, 8, 9, 10, 11, 4, 5, 6, 7, 0, 1, 2, 3, 12, 13, 14, 15, 8, 9, 10, 11, 4, 5, 6, 7, 0, 1, 2, 3)))
-
-#define Lib_IntVector_Intrinsics_vec256_load64_be(x0)		\
-  (_mm256_shuffle_epi8(_mm256_loadu_si256((__m256i*)(x0)), _mm256_set_epi8(8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7)))
-
-
 #define Lib_IntVector_Intrinsics_vec256_store_le(x0, x1) \
   (_mm256_storeu_si256((__m256i*)(x0), x1))
-
-#define Lib_IntVector_Intrinsics_vec256_store32_be(x0, x1)	\
-  (_mm256_storeu_si256((__m256i*)(x0), _mm256_shuffle_epi8(x1, _mm256_set_epi8(12, 13, 14, 15, 8, 9, 10, 11, 4, 5, 6, 7, 0, 1, 2, 3, 12, 13, 14, 15, 8, 9, 10, 11, 4, 5, 6, 7, 0, 1, 2, 3))))
-
-#define Lib_IntVector_Intrinsics_vec256_store64_be(x0, x1)	\
-  (_mm256_storeu_si256((__m256i*)(x0), _mm256_shuffle_epi8(x1, _mm256_set_epi8(8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7))))
-
 
 #define Lib_IntVector_Intrinsics_vec256_insert8(x0, x1, x2)	\
   (_mm256_insert_epi8(x0, x1, x2))
@@ -390,6 +364,7 @@ typedef __m256i Lib_IntVector_Intrinsics_vec256;
 
 #define Lib_IntVector_Intrinsics_vec256_interleave_high128(x1, x2) \
   (_mm256_permute2x128_si256(x1, x2, 0x31))
+
 
 
 typedef __m512i Lib_IntVector_Intrinsics_vec512;
@@ -487,16 +462,6 @@ typedef __m512i Lib_IntVector_Intrinsics_vec512;
 #define Lib_IntVector_Intrinsics_vec512_store_le(x0, x1) \
   (_mm512_storeu_si512((__m512i*)(x0), x1))
 
-#define Lib_IntVector_Intrinsics_vec512_load64_be(x0) \
-  (_mm512_shuffle_epi8(_mm512_loadu_si512((__m512i*)(x0)), \
-		       _mm512_set_epi8(8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7, \
-				       8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7)))
-
-#define Lib_IntVector_Intrinsics_vec512_store64_be(x0, x1) \
-  (_mm512_storeu_si512((__m512i*)(x0), _mm512_shuffle_epi8(x1, \
-		       _mm512_set_epi8(8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7, \
-				       8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7))))
-
 #define Lib_IntVector_Intrinsics_vec512_interleave_low32(x1, x2) \
   (_mm512_unpacklo_epi32(x1, x2))
 
@@ -521,7 +486,6 @@ typedef __m512i Lib_IntVector_Intrinsics_vec512;
 #define Lib_IntVector_Intrinsics_vec512_interleave_high256(x1, x2) \
   (_mm512_shuffle_i32x4(x1, x2, 0xee))
 
-
 #elif defined(__aarch64__) || defined(_M_ARM64) || defined(__arm__) || defined(_M_ARM)
 #include <arm_neon.h>
 
@@ -539,17 +503,8 @@ typedef uint32x4_t Lib_IntVector_Intrinsics_vec128;
 #define Lib_IntVector_Intrinsics_vec128_gt32(x0, x1) \
   (vcgtq_u32(x0, x1))
 
-#define high32(x0) \
-  (vmovn_u64(vshrq_n_u64(vreinterpretq_u64_u32(x0),32)))
-
-#define low32(x0) \
-  (vmovn_u64(vreinterpretq_u64_u32(x0)))
-
-#define Lib_IntVector_Intrinsics_vec128_gt64(x0, x1) \
-  (vreinterpretq_u32_u64(vmovl_u32(vorr_u32(vcgt_u32(high32(x0),high32(x1)),vand_u32(vceq_u32(high32(x0),high32(x1)),vcgt_u32(low32(x0),low32(x1)))))))
-
 #define Lib_IntVector_Intrinsics_vec128_or(x0, x1) \
-  (vorrq_u32(x0, x1))
+  (voorq_u32(x0, x1))
 
 #define Lib_IntVector_Intrinsics_vec128_and(x0, x1) \
   (vandq_u32(x0, x1))
@@ -582,13 +537,6 @@ typedef uint32x4_t Lib_IntVector_Intrinsics_vec128;
 #define Lib_IntVector_Intrinsics_vec128_rotate_right32(x0,x1)	\
   (vsriq_n_u32(vshlq_n_u32((x0),32-(x1)),(x0),(x1)))
 
-#define Lib_IntVector_Intrinsics_vec128_rotate_right_lanes32(x0, x1)	\
-  (vextq_u32(x0,x0,x1))
-
-#define Lib_IntVector_Intrinsics_vec128_rotate_right_lanes64(x0, x1)	\
-  (vextq_u64(x0,x0,x1))
-
-
 /*
 #define Lib_IntVector_Intrinsics_vec128_shuffle32(x0, x1, x2, x3, x4)	\
   (_mm_shuffle_epi32(x0, _MM_SHUFFLE(x1,x2,x3,x4)))
@@ -610,10 +558,10 @@ typedef uint32x4_t Lib_IntVector_Intrinsics_vec128;
 */
 
 #define Lib_IntVector_Intrinsics_vec128_load32_be(x0)		\
-  (vreinterpretq_u32_u8(vrev32q_u8(vreinterpretq_u8_u32(vld1q_u32((const uint32_t*)(x0))))))
+  (vrev32q_u8(vld1q_u32((const uint32_t*)(x0))))
 
 #define Lib_IntVector_Intrinsics_vec128_load64_be(x0)		\
-  (vreinterpretq_u32_u8(vrev64q_u8(vreinterpretq_u8_u32(vld1q_u32((const uint32_t*)(x0))))))
+  (vreinterpretq_u32_u64(vrev64q_u8(vld1q_u32((const uint32_t*)(x0)))))
 
 /*
 #define Lib_IntVector_Intrinsics_vec128_store_be(x0, x1)	\
@@ -621,10 +569,10 @@ typedef uint32x4_t Lib_IntVector_Intrinsics_vec128;
 */
 
 #define Lib_IntVector_Intrinsics_vec128_store32_be(x0, x1)	\
-  (vst1q_u32((uint32_t*)(x0),(vreinterpretq_u32_u8(vrev32q_u8(vreinterpretq_u8_u32(x1))))))
+  (vst1q_u32((uint32_t*)(x0),(vrev32q_u8(x1))))
 
 #define Lib_IntVector_Intrinsics_vec128_store64_be(x0, x1)	\
-  (vst1q_u32((uint32_t*)(x0),(vreinterpretq_u32_u8(vrev64q_u8(vreinterpretq_u8_u32(x1))))))
+  (vst1q_u32((uint32_t*)(x0),(vrev64q_u8(x1))))
 
 #define Lib_IntVector_Intrinsics_vec128_insert8(x0, x1, x2)	\
   (vsetq_lane_u8(x1,x0,x2))
@@ -642,10 +590,10 @@ typedef uint32x4_t Lib_IntVector_Intrinsics_vec128;
   (vgetq_lane_u32(x0,x1))
 
 #define Lib_IntVector_Intrinsics_vec128_extract64(x0, x1)	\
-  (vgetq_lane_u64(vreinterpretq_u64_u32(x0),x1))
+  (vreinterpretq_u32_u64(vgetq_lane_u64(vreinterpretq_u64_u32(x0),x1)))
 
 #define Lib_IntVector_Intrinsics_vec128_zero  \
-  (vdupq_n_u32(0))
+  (vdup_n_u8(0))
 
 #define Lib_IntVector_Intrinsics_vec128_add64(x0, x1) \
   (vreinterpretq_u32_u64(vaddq_u64(vreinterpretq_u64_u32(x0), vreinterpretq_u64_u32(x1))))
@@ -654,10 +602,10 @@ typedef uint32x4_t Lib_IntVector_Intrinsics_vec128;
   (vreinterpretq_u32_u64(vsubq_u64(vreinterpretq_u64_u32(x0), vreinterpretq_u64_u32(x1))))
 
 #define Lib_IntVector_Intrinsics_vec128_mul64(x0, x1) \
-  (vreinterpretq_u32_u64(vmull_u32(vmovn_u64(vreinterpretq_u64_u32(x0)), vmovn_u64(vreinterpretq_u64_u32(x1)))))
+  (vmull_u32(vmovn_u64(x0), vmovn_u64(x1)))
 
 #define Lib_IntVector_Intrinsics_vec128_smul64(x0, x1) \
-  (vreinterpretq_u32_u64(vmull_n_u32(vmovn_u64(vreinterpretq_u64_u32(x0)), (uint32_t)x1)))
+  (vmull_u32(vmovn_u64(x0), vdupq_n_u64(x1)))
 
 #define Lib_IntVector_Intrinsics_vec128_add32(x0, x1) \
   (vaddq_u32(x0, x1))
