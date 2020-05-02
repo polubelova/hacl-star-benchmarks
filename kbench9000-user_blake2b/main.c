@@ -3,6 +3,9 @@
  * Copyright (C) 2018 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
  */
 
+// ln -s libcrypto.so.3 libcrypto.so
+// ln -s libssl.so.3 libssl.so
+
 #include <inttypes.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -86,6 +89,7 @@ declare_it(hacl)
 declare_it(hacl256)
 declare_it(nacl)
 declare_it(ref)
+declare_it(openssl)
 
 static int compare_cycles(const void *a, const void *b)
 {
@@ -103,6 +107,7 @@ static bool verify(void)
 	test_it(hacl256, {}, {});
 	test_it(nacl, {}, {});
 	test_it(ref, {}, {});
+	// test_it(openssl, {}, {});
 
 	return true;
 }
@@ -115,12 +120,14 @@ int main()
 	cycles_t median_hacl256[DOUBLING_STEPS+1];
 	cycles_t median_nacl[DOUBLING_STEPS+1];
 	cycles_t median_ref[DOUBLING_STEPS+1];
+	cycles_t median_openssl[DOUBLING_STEPS+1];
 
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
 
 	if (!verify())
 		return -1;
+	printf("%s\n", "Verification finished");
 
 	for (i = 0; i < sizeof(input_data); ++i)
 		input_data[i] = i;
@@ -131,6 +138,8 @@ int main()
 	do_it(hacl256);
 	do_it(nacl);
 	do_it(ref);
+	do_it(openssl);
+
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
@@ -141,6 +150,7 @@ int main()
 	report_it(hacl256);
 	report_it(nacl);
 	report_it(ref);
+	report_it(openssl);
 
 	/* Don't let compiler be too clever. */
 	// Why not? 
