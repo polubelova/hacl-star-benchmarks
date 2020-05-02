@@ -1,0 +1,12 @@
+10.14, crypto_hash/sha256/hacl_star  gcc-9
+10.86, crypto_hash/sha256/hacl_star  clang
+4.84, crypto_hash/sha256/openssl  gcc
+4.84, crypto_hash/sha256/openssl  gcc-9
+4.98, crypto_hash/sha256/openssl  clang
+7.35, crypto_hash/sha256/sphlib  gcc-9
+7.39, crypto_hash/sha256/sphlib  gcc
+7.40, crypto_hash/sha256/sphlib-small  gcc
+7.47, crypto_hash/sha256/sphlib-small  gcc-9
+7.87, crypto_hash/sha256/sphlib  clang
+8.46, crypto_hash/sha256/sphlib-small  clang
+9.56, crypto_hash/sha256/hacl_star  gcc

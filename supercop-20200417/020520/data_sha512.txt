@@ -1,0 +1,12 @@
+3.25, crypto_hash/sha512/openssl  gcc
+3.25, crypto_hash/sha512/openssl  gcc-9
+3.36, crypto_hash/sha512/openssl  clang
+4.71, crypto_hash/sha512/sphlib-small  gcc
+4.72, crypto_hash/sha512/sphlib  gcc-9
+4.72, crypto_hash/sha512/sphlib-small  gcc-9
+4.85, crypto_hash/sha512/sphlib  gcc
+5.21, crypto_hash/sha512/sphlib  clang
+5.35, crypto_hash/sha512/sphlib-small  clang
+5.48, crypto_hash/sha512/hacl_star  gcc
+6.60, crypto_hash/sha512/hacl_star  gcc-9
+7.35, crypto_hash/sha512/hacl_star  clang
