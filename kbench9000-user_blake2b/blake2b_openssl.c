@@ -14,17 +14,22 @@
 
 	 EVP_MD_CTX *mdctx;
 	 const EVP_MD *md;
-	 char mess1[] = "Test Message\n";
+
+
 	 unsigned char md_value[EVP_MAX_MD_SIZE];
 	 int md_len, i;
 
-	 md = EVP_blake2s256();
+	 md = EVP_blake2b512();
 
 	 mdctx =  EVP_MD_CTX_new();
+
 	 EVP_DigestInit_ex(mdctx, md, NULL);
 	 EVP_DigestUpdate(mdctx, d, ll);
 	 EVP_DigestFinal_ex(mdctx, output, &nn);
+	 
 	 EVP_MD_CTX_free(mdctx);
+
+
 
 }
 

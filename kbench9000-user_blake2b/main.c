@@ -66,7 +66,7 @@ static inline int name(size_t len) \
 	after; \
 	if (memcmp(out, vectors2b[i].expected, vectors2b[i].expected_len)) { \
 		fprintf(stderr,#name " self-test %zu: FAIL\n", i + 1); \
-		return false; \
+		return false;\
 	} \
 } while (0)
 
@@ -107,7 +107,7 @@ static bool verify(void)
 	test_it(hacl256, {}, {});
 	test_it(nacl, {}, {});
 	test_it(ref, {}, {});
-	// test_it(openssl, {}, {});
+	test_it(openssl, {}, {});
 
 	return true;
 }
@@ -127,7 +127,6 @@ int main()
 
 	if (!verify())
 		return -1;
-	printf("%s\n", "Verification finished");
 
 	for (i = 0; i < sizeof(input_data); ++i)
 		input_data[i] = i;

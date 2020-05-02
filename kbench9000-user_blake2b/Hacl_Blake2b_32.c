@@ -1202,5 +1202,7 @@ blake2b_hacl(
   uint8_t *k
 )
 {
+
   Hacl_Blake2b_32_blake2b (nn, output, ll, d, kk, k);
+
 }
