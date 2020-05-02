@@ -6,6 +6,12 @@ We use the SUPERCOP benchmarking to compare HACL* with assembly and C implementa
 
 ./do-part crypto_verify 16
 ./do-part crypto_onetimeauth poly1305
+
+./do-part crypto_hash blake2b
+./do-part crypto_hash blake2s
+
+./do-part crypto_hash sha256
+./do-part crypto_hash sha512
 ```
 
 Script to print a table.
