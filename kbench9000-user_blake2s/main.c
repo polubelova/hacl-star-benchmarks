@@ -85,6 +85,7 @@ u8 input_data[1000 * (1ULL << DOUBLING_STEPS)];
 declare_it(hacl)
 declare_it(hacl128)
 declare_it(nacl)
+declare_it(openssl)
 // declare_it(ref)
 
 static int compare_cycles(const void *a, const void *b)
@@ -102,6 +103,7 @@ static bool verify(void)
 	test_it(hacl, {}, {});
 	test_it(hacl128, {}, {});
 	test_it(nacl, {}, {});
+	test_it(openssl, {}, {});
 	// test_it(ref, {}, {});
 
 	return true;
@@ -114,6 +116,7 @@ int main()
 	cycles_t median_hacl[DOUBLING_STEPS+1];
 	cycles_t median_hacl128[DOUBLING_STEPS+1];
 	cycles_t median_nacl[DOUBLING_STEPS+1];
+	cycles_t median_openssl[DOUBLING_STEPS+1];
 	// cycles_t median_ref[DOUBLING_STEPS+1];
 
 	unsigned long flags;
@@ -130,6 +133,7 @@ int main()
 	do_it(hacl);
 	do_it(hacl128);
 	do_it(nacl);
+	do_it(openssl);
 	// do_it(ref);
 
 	fprintf(stderr,"%11s","");
@@ -140,6 +144,8 @@ int main()
 	report_it(hacl);
 	report_it(hacl128);
 	report_it(nacl);
+	report_it(openssl);
+
 	// report_it(ref);
 
 	/* Don't let compiler be too clever. */
