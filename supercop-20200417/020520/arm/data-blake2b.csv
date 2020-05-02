@@ -1,0 +1,3 @@
+5.46, crypto_hash/blake2b/regs  gcc
+6.24, crypto_hash/blake2b/ref  gcc
+9.69, crypto_hash/blake2b/hacl_star/vec32  gcc

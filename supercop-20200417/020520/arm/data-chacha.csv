@@ -1,0 +1,11 @@
+5.15, crypto_stream/chacha20/dolbeau/arm-neon  gcc
+5.75, crypto_stream/chacha20/hacl_star/vec128  gcc
+5.94, crypto_stream/chacha20/hacl_star/scalar  gcc
+5.94, crypto_stream/chacha20/hacl_star_old/scalar  gcc
+5.94, crypto_stream/chacha20/hacl_star_old/vec32  gcc
+5.96, crypto_stream/chacha20/hacl_star/vec32  gcc
+6.01, crypto_stream/chacha20/dolbeau/generic-gccsimd128  gcc
+7.18, crypto_stream/chacha20/dolbeau/generic-gccsimd256  gcc
+8.93, crypto_stream/chacha20/e/ref  gcc
+8.93, crypto_stream/chacha20/e/regs  gcc
+9.03, crypto_stream/chacha20/e/merged  gcc

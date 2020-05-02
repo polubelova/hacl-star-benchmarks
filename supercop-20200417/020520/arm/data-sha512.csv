@@ -1,0 +1,3 @@
+11.77, crypto_hash/sha512/hacl_star  gcc
+17.80, crypto_hash/sha512/sphlib  gcc
+17.80, crypto_hash/sha512/sphlib-small  gcc

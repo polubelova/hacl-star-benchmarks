@@ -1038,15 +1038,22 @@ Hacl_Poly1305_256_poly1305_update_52(
     for (uint32_t i = (uint32_t)0U; i < nb; i++)
     {
       uint8_t *block = text1 + i * bs;
-      Lib_IntVector_Intrinsics_vec256 lo = Lib_IntVector_Intrinsics_vec256_load_le(block);
-      Lib_IntVector_Intrinsics_vec256
-      hi = Lib_IntVector_Intrinsics_vec256_load_le(block + (uint32_t)32U);
-      Lib_IntVector_Intrinsics_vec256
-      m0 = Lib_IntVector_Intrinsics_vec256_interleave_low128(lo, hi);
+//      Lib_IntVector_Intrinsics_vec256 lo = Lib_IntVector_Intrinsics_vec256_load_le(block);
+//      Lib_IntVector_Intrinsics_vec256
+//      hi = Lib_IntVector_Intrinsics_vec256_load_le(block + (uint32_t)32U);
+//      Lib_IntVector_Intrinsics_vec256
+//      m0 = Lib_IntVector_Intrinsics_vec256_interleave_low128(lo, hi);
+      Lib_IntVector_Intrinsics_vec256 lo = _mm256_castsi128_si256(_mm_loadu_si128((__m128i*)block));
+      Lib_IntVector_Intrinsics_vec256 hi = _mm256_castsi128_si256(_mm_loadu_si128((__m128i*)block+1));
+      Lib_IntVector_Intrinsics_vec256 m0 = _mm256_inserti128_si256(lo,_mm_loadu_si128((__m128i*)block+2),1);
+      Lib_IntVector_Intrinsics_vec256 m1 = _mm256_inserti128_si256(hi,_mm_loadu_si128((__m128i*)block+3),1);
+
+//      Lib_IntVector_Intrinsics_vec256
+//      m2 = Lib_IntVector_Intrinsics_vec256_shift_right(m0, (uint32_t)48U);
+//      Lib_IntVector_Intrinsics_vec256
+//      m1 = Lib_IntVector_Intrinsics_vec256_interleave_high128(lo, hi);
       Lib_IntVector_Intrinsics_vec256
       m2 = Lib_IntVector_Intrinsics_vec256_shift_right(m0, (uint32_t)48U);
-      Lib_IntVector_Intrinsics_vec256
-      m1 = Lib_IntVector_Intrinsics_vec256_interleave_high128(lo, hi);
       Lib_IntVector_Intrinsics_vec256
       m3 = Lib_IntVector_Intrinsics_vec256_shift_right(m1, (uint32_t)48U);
       Lib_IntVector_Intrinsics_vec256
