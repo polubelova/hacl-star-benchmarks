@@ -24,7 +24,7 @@
 
 #include "Hacl_Poly1305_512.h"
 
-static inline void load_acc8(Lib_IntVector_Intrinsics_vec512 *acc, uint8_t *b)
+static void load_acc8(Lib_IntVector_Intrinsics_vec512 *acc, uint8_t *b)
 {
   KRML_CHECK_SIZE(sizeof (Lib_IntVector_Intrinsics_vec512), (uint32_t)5U);
   Lib_IntVector_Intrinsics_vec512 e[5U];
@@ -139,7 +139,7 @@ static inline void load_acc8(Lib_IntVector_Intrinsics_vec512 *acc, uint8_t *b)
   acc[4U] = acc41;
 }
 
-static inline void
+static void
 fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics_vec512 *p)
 {
   Lib_IntVector_Intrinsics_vec512 *r = p;
@@ -255,13 +255,13 @@ fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics
   Lib_IntVector_Intrinsics_vec512 t30 = a350;
   Lib_IntVector_Intrinsics_vec512 t40 = a450;
   Lib_IntVector_Intrinsics_vec512
-  mask2610 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
+  mask260 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
   Lib_IntVector_Intrinsics_vec512
   z00 = Lib_IntVector_Intrinsics_vec512_shift_right64(t00, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z10 = Lib_IntVector_Intrinsics_vec512_shift_right64(t30, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x00 = Lib_IntVector_Intrinsics_vec512_and(t00, mask2610);
-  Lib_IntVector_Intrinsics_vec512 x30 = Lib_IntVector_Intrinsics_vec512_and(t30, mask2610);
+  Lib_IntVector_Intrinsics_vec512 x00 = Lib_IntVector_Intrinsics_vec512_and(t00, mask260);
+  Lib_IntVector_Intrinsics_vec512 x30 = Lib_IntVector_Intrinsics_vec512_and(t30, mask260);
   Lib_IntVector_Intrinsics_vec512 x10 = Lib_IntVector_Intrinsics_vec512_add64(t10, z00);
   Lib_IntVector_Intrinsics_vec512 x40 = Lib_IntVector_Intrinsics_vec512_add64(t40, z10);
   Lib_IntVector_Intrinsics_vec512
@@ -271,21 +271,21 @@ fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics
   Lib_IntVector_Intrinsics_vec512
   t5 = Lib_IntVector_Intrinsics_vec512_shift_left64(z110, (uint32_t)2U);
   Lib_IntVector_Intrinsics_vec512 z12 = Lib_IntVector_Intrinsics_vec512_add64(z110, t5);
-  Lib_IntVector_Intrinsics_vec512 x110 = Lib_IntVector_Intrinsics_vec512_and(x10, mask2610);
-  Lib_IntVector_Intrinsics_vec512 x410 = Lib_IntVector_Intrinsics_vec512_and(x40, mask2610);
+  Lib_IntVector_Intrinsics_vec512 x110 = Lib_IntVector_Intrinsics_vec512_and(x10, mask260);
+  Lib_IntVector_Intrinsics_vec512 x410 = Lib_IntVector_Intrinsics_vec512_and(x40, mask260);
   Lib_IntVector_Intrinsics_vec512 x20 = Lib_IntVector_Intrinsics_vec512_add64(t20, z010);
   Lib_IntVector_Intrinsics_vec512 x010 = Lib_IntVector_Intrinsics_vec512_add64(x00, z12);
   Lib_IntVector_Intrinsics_vec512
   z020 = Lib_IntVector_Intrinsics_vec512_shift_right64(x20, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z130 = Lib_IntVector_Intrinsics_vec512_shift_right64(x010, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x210 = Lib_IntVector_Intrinsics_vec512_and(x20, mask2610);
-  Lib_IntVector_Intrinsics_vec512 x020 = Lib_IntVector_Intrinsics_vec512_and(x010, mask2610);
+  Lib_IntVector_Intrinsics_vec512 x210 = Lib_IntVector_Intrinsics_vec512_and(x20, mask260);
+  Lib_IntVector_Intrinsics_vec512 x020 = Lib_IntVector_Intrinsics_vec512_and(x010, mask260);
   Lib_IntVector_Intrinsics_vec512 x310 = Lib_IntVector_Intrinsics_vec512_add64(x30, z020);
   Lib_IntVector_Intrinsics_vec512 x120 = Lib_IntVector_Intrinsics_vec512_add64(x110, z130);
   Lib_IntVector_Intrinsics_vec512
   z030 = Lib_IntVector_Intrinsics_vec512_shift_right64(x310, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x320 = Lib_IntVector_Intrinsics_vec512_and(x310, mask2610);
+  Lib_IntVector_Intrinsics_vec512 x320 = Lib_IntVector_Intrinsics_vec512_and(x310, mask260);
   Lib_IntVector_Intrinsics_vec512 x420 = Lib_IntVector_Intrinsics_vec512_add64(x410, z030);
   Lib_IntVector_Intrinsics_vec512 r20 = x020;
   Lib_IntVector_Intrinsics_vec512 r21 = x120;
@@ -383,13 +383,13 @@ fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics
   Lib_IntVector_Intrinsics_vec512 t31 = a351;
   Lib_IntVector_Intrinsics_vec512 t41 = a451;
   Lib_IntVector_Intrinsics_vec512
-  mask2611 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
+  mask261 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
   Lib_IntVector_Intrinsics_vec512
   z04 = Lib_IntVector_Intrinsics_vec512_shift_right64(t01, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z14 = Lib_IntVector_Intrinsics_vec512_shift_right64(t31, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x03 = Lib_IntVector_Intrinsics_vec512_and(t01, mask2611);
-  Lib_IntVector_Intrinsics_vec512 x33 = Lib_IntVector_Intrinsics_vec512_and(t31, mask2611);
+  Lib_IntVector_Intrinsics_vec512 x03 = Lib_IntVector_Intrinsics_vec512_and(t01, mask261);
+  Lib_IntVector_Intrinsics_vec512 x33 = Lib_IntVector_Intrinsics_vec512_and(t31, mask261);
   Lib_IntVector_Intrinsics_vec512 x13 = Lib_IntVector_Intrinsics_vec512_add64(t11, z04);
   Lib_IntVector_Intrinsics_vec512 x43 = Lib_IntVector_Intrinsics_vec512_add64(t41, z14);
   Lib_IntVector_Intrinsics_vec512
@@ -399,21 +399,21 @@ fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics
   Lib_IntVector_Intrinsics_vec512
   t6 = Lib_IntVector_Intrinsics_vec512_shift_left64(z111, (uint32_t)2U);
   Lib_IntVector_Intrinsics_vec512 z120 = Lib_IntVector_Intrinsics_vec512_add64(z111, t6);
-  Lib_IntVector_Intrinsics_vec512 x111 = Lib_IntVector_Intrinsics_vec512_and(x13, mask2611);
-  Lib_IntVector_Intrinsics_vec512 x411 = Lib_IntVector_Intrinsics_vec512_and(x43, mask2611);
+  Lib_IntVector_Intrinsics_vec512 x111 = Lib_IntVector_Intrinsics_vec512_and(x13, mask261);
+  Lib_IntVector_Intrinsics_vec512 x411 = Lib_IntVector_Intrinsics_vec512_and(x43, mask261);
   Lib_IntVector_Intrinsics_vec512 x22 = Lib_IntVector_Intrinsics_vec512_add64(t21, z011);
   Lib_IntVector_Intrinsics_vec512 x011 = Lib_IntVector_Intrinsics_vec512_add64(x03, z120);
   Lib_IntVector_Intrinsics_vec512
   z021 = Lib_IntVector_Intrinsics_vec512_shift_right64(x22, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z131 = Lib_IntVector_Intrinsics_vec512_shift_right64(x011, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x211 = Lib_IntVector_Intrinsics_vec512_and(x22, mask2611);
-  Lib_IntVector_Intrinsics_vec512 x021 = Lib_IntVector_Intrinsics_vec512_and(x011, mask2611);
+  Lib_IntVector_Intrinsics_vec512 x211 = Lib_IntVector_Intrinsics_vec512_and(x22, mask261);
+  Lib_IntVector_Intrinsics_vec512 x021 = Lib_IntVector_Intrinsics_vec512_and(x011, mask261);
   Lib_IntVector_Intrinsics_vec512 x311 = Lib_IntVector_Intrinsics_vec512_add64(x33, z021);
   Lib_IntVector_Intrinsics_vec512 x121 = Lib_IntVector_Intrinsics_vec512_add64(x111, z131);
   Lib_IntVector_Intrinsics_vec512
   z031 = Lib_IntVector_Intrinsics_vec512_shift_right64(x311, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x321 = Lib_IntVector_Intrinsics_vec512_and(x311, mask2611);
+  Lib_IntVector_Intrinsics_vec512 x321 = Lib_IntVector_Intrinsics_vec512_and(x311, mask261);
   Lib_IntVector_Intrinsics_vec512 x421 = Lib_IntVector_Intrinsics_vec512_add64(x411, z031);
   Lib_IntVector_Intrinsics_vec512 r30 = x021;
   Lib_IntVector_Intrinsics_vec512 r31 = x121;
@@ -511,13 +511,13 @@ fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics
   Lib_IntVector_Intrinsics_vec512 t32 = a352;
   Lib_IntVector_Intrinsics_vec512 t42 = a452;
   Lib_IntVector_Intrinsics_vec512
-  mask2612 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
+  mask262 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
   Lib_IntVector_Intrinsics_vec512
   z05 = Lib_IntVector_Intrinsics_vec512_shift_right64(t02, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z15 = Lib_IntVector_Intrinsics_vec512_shift_right64(t32, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x04 = Lib_IntVector_Intrinsics_vec512_and(t02, mask2612);
-  Lib_IntVector_Intrinsics_vec512 x34 = Lib_IntVector_Intrinsics_vec512_and(t32, mask2612);
+  Lib_IntVector_Intrinsics_vec512 x04 = Lib_IntVector_Intrinsics_vec512_and(t02, mask262);
+  Lib_IntVector_Intrinsics_vec512 x34 = Lib_IntVector_Intrinsics_vec512_and(t32, mask262);
   Lib_IntVector_Intrinsics_vec512 x14 = Lib_IntVector_Intrinsics_vec512_add64(t12, z05);
   Lib_IntVector_Intrinsics_vec512 x44 = Lib_IntVector_Intrinsics_vec512_add64(t42, z15);
   Lib_IntVector_Intrinsics_vec512
@@ -527,21 +527,21 @@ fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics
   Lib_IntVector_Intrinsics_vec512
   t7 = Lib_IntVector_Intrinsics_vec512_shift_left64(z112, (uint32_t)2U);
   Lib_IntVector_Intrinsics_vec512 z121 = Lib_IntVector_Intrinsics_vec512_add64(z112, t7);
-  Lib_IntVector_Intrinsics_vec512 x112 = Lib_IntVector_Intrinsics_vec512_and(x14, mask2612);
-  Lib_IntVector_Intrinsics_vec512 x412 = Lib_IntVector_Intrinsics_vec512_and(x44, mask2612);
+  Lib_IntVector_Intrinsics_vec512 x112 = Lib_IntVector_Intrinsics_vec512_and(x14, mask262);
+  Lib_IntVector_Intrinsics_vec512 x412 = Lib_IntVector_Intrinsics_vec512_and(x44, mask262);
   Lib_IntVector_Intrinsics_vec512 x23 = Lib_IntVector_Intrinsics_vec512_add64(t22, z012);
   Lib_IntVector_Intrinsics_vec512 x012 = Lib_IntVector_Intrinsics_vec512_add64(x04, z121);
   Lib_IntVector_Intrinsics_vec512
   z022 = Lib_IntVector_Intrinsics_vec512_shift_right64(x23, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z132 = Lib_IntVector_Intrinsics_vec512_shift_right64(x012, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x212 = Lib_IntVector_Intrinsics_vec512_and(x23, mask2612);
-  Lib_IntVector_Intrinsics_vec512 x022 = Lib_IntVector_Intrinsics_vec512_and(x012, mask2612);
+  Lib_IntVector_Intrinsics_vec512 x212 = Lib_IntVector_Intrinsics_vec512_and(x23, mask262);
+  Lib_IntVector_Intrinsics_vec512 x022 = Lib_IntVector_Intrinsics_vec512_and(x012, mask262);
   Lib_IntVector_Intrinsics_vec512 x312 = Lib_IntVector_Intrinsics_vec512_add64(x34, z022);
   Lib_IntVector_Intrinsics_vec512 x122 = Lib_IntVector_Intrinsics_vec512_add64(x112, z132);
   Lib_IntVector_Intrinsics_vec512
   z032 = Lib_IntVector_Intrinsics_vec512_shift_right64(x312, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x322 = Lib_IntVector_Intrinsics_vec512_and(x312, mask2612);
+  Lib_IntVector_Intrinsics_vec512 x322 = Lib_IntVector_Intrinsics_vec512_and(x312, mask262);
   Lib_IntVector_Intrinsics_vec512 x422 = Lib_IntVector_Intrinsics_vec512_add64(x412, z032);
   Lib_IntVector_Intrinsics_vec512 r40 = x022;
   Lib_IntVector_Intrinsics_vec512 r41 = x122;
@@ -639,13 +639,13 @@ fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics
   Lib_IntVector_Intrinsics_vec512 t33 = a353;
   Lib_IntVector_Intrinsics_vec512 t43 = a453;
   Lib_IntVector_Intrinsics_vec512
-  mask2613 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
+  mask263 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
   Lib_IntVector_Intrinsics_vec512
   z06 = Lib_IntVector_Intrinsics_vec512_shift_right64(t03, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z16 = Lib_IntVector_Intrinsics_vec512_shift_right64(t33, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x05 = Lib_IntVector_Intrinsics_vec512_and(t03, mask2613);
-  Lib_IntVector_Intrinsics_vec512 x35 = Lib_IntVector_Intrinsics_vec512_and(t33, mask2613);
+  Lib_IntVector_Intrinsics_vec512 x05 = Lib_IntVector_Intrinsics_vec512_and(t03, mask263);
+  Lib_IntVector_Intrinsics_vec512 x35 = Lib_IntVector_Intrinsics_vec512_and(t33, mask263);
   Lib_IntVector_Intrinsics_vec512 x15 = Lib_IntVector_Intrinsics_vec512_add64(t13, z06);
   Lib_IntVector_Intrinsics_vec512 x45 = Lib_IntVector_Intrinsics_vec512_add64(t43, z16);
   Lib_IntVector_Intrinsics_vec512
@@ -655,21 +655,21 @@ fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics
   Lib_IntVector_Intrinsics_vec512
   t8 = Lib_IntVector_Intrinsics_vec512_shift_left64(z113, (uint32_t)2U);
   Lib_IntVector_Intrinsics_vec512 z122 = Lib_IntVector_Intrinsics_vec512_add64(z113, t8);
-  Lib_IntVector_Intrinsics_vec512 x113 = Lib_IntVector_Intrinsics_vec512_and(x15, mask2613);
-  Lib_IntVector_Intrinsics_vec512 x413 = Lib_IntVector_Intrinsics_vec512_and(x45, mask2613);
+  Lib_IntVector_Intrinsics_vec512 x113 = Lib_IntVector_Intrinsics_vec512_and(x15, mask263);
+  Lib_IntVector_Intrinsics_vec512 x413 = Lib_IntVector_Intrinsics_vec512_and(x45, mask263);
   Lib_IntVector_Intrinsics_vec512 x24 = Lib_IntVector_Intrinsics_vec512_add64(t23, z013);
   Lib_IntVector_Intrinsics_vec512 x013 = Lib_IntVector_Intrinsics_vec512_add64(x05, z122);
   Lib_IntVector_Intrinsics_vec512
   z023 = Lib_IntVector_Intrinsics_vec512_shift_right64(x24, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z133 = Lib_IntVector_Intrinsics_vec512_shift_right64(x013, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x213 = Lib_IntVector_Intrinsics_vec512_and(x24, mask2613);
-  Lib_IntVector_Intrinsics_vec512 x023 = Lib_IntVector_Intrinsics_vec512_and(x013, mask2613);
+  Lib_IntVector_Intrinsics_vec512 x213 = Lib_IntVector_Intrinsics_vec512_and(x24, mask263);
+  Lib_IntVector_Intrinsics_vec512 x023 = Lib_IntVector_Intrinsics_vec512_and(x013, mask263);
   Lib_IntVector_Intrinsics_vec512 x313 = Lib_IntVector_Intrinsics_vec512_add64(x35, z023);
   Lib_IntVector_Intrinsics_vec512 x123 = Lib_IntVector_Intrinsics_vec512_add64(x113, z133);
   Lib_IntVector_Intrinsics_vec512
   z033 = Lib_IntVector_Intrinsics_vec512_shift_right64(x313, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x323 = Lib_IntVector_Intrinsics_vec512_and(x313, mask2613);
+  Lib_IntVector_Intrinsics_vec512 x323 = Lib_IntVector_Intrinsics_vec512_and(x313, mask263);
   Lib_IntVector_Intrinsics_vec512 x423 = Lib_IntVector_Intrinsics_vec512_add64(x413, z033);
   Lib_IntVector_Intrinsics_vec512 r50 = x023;
   Lib_IntVector_Intrinsics_vec512 r51 = x123;
@@ -767,13 +767,13 @@ fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics
   Lib_IntVector_Intrinsics_vec512 t34 = a354;
   Lib_IntVector_Intrinsics_vec512 t44 = a454;
   Lib_IntVector_Intrinsics_vec512
-  mask2614 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
+  mask264 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
   Lib_IntVector_Intrinsics_vec512
   z07 = Lib_IntVector_Intrinsics_vec512_shift_right64(t04, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z17 = Lib_IntVector_Intrinsics_vec512_shift_right64(t34, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x06 = Lib_IntVector_Intrinsics_vec512_and(t04, mask2614);
-  Lib_IntVector_Intrinsics_vec512 x36 = Lib_IntVector_Intrinsics_vec512_and(t34, mask2614);
+  Lib_IntVector_Intrinsics_vec512 x06 = Lib_IntVector_Intrinsics_vec512_and(t04, mask264);
+  Lib_IntVector_Intrinsics_vec512 x36 = Lib_IntVector_Intrinsics_vec512_and(t34, mask264);
   Lib_IntVector_Intrinsics_vec512 x16 = Lib_IntVector_Intrinsics_vec512_add64(t14, z07);
   Lib_IntVector_Intrinsics_vec512 x46 = Lib_IntVector_Intrinsics_vec512_add64(t44, z17);
   Lib_IntVector_Intrinsics_vec512
@@ -783,21 +783,21 @@ fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics
   Lib_IntVector_Intrinsics_vec512
   t9 = Lib_IntVector_Intrinsics_vec512_shift_left64(z114, (uint32_t)2U);
   Lib_IntVector_Intrinsics_vec512 z123 = Lib_IntVector_Intrinsics_vec512_add64(z114, t9);
-  Lib_IntVector_Intrinsics_vec512 x114 = Lib_IntVector_Intrinsics_vec512_and(x16, mask2614);
-  Lib_IntVector_Intrinsics_vec512 x414 = Lib_IntVector_Intrinsics_vec512_and(x46, mask2614);
+  Lib_IntVector_Intrinsics_vec512 x114 = Lib_IntVector_Intrinsics_vec512_and(x16, mask264);
+  Lib_IntVector_Intrinsics_vec512 x414 = Lib_IntVector_Intrinsics_vec512_and(x46, mask264);
   Lib_IntVector_Intrinsics_vec512 x25 = Lib_IntVector_Intrinsics_vec512_add64(t24, z014);
   Lib_IntVector_Intrinsics_vec512 x014 = Lib_IntVector_Intrinsics_vec512_add64(x06, z123);
   Lib_IntVector_Intrinsics_vec512
   z024 = Lib_IntVector_Intrinsics_vec512_shift_right64(x25, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z134 = Lib_IntVector_Intrinsics_vec512_shift_right64(x014, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x214 = Lib_IntVector_Intrinsics_vec512_and(x25, mask2614);
-  Lib_IntVector_Intrinsics_vec512 x024 = Lib_IntVector_Intrinsics_vec512_and(x014, mask2614);
+  Lib_IntVector_Intrinsics_vec512 x214 = Lib_IntVector_Intrinsics_vec512_and(x25, mask264);
+  Lib_IntVector_Intrinsics_vec512 x024 = Lib_IntVector_Intrinsics_vec512_and(x014, mask264);
   Lib_IntVector_Intrinsics_vec512 x314 = Lib_IntVector_Intrinsics_vec512_add64(x36, z024);
   Lib_IntVector_Intrinsics_vec512 x124 = Lib_IntVector_Intrinsics_vec512_add64(x114, z134);
   Lib_IntVector_Intrinsics_vec512
   z034 = Lib_IntVector_Intrinsics_vec512_shift_right64(x314, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x324 = Lib_IntVector_Intrinsics_vec512_and(x314, mask2614);
+  Lib_IntVector_Intrinsics_vec512 x324 = Lib_IntVector_Intrinsics_vec512_and(x314, mask264);
   Lib_IntVector_Intrinsics_vec512 x424 = Lib_IntVector_Intrinsics_vec512_add64(x414, z034);
   Lib_IntVector_Intrinsics_vec512 r60 = x024;
   Lib_IntVector_Intrinsics_vec512 r61 = x124;
@@ -895,13 +895,13 @@ fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics
   Lib_IntVector_Intrinsics_vec512 t35 = a355;
   Lib_IntVector_Intrinsics_vec512 t45 = a455;
   Lib_IntVector_Intrinsics_vec512
-  mask2615 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
+  mask265 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
   Lib_IntVector_Intrinsics_vec512
   z08 = Lib_IntVector_Intrinsics_vec512_shift_right64(t05, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z18 = Lib_IntVector_Intrinsics_vec512_shift_right64(t35, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x07 = Lib_IntVector_Intrinsics_vec512_and(t05, mask2615);
-  Lib_IntVector_Intrinsics_vec512 x37 = Lib_IntVector_Intrinsics_vec512_and(t35, mask2615);
+  Lib_IntVector_Intrinsics_vec512 x07 = Lib_IntVector_Intrinsics_vec512_and(t05, mask265);
+  Lib_IntVector_Intrinsics_vec512 x37 = Lib_IntVector_Intrinsics_vec512_and(t35, mask265);
   Lib_IntVector_Intrinsics_vec512 x17 = Lib_IntVector_Intrinsics_vec512_add64(t15, z08);
   Lib_IntVector_Intrinsics_vec512 x47 = Lib_IntVector_Intrinsics_vec512_add64(t45, z18);
   Lib_IntVector_Intrinsics_vec512
@@ -911,21 +911,21 @@ fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics
   Lib_IntVector_Intrinsics_vec512
   t16 = Lib_IntVector_Intrinsics_vec512_shift_left64(z115, (uint32_t)2U);
   Lib_IntVector_Intrinsics_vec512 z124 = Lib_IntVector_Intrinsics_vec512_add64(z115, t16);
-  Lib_IntVector_Intrinsics_vec512 x115 = Lib_IntVector_Intrinsics_vec512_and(x17, mask2615);
-  Lib_IntVector_Intrinsics_vec512 x415 = Lib_IntVector_Intrinsics_vec512_and(x47, mask2615);
+  Lib_IntVector_Intrinsics_vec512 x115 = Lib_IntVector_Intrinsics_vec512_and(x17, mask265);
+  Lib_IntVector_Intrinsics_vec512 x415 = Lib_IntVector_Intrinsics_vec512_and(x47, mask265);
   Lib_IntVector_Intrinsics_vec512 x26 = Lib_IntVector_Intrinsics_vec512_add64(t25, z015);
   Lib_IntVector_Intrinsics_vec512 x015 = Lib_IntVector_Intrinsics_vec512_add64(x07, z124);
   Lib_IntVector_Intrinsics_vec512
   z025 = Lib_IntVector_Intrinsics_vec512_shift_right64(x26, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z135 = Lib_IntVector_Intrinsics_vec512_shift_right64(x015, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x215 = Lib_IntVector_Intrinsics_vec512_and(x26, mask2615);
-  Lib_IntVector_Intrinsics_vec512 x025 = Lib_IntVector_Intrinsics_vec512_and(x015, mask2615);
+  Lib_IntVector_Intrinsics_vec512 x215 = Lib_IntVector_Intrinsics_vec512_and(x26, mask265);
+  Lib_IntVector_Intrinsics_vec512 x025 = Lib_IntVector_Intrinsics_vec512_and(x015, mask265);
   Lib_IntVector_Intrinsics_vec512 x315 = Lib_IntVector_Intrinsics_vec512_add64(x37, z025);
   Lib_IntVector_Intrinsics_vec512 x125 = Lib_IntVector_Intrinsics_vec512_add64(x115, z135);
   Lib_IntVector_Intrinsics_vec512
   z035 = Lib_IntVector_Intrinsics_vec512_shift_right64(x315, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x325 = Lib_IntVector_Intrinsics_vec512_and(x315, mask2615);
+  Lib_IntVector_Intrinsics_vec512 x325 = Lib_IntVector_Intrinsics_vec512_and(x315, mask265);
   Lib_IntVector_Intrinsics_vec512 x425 = Lib_IntVector_Intrinsics_vec512_add64(x415, z035);
   Lib_IntVector_Intrinsics_vec512 r70 = x025;
   Lib_IntVector_Intrinsics_vec512 r71 = x125;
@@ -1103,13 +1103,13 @@ fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics
   Lib_IntVector_Intrinsics_vec512 t3 = a35;
   Lib_IntVector_Intrinsics_vec512 t4 = a45;
   Lib_IntVector_Intrinsics_vec512
-  mask261 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
+  mask26 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
   Lib_IntVector_Intrinsics_vec512
   z0 = Lib_IntVector_Intrinsics_vec512_shift_right64(t0, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z1 = Lib_IntVector_Intrinsics_vec512_shift_right64(t3, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x0 = Lib_IntVector_Intrinsics_vec512_and(t0, mask261);
-  Lib_IntVector_Intrinsics_vec512 x3 = Lib_IntVector_Intrinsics_vec512_and(t3, mask261);
+  Lib_IntVector_Intrinsics_vec512 x0 = Lib_IntVector_Intrinsics_vec512_and(t0, mask26);
+  Lib_IntVector_Intrinsics_vec512 x3 = Lib_IntVector_Intrinsics_vec512_and(t3, mask26);
   Lib_IntVector_Intrinsics_vec512 x1 = Lib_IntVector_Intrinsics_vec512_add64(t1, z0);
   Lib_IntVector_Intrinsics_vec512 x4 = Lib_IntVector_Intrinsics_vec512_add64(t4, z1);
   Lib_IntVector_Intrinsics_vec512
@@ -1119,21 +1119,21 @@ fmul_r8_normalize(Lib_IntVector_Intrinsics_vec512 *out, Lib_IntVector_Intrinsics
   Lib_IntVector_Intrinsics_vec512
   t = Lib_IntVector_Intrinsics_vec512_shift_left64(z11, (uint32_t)2U);
   Lib_IntVector_Intrinsics_vec512 z125 = Lib_IntVector_Intrinsics_vec512_add64(z11, t);
-  Lib_IntVector_Intrinsics_vec512 x11 = Lib_IntVector_Intrinsics_vec512_and(x1, mask261);
-  Lib_IntVector_Intrinsics_vec512 x41 = Lib_IntVector_Intrinsics_vec512_and(x4, mask261);
+  Lib_IntVector_Intrinsics_vec512 x11 = Lib_IntVector_Intrinsics_vec512_and(x1, mask26);
+  Lib_IntVector_Intrinsics_vec512 x41 = Lib_IntVector_Intrinsics_vec512_and(x4, mask26);
   Lib_IntVector_Intrinsics_vec512 x2 = Lib_IntVector_Intrinsics_vec512_add64(t2, z01);
   Lib_IntVector_Intrinsics_vec512 x01 = Lib_IntVector_Intrinsics_vec512_add64(x0, z125);
   Lib_IntVector_Intrinsics_vec512
   z02 = Lib_IntVector_Intrinsics_vec512_shift_right64(x2, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z13 = Lib_IntVector_Intrinsics_vec512_shift_right64(x01, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x21 = Lib_IntVector_Intrinsics_vec512_and(x2, mask261);
-  Lib_IntVector_Intrinsics_vec512 x02 = Lib_IntVector_Intrinsics_vec512_and(x01, mask261);
+  Lib_IntVector_Intrinsics_vec512 x21 = Lib_IntVector_Intrinsics_vec512_and(x2, mask26);
+  Lib_IntVector_Intrinsics_vec512 x02 = Lib_IntVector_Intrinsics_vec512_and(x01, mask26);
   Lib_IntVector_Intrinsics_vec512 x31 = Lib_IntVector_Intrinsics_vec512_add64(x3, z02);
   Lib_IntVector_Intrinsics_vec512 x12 = Lib_IntVector_Intrinsics_vec512_add64(x11, z13);
   Lib_IntVector_Intrinsics_vec512
   z03 = Lib_IntVector_Intrinsics_vec512_shift_right64(x31, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x32 = Lib_IntVector_Intrinsics_vec512_and(x31, mask261);
+  Lib_IntVector_Intrinsics_vec512 x32 = Lib_IntVector_Intrinsics_vec512_and(x31, mask26);
   Lib_IntVector_Intrinsics_vec512 x42 = Lib_IntVector_Intrinsics_vec512_add64(x41, z03);
   Lib_IntVector_Intrinsics_vec512 o0 = x02;
   Lib_IntVector_Intrinsics_vec512 o10 = x12;
@@ -1415,13 +1415,13 @@ void Hacl_Poly1305_512_poly1305_init(Lib_IntVector_Intrinsics_vec512 *ctx, uint8
   Lib_IntVector_Intrinsics_vec512 t30 = a340;
   Lib_IntVector_Intrinsics_vec512 t40 = a440;
   Lib_IntVector_Intrinsics_vec512
-  mask2610 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
+  mask260 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
   Lib_IntVector_Intrinsics_vec512
   z00 = Lib_IntVector_Intrinsics_vec512_shift_right64(t00, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z10 = Lib_IntVector_Intrinsics_vec512_shift_right64(t30, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x00 = Lib_IntVector_Intrinsics_vec512_and(t00, mask2610);
-  Lib_IntVector_Intrinsics_vec512 x30 = Lib_IntVector_Intrinsics_vec512_and(t30, mask2610);
+  Lib_IntVector_Intrinsics_vec512 x00 = Lib_IntVector_Intrinsics_vec512_and(t00, mask260);
+  Lib_IntVector_Intrinsics_vec512 x30 = Lib_IntVector_Intrinsics_vec512_and(t30, mask260);
   Lib_IntVector_Intrinsics_vec512 x10 = Lib_IntVector_Intrinsics_vec512_add64(t10, z00);
   Lib_IntVector_Intrinsics_vec512 x40 = Lib_IntVector_Intrinsics_vec512_add64(t40, z10);
   Lib_IntVector_Intrinsics_vec512
@@ -1431,21 +1431,21 @@ void Hacl_Poly1305_512_poly1305_init(Lib_IntVector_Intrinsics_vec512 *ctx, uint8
   Lib_IntVector_Intrinsics_vec512
   t5 = Lib_IntVector_Intrinsics_vec512_shift_left64(z110, (uint32_t)2U);
   Lib_IntVector_Intrinsics_vec512 z12 = Lib_IntVector_Intrinsics_vec512_add64(z110, t5);
-  Lib_IntVector_Intrinsics_vec512 x110 = Lib_IntVector_Intrinsics_vec512_and(x10, mask2610);
-  Lib_IntVector_Intrinsics_vec512 x410 = Lib_IntVector_Intrinsics_vec512_and(x40, mask2610);
+  Lib_IntVector_Intrinsics_vec512 x110 = Lib_IntVector_Intrinsics_vec512_and(x10, mask260);
+  Lib_IntVector_Intrinsics_vec512 x410 = Lib_IntVector_Intrinsics_vec512_and(x40, mask260);
   Lib_IntVector_Intrinsics_vec512 x20 = Lib_IntVector_Intrinsics_vec512_add64(t20, z010);
   Lib_IntVector_Intrinsics_vec512 x010 = Lib_IntVector_Intrinsics_vec512_add64(x00, z12);
   Lib_IntVector_Intrinsics_vec512
   z020 = Lib_IntVector_Intrinsics_vec512_shift_right64(x20, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z130 = Lib_IntVector_Intrinsics_vec512_shift_right64(x010, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x210 = Lib_IntVector_Intrinsics_vec512_and(x20, mask2610);
-  Lib_IntVector_Intrinsics_vec512 x020 = Lib_IntVector_Intrinsics_vec512_and(x010, mask2610);
+  Lib_IntVector_Intrinsics_vec512 x210 = Lib_IntVector_Intrinsics_vec512_and(x20, mask260);
+  Lib_IntVector_Intrinsics_vec512 x020 = Lib_IntVector_Intrinsics_vec512_and(x010, mask260);
   Lib_IntVector_Intrinsics_vec512 x310 = Lib_IntVector_Intrinsics_vec512_add64(x30, z020);
   Lib_IntVector_Intrinsics_vec512 x120 = Lib_IntVector_Intrinsics_vec512_add64(x110, z130);
   Lib_IntVector_Intrinsics_vec512
   z030 = Lib_IntVector_Intrinsics_vec512_shift_right64(x310, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x320 = Lib_IntVector_Intrinsics_vec512_and(x310, mask2610);
+  Lib_IntVector_Intrinsics_vec512 x320 = Lib_IntVector_Intrinsics_vec512_and(x310, mask260);
   Lib_IntVector_Intrinsics_vec512 x420 = Lib_IntVector_Intrinsics_vec512_add64(x410, z030);
   Lib_IntVector_Intrinsics_vec512 o00 = x020;
   Lib_IntVector_Intrinsics_vec512 o10 = x120;
@@ -1572,13 +1572,13 @@ void Hacl_Poly1305_512_poly1305_init(Lib_IntVector_Intrinsics_vec512 *ctx, uint8
   Lib_IntVector_Intrinsics_vec512 t31 = a341;
   Lib_IntVector_Intrinsics_vec512 t41 = a441;
   Lib_IntVector_Intrinsics_vec512
-  mask2611 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
+  mask261 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
   Lib_IntVector_Intrinsics_vec512
   z04 = Lib_IntVector_Intrinsics_vec512_shift_right64(t01, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z14 = Lib_IntVector_Intrinsics_vec512_shift_right64(t31, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x03 = Lib_IntVector_Intrinsics_vec512_and(t01, mask2611);
-  Lib_IntVector_Intrinsics_vec512 x33 = Lib_IntVector_Intrinsics_vec512_and(t31, mask2611);
+  Lib_IntVector_Intrinsics_vec512 x03 = Lib_IntVector_Intrinsics_vec512_and(t01, mask261);
+  Lib_IntVector_Intrinsics_vec512 x33 = Lib_IntVector_Intrinsics_vec512_and(t31, mask261);
   Lib_IntVector_Intrinsics_vec512 x13 = Lib_IntVector_Intrinsics_vec512_add64(t11, z04);
   Lib_IntVector_Intrinsics_vec512 x43 = Lib_IntVector_Intrinsics_vec512_add64(t41, z14);
   Lib_IntVector_Intrinsics_vec512
@@ -1588,21 +1588,21 @@ void Hacl_Poly1305_512_poly1305_init(Lib_IntVector_Intrinsics_vec512 *ctx, uint8
   Lib_IntVector_Intrinsics_vec512
   t6 = Lib_IntVector_Intrinsics_vec512_shift_left64(z111, (uint32_t)2U);
   Lib_IntVector_Intrinsics_vec512 z120 = Lib_IntVector_Intrinsics_vec512_add64(z111, t6);
-  Lib_IntVector_Intrinsics_vec512 x111 = Lib_IntVector_Intrinsics_vec512_and(x13, mask2611);
-  Lib_IntVector_Intrinsics_vec512 x411 = Lib_IntVector_Intrinsics_vec512_and(x43, mask2611);
+  Lib_IntVector_Intrinsics_vec512 x111 = Lib_IntVector_Intrinsics_vec512_and(x13, mask261);
+  Lib_IntVector_Intrinsics_vec512 x411 = Lib_IntVector_Intrinsics_vec512_and(x43, mask261);
   Lib_IntVector_Intrinsics_vec512 x22 = Lib_IntVector_Intrinsics_vec512_add64(t21, z011);
   Lib_IntVector_Intrinsics_vec512 x011 = Lib_IntVector_Intrinsics_vec512_add64(x03, z120);
   Lib_IntVector_Intrinsics_vec512
   z021 = Lib_IntVector_Intrinsics_vec512_shift_right64(x22, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z131 = Lib_IntVector_Intrinsics_vec512_shift_right64(x011, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x211 = Lib_IntVector_Intrinsics_vec512_and(x22, mask2611);
-  Lib_IntVector_Intrinsics_vec512 x021 = Lib_IntVector_Intrinsics_vec512_and(x011, mask2611);
+  Lib_IntVector_Intrinsics_vec512 x211 = Lib_IntVector_Intrinsics_vec512_and(x22, mask261);
+  Lib_IntVector_Intrinsics_vec512 x021 = Lib_IntVector_Intrinsics_vec512_and(x011, mask261);
   Lib_IntVector_Intrinsics_vec512 x311 = Lib_IntVector_Intrinsics_vec512_add64(x33, z021);
   Lib_IntVector_Intrinsics_vec512 x121 = Lib_IntVector_Intrinsics_vec512_add64(x111, z131);
   Lib_IntVector_Intrinsics_vec512
   z031 = Lib_IntVector_Intrinsics_vec512_shift_right64(x311, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x321 = Lib_IntVector_Intrinsics_vec512_and(x311, mask2611);
+  Lib_IntVector_Intrinsics_vec512 x321 = Lib_IntVector_Intrinsics_vec512_and(x311, mask261);
   Lib_IntVector_Intrinsics_vec512 x421 = Lib_IntVector_Intrinsics_vec512_add64(x411, z031);
   Lib_IntVector_Intrinsics_vec512 o01 = x021;
   Lib_IntVector_Intrinsics_vec512 o11 = x121;
@@ -1723,13 +1723,13 @@ void Hacl_Poly1305_512_poly1305_init(Lib_IntVector_Intrinsics_vec512 *ctx, uint8
   Lib_IntVector_Intrinsics_vec512 t3 = a34;
   Lib_IntVector_Intrinsics_vec512 t4 = a44;
   Lib_IntVector_Intrinsics_vec512
-  mask261 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
+  mask26 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
   Lib_IntVector_Intrinsics_vec512
   z0 = Lib_IntVector_Intrinsics_vec512_shift_right64(t0, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z1 = Lib_IntVector_Intrinsics_vec512_shift_right64(t3, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x0 = Lib_IntVector_Intrinsics_vec512_and(t0, mask261);
-  Lib_IntVector_Intrinsics_vec512 x3 = Lib_IntVector_Intrinsics_vec512_and(t3, mask261);
+  Lib_IntVector_Intrinsics_vec512 x0 = Lib_IntVector_Intrinsics_vec512_and(t0, mask26);
+  Lib_IntVector_Intrinsics_vec512 x3 = Lib_IntVector_Intrinsics_vec512_and(t3, mask26);
   Lib_IntVector_Intrinsics_vec512 x1 = Lib_IntVector_Intrinsics_vec512_add64(t1, z0);
   Lib_IntVector_Intrinsics_vec512 x4 = Lib_IntVector_Intrinsics_vec512_add64(t4, z1);
   Lib_IntVector_Intrinsics_vec512
@@ -1739,21 +1739,21 @@ void Hacl_Poly1305_512_poly1305_init(Lib_IntVector_Intrinsics_vec512 *ctx, uint8
   Lib_IntVector_Intrinsics_vec512
   t = Lib_IntVector_Intrinsics_vec512_shift_left64(z11, (uint32_t)2U);
   Lib_IntVector_Intrinsics_vec512 z121 = Lib_IntVector_Intrinsics_vec512_add64(z11, t);
-  Lib_IntVector_Intrinsics_vec512 x11 = Lib_IntVector_Intrinsics_vec512_and(x1, mask261);
-  Lib_IntVector_Intrinsics_vec512 x41 = Lib_IntVector_Intrinsics_vec512_and(x4, mask261);
+  Lib_IntVector_Intrinsics_vec512 x11 = Lib_IntVector_Intrinsics_vec512_and(x1, mask26);
+  Lib_IntVector_Intrinsics_vec512 x41 = Lib_IntVector_Intrinsics_vec512_and(x4, mask26);
   Lib_IntVector_Intrinsics_vec512 x2 = Lib_IntVector_Intrinsics_vec512_add64(t2, z01);
   Lib_IntVector_Intrinsics_vec512 x01 = Lib_IntVector_Intrinsics_vec512_add64(x0, z121);
   Lib_IntVector_Intrinsics_vec512
   z02 = Lib_IntVector_Intrinsics_vec512_shift_right64(x2, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z13 = Lib_IntVector_Intrinsics_vec512_shift_right64(x01, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x21 = Lib_IntVector_Intrinsics_vec512_and(x2, mask261);
-  Lib_IntVector_Intrinsics_vec512 x02 = Lib_IntVector_Intrinsics_vec512_and(x01, mask261);
+  Lib_IntVector_Intrinsics_vec512 x21 = Lib_IntVector_Intrinsics_vec512_and(x2, mask26);
+  Lib_IntVector_Intrinsics_vec512 x02 = Lib_IntVector_Intrinsics_vec512_and(x01, mask26);
   Lib_IntVector_Intrinsics_vec512 x31 = Lib_IntVector_Intrinsics_vec512_add64(x3, z02);
   Lib_IntVector_Intrinsics_vec512 x12 = Lib_IntVector_Intrinsics_vec512_add64(x11, z13);
   Lib_IntVector_Intrinsics_vec512
   z03 = Lib_IntVector_Intrinsics_vec512_shift_right64(x31, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x32 = Lib_IntVector_Intrinsics_vec512_and(x31, mask261);
+  Lib_IntVector_Intrinsics_vec512 x32 = Lib_IntVector_Intrinsics_vec512_and(x31, mask26);
   Lib_IntVector_Intrinsics_vec512 x42 = Lib_IntVector_Intrinsics_vec512_add64(x41, z03);
   Lib_IntVector_Intrinsics_vec512 o0 = x02;
   Lib_IntVector_Intrinsics_vec512 o1 = x12;
@@ -1945,13 +1945,13 @@ void Hacl_Poly1305_512_poly1305_update1(Lib_IntVector_Intrinsics_vec512 *ctx, ui
   Lib_IntVector_Intrinsics_vec512 t3 = a36;
   Lib_IntVector_Intrinsics_vec512 t4 = a46;
   Lib_IntVector_Intrinsics_vec512
-  mask261 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
+  mask26 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
   Lib_IntVector_Intrinsics_vec512
   z0 = Lib_IntVector_Intrinsics_vec512_shift_right64(t0, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z1 = Lib_IntVector_Intrinsics_vec512_shift_right64(t3, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x0 = Lib_IntVector_Intrinsics_vec512_and(t0, mask261);
-  Lib_IntVector_Intrinsics_vec512 x3 = Lib_IntVector_Intrinsics_vec512_and(t3, mask261);
+  Lib_IntVector_Intrinsics_vec512 x0 = Lib_IntVector_Intrinsics_vec512_and(t0, mask26);
+  Lib_IntVector_Intrinsics_vec512 x3 = Lib_IntVector_Intrinsics_vec512_and(t3, mask26);
   Lib_IntVector_Intrinsics_vec512 x1 = Lib_IntVector_Intrinsics_vec512_add64(t1, z0);
   Lib_IntVector_Intrinsics_vec512 x4 = Lib_IntVector_Intrinsics_vec512_add64(t4, z1);
   Lib_IntVector_Intrinsics_vec512
@@ -1961,21 +1961,21 @@ void Hacl_Poly1305_512_poly1305_update1(Lib_IntVector_Intrinsics_vec512 *ctx, ui
   Lib_IntVector_Intrinsics_vec512
   t = Lib_IntVector_Intrinsics_vec512_shift_left64(z11, (uint32_t)2U);
   Lib_IntVector_Intrinsics_vec512 z12 = Lib_IntVector_Intrinsics_vec512_add64(z11, t);
-  Lib_IntVector_Intrinsics_vec512 x11 = Lib_IntVector_Intrinsics_vec512_and(x1, mask261);
-  Lib_IntVector_Intrinsics_vec512 x41 = Lib_IntVector_Intrinsics_vec512_and(x4, mask261);
+  Lib_IntVector_Intrinsics_vec512 x11 = Lib_IntVector_Intrinsics_vec512_and(x1, mask26);
+  Lib_IntVector_Intrinsics_vec512 x41 = Lib_IntVector_Intrinsics_vec512_and(x4, mask26);
   Lib_IntVector_Intrinsics_vec512 x2 = Lib_IntVector_Intrinsics_vec512_add64(t2, z01);
   Lib_IntVector_Intrinsics_vec512 x01 = Lib_IntVector_Intrinsics_vec512_add64(x0, z12);
   Lib_IntVector_Intrinsics_vec512
   z02 = Lib_IntVector_Intrinsics_vec512_shift_right64(x2, (uint32_t)26U);
   Lib_IntVector_Intrinsics_vec512
   z13 = Lib_IntVector_Intrinsics_vec512_shift_right64(x01, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x21 = Lib_IntVector_Intrinsics_vec512_and(x2, mask261);
-  Lib_IntVector_Intrinsics_vec512 x02 = Lib_IntVector_Intrinsics_vec512_and(x01, mask261);
+  Lib_IntVector_Intrinsics_vec512 x21 = Lib_IntVector_Intrinsics_vec512_and(x2, mask26);
+  Lib_IntVector_Intrinsics_vec512 x02 = Lib_IntVector_Intrinsics_vec512_and(x01, mask26);
   Lib_IntVector_Intrinsics_vec512 x31 = Lib_IntVector_Intrinsics_vec512_add64(x3, z02);
   Lib_IntVector_Intrinsics_vec512 x12 = Lib_IntVector_Intrinsics_vec512_add64(x11, z13);
   Lib_IntVector_Intrinsics_vec512
   z03 = Lib_IntVector_Intrinsics_vec512_shift_right64(x31, (uint32_t)26U);
-  Lib_IntVector_Intrinsics_vec512 x32 = Lib_IntVector_Intrinsics_vec512_and(x31, mask261);
+  Lib_IntVector_Intrinsics_vec512 x32 = Lib_IntVector_Intrinsics_vec512_and(x31, mask26);
   Lib_IntVector_Intrinsics_vec512 x42 = Lib_IntVector_Intrinsics_vec512_add64(x41, z03);
   Lib_IntVector_Intrinsics_vec512 o0 = x02;
   Lib_IntVector_Intrinsics_vec512 o1 = x12;
@@ -2175,13 +2175,13 @@ Hacl_Poly1305_512_poly1305_update(
       Lib_IntVector_Intrinsics_vec512 t3 = a34;
       Lib_IntVector_Intrinsics_vec512 t4 = a44;
       Lib_IntVector_Intrinsics_vec512
-      mask261 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
+      mask26 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
       Lib_IntVector_Intrinsics_vec512
       z0 = Lib_IntVector_Intrinsics_vec512_shift_right64(t01, (uint32_t)26U);
       Lib_IntVector_Intrinsics_vec512
       z1 = Lib_IntVector_Intrinsics_vec512_shift_right64(t3, (uint32_t)26U);
-      Lib_IntVector_Intrinsics_vec512 x0 = Lib_IntVector_Intrinsics_vec512_and(t01, mask261);
-      Lib_IntVector_Intrinsics_vec512 x3 = Lib_IntVector_Intrinsics_vec512_and(t3, mask261);
+      Lib_IntVector_Intrinsics_vec512 x0 = Lib_IntVector_Intrinsics_vec512_and(t01, mask26);
+      Lib_IntVector_Intrinsics_vec512 x3 = Lib_IntVector_Intrinsics_vec512_and(t3, mask26);
       Lib_IntVector_Intrinsics_vec512 x1 = Lib_IntVector_Intrinsics_vec512_add64(t1, z0);
       Lib_IntVector_Intrinsics_vec512 x4 = Lib_IntVector_Intrinsics_vec512_add64(t4, z1);
       Lib_IntVector_Intrinsics_vec512
@@ -2191,21 +2191,21 @@ Hacl_Poly1305_512_poly1305_update(
       Lib_IntVector_Intrinsics_vec512
       t = Lib_IntVector_Intrinsics_vec512_shift_left64(z11, (uint32_t)2U);
       Lib_IntVector_Intrinsics_vec512 z12 = Lib_IntVector_Intrinsics_vec512_add64(z11, t);
-      Lib_IntVector_Intrinsics_vec512 x11 = Lib_IntVector_Intrinsics_vec512_and(x1, mask261);
-      Lib_IntVector_Intrinsics_vec512 x41 = Lib_IntVector_Intrinsics_vec512_and(x4, mask261);
+      Lib_IntVector_Intrinsics_vec512 x11 = Lib_IntVector_Intrinsics_vec512_and(x1, mask26);
+      Lib_IntVector_Intrinsics_vec512 x41 = Lib_IntVector_Intrinsics_vec512_and(x4, mask26);
       Lib_IntVector_Intrinsics_vec512 x2 = Lib_IntVector_Intrinsics_vec512_add64(t2, z01);
       Lib_IntVector_Intrinsics_vec512 x01 = Lib_IntVector_Intrinsics_vec512_add64(x0, z12);
       Lib_IntVector_Intrinsics_vec512
       z02 = Lib_IntVector_Intrinsics_vec512_shift_right64(x2, (uint32_t)26U);
       Lib_IntVector_Intrinsics_vec512
       z13 = Lib_IntVector_Intrinsics_vec512_shift_right64(x01, (uint32_t)26U);
-      Lib_IntVector_Intrinsics_vec512 x21 = Lib_IntVector_Intrinsics_vec512_and(x2, mask261);
-      Lib_IntVector_Intrinsics_vec512 x02 = Lib_IntVector_Intrinsics_vec512_and(x01, mask261);
+      Lib_IntVector_Intrinsics_vec512 x21 = Lib_IntVector_Intrinsics_vec512_and(x2, mask26);
+      Lib_IntVector_Intrinsics_vec512 x02 = Lib_IntVector_Intrinsics_vec512_and(x01, mask26);
       Lib_IntVector_Intrinsics_vec512 x31 = Lib_IntVector_Intrinsics_vec512_add64(x3, z02);
       Lib_IntVector_Intrinsics_vec512 x12 = Lib_IntVector_Intrinsics_vec512_add64(x11, z13);
       Lib_IntVector_Intrinsics_vec512
       z03 = Lib_IntVector_Intrinsics_vec512_shift_right64(x31, (uint32_t)26U);
-      Lib_IntVector_Intrinsics_vec512 x32 = Lib_IntVector_Intrinsics_vec512_and(x31, mask261);
+      Lib_IntVector_Intrinsics_vec512 x32 = Lib_IntVector_Intrinsics_vec512_and(x31, mask26);
       Lib_IntVector_Intrinsics_vec512 x42 = Lib_IntVector_Intrinsics_vec512_add64(x41, z03);
       Lib_IntVector_Intrinsics_vec512 o00 = x02;
       Lib_IntVector_Intrinsics_vec512 o10 = x12;
@@ -2243,7 +2243,7 @@ Hacl_Poly1305_512_poly1305_update(
   uint32_t len1 = len - len0;
   uint8_t *t1 = text + len0;
   uint32_t nb = len1 / (uint32_t)16U;
-  uint32_t rem1 = len1 % (uint32_t)16U;
+  uint32_t rem = len1 % (uint32_t)16U;
   for (uint32_t i = (uint32_t)0U; i < nb; i++)
   {
     uint8_t *block = t1 + i * (uint32_t)16U;
@@ -2411,13 +2411,13 @@ Hacl_Poly1305_512_poly1305_update(
     Lib_IntVector_Intrinsics_vec512 t3 = a36;
     Lib_IntVector_Intrinsics_vec512 t4 = a46;
     Lib_IntVector_Intrinsics_vec512
-    mask261 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
+    mask26 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
     Lib_IntVector_Intrinsics_vec512
     z0 = Lib_IntVector_Intrinsics_vec512_shift_right64(t01, (uint32_t)26U);
     Lib_IntVector_Intrinsics_vec512
     z1 = Lib_IntVector_Intrinsics_vec512_shift_right64(t3, (uint32_t)26U);
-    Lib_IntVector_Intrinsics_vec512 x0 = Lib_IntVector_Intrinsics_vec512_and(t01, mask261);
-    Lib_IntVector_Intrinsics_vec512 x3 = Lib_IntVector_Intrinsics_vec512_and(t3, mask261);
+    Lib_IntVector_Intrinsics_vec512 x0 = Lib_IntVector_Intrinsics_vec512_and(t01, mask26);
+    Lib_IntVector_Intrinsics_vec512 x3 = Lib_IntVector_Intrinsics_vec512_and(t3, mask26);
     Lib_IntVector_Intrinsics_vec512 x1 = Lib_IntVector_Intrinsics_vec512_add64(t11, z0);
     Lib_IntVector_Intrinsics_vec512 x4 = Lib_IntVector_Intrinsics_vec512_add64(t4, z1);
     Lib_IntVector_Intrinsics_vec512
@@ -2427,21 +2427,21 @@ Hacl_Poly1305_512_poly1305_update(
     Lib_IntVector_Intrinsics_vec512
     t = Lib_IntVector_Intrinsics_vec512_shift_left64(z11, (uint32_t)2U);
     Lib_IntVector_Intrinsics_vec512 z12 = Lib_IntVector_Intrinsics_vec512_add64(z11, t);
-    Lib_IntVector_Intrinsics_vec512 x11 = Lib_IntVector_Intrinsics_vec512_and(x1, mask261);
-    Lib_IntVector_Intrinsics_vec512 x41 = Lib_IntVector_Intrinsics_vec512_and(x4, mask261);
+    Lib_IntVector_Intrinsics_vec512 x11 = Lib_IntVector_Intrinsics_vec512_and(x1, mask26);
+    Lib_IntVector_Intrinsics_vec512 x41 = Lib_IntVector_Intrinsics_vec512_and(x4, mask26);
     Lib_IntVector_Intrinsics_vec512 x2 = Lib_IntVector_Intrinsics_vec512_add64(t2, z01);
     Lib_IntVector_Intrinsics_vec512 x01 = Lib_IntVector_Intrinsics_vec512_add64(x0, z12);
     Lib_IntVector_Intrinsics_vec512
     z02 = Lib_IntVector_Intrinsics_vec512_shift_right64(x2, (uint32_t)26U);
     Lib_IntVector_Intrinsics_vec512
     z13 = Lib_IntVector_Intrinsics_vec512_shift_right64(x01, (uint32_t)26U);
-    Lib_IntVector_Intrinsics_vec512 x21 = Lib_IntVector_Intrinsics_vec512_and(x2, mask261);
-    Lib_IntVector_Intrinsics_vec512 x02 = Lib_IntVector_Intrinsics_vec512_and(x01, mask261);
+    Lib_IntVector_Intrinsics_vec512 x21 = Lib_IntVector_Intrinsics_vec512_and(x2, mask26);
+    Lib_IntVector_Intrinsics_vec512 x02 = Lib_IntVector_Intrinsics_vec512_and(x01, mask26);
     Lib_IntVector_Intrinsics_vec512 x31 = Lib_IntVector_Intrinsics_vec512_add64(x3, z02);
     Lib_IntVector_Intrinsics_vec512 x12 = Lib_IntVector_Intrinsics_vec512_add64(x11, z13);
     Lib_IntVector_Intrinsics_vec512
     z03 = Lib_IntVector_Intrinsics_vec512_shift_right64(x31, (uint32_t)26U);
-    Lib_IntVector_Intrinsics_vec512 x32 = Lib_IntVector_Intrinsics_vec512_and(x31, mask261);
+    Lib_IntVector_Intrinsics_vec512 x32 = Lib_IntVector_Intrinsics_vec512_and(x31, mask26);
     Lib_IntVector_Intrinsics_vec512 x42 = Lib_IntVector_Intrinsics_vec512_add64(x41, z03);
     Lib_IntVector_Intrinsics_vec512 o0 = x02;
     Lib_IntVector_Intrinsics_vec512 o1 = x12;
@@ -2454,15 +2454,15 @@ Hacl_Poly1305_512_poly1305_update(
     acc[3U] = o3;
     acc[4U] = o4;
   }
-  if (rem1 > (uint32_t)0U)
+  if (rem > (uint32_t)0U)
   {
-    uint8_t *last1 = t1 + nb * (uint32_t)16U;
+    uint8_t *last = t1 + nb * (uint32_t)16U;
     KRML_CHECK_SIZE(sizeof (Lib_IntVector_Intrinsics_vec512), (uint32_t)5U);
     Lib_IntVector_Intrinsics_vec512 e[5U];
     for (uint32_t _i = 0U; _i < (uint32_t)5U; ++_i)
       e[_i] = Lib_IntVector_Intrinsics_vec512_zero;
     uint8_t tmp[16U] = { 0U };
-    memcpy(tmp, last1, rem1 * sizeof (last1[0U]));
+    memcpy(tmp, last, rem * sizeof (last[0U]));
     uint64_t u0 = load64_le(tmp);
     uint64_t lo = u0;
     uint64_t u = load64_le(tmp + (uint32_t)8U);
@@ -2502,10 +2502,10 @@ Hacl_Poly1305_512_poly1305_update(
     e[2U] = f2;
     e[3U] = f3;
     e[4U] = f4;
-    uint64_t b = (uint64_t)1U << rem1 * (uint32_t)8U % (uint32_t)26U;
+    uint64_t b = (uint64_t)1U << rem * (uint32_t)8U % (uint32_t)26U;
     Lib_IntVector_Intrinsics_vec512 mask = Lib_IntVector_Intrinsics_vec512_load64(b);
-    Lib_IntVector_Intrinsics_vec512 fi = e[rem1 * (uint32_t)8U / (uint32_t)26U];
-    e[rem1 * (uint32_t)8U / (uint32_t)26U] = Lib_IntVector_Intrinsics_vec512_or(fi, mask);
+    Lib_IntVector_Intrinsics_vec512 fi = e[rem * (uint32_t)8U / (uint32_t)26U];
+    e[rem * (uint32_t)8U / (uint32_t)26U] = Lib_IntVector_Intrinsics_vec512_or(fi, mask);
     Lib_IntVector_Intrinsics_vec512 *r = pre;
     Lib_IntVector_Intrinsics_vec512 *r5 = pre + (uint32_t)5U;
     Lib_IntVector_Intrinsics_vec512 r0 = r[0U];
@@ -2623,13 +2623,13 @@ Hacl_Poly1305_512_poly1305_update(
     Lib_IntVector_Intrinsics_vec512 t3 = a36;
     Lib_IntVector_Intrinsics_vec512 t4 = a46;
     Lib_IntVector_Intrinsics_vec512
-    mask261 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
+    mask26 = Lib_IntVector_Intrinsics_vec512_load64((uint64_t)0x3ffffffU);
     Lib_IntVector_Intrinsics_vec512
     z0 = Lib_IntVector_Intrinsics_vec512_shift_right64(t01, (uint32_t)26U);
     Lib_IntVector_Intrinsics_vec512
     z1 = Lib_IntVector_Intrinsics_vec512_shift_right64(t3, (uint32_t)26U);
-    Lib_IntVector_Intrinsics_vec512 x0 = Lib_IntVector_Intrinsics_vec512_and(t01, mask261);
-    Lib_IntVector_Intrinsics_vec512 x3 = Lib_IntVector_Intrinsics_vec512_and(t3, mask261);
+    Lib_IntVector_Intrinsics_vec512 x0 = Lib_IntVector_Intrinsics_vec512_and(t01, mask26);
+    Lib_IntVector_Intrinsics_vec512 x3 = Lib_IntVector_Intrinsics_vec512_and(t3, mask26);
     Lib_IntVector_Intrinsics_vec512 x1 = Lib_IntVector_Intrinsics_vec512_add64(t11, z0);
     Lib_IntVector_Intrinsics_vec512 x4 = Lib_IntVector_Intrinsics_vec512_add64(t4, z1);
     Lib_IntVector_Intrinsics_vec512
@@ -2639,21 +2639,21 @@ Hacl_Poly1305_512_poly1305_update(
     Lib_IntVector_Intrinsics_vec512
     t = Lib_IntVector_Intrinsics_vec512_shift_left64(z11, (uint32_t)2U);
     Lib_IntVector_Intrinsics_vec512 z12 = Lib_IntVector_Intrinsics_vec512_add64(z11, t);
-    Lib_IntVector_Intrinsics_vec512 x11 = Lib_IntVector_Intrinsics_vec512_and(x1, mask261);
-    Lib_IntVector_Intrinsics_vec512 x41 = Lib_IntVector_Intrinsics_vec512_and(x4, mask261);
+    Lib_IntVector_Intrinsics_vec512 x11 = Lib_IntVector_Intrinsics_vec512_and(x1, mask26);
+    Lib_IntVector_Intrinsics_vec512 x41 = Lib_IntVector_Intrinsics_vec512_and(x4, mask26);
     Lib_IntVector_Intrinsics_vec512 x2 = Lib_IntVector_Intrinsics_vec512_add64(t2, z01);
     Lib_IntVector_Intrinsics_vec512 x01 = Lib_IntVector_Intrinsics_vec512_add64(x0, z12);
     Lib_IntVector_Intrinsics_vec512
     z02 = Lib_IntVector_Intrinsics_vec512_shift_right64(x2, (uint32_t)26U);
     Lib_IntVector_Intrinsics_vec512
     z13 = Lib_IntVector_Intrinsics_vec512_shift_right64(x01, (uint32_t)26U);
-    Lib_IntVector_Intrinsics_vec512 x21 = Lib_IntVector_Intrinsics_vec512_and(x2, mask261);
-    Lib_IntVector_Intrinsics_vec512 x02 = Lib_IntVector_Intrinsics_vec512_and(x01, mask261);
+    Lib_IntVector_Intrinsics_vec512 x21 = Lib_IntVector_Intrinsics_vec512_and(x2, mask26);
+    Lib_IntVector_Intrinsics_vec512 x02 = Lib_IntVector_Intrinsics_vec512_and(x01, mask26);
     Lib_IntVector_Intrinsics_vec512 x31 = Lib_IntVector_Intrinsics_vec512_add64(x3, z02);
     Lib_IntVector_Intrinsics_vec512 x12 = Lib_IntVector_Intrinsics_vec512_add64(x11, z13);
     Lib_IntVector_Intrinsics_vec512
     z03 = Lib_IntVector_Intrinsics_vec512_shift_right64(x31, (uint32_t)26U);
-    Lib_IntVector_Intrinsics_vec512 x32 = Lib_IntVector_Intrinsics_vec512_and(x31, mask261);
+    Lib_IntVector_Intrinsics_vec512 x32 = Lib_IntVector_Intrinsics_vec512_and(x31, mask26);
     Lib_IntVector_Intrinsics_vec512 x42 = Lib_IntVector_Intrinsics_vec512_add64(x41, z03);
     Lib_IntVector_Intrinsics_vec512 o0 = x02;
     Lib_IntVector_Intrinsics_vec512 o1 = x12;
