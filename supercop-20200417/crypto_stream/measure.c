@@ -9,7 +9,7 @@ const char *implementationversion = crypto_stream_VERSION;
 const char *sizenames[] = { "keybytes", "noncebytes", 0 };
 const long long sizes[] = { crypto_stream_KEYBYTES, crypto_stream_NONCEBYTES };
 
-#define MAXTEST_BYTES 4096
+#define MAXTEST_BYTES 16384
 #ifdef SUPERCOP
 #define MGAP 8192
 #else

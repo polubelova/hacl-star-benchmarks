@@ -10,7 +10,7 @@
 
 const char *primitiveimplementation = crypto_onetimeauth_IMPLEMENTATION;
 
-#define TUNE_BYTES 1536
+#define TUNE_BYTES 16384
 #ifdef SMALL
 #define MAXTEST_BYTES 128
 #else
