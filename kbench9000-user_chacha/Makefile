@@ -1,4 +1,4 @@
-objs := main.o chacha20_hacl.c chacha20_hacl32.c chacha20_vec128.c chacha20_vec256.c
+objs := main.o chacha20_hacl.c chacha20_hacl32.c chacha20_vec128.c chacha20_vec256.c chacha20_openssl.c chacha20_jazz.o
 
 CFLAGS += -O3 -g -march=native -mtune=native
 ASFLAGS += -O3 -g -march=native -mtune=native

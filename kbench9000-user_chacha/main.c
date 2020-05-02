@@ -89,6 +89,7 @@ declare_it(hacl)
 declare_it(hacl32)
 declare_it(hacl128)
 declare_it(hacl256)
+declare_it(openssl)
 // declare_it(vec256)
 
 static int compare_cycles(const void *a, const void *b)
@@ -106,6 +107,8 @@ static bool verify(void)
 	test_it(hacl32, {}, {});
 	test_it(hacl128, {}, {});
 	test_it(hacl256, {}, {});
+	test_it(openssl, {}, {});
+	// test_it(avx2, {}, {});
 	
 
 	return true;
@@ -120,13 +123,13 @@ int main()
 	cycles_t median_hacl32[DOUBLING_STEPS+1];
 	cycles_t median_hacl128[DOUBLING_STEPS+1];
 	cycles_t median_hacl256[DOUBLING_STEPS+1];
+	cycles_t median_openssl[DOUBLING_STEPS+1];
 	
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
 
 	if (!verify())
 		return -1;
-	printf("%s\n", "Testing finished");
 
 	for (i = 0; i < sizeof(input_data); ++i)
 		input_data[i] = i;
@@ -137,6 +140,7 @@ int main()
 	do_it(hacl32);
 	do_it(hacl128);
 	do_it(hacl256);
+	do_it(openssl);
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
@@ -147,6 +151,7 @@ int main()
 	report_it(hacl32);
 	report_it(hacl128);
 	report_it(hacl256);
+	report_it(openssl);
 	
 
 	/* Don't let compiler be too clever. */
