@@ -1,0 +1,5 @@
+5.49, crypto_onetimeauth/poly1305/hacl_star/vec128  gcc
+7.67, crypto_onetimeauth/poly1305/53  gcc
+10.28, crypto_onetimeauth/poly1305/hacl_star_old/vec32  gcc
+10.29, crypto_onetimeauth/poly1305/hacl_star/vec32  gcc
+138.07, crypto_onetimeauth/poly1305/ref  gcc
