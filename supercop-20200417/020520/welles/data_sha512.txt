@@ -1,6 +1,6 @@
 crypto_hash/sha512/openssl gcc-9 4.99
-crypto_hash/sha512/sphlib gcc-9 6.75
-crypto_hash/sha512/sphlib-small gcc-9 6.75
-crypto_hash/sha512/hacl_star/scalar gcc 9.09
-crypto_hash/sha512/hacl_star/sha512-mb4 clang 11.73
-crypto_hash/sha512/hacl_star/sha512-mb8 clang-9 14.93
+crypto_hash/sha512/sphlib-small gcc-9 6.72
+crypto_hash/sha512/sphlib gcc-9 6.73
+crypto_hash/sha512/hacl_star/scalar gcc 9.08
+crypto_hash/sha512/hacl_star/sha512-mb4 clang-9 11.73
+crypto_hash/sha512/hacl_star/sha512-mb8 clang-9 14.90
