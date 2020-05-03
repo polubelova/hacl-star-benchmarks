@@ -1,4 +1,4 @@
 gcc -march=native -mtune=native -O3 -Wno-discarded-qualifiers -fomit-frame-pointer -fwrapv -fPIC -fPIE
 gcc-9 -march=native -mtune=native -O3 -Wno-discarded-qualifiers -fomit-frame-pointer -fwrapv -fPIC -fPIE
+clang-9 -march=native -O3 -fomit-frame-pointer -fwrapv -Qunused-arguments -fPIC -fPIE
 clang -march=native -O3 -fomit-frame-pointer -fwrapv -Qunused-arguments -fPIC -fPIE
-clang-11 -march=native -O3 -fomit-frame-pointer -fwrapv -Qunused-arguments -fPIC -fPIE
