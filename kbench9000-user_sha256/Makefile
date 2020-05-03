@@ -14,10 +14,10 @@ ASFLAGS += -O3 -g -march=native -mtune=native
 default: build
 
 run: build
-	sudo ./run.sh sha512_bench.exe
+	sudo ./run.sh sha2_bench.exe
 
 build: $(objs)
-	$(CC) $(CFLAGS) -o sha512_bench.exe $(objs) -lsodium -lssl -lcrypto -L/usr/local/lib 
+	$(CC) $(CFLAGS) -o sha2_bench.exe $(objs) -lsodium -lssl -lcrypto -L/usr/local/lib 
 
 clean:
 	rm -f *.o *~ *.exe

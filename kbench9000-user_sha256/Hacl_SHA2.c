@@ -1023,7 +1023,7 @@ uint32_t Hacl_Hash_Definitions_hash_len(Spec_Hash_Definitions_hash_alg a)
 
 
 
-void sha512_hacl(uint8_t *input, uint32_t input_len, uint8_t *dst)
+void sha2_hacl(uint8_t *input, uint32_t input_len, uint8_t *dst)
 {
-  Hacl_Hash_SHA2_hash_512(input, input_len, dst);
+  Hacl_Hash_SHA2_hash_256(input, input_len, dst);
 }
