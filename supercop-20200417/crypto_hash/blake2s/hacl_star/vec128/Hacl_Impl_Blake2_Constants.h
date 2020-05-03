@@ -21,11 +21,12 @@
  * SOFTWARE.
  */
 
-
+#include "kremlin/internal/types.h"
+#include "kremlin/lowstar_endianness.h"
 #include <string.h>
-#include <inttypes.h>
-#include "lowstar_endianness.h"
+#include "kremlin/internal/target.h"
 #include <stdbool.h>
+#include "libintvector.h"
 
 #ifndef __Hacl_Impl_Blake2_Constants_H
 #define __Hacl_Impl_Blake2_Constants_H

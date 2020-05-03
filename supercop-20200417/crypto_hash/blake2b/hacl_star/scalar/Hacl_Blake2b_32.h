@@ -21,32 +21,20 @@
  * SOFTWARE.
  */
 
-
-
-
+#include "kremlin/internal/types.h"
+#include "kremlin/lowstar_endianness.h"
 #include <string.h>
-#include <inttypes.h>
-#include "lowstar_endianness.h"
+#include "kremlin/internal/target.h"
 #include <stdbool.h>
-#include "stdint.h"
-
-typedef unsigned __int128 FStar_UInt128_uint128;
-typedef FStar_UInt128_uint128 FStar_UInt128_t, uint128_t;
-
-#define KRML_CHECK_SIZE(a,b) {}
+#include "libintvector.h"
 
 #ifndef __Hacl_Blake2b_32_H
 #define __Hacl_Blake2b_32_H
 
+#include "Hacl_Kremlib.h"
 #include "Hacl_Impl_Blake2_Constants.h"
+#include "Hacl_Blake2b_256.h"
 
-
-typedef struct K___uint32_t_uint32_t_s
-{
-  uint32_t fst;
-  uint32_t snd;
-}
-K___uint32_t_uint32_t;
 
 void
 Hacl_Blake2b_32_blake2b(
