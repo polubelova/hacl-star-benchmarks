@@ -90,7 +90,8 @@ declare_it(hacl32)
 declare_it(hacl128)
 declare_it(hacl256)
 declare_it(openssl)
-declare_it(impl)
+declare_it(jazz_avx2)
+declare_it(nacl)
 
 static int compare_cycles(const void *a, const void *b)
 {
@@ -108,7 +109,8 @@ static bool verify(void)
 	test_it(hacl128, {}, {});
 	test_it(hacl256, {}, {});
 	test_it(openssl, {}, {});
-	test_it(impl, {}, {});
+	test_it(nacl, {}, {});
+	// test_it(jazz_avx2, {}, {});
 	
 
 	return true;
@@ -124,7 +126,8 @@ int main()
 	cycles_t median_hacl128[DOUBLING_STEPS+1];
 	cycles_t median_hacl256[DOUBLING_STEPS+1];
 	cycles_t median_openssl[DOUBLING_STEPS+1];
-	cycles_t median_impl[DOUBLING_STEPS+1];
+	cycles_t median_nacl[DOUBLING_STEPS+1];
+	// cycles_t median_jazz_avx2[DOUBLING_STEPS+1];
 
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
@@ -142,7 +145,8 @@ int main()
 	do_it(hacl128);
 	do_it(hacl256);
 	do_it(openssl);
-	do_it(impl);
+	do_it(nacl);
+	// do_it(jazz_avx2);
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
@@ -154,7 +158,8 @@ int main()
 	report_it(hacl128);
 	report_it(hacl256);
 	report_it(openssl);
-	report_it(impl);
+	report_it(nacl);
+	// report_it(jazz_avx2);
 	
 
 	/* Don't let compiler be too clever. */

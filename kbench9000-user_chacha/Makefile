@@ -1,4 +1,4 @@
-objs := main.o chacha20_hacl.c chacha20_hacl32.c chacha20_vec128.c chacha20_vec256.c chacha20_openssl.c  chacha20_jazz_asm.o chacha20_jazz.o
+objs := main.o chacha20_hacl.c chacha20_hacl32.c chacha20_vec128.c chacha20_vec256.c chacha20_openssl.c chacha20_nacl.c chacha20_jazz_asm.o chacha20_jazz.o
 
 CFLAGS += -O3 -g -march=native -mtune=native
 ASFLAGS += -O3 -g -march=native -mtune=native
@@ -7,8 +7,8 @@ chacha20_hacl.o: CFLAGS +=
 chacha20_hacl32.o: CFLAGS += 
 chacha20_vec128.o: CFLAGS += 
 chacha20_vec256.o: CFLAGS += 
-chacha20_jazz.o : CFLAGS +=
-chacha20_jazz_asm.o: ASFLAGS +=
+chacha20_jazz.o : CFLAGS += -m32
+chacha20_jazz_asm.o: ASFLAGS += 
 
 default: build
 
@@ -16,7 +16,7 @@ run: build
 	sudo ./run.sh chacha20_bench.exe
 
 build: $(objs)
-	$(CC) $(CFLAGS) -o chacha20_bench.exe $(objs)
+	$(CC) $(CFLAGS) -o chacha20_bench.exe $(objs) -lsodium
 
 clean:
 	rm -f *.o *~ *.exe

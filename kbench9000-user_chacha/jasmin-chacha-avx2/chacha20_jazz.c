@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdint.h>
 
-extern void chacha20_impl(
+extern void chacha20_jazz_avx2(
   unsigned long long inlen,
   unsigned char *out,
   const unsigned char *in,
