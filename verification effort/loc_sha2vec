@@ -1,0 +1,51 @@
+306 code/sha2-vec/Hacl.Spec.SHA2.fst
+221 specs/Spec.Hash.Definitions.fst
+
+
+find sha2-vec -name '*.fsti' | xargs wc -l | sort -nr
+0
+
+ find sha2-vec -name '*.fst' | xargs wc -l | sort -nr
+  3538 total
+   885 sha2-vec/Hacl.Impl.SHA2.Core.fst
+   684 sha2-vec/Hacl.Spec.SHA2.Equiv.fst
+   493 sha2-vec/Hacl.Spec.SHA2.Vec.fst
+   409 sha2-vec/Hacl.Impl.SHA2.Generic.fst
+   306 sha2-vec/Hacl.Spec.SHA2.fst
+   287 sha2-vec/Lib.MultiBuffer.fst
+   138 sha2-vec/Hacl.Spec.SHA2.Lemmas.fst
+    95 sha2-vec/Hacl.SHA2.Vec256.fst
+    67 sha2-vec/Hacl.SHA2.Scalar32.fst
+    62 sha2-vec/Hacl.SHA2.Vec512.fst
+    58 sha2-vec/Lib.IntTuple.fst
+    54 sha2-vec/Hacl.SHA2.Vec128.fst
+
+ find sha2-vec -name '*.c' | xargs wc -l | sort -nr
+  2809 total
+  1189 sha2-vec/dist/Hacl_SHA2_Vec256.c
+   747 sha2-vec/dist/Hacl_SHA2_Vec512.c
+   483 sha2-vec/dist/Hacl_SHA2_Vec128.c
+   390 sha2-vec/dist/Hacl_SHA2_Scalar32.c
+
+ find sha2-vec -name '*.h' | xargs wc -l | sort -nr
+  463 total
+  125 sha2-vec/dist/Hacl_SHA2_Generic.h
+  101 sha2-vec/dist/Hacl_SHA2_Vec512.h
+   79 sha2-vec/dist/Hacl_SHA2_Vec128.h
+   73 sha2-vec/dist/Hacl_SHA2_Vec256.h
+   43 sha2-vec/dist/Hacl_Kremlib.h
+   42 sha2-vec/dist/Hacl_SHA2_Scalar32.h
+
+find code/sha2-vec -name '*Impl*' | xargs wc -l | sort -nr
+ 1294 total
+  885 code/sha2-vec/Hacl.Impl.SHA2.Core.fst
+  409 code/sha2-vec/Hacl.Impl.SHA2.Generic.fst
+
+
+==========================================
+
+Scalar spec: 306 (Hacl.Spec.SHA2.fst)
+Vec spec: 493 (Hacl.Spec.SHA2.Vec.fst)
+Spec equiv proof: 822  (Hacl.Spec.SHA2.Equiv.fst + Hacl.Spec.SHA2.Lemmas.fst)
+Low* code: 1294  (*Impl*)
+C code: 2809 + 125 (*.c + Hacl_SHA2_Generic.h)

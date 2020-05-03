@@ -1,0 +1,90 @@
+77 specs/Spec.Poly1305.fst
+
+find poly1305 -name '*.c' | xargs wc -l | sort -nr
+  7168 total
+  2852 poly1305/dist/Hacl_Poly1305_512.c
+  2097 poly1305/dist/Hacl_Poly1305_256.c
+  1646 poly1305/dist/Hacl_Poly1305_128.c
+   573 poly1305/dist/Hacl_Poly1305_32.c
+
+ find poly1305 -name '*.h' | xargs wc -l | sort -nr
+ 275 total
+  61 poly1305/dist/Hacl_Poly1305_512.h
+  61 poly1305/dist/Hacl_Poly1305_256.h
+  61 poly1305/dist/Hacl_Poly1305_128.h
+  51 poly1305/dist/Hacl_Poly1305_32.h
+  41 poly1305/dist/Hacl_Kremlib.h
+
+ find poly1305 -name '*.fst' | xargs wc -l | sort -nr
+  7450 total
+-  1090 poly1305/Hacl.Poly1305.Field32xN.Lemmas1.fst
+-   923 poly1305/Hacl.Spec.Poly1305.Field32xN.Lemmas.fst
+   833 poly1305/Hacl.Impl.Poly1305.Field32xN.fst
+-   822 poly1305/Hacl.Poly1305.Field32xN.Lemmas2.fst
+-   733 poly1305/Hacl.Poly1305.Field32xN.Lemmas0.fst
+-   693 poly1305/Hacl.Spec.Poly1305.Field32xN.fst
+   613 poly1305/Hacl.Impl.Poly1305.fst
+   486 poly1305/Hacl.Impl.Poly1305.Fields.fst
+-   280 poly1305/Hacl.Spec.Poly1305.Equiv.fst
+-   191 poly1305/Hacl.Spec.Poly1305.Lemmas.fst
+-  158 poly1305/Hacl.Spec.Poly1305.Vec.fst
+   125 poly1305/Hacl.Impl.Poly1305.Lemmas.fst
+   123 poly1305/Hacl.Impl.Poly1305.Field32xN_256.fst
+   107 poly1305/Hacl.Impl.Poly1305.Field32xN_512.fst
+   103 poly1305/Hacl.Impl.Poly1305.Field32xN_128.fst
+    64 poly1305/Hacl.Impl.Poly1305.Field32xN_32.fst
+    23 poly1305/Hacl.Poly1305_512.fst
+    23 poly1305/Hacl.Poly1305_32.fst
+    23 poly1305/Hacl.Poly1305_256.fst
+    23 poly1305/Hacl.Poly1305_128.fst
+    14 poly1305/Hacl.Meta.Poly1305.fst
+
+ find poly1305 -name '*.fsti' | xargs wc -l | sort -nr
+ 249 total
+ 148 poly1305/Hacl.Impl.Poly1305.fsti
+  25 poly1305/Hacl.Poly1305_512.fsti
+  25 poly1305/Hacl.Poly1305_32.fsti
+  25 poly1305/Hacl.Poly1305_256.fsti
+  25 poly1305/Hacl.Poly1305_128.fsti
+   1 poly1305/Hacl.Meta.Poly1305.fsti
+
+
+find code/poly1305 -name '*Lemmas*' | xargs wc -l | sort -nr
+  3884 total = 3568
+  1090 code/poly1305/Hacl.Poly1305.Field32xN.Lemmas1.fst
+   923 code/poly1305/Hacl.Spec.Poly1305.Field32xN.Lemmas.fst
+   822 code/poly1305/Hacl.Poly1305.Field32xN.Lemmas2.fst
+   733 code/poly1305/Hacl.Poly1305.Field32xN.Lemmas0.fst
+-   191 code/poly1305/Hacl.Spec.Poly1305.Lemmas.fst
+-   125 code/poly1305/Hacl.Impl.Poly1305.Lemmas.fst
+
+
+find code/poly1305 -name '*Impl*' | xargs wc -l | sort -nr
+ 2602 total
+  833 code/poly1305/Hacl.Impl.Poly1305.Field32xN.fst
+  613 code/poly1305/Hacl.Impl.Poly1305.fst
+  486 code/poly1305/Hacl.Impl.Poly1305.Fields.fst
+  148 code/poly1305/Hacl.Impl.Poly1305.fsti
+  125 code/poly1305/Hacl.Impl.Poly1305.Lemmas.fst
+  123 code/poly1305/Hacl.Impl.Poly1305.Field32xN_256.fst
+  107 code/poly1305/Hacl.Impl.Poly1305.Field32xN_512.fst
+  103 code/poly1305/Hacl.Impl.Poly1305.Field32xN_128.fst
+   64 code/poly1305/Hacl.Impl.Poly1305.Field32xN_32.fst
+
+
+find code/poly1305 -name '*Spec*' | xargs wc -l | sort -nr
+ 2245 total
+  923 code/poly1305/Hacl.Spec.Poly1305.Field32xN.Lemmas.fst
+  693 code/poly1305/Hacl.Spec.Poly1305.Field32xN.fst
+  280 code/poly1305/Hacl.Spec.Poly1305.Equiv.fst
+  191 code/poly1305/Hacl.Spec.Poly1305.Lemmas.fst
+  158 code/poly1305/Hacl.Spec.Poly1305.Vec.fst
+
+==========================================
+
+Scalar spec: 77              (Spec.Poly1305.fst)
+Vec spec: 158                (Hacl.Spec.Poly1305.Vec.fst)
+Spec equiv proof: 471        (Hacl.Spec.Poly1305.Equiv.fst + Hacl.Spec.Poly1305.Lemmas.fst)
+Bignums spec + proofs: 4261  (Hacl.Spec.Poly1305.Field32xN.fst +  *Lemmas*)
+Low* code: 2602              (*Impl*)
+C code: 7168                 (*.c)

@@ -1,0 +1,47 @@
+Poly1305
+=============
+Scalar spec: 77              (Spec.Poly1305.fst)
+Vec spec: 158                (Hacl.Spec.Poly1305.Vec.fst)
+Spec equiv proof: 471        (Hacl.Spec.Poly1305.Equiv.fst + Hacl.Spec.Poly1305.Lemmas.fst)
+Bignums spec + proofs: 4261  (Hacl.Spec.Poly1305.Field32xN.fst +  *Lemmas*)
+Low* code: 2602              (*Impl*)
+C code: 7168                 (*.c)
+
+
+Chacha20
+=============
+Scalar spec: 191  (Spec.Chacha20.fst)
+Vec spec: 225     (Hacl.Spec.Chacha20.Vec.fst)
+Spec equv proof: 957  (Hacl.Spec.Chacha20.Equiv.fst)
+Low* code: 494   (Hacl.Impl.Chacha20.Vec.fst + Hacl.Impl.Chacha20.Core32xN.fst)
+C code: 3874     (*.c)
+
+
+SHA2-VEC
+=============
+Scalar spec: 306 (Hacl.Spec.SHA2.fst)
+Vec spec: 493 (Hacl.Spec.SHA2.Vec.fst)
+Spec equiv proof: 822  (Hacl.Spec.SHA2.Equiv.fst + Hacl.Spec.SHA2.Lemmas.fst)
+Low* code: 1294  (*Impl*)
+C code: 2809 + 125 (*.c + Hacl_SHA2_Generic.h)
+
+
+Blake2
+=============
+Scalar spec: 527 (Spec.Blake2.fst)
+Vec spec: ??
+Spec equiv proof: ??
+Low* code: 990 + 222 = 1212 (*Impl*.fst + fsti)
+C code: 3094 + 98 = 3192 (*.c + Hacl_Impl_Blake2_Constants.h)
+
+
+Lib
+=============
+General: 7119 + 1441 (Sequence.Lemmas) = 8560
+Vec:    fstar:	2597 + 1060 (Vec.Lemmas) = 3657
+            c:  706 lib/c/libintvector.h
+
+generic ctr-poly
+=============
+poly: 125 (spec) + 470 (proofs)   !! it means that we need to prove only (felem_v, fmul_v, fadd_v) is a semiring
+ctr:  93 (spec) + 504 (proofs)    !! need to add transpose and xor_block, it will decrease the size of Hacl.Spec.Chacha20.Equiv.fst up to 500-600 LOC

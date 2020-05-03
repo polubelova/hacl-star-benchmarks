@@ -1,0 +1,277 @@
+77 specs/Spec.Poly1305.fst
+191 specs/Spec.Chacha20.fst
+527 specs/Spec.Blake2.fst
+306 code/sha2-vec/Hacl.Spec.SHA2.fst
+
+
+221 specs/Spec.Hash.Definitions.fst
+53 specs/Spec.Hash.Lemmas.fst
+52 specs/Spec.Hash.Lemmas0.fst
+40 specs/Spec.Hash.PadFinish.fst
+37 specs/Spec.Agile.Hash.fst
+32 specs/lemmas/Spec.Hash.Incremental.fst
+
+
+
+find poly1305 -name '*.c' | xargs wc -l | sort -nr
+  7168 total
+  2852 poly1305/dist/Hacl_Poly1305_512.c
+  2097 poly1305/dist/Hacl_Poly1305_256.c
+  1646 poly1305/dist/Hacl_Poly1305_128.c
+   573 poly1305/dist/Hacl_Poly1305_32.c
+
+ find poly1305 -name '*.h' | xargs wc -l | sort -nr
+ 275 total
+  61 poly1305/dist/Hacl_Poly1305_512.h
+  61 poly1305/dist/Hacl_Poly1305_256.h
+  61 poly1305/dist/Hacl_Poly1305_128.h
+  51 poly1305/dist/Hacl_Poly1305_32.h
+  41 poly1305/dist/Hacl_Kremlib.h
+
+ find poly1305 -name '*.fst' | xargs wc -l | sort -nr
+  7450 total
+  1090 poly1305/Hacl.Poly1305.Field32xN.Lemmas1.fst
+   923 poly1305/Hacl.Spec.Poly1305.Field32xN.Lemmas.fst
+   833 poly1305/Hacl.Impl.Poly1305.Field32xN.fst
+   822 poly1305/Hacl.Poly1305.Field32xN.Lemmas2.fst
+   733 poly1305/Hacl.Poly1305.Field32xN.Lemmas0.fst
+   693 poly1305/Hacl.Spec.Poly1305.Field32xN.fst
+   613 poly1305/Hacl.Impl.Poly1305.fst
+   486 poly1305/Hacl.Impl.Poly1305.Fields.fst
+   280 poly1305/Hacl.Spec.Poly1305.Equiv.fst
+   191 poly1305/Hacl.Spec.Poly1305.Lemmas.fst
+   158 poly1305/Hacl.Spec.Poly1305.Vec.fst
+   125 poly1305/Hacl.Impl.Poly1305.Lemmas.fst
+   123 poly1305/Hacl.Impl.Poly1305.Field32xN_256.fst
+   107 poly1305/Hacl.Impl.Poly1305.Field32xN_512.fst
+   103 poly1305/Hacl.Impl.Poly1305.Field32xN_128.fst
+    64 poly1305/Hacl.Impl.Poly1305.Field32xN_32.fst
+    23 poly1305/Hacl.Poly1305_512.fst
+    23 poly1305/Hacl.Poly1305_32.fst
+    23 poly1305/Hacl.Poly1305_256.fst
+    23 poly1305/Hacl.Poly1305_128.fst
+    14 poly1305/Hacl.Meta.Poly1305.fst
+
+ find poly1305 -name '*.fsti' | xargs wc -l | sort -nr
+ 249 total
+ 148 poly1305/Hacl.Impl.Poly1305.fsti
+  25 poly1305/Hacl.Poly1305_512.fsti
+  25 poly1305/Hacl.Poly1305_32.fsti
+  25 poly1305/Hacl.Poly1305_256.fsti
+  25 poly1305/Hacl.Poly1305_128.fsti
+   1 poly1305/Hacl.Meta.Poly1305.fsti
+
+
+
+
+ find chacha20 -name '*.fsti' | xargs wc -l | sort -nr
+0
+
+ find chacha20 -name '*.fst' | xargs wc -l | sort -nr
+ 2260 total
+  957 chacha20/Hacl.Spec.Chacha20.Equiv.fst
+  286 chacha20/Hacl.Impl.Chacha20.Vec.fst
+  228 chacha20/Hacl.Impl.Chacha20.fst
+  225 chacha20/Hacl.Spec.Chacha20.Vec.fst
+  208 chacha20/Hacl.Impl.Chacha20.Core32xN.fst
+  185 chacha20/Hacl.Impl.Chacha20.Core32.fst
+   54 chacha20/Hacl.Spec.Chacha20.Lemmas.fst
+   40 chacha20/Hacl.Chacha20.fst
+   16 chacha20/Hacl.Chacha20.Vec512.fst
+   16 chacha20/Hacl.Chacha20.Vec32.fst
+   16 chacha20/Hacl.Chacha20.Vec256.fst
+   16 chacha20/Hacl.Chacha20.Vec128.fst
+   13 chacha20/Hacl.Meta.Chacha20.Vec.fst
+
+ find chacha20 -name '*.c' | xargs wc -l | sort -nr
+  4100 total
+  1611 chacha20/dist/Hacl_Chacha20_Vec512.c
+  1149 chacha20/dist/Hacl_Chacha20_Vec256.c
+   825 chacha20/dist/Hacl_Chacha20_Vec128.c
+   289 chacha20/dist/Hacl_Chacha20_Vec32.c
+   226 chacha20/dist/Hacl_Chacha20.c
+
+ find chacha20 -name '*.h' | xargs wc -l | sort -nr
+  324 total
+   58 chacha20/dist/Hacl_Chacha20.h
+   57 chacha20/dist/Hacl_Chacha20_Vec512.h
+   57 chacha20/dist/Hacl_Chacha20_Vec32.h
+   57 chacha20/dist/Hacl_Chacha20_Vec256.h
+   57 chacha20/dist/Hacl_Chacha20_Vec128.h
+   38 chacha20/dist/Hacl_Kremlib.h
+
+
+
+
+find code/ctr-poly-vec -name '*.fsti' | xargs wc -l | sort -nr
+ 258 total
+ 125 code/ctr-poly-vec/Hacl.Poly.fsti
+  93 code/ctr-poly-vec/Hacl.CTR.fsti
+  23 code/ctr-poly-vec/Hacl.CTR.Equiv.fsti
+  17 code/ctr-poly-vec/Hacl.Poly.Equiv.fsti
+
+find code/ctr-poly-vec -name '*.fst' | xargs wc -l | sort -nr
+  976 total
+  504 code/ctr-poly-vec/Hacl.CTR.Equiv.fst
+  370 code/ctr-poly-vec/Hacl.Poly.Lemmas.fst
+  102 code/ctr-poly-vec/Hacl.Poly.Equiv.fst
+
+
+
+
+find blake2 -name '*.h' | xargs wc -l | sort -nr
+  350 total
+   98 blake2/dist/Hacl_Impl_Blake2_Constants.h
+   56 blake2/dist/Hacl_Blake2b_256.h
+   50 blake2/dist/Hacl_Blake2s_32.h
+   50 blake2/dist/Hacl_Blake2s_128.h
+   50 blake2/dist/Hacl_Blake2b_32.h
+   46 blake2/dist/Hacl_Kremlib.h
+
+ find blake2 -name '*.c' | xargs wc -l | sort -nr
+ 3094 total
+ 1179 blake2/dist/Hacl_Blake2s_32.c
+ 1179 blake2/dist/Hacl_Blake2b_32.c
+  368 blake2/dist/Hacl_Blake2s_128.c
+  368 blake2/dist/Hacl_Blake2b_256.c
+
+ find blake2 -name '*.fst' | xargs wc -l | sort -nr
+ 1034 total
+  689 blake2/Hacl.Impl.Blake2.Generic.fst
+  270 blake2/Hacl.Impl.Blake2.Core.fst
+   31 blake2/Hacl.Impl.Blake2.Constants.fst
+   11 blake2/Hacl.Blake2s_32.fst
+   11 blake2/Hacl.Blake2s_128.fst
+   11 blake2/Hacl.Blake2b_32.fst
+   11 blake2/Hacl.Blake2b_256.fst
+
+ find blake2 -name '*.fsti' | xargs wc -l | sort -nr
+222 blake2/Hacl.Impl.Blake2.Core.fsti
+
+
+
+
+ find sha2-vec -name '*.fsti' | xargs wc -l | sort -nr
+0
+
+ find sha2-vec -name '*.fst' | xargs wc -l | sort -nr
+  3538 total
+   885 sha2-vec/Hacl.Impl.SHA2.Core.fst
+   684 sha2-vec/Hacl.Spec.SHA2.Equiv.fst
+   493 sha2-vec/Hacl.Spec.SHA2.Vec.fst
+   409 sha2-vec/Hacl.Impl.SHA2.Generic.fst
+   306 sha2-vec/Hacl.Spec.SHA2.fst
+   287 sha2-vec/Lib.MultiBuffer.fst
+   138 sha2-vec/Hacl.Spec.SHA2.Lemmas.fst
+    95 sha2-vec/Hacl.SHA2.Vec256.fst
+    67 sha2-vec/Hacl.SHA2.Scalar32.fst
+    62 sha2-vec/Hacl.SHA2.Vec512.fst
+    58 sha2-vec/Lib.IntTuple.fst
+    54 sha2-vec/Hacl.SHA2.Vec128.fst
+
+ find sha2-vec -name '*.c' | xargs wc -l | sort -nr
+  2809 total
+  1189 sha2-vec/dist/Hacl_SHA2_Vec256.c
+   747 sha2-vec/dist/Hacl_SHA2_Vec512.c
+   483 sha2-vec/dist/Hacl_SHA2_Vec128.c
+   390 sha2-vec/dist/Hacl_SHA2_Scalar32.c
+
+ find sha2-vec -name '*.h' | xargs wc -l | sort -nr
+  463 total
+  125 sha2-vec/dist/Hacl_SHA2_Generic.h
+  101 sha2-vec/dist/Hacl_SHA2_Vec512.h
+   79 sha2-vec/dist/Hacl_SHA2_Vec128.h
+   73 sha2-vec/dist/Hacl_SHA2_Vec256.h
+   43 sha2-vec/dist/Hacl_Kremlib.h
+   42 sha2-vec/dist/Hacl_SHA2_Scalar32.h
+
+
+
+
+ find lib -name '*.h' | xargs wc -l | sort -nr
+  759 total
+  706 lib/c/libintvector.h
+   30 lib/c/lib_intrinsics.h
+   23 lib/c/evercrypt_targetconfig.h
+
+ find lib -name '*.c' | xargs wc -l | sort -nr
+ 134 total
+  57 lib/c/Lib_RandomBuffer_System.c
+  56 lib/c/Lib_PrintBuffer.c
+  21 lib/c/Lib_Memzero.c
+
+ find lib -name '*.fst' | xargs wc -l | sort -nr
+  7137 total
+  1142 lib/Lib.IntTypes.fst
+   768 lib/Lib.Sequence.Lemmas.fst
+   729 lib/Lib.Vec.Lemmas.fst
+   726 lib/Lib.ByteSequence.fst
+   647 lib/Lib.IntVector.Transpose.fst
+   595 lib/Lib.Buffer.fst
+   593 lib/Lib.IntVector.fst
+   367 lib/Lib.Sequence.fst
+   283 lib/Lib.ByteBuffer.fst
+   251 lib/Lib.NTuple.fst
+   238 lib/Lib.PrintSequence.fst
+   188 lib/Lib.UpdateMulti.fst
+   143 lib/Lib.IntVector.Serialize.fst
+   111 lib/Lib.LoopCombinators.fst
+   107 lib/Lib.UpdateMulti.Lemmas.fst
+    75 lib/Lib.Meta.fst
+    50 lib/Lib.CreateN.fst
+    48 lib/Lib.Loops.fst
+    40 lib/Lib.IntTypes.Compatibility.fst
+    36 lib/Lib.RawIntTypes.fst
+
+ find lib -name '*.fsti' | xargs wc -l | sort -nr
+  6214 total
+  1155 lib/Lib.Buffer.fsti
+   975 lib/Lib.IntTypes.fsti
+   673 lib/Lib.Sequence.Lemmas.fsti
+   565 lib/Lib.IntVector.fsti
+   552 lib/Lib.Sequence.fsti
+   484 lib/Lib.IntVector.Intrinsics.fsti
+   331 lib/Lib.Vec.Lemmas.fsti
+   291 lib/Lib.LoopCombinators.fsti
+   248 lib/Lib.NTuple.fsti
+   240 lib/Lib.ByteSequence.fsti
+   183 lib/Lib.ByteBuffer.fsti
+   107 lib/Lib.IntVector.Serialize.fsti
+    61 lib/Lib.PrintSequence.fsti
+    58 lib/Lib.IntVector.Transpose.fsti
+    51 lib/Lib.UpdateMulti.Lemmas.fsti
+    40 lib/Lib.Loops.fsti
+    38 lib/Lib.PrintBuffer.fsti
+    37 lib/Lib.RawIntTypes.fsti
+    33 lib/Lib.CreateN.fsti
+    30 lib/Lib.Memzero.fsti
+    27 lib/Lib.IntTypes.Intrinsics.fsti
+    21 lib/Lib.RandomSequence.fsti
+    14 lib/Lib.RandomBuffer.System.fsti
+
+
+
+find code/hash -name '*.fst' | xargs wc -l | sort -nr
+ 1917 total
+  407 code/hash/Hacl.Hash.Core.MD5.fst
+  390 code/hash/Hacl.Hash.Core.SHA2.fst
+  312 code/hash/Hacl.Hash.Core.SHA1.fst
+  241 code/hash/Hacl.Hash.PadFinish.fst
+  219 code/hash/Hacl.Hash.MD.fst
+  155 code/hash/Hacl.Hash.Definitions.fst
+   67 code/hash/Hacl.Hash.Lemmas.fst
+   57 code/hash/Hacl.Hash.Agile.fst
+   45 code/hash/Hacl.Hash.SHA2.fst
+   12 code/hash/Hacl.Hash.SHA1.fst
+   12 code/hash/Hacl.Hash.MD5.fst
+
+find code/hash -name '*.fsti' | xargs wc -l | sort -nr
+ 159 total
+  43 code/hash/Hacl.Hash.SHA2.fsti
+  37 code/hash/Hacl.Hash.Core.SHA2.fsti
+  19 code/hash/Hacl.Hash.PadFinish.fsti
+  18 code/hash/Hacl.Hash.MD.fsti
+  11 code/hash/Hacl.Hash.Core.SHA1.fsti
+  11 code/hash/Hacl.Hash.Core.MD5.fsti
+  10 code/hash/Hacl.Hash.SHA1.fsti
+  10 code/hash/Hacl.Hash.MD5.fsti

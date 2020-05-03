@@ -1,0 +1,54 @@
+191 specs/Spec.Chacha20.fst
+
+ find chacha20 -name '*.fsti' | xargs wc -l | sort -nr
+0
+
+ find chacha20 -name '*.fst' | xargs wc -l | sort -nr
+ 2260 total
+  957 chacha20/Hacl.Spec.Chacha20.Equiv.fst
+  286 chacha20/Hacl.Impl.Chacha20.Vec.fst
+  228 chacha20/Hacl.Impl.Chacha20.fst
+  225 chacha20/Hacl.Spec.Chacha20.Vec.fst
+  208 chacha20/Hacl.Impl.Chacha20.Core32xN.fst
+  185 chacha20/Hacl.Impl.Chacha20.Core32.fst
+   54 chacha20/Hacl.Spec.Chacha20.Lemmas.fst
+   40 chacha20/Hacl.Chacha20.fst
+   16 chacha20/Hacl.Chacha20.Vec512.fst
+   16 chacha20/Hacl.Chacha20.Vec32.fst
+   16 chacha20/Hacl.Chacha20.Vec256.fst
+   16 chacha20/Hacl.Chacha20.Vec128.fst
+   13 chacha20/Hacl.Meta.Chacha20.Vec.fst
+
+ find chacha20 -name '*.c' | xargs wc -l | sort -nr
+  4100 total - 226
+  1611 chacha20/dist/Hacl_Chacha20_Vec512.c
+  1149 chacha20/dist/Hacl_Chacha20_Vec256.c
+   825 chacha20/dist/Hacl_Chacha20_Vec128.c
+   289 chacha20/dist/Hacl_Chacha20_Vec32.c
+   226 chacha20/dist/Hacl_Chacha20.c
+
+ find chacha20 -name '*.h' | xargs wc -l | sort -nr
+  324 total
+   58 chacha20/dist/Hacl_Chacha20.h
+   57 chacha20/dist/Hacl_Chacha20_Vec512.h
+   57 chacha20/dist/Hacl_Chacha20_Vec32.h
+   57 chacha20/dist/Hacl_Chacha20_Vec256.h
+   57 chacha20/dist/Hacl_Chacha20_Vec128.h
+   38 chacha20/dist/Hacl_Kremlib.h
+
+
+find code/chacha20 -name '*Impl*' | xargs wc -l | sort -nr
+  907 total
+  286 code/chacha20/Hacl.Impl.Chacha20.Vec.fst
+-  228 code/chacha20/Hacl.Impl.Chacha20.fst
+  208 code/chacha20/Hacl.Impl.Chacha20.Core32xN.fst
+-  185 code/chacha20/Hacl.Impl.Chacha20.Core32.fst
+
+
+==========================================
+
+Scalar spec: 191  (Spec.Chacha20.fst)
+Vec spec: 225     (Hacl.Spec.Chacha20.Vec.fst)
+Spec equv proof: 957  (Hacl.Spec.Chacha20.Equiv.fst)
+Low* code: 494
+C code: 3874

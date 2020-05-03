@@ -1,0 +1,114 @@
+ find lib -name '*.h' | xargs wc -l | sort -nr
+  759 total
+  706 lib/c/libintvector.h
+   30 lib/c/lib_intrinsics.h
+   23 lib/c/evercrypt_targetconfig.h
+
+ find lib -name '*.c' | xargs wc -l | sort -nr
+ 134 total
+  57 lib/c/Lib_RandomBuffer_System.c
+  56 lib/c/Lib_PrintBuffer.c
+  21 lib/c/Lib_Memzero.c
+
+ find lib -name '*.fst' | xargs wc -l | sort -nr
+  7137 total
+  1142 lib/Lib.IntTypes.fst
+   768 lib/Lib.Sequence.Lemmas.fst
+   729 lib/Lib.Vec.Lemmas.fst
+   726 lib/Lib.ByteSequence.fst
+   647 lib/Lib.IntVector.Transpose.fst
+   595 lib/Lib.Buffer.fst
+   593 lib/Lib.IntVector.fst
+   367 lib/Lib.Sequence.fst
+   283 lib/Lib.ByteBuffer.fst
+   251 lib/Lib.NTuple.fst
+   238 lib/Lib.PrintSequence.fst
+   188 lib/Lib.UpdateMulti.fst
+   143 lib/Lib.IntVector.Serialize.fst
+   111 lib/Lib.LoopCombinators.fst
+   107 lib/Lib.UpdateMulti.Lemmas.fst
+    75 lib/Lib.Meta.fst
+    50 lib/Lib.CreateN.fst
+    48 lib/Lib.Loops.fst
+    40 lib/Lib.IntTypes.Compatibility.fst
+    36 lib/Lib.RawIntTypes.fst
+
+ find lib -name '*.fsti' | xargs wc -l | sort -nr
+  6214 total
+  1155 lib/Lib.Buffer.fsti
+   975 lib/Lib.IntTypes.fsti
+   673 lib/Lib.Sequence.Lemmas.fsti
+   565 lib/Lib.IntVector.fsti
+   552 lib/Lib.Sequence.fsti
+   484 lib/Lib.IntVector.Intrinsics.fsti
+   331 lib/Lib.Vec.Lemmas.fsti
+   291 lib/Lib.LoopCombinators.fsti
+   248 lib/Lib.NTuple.fsti
+   240 lib/Lib.ByteSequence.fsti
+   183 lib/Lib.ByteBuffer.fsti
+   107 lib/Lib.IntVector.Serialize.fsti
+    61 lib/Lib.PrintSequence.fsti
+    58 lib/Lib.IntVector.Transpose.fsti
+    51 lib/Lib.UpdateMulti.Lemmas.fsti
+    40 lib/Lib.Loops.fsti
+    38 lib/Lib.PrintBuffer.fsti
+    37 lib/Lib.RawIntTypes.fsti
+    33 lib/Lib.CreateN.fsti
+    30 lib/Lib.Memzero.fsti
+    27 lib/Lib.IntTypes.Intrinsics.fsti
+    21 lib/Lib.RandomSequence.fsti
+    14 lib/Lib.RandomBuffer.System.fsti
+
+
+find lib/ -name '*IntVector*' | xargs wc -l | sort -nr
+
+ 2597 total
+  647 lib/Lib.IntVector.Transpose.fst
+  593 lib/Lib.IntVector.fst
+  565 lib/Lib.IntVector.fsti
+  484 lib/Lib.IntVector.Intrinsics.fsti
+  143 lib/Lib.IntVector.Serialize.fst
+  107 lib/Lib.IntVector.Serialize.fsti
+   58 lib/Lib.IntVector.Transpose.fsti
+
+
+
+====================================
+
+General: 7119 + 1441 (Sequence.Lemmas) = 8560
+  1155 lib/Lib.Buffer.fsti
+  1142 lib/Lib.IntTypes.fst
+   975 lib/Lib.IntTypes.fsti
+   291 lib/Lib.LoopCombinators.fsti
+   726 lib/Lib.ByteSequence.fst
+   240 lib/Lib.ByteSequence.fsti
+   183 lib/Lib.ByteBuffer.fsti
+   595 lib/Lib.Buffer.fst
+   552 lib/Lib.Sequence.fsti
+   367 lib/Lib.Sequence.fst
+   283 lib/Lib.ByteBuffer.fst
+   111 lib/Lib.LoopCombinators.fst
+   251 lib/Lib.NTuple.fst
+   248 lib/Lib.NTuple.fsti
+
+   768 lib/Lib.Sequence.Lemmas.fst
+   673 lib/Lib.Sequence.Lemmas.fsti
+
+
+Vec:
+fstar:	2597 + 1060 (Vec.Lemmas) = 3657
+c:      706 lib/c/libintvector.h
+
+   143 lib/Lib.IntVector.Serialize.fst
+   565 lib/Lib.IntVector.fsti
+   593 lib/Lib.IntVector.fst
+   647 lib/Lib.IntVector.Transpose.fst
+   107 lib/Lib.IntVector.Serialize.fsti
+   58 lib/Lib.IntVector.Transpose.fsti
+   484 lib/Lib.IntVector.Intrinsics.fsti
+
+
+   729 lib/Lib.Vec.Lemmas.fst
+   331 lib/Lib.Vec.Lemmas.fsti
+
+

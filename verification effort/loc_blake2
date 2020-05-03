@@ -1,0 +1,44 @@
+527 specs/Spec.Blake2.fst
+
+find blake2 -name '*.h' | xargs wc -l | sort -nr
+  350 total
+   98 blake2/dist/Hacl_Impl_Blake2_Constants.h
+   56 blake2/dist/Hacl_Blake2b_256.h
+   50 blake2/dist/Hacl_Blake2s_32.h
+   50 blake2/dist/Hacl_Blake2s_128.h
+   50 blake2/dist/Hacl_Blake2b_32.h
+   46 blake2/dist/Hacl_Kremlib.h
+
+ find blake2 -name '*.c' | xargs wc -l | sort -nr
+ 3094 total
+ 1179 blake2/dist/Hacl_Blake2s_32.c
+ 1179 blake2/dist/Hacl_Blake2b_32.c
+  368 blake2/dist/Hacl_Blake2s_128.c
+  368 blake2/dist/Hacl_Blake2b_256.c
+
+ find blake2 -name '*.fst' | xargs wc -l | sort -nr
+ 1034 total
+  689 blake2/Hacl.Impl.Blake2.Generic.fst
+  270 blake2/Hacl.Impl.Blake2.Core.fst
+   31 blake2/Hacl.Impl.Blake2.Constants.fst
+   11 blake2/Hacl.Blake2s_32.fst
+   11 blake2/Hacl.Blake2s_128.fst
+   11 blake2/Hacl.Blake2b_32.fst
+   11 blake2/Hacl.Blake2b_256.fst
+
+ find blake2 -name '*.fsti' | xargs wc -l | sort -nr
+222 blake2/Hacl.Impl.Blake2.Core.fsti
+
+find code/blake2 -name '*Impl*.fst' | xargs wc -l | sort -nr
+  990 total
+  689 code/blake2/Hacl.Impl.Blake2.Generic.fst
+  270 code/blake2/Hacl.Impl.Blake2.Core.fst
+   31 code/blake2/Hacl.Impl.Blake2.Constants.fst
+
+===========================================
+
+Scalar spec: 527 (Spec.Blake2.fst)
+Vec spec: ??
+Spec equiv proof: ??
+Low* code: 990 + 222 = 1212 (*Impl*.fst + fsti)
+C code: 3094 + 98 = 3192 (*.c + Hacl_Impl_Blake2_Constants.h)
