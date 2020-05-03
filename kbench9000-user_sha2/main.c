@@ -35,10 +35,10 @@ static __inline__ cycles_t get_cycles(void)
 
 
 #define declare_it(name) \
-void sha2_ ## name(const u32 nn,  u8 *output, const u32 ll, const u8 *d, const u32 kk, const u8 *k); \
+void sha2_ ## name(u8* input_data,  u32 len, u8 * output); \
 static inline int name(size_t len) \
 { \
-	sha2_ ## name(44, dummy_out, 64, input_data, 64, input_key); \
+	sha2_ ## name(input_data, len, dummy_out); \
 }
 
 #define do_it(name) do { \
@@ -59,7 +59,7 @@ static inline int name(size_t len) \
 #define test_it(name, before, after) do { \
 	memset(out, __LINE__, vectors2b[i].expected_len); \
 	before; \
-	sha2_ ## name(vectors2b[i].expected_len, out, vectors2b[i].input_len, vectors2b[i].input, vectors2b[i].key_len, vectors2b[i].key); \
+	sha2_ ## name(vectors2b[i].input, vectors2b[i].input_len, out); \
 	after; \
 	if (memcmp(out, vectors2b[i].expected, vectors2b[i].expected_len)) { \
 		fprintf(stderr,#name " self-test %zu: FAIL\n", i + 1); \

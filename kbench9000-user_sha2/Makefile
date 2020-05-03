@@ -14,10 +14,10 @@ ASFLAGS += -O3 -g -march=native -mtune=native
 default: build
 
 run: build
-	sudo ./run.sh blake2b_bench.exe
+	sudo ./run.sh sha2_bench.exe
 
 build: $(objs)
-	$(CC) $(CFLAGS) -o blake2b_bench.exe $(objs) -lsodium
+	$(CC) $(CFLAGS) -o sha2_bench.exe $(objs) -lsodium
 
 clean:
 	rm -f *.o *~ *.exe
