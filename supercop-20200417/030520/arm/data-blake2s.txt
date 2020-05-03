@@ -1,0 +1,5 @@
+crypto_hash/blake2s/regs gcc 9.14
+crypto_hash/blake2s/ref gcc 10.06
+crypto_hash/blake2s/hacl_star/scalar gcc 11.86
+crypto_hash/blake2s/hacl_star/vec32 gcc 11.89
+crypto_hash/blake2s/hacl_star/vec128 gcc 22.57

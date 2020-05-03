@@ -1,0 +1,4 @@
+crypto_hash/sha256/sphlib gcc 12.30
+crypto_hash/sha256/sphlib-small gcc 12.42
+crypto_hash/sha256/hacl_star/scalar gcc 18.45
+crypto_hash/sha256/hacl_star gcc 18.47

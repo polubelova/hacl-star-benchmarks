@@ -1,0 +1,4 @@
+crypto_hash/sha512/sphlib-small clang 11.00
+crypto_hash/sha512/sphlib clang 11.06
+crypto_hash/sha512/hacl_star gcc 11.79
+crypto_hash/sha512/hacl_star/scalar gcc 11.81
