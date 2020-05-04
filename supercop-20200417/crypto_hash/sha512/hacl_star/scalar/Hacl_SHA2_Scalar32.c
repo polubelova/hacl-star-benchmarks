@@ -815,7 +815,7 @@ void Hacl_SHA2_Scalar32_sha512(uint8_t *h, uint32_t len, uint8_t *b)
     os[i] = x;
   }
   uint32_t rem = len % (uint32_t)128U;
-  FStar_UInt128_uint128 len_ = FStar_UInt128_uint64_to_uint128((uint64_t)len);
+  uint128_t len_ = (uint128_t)(uint64_t)len;
   uint32_t blocks0 = len / (uint32_t)128U;
   for (uint32_t i = (uint32_t)0U; i < blocks0; i++)
   {
@@ -838,7 +838,7 @@ void Hacl_SHA2_Scalar32_sha512(uint8_t *h, uint32_t len, uint8_t *b)
   uint32_t fin = blocks * (uint32_t)128U;
   uint8_t last[256U] = { 0U };
   uint8_t totlen_buf[16U] = { 0U };
-  FStar_UInt128_uint128 total_len_bits = FStar_UInt128_shift_left(len_, (uint32_t)3U);
+  uint128_t total_len_bits = len_ << (uint32_t)3U;
   store128_be(totlen_buf, total_len_bits);
   uint8_t *b00 = lb;
   memcpy(last, b00, rem * sizeof (b00[0U]));
