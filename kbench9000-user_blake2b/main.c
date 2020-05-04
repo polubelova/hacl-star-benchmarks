@@ -95,6 +95,8 @@ declare_it(hacl_256_vec)
 declare_it(libsodium)
 declare_it(reference)
 declare_it(openssl_prov)
+declare_it(reference1)
+
 
 static int compare_cycles(const void *a, const void *b)
 {
@@ -113,6 +115,7 @@ static bool verify(void)
 	test_it(libsodium, {}, {});
 	test_it(reference, {}, {});
 	test_it(openssl_prov, {}, {});
+	test_it(reference1, {}, {});
 
 	return true;
 }
@@ -126,6 +129,8 @@ int main()
 	cycles_t median_libsodium[DOUBLING_STEPS+1];
 	cycles_t median_reference[DOUBLING_STEPS+1];
 	cycles_t median_openssl_prov[DOUBLING_STEPS+1];
+	cycles_t median_reference1[DOUBLING_STEPS+1];
+
 
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
@@ -142,6 +147,7 @@ int main()
 	do_it(hacl_256_vec);
 	do_it(libsodium);
 	do_it(reference);
+	do_it(reference1);
 	do_it(openssl_prov);
 
 
@@ -155,6 +161,7 @@ int main()
 	report_it(openssl_prov);
 	report_it(libsodium);
 	report_it(reference);
+	report_it(reference1);
 
 
 	/* Don't let compiler be too clever. */
