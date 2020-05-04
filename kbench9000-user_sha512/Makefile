@@ -1,4 +1,4 @@
-objs := main.o Hacl_SHA2.c sha2_openssl.c hash_sha512_cp.c
+objs := main.o Hacl_SHA2.c sha2_openssl.c hash_sha512_cp.c 
 
 CFLAGS += -O3 -g -march=native -mtune=native
 ASFLAGS += -O3 -g -march=native -mtune=native

@@ -281,7 +281,7 @@ crypto_hash_sha512(unsigned char *out, const unsigned char *in,
     return 0;
 }
 
-void sha512_nacl(uint8_t *input, uint32_t input_len, uint8_t *dst)
+void sha512_libsodium(uint8_t *input, uint32_t input_len, uint8_t *dst)
 {
   crypto_hash_sha512(dst, input, input_len);
 }
