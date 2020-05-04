@@ -1,4 +1,10 @@
 gcc -march=native -mtune=native -O3 -Wno-discarded-qualifiers -fomit-frame-pointer -fwrapv -fPIC -fPIE
+clang -march=native -mtune=native -O3 -fomit-frame-pointer -fwrapv -Qunused-arguments -fPIC -fPIE
 gcc-9 -march=native -mtune=native -O3 -Wno-discarded-qualifiers -fomit-frame-pointer -fwrapv -fPIC -fPIE
-clang-10 -march=native -O3 -fomit-frame-pointer -fwrapv -Qunused-arguments -fPIC -fPIE
-clang -march=native -O3 -fomit-frame-pointer -fwrapv -Qunused-arguments -fPIC -fPIE
+clang-10 -march=native -mtune=native -O3 -fomit-frame-pointer -fwrapv -Qunused-arguments -fPIC -fPIE
+gcc -march=native -mtune=native -O3 -Wno-discarded-qualifiers -fomit-frame-pointer -fwrapv -fPIC -fPIE -fno-tree-vectorize
+clang -march=native -mtune=native -O3 -fomit-frame-pointer -fwrapv -Qunused-arguments -fPIC -fPIE -fno-tree-vectorize
+gcc-9 -march=native -mtune=native -O3 -Wno-discarded-qualifiers -fomit-frame-pointer -fwrapv -fPIC -fPIE -fno-tree-vectorize
+clang-10 -march=native -mtune=native -O3 -fomit-frame-pointer -fwrapv -Qunused-arguments -fPIC -fPIE -fno-tree-vectorize
+gcc -march=armv8a+simd -mcpu=cortex-a72 -mtune=native -O3 -Wno-discarded-qualifiers -fomit-frame-pointer -fwrapv -fPIC -fPIE -fno-tree-vectorize
+clang -march=native -mcpu=cortex-a72 -mtune=native -O3 -fomit-frame-pointer -fwrapv -Qunused-arguments -fPIC -fPIE -fno-tree-vectorize
