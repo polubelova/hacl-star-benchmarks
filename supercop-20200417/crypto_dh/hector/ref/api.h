@@ -1,3 +1,0 @@
-#define crypto_dh_hector_ref_SECRETKEYBYTES 29 
-#define crypto_dh_hector_ref_PUBLICKEYBYTES 60
-#define crypto_dh_hector_ref_BYTES 60

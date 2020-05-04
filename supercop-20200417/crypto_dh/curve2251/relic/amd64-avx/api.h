@@ -1,4 +1,0 @@
-#define crypto_dh_curve2251_relic_amd64_avx_SECRETKEYBYTES 32
-#define crypto_dh_curve2251_relic_amd64_avx_PUBLICKEYBYTES 32
-#define crypto_dh_curve2251_relic_amd64_avx_BYTES 32
-

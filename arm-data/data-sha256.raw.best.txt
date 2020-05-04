@@ -1,4 +1,7 @@
-crypto_hash/sha256/sphlib-small clang 12.12
-crypto_hash/sha256/sphlib gcc 12.65
-crypto_hash/sha256/hacl_star/scalar gcc 17.26
-crypto_hash/sha256/hacl_star/sha256-mb4 clang 56.30
+crypto_hash/sha256/openssl-new/asm clang 2.01
+crypto_hash/sha256/openssl clang 2.01
+crypto_hash/sha256/sphlib-small clang 12.13
+crypto_hash/sha256/sphlib gcc 12.32
+crypto_hash/sha256/openssl-new/no-asm gcc 15.62
+crypto_hash/sha256/hacl_star/scalar gcc 17.40
+crypto_hash/sha256/hacl_star/sha256-mb4 clang 56.32
