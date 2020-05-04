@@ -108,7 +108,7 @@ declare_it(hacl32)
 declare_it(hacl128)
 declare_it(hacl256)
 declare_it(openssl)
-declare_it(jazz_avx2)
+declare_it(jasmin)
 declare_it(nacl)
 
 static int compare_cycles(const void *a, const void *b)
@@ -116,23 +116,24 @@ static int compare_cycles(const void *a, const void *b)
 	return *((cycles_t *)a) - *((cycles_t *)b);
 }
 
-// static bool verify(void)
-// {
-// 	int ret;
-// 	size_t i = 0;
-// 	u8 out[LEN];
+static bool verify(void)
+{
+	int ret;
+	size_t i = 0;
+	u8 out[123];
 
-// 	test_it(hacl, {}, {});
-// 	test_it(hacl32, {}, {});
-// 	test_it(hacl128, {}, {});
-// 	test_it(hacl256, {}, {});
-// 	test_it(openssl, {}, {});
-// 	test_it(nacl, {}, {});
-// 	// test_it(jazz_avx2, {}, {});
+	test_it(hacl, {}, {});
+	test_it(hacl32, {}, {});
+	test_it(hacl128, {}, {});
+	test_it(hacl256, {}, {});
+	test_it(openssl, {}, {});
+	test_it(nacl, {}, {});
+	test_it(jasmin, {}, {});
+	// test_it(jazz_avx2, {}, {});
 	
 
-// 	return true;
-// }
+	return true;
+}
 
 int main()
 {
@@ -145,13 +146,14 @@ int main()
 	cycles_t median_hacl256[DOUBLING_STEPS+1];
 	cycles_t median_openssl[DOUBLING_STEPS+1];
 	cycles_t median_nacl[DOUBLING_STEPS+1];
+	cycles_t median_jasmin[DOUBLING_STEPS+1];
 	// cycles_t median_jazz_avx2[DOUBLING_STEPS+1];
 
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
 
-	// if (!verify())
-	// 	return -1;
+	if (!verify())
+		return -1;
 
 	for (i = 0; i < sizeof(input_data); ++i)
 		input_data[i] = i;
@@ -164,6 +166,7 @@ int main()
 	do_it(hacl256);
 	do_it(openssl);
 	do_it(nacl);
+	do_it(jasmin);
 	// do_it(jazz_avx2);
 
 	fprintf(stderr,"%11s","");
@@ -177,6 +180,7 @@ int main()
 	report_it(hacl256);
 	report_it(openssl);
 	report_it(nacl);
+	report_it(jasmin);
 	// report_it(jazz_avx2);
 	
 
