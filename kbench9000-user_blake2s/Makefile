@@ -1,4 +1,4 @@
-objs := main.o Hacl_Blake2s_32.c Hacl_Blake2s_128.c blake2s_nacl.c blake2s_openssl.c blake2s_ref.c
+objs := main.o Hacl_Blake2s_32.c Hacl_Blake2s_128.c blake2s_nacl.c blake2s_openssl.c blake2s.c
 
 CC = gcc-9
 
