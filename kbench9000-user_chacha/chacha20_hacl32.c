@@ -290,7 +290,7 @@ Hacl_Chacha20_Vec32_chacha20_decrypt_32(
 
 
 
-void chacha20_hacl32(
+void chacha20_hacl_scalar(
   uint32_t len,
   uint8_t *out,
   uint8_t *text,

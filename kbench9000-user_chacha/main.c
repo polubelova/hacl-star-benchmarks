@@ -103,13 +103,13 @@ u8 input_key[KEY_LEN];
 u8 input_nonce[NONCE];
 u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 
-declare_it(hacl)
-declare_it(hacl32)
-declare_it(hacl128)
-declare_it(hacl256)
-declare_it(openssl)
+// declare_it(hacl)
+declare_it(hacl_scalar)
+declare_it(hacl_avx)
+declare_it(hacl_avx2)
+declare_it(openssl_prov)
 declare_it(jasmin)
-declare_it(nacl)
+declare_it(libsodium)
 
 static int compare_cycles(const void *a, const void *b)
 {
@@ -122,16 +122,13 @@ static bool verify(void)
 	size_t i = 0;
 	u8 out[123];
 
-	test_it(hacl, {}, {});
-	test_it(hacl32, {}, {});
-	test_it(hacl128, {}, {});
-	test_it(hacl256, {}, {});
-	test_it(openssl, {}, {});
-	test_it(nacl, {}, {});
+	test_it(hacl_scalar, {}, {});
+	test_it(hacl_avx, {}, {});
+	test_it(hacl_avx2, {}, {});
+	test_it(openssl_prov, {}, {});
+	test_it(libsodium, {}, {});
 	test_it(jasmin, {}, {});
-	// test_it(jazz_avx2, {}, {});
 	
-
 	return true;
 }
 
@@ -140,14 +137,12 @@ int main()
 	// u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 	size_t s;
 	int ret = 0, i, j;
-	cycles_t median_hacl[DOUBLING_STEPS+1];
-	cycles_t median_hacl32[DOUBLING_STEPS+1];
-	cycles_t median_hacl128[DOUBLING_STEPS+1];
-	cycles_t median_hacl256[DOUBLING_STEPS+1];
-	cycles_t median_openssl[DOUBLING_STEPS+1];
-	cycles_t median_nacl[DOUBLING_STEPS+1];
+	cycles_t median_hacl_scalar[DOUBLING_STEPS+1];
+	cycles_t median_hacl_avx[DOUBLING_STEPS+1];
+	cycles_t median_hacl_avx2[DOUBLING_STEPS+1];
+	cycles_t median_openssl_prov[DOUBLING_STEPS+1];
+	cycles_t median_libsodium[DOUBLING_STEPS+1];
 	cycles_t median_jasmin[DOUBLING_STEPS+1];
-	// cycles_t median_jazz_avx2[DOUBLING_STEPS+1];
 
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
@@ -160,28 +155,25 @@ int main()
 	for (i = 0; i < sizeof(input_key); ++i)
 		input_key[i] = i;
 
-	do_it(hacl);
-	do_it(hacl32);
-	do_it(hacl128);
-	do_it(hacl256);
-	do_it(openssl);
-	do_it(nacl);
+	do_it(hacl_scalar);
+	do_it(hacl_avx);
+	do_it(hacl_avx2);
+	do_it(openssl_prov);
+	do_it(libsodium);
 	do_it(jasmin);
-	// do_it(jazz_avx2);
+
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
 		fprintf(stderr, " \x1b[4m%6zu\x1b[24m", s);
 	fprintf(stderr,"\n");
 
-	report_it(hacl);
-	report_it(hacl32);
-	report_it(hacl128);
-	report_it(hacl256);
-	report_it(openssl);
-	report_it(nacl);
+	report_it(hacl_scalar);
+	report_it(hacl_avx);
+	report_it(hacl_avx2);
+	report_it(openssl_prov);
+	report_it(libsodium);
 	report_it(jasmin);
-	// report_it(jazz_avx2);
 	
 
 	/* Don't let compiler be too clever. */

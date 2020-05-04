@@ -132,7 +132,7 @@ void ChaCha20_ctr32(unsigned char *out, const unsigned char *inp,
 }
 
 
-void chacha20_openssl(
+void chacha20_openssl_prov(
   uint32_t len,
   uint8_t *out,
   uint8_t *text,

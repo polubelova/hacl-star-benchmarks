@@ -1,6 +1,6 @@
 #include <sodium.h>
 
-void chacha20_nacl(
+void chacha20_libsodium(
   uint32_t len,
   uint8_t *out,
   uint8_t *text,
