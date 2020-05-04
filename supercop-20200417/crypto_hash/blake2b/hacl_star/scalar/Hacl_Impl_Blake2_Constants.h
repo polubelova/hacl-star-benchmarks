@@ -21,12 +21,11 @@
  * SOFTWARE.
  */
 
-#include "kremlin/internal/types.h"
-#include "kremlin/lowstar_endianness.h"
+
 #include <string.h>
-#include "kremlin/internal/target.h"
+#include <inttypes.h>
+#include "lowstar_endianness.h"
 #include <stdbool.h>
-#include "libintvector.h"
 
 #ifndef __Hacl_Impl_Blake2_Constants_H
 #define __Hacl_Impl_Blake2_Constants_H
@@ -96,3 +95,4 @@ Hacl_Impl_Blake2_Constants_rTable_B[4U] =
 
 #define __Hacl_Impl_Blake2_Constants_H_DEFINED
 #endif
+
