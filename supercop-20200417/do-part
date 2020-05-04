@@ -451,7 +451,8 @@ do
 	    done
 
 	    [ "$ok" = 1 ] || continue
-	    okar-$abi cr "$op.a" *.o || continue
+	    okar-$abi crT "$op.a" *.o `(find . -maxdepth 1 -type f -name "*.a")` || continue
+	    #okar-$abi cr "$op.a" *.o || continue
 	    ranlib "$op.a"
 
 	    killafter 300 \
