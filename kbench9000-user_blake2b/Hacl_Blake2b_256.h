@@ -21,19 +21,22 @@
  * SOFTWARE.
  */
 
-#include "types.h"
-#include "lowstar_endianness.h"
-#include <string.h>
-#include "target.h"
-#include <stdbool.h>
 #include "libintvector.h"
+#include <string.h>
+#include <inttypes.h>
+#include "lowstar_endianness.h"
+#include <stdbool.h>
+#include "stdint.h"
+
+typedef unsigned __int128 FStar_UInt128_uint128;
+typedef FStar_UInt128_uint128 FStar_UInt128_t, uint128_t;
+
+#define KRML_CHECK_SIZE(a,b) {}
 
 #ifndef __Hacl_Blake2b_256_H
 #define __Hacl_Blake2b_256_H
 
-#include "kremlib.h"
 #include "Hacl_Impl_Blake2_Constants.h"
-
 
 typedef struct K___uint32_t_uint32_t_s
 {
@@ -41,6 +44,7 @@ typedef struct K___uint32_t_uint32_t_s
   uint32_t snd;
 }
 K___uint32_t_uint32_t;
+
 
 void
 Hacl_Blake2b_256_blake2b(
