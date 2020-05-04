@@ -1,5 +1,8 @@
 objs := main.o Hacl_SHA2.c sha2_openssl.c hash_sha512_cp.c 
 
+
+CC = gcc-9
+
 CFLAGS += -O3 -g -march=native -mtune=native
 ASFLAGS += -O3 -g -march=native -mtune=native
 # blake2b_hacl.o: CFLAGS +=
