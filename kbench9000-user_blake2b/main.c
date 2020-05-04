@@ -27,6 +27,7 @@ typedef unsigned long long cycles_t;
 
 int dummy;
 
+
 #include "test_vectors.h"
 
 static __inline__ cycles_t get_cycles(void)
@@ -41,8 +42,9 @@ static __inline__ cycles_t get_cycles(void)
 void blake2b_ ## name(const u32 nn,  u8 *output, const u32 ll, const u8 *d, const u32 kk, const u8 *k); \
 static inline int name(size_t len) \
 { \
-	blake2b_ ## name(44, dummy_out, 64, input_data, 64, input_key); \
+	blake2b_ ## name(64, dummy_out, len, input_data, 0, NULL); \
 }
+
 
 #define do_it(name) do { \
 	for (i = 0; i < WARMUP; ++i) \
@@ -58,6 +60,23 @@ static inline int name(size_t len) \
 		median_ ## name[j] = trial_times[TRIALS/2]; \
 	} \
 } while (0)
+
+
+// #define do_it(name) do { \
+// 	for (i = 0; i < WARMUP; ++i) \
+// 		ret |= name(sizeof(input_data)); \
+// 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) { \
+// 	        trial_times[0] = get_cycles(); \
+// 		for (i = 1; i <= TRIALS; ++i) { \
+// 			ret |= name(s); \
+// 		        trial_times[i] = get_cycles(); } \
+// 		for (i = 0; i < TRIALS; ++i) \
+// 		        trial_times[i] = trial_times[i+1] - trial_times[i]; \
+// 		qsort(trial_times, TRIALS, sizeof(cycles_t), compare_cycles); \
+// 		median_ ## name[j] = trial_times[TRIALS/2]; \
+// 	} \
+// } while (0)
+
 
 #define test_it(name, before, after) do { \
 	memset(out, __LINE__, vectors2b[i].expected_len); \
@@ -79,6 +98,8 @@ static inline int name(size_t len) \
 	} \
 	fprintf(stderr, "\n"); \
 } while (0)
+
+
 
 enum { WARMUP = 50000, TRIALS = 10000, IDLE = 1 * 1000, STARTING_SIZE = 1024, DOUBLING_STEPS = 5 };
 u8 dummy_out[1000];
