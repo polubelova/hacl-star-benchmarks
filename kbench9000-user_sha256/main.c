@@ -82,9 +82,9 @@ u8 dummy_out[1000];
 u8 input_key[1000];
 u8 input_data[1000 * (1ULL << DOUBLING_STEPS)];
 
-declare_it(hacl)
+declare_it(hacl_scalar)
 declare_it(openssl)
-declare_it(nacl)
+declare_it(libsodium)
 // declare_it(ref)
 
 static int compare_cycles(const void *a, const void *b)
@@ -99,9 +99,9 @@ static bool verify(void)
 	u8 out[1000];
 
 	// NB: Test is done using only one test vector, so I deleted the loop
-	test_it(hacl, {}, {});
+	test_it(hacl_scalar, {}, {});
 	test_it(openssl, {}, {});
-	test_it(nacl, {}, {});
+	test_it(libsodium, {}, {});
 	// test_it(ref, {}, {});
 
 	return true;
@@ -111,9 +111,9 @@ int main()
 {
 	size_t s;
 	int ret = 0, i, j;
-	cycles_t median_hacl[DOUBLING_STEPS+1];
+	cycles_t median_hacl_scalar[DOUBLING_STEPS+1];
 	cycles_t median_openssl[DOUBLING_STEPS+1];
-	cycles_t median_nacl[DOUBLING_STEPS+1];
+	cycles_t median_libsodium[DOUBLING_STEPS+1];
 
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
@@ -126,9 +126,9 @@ int main()
 	for (i = 0; i < sizeof(input_key); ++i)
 		input_key[i] = i;
 
-	do_it(hacl);
+	do_it(hacl_scalar);
 	do_it(openssl);
-	do_it(nacl);
+	do_it(libsodium);
 	// do_it(ref);
 
 	fprintf(stderr,"%11s","");
@@ -136,9 +136,9 @@ int main()
 		fprintf(stderr, " \x1b[4m%6zu\x1b[24m", s);
 	fprintf(stderr,"\n");
 
-	report_it(hacl);
+	report_it(hacl_scalar);
 	report_it(openssl);
-	report_it(nacl);
+	report_it(libsodium);
 	// report_it(ref);
 
 	/* Don't let compiler be too clever. */

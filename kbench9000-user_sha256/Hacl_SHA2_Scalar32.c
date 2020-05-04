@@ -390,7 +390,7 @@ void Hacl_SHA2_Scalar32_sha512(uint8_t *h, uint32_t len, uint8_t *b)
 
 
 
-void sha2_hacl(uint8_t *input, uint32_t input_len, uint8_t *dst)
+void sha2_hacl_scalar(uint8_t *input, uint32_t input_len, uint8_t *dst)
 {
   Hacl_SHA2_Scalar32_sha256(dst, input_len, input);
 }

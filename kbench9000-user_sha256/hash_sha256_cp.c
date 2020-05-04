@@ -255,7 +255,7 @@ crypto_hash_sha256(unsigned char *out, const unsigned char *in,
 
 
 
-void sha2_nacl(uint8_t *input, uint32_t input_len, uint8_t *dst)
+void sha2_libsodium(uint8_t *input, uint32_t input_len, uint8_t *dst)
 {
   crypto_hash_sha256(dst, input, input_len);
 }
