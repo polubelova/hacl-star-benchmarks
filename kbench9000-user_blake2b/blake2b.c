@@ -374,7 +374,7 @@ fail:
 
 
 void
-blake2b_reference1(
+blake2b_reference(
   uint32_t nn,
   uint8_t *output,
   uint32_t ll,

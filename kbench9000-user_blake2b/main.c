@@ -93,9 +93,11 @@ u8 input_data[1000 * (1ULL << DOUBLING_STEPS)];
 declare_it(hacl_scalar)
 declare_it(hacl_256_vec)
 declare_it(libsodium)
-declare_it(reference)
+// declare_it(reference)
 declare_it(openssl_prov)
-declare_it(reference1)
+declare_it(reference)
+// declare_it(optimized_reference)
+// declare_it(optimized)
 
 
 static int compare_cycles(const void *a, const void *b)
@@ -113,9 +115,12 @@ static bool verify(void)
 	test_it(hacl_scalar, {}, {});
 	test_it(hacl_256_vec, {}, {});
 	test_it(libsodium, {}, {});
-	test_it(reference, {}, {});
+	// test_it(reference, {}, {});
 	test_it(openssl_prov, {}, {});
-	test_it(reference1, {}, {});
+	test_it(reference, {}, {});
+	// test_it(optimized, {}, {});
+	// test_it(optimized_reference, {}, {});
+	
 
 	return true;
 }
@@ -127,10 +132,11 @@ int main()
 	cycles_t median_hacl_scalar[DOUBLING_STEPS+1];
 	cycles_t median_hacl_256_vec[DOUBLING_STEPS+1];
 	cycles_t median_libsodium[DOUBLING_STEPS+1];
-	cycles_t median_reference[DOUBLING_STEPS+1];
+	// cycles_t median_reference[DOUBLING_STEPS+1];
 	cycles_t median_openssl_prov[DOUBLING_STEPS+1];
-	cycles_t median_reference1[DOUBLING_STEPS+1];
-
+	cycles_t median_reference[DOUBLING_STEPS+1];
+	// cycles_t median_optimized_reference[DOUBLING_STEPS+1];
+	// cycles_t median_optimized[DOUBLING_STEPS+1];
 
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
@@ -147,8 +153,10 @@ int main()
 	do_it(hacl_256_vec);
 	do_it(libsodium);
 	do_it(reference);
-	do_it(reference1);
+	// do_it(reference1>);
 	do_it(openssl_prov);
+	// do_it(optimized_reference);
+	// do_it(optimized);
 
 
 	fprintf(stderr,"%11s","");
@@ -161,7 +169,9 @@ int main()
 	report_it(openssl_prov);
 	report_it(libsodium);
 	report_it(reference);
-	report_it(reference1);
+	// report_it(reference1);
+	// report_it(optimized_reference);
+	// report_it(optimized);
 
 
 	/* Don't let compiler be too clever. */
