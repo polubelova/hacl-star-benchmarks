@@ -1,0 +1,16 @@
+12.12, crypto_hash/sha256/sphlib-small  clang
+12.15, crypto_hash/sha256/sphlib-small  clang
+12.65, crypto_hash/sha256/sphlib  gcc
+12.66, crypto_hash/sha256/sphlib  gcc
+12.70, crypto_hash/sha256/sphlib-small  gcc
+13.17, crypto_hash/sha256/sphlib-small  gcc
+13.95, crypto_hash/sha256/sphlib  clang
+14.23, crypto_hash/sha256/sphlib  clang
+17.26, crypto_hash/sha256/hacl_star/scalar  gcc
+17.79, crypto_hash/sha256/hacl_star/scalar  gcc
+23.55, crypto_hash/sha256/hacl_star/scalar  clang
+23.65, crypto_hash/sha256/hacl_star/scalar  clang
+56.30, crypto_hash/sha256/hacl_star/sha256-mb4  clang
+56.32, crypto_hash/sha256/hacl_star/sha256-mb4  clang
+65.34, crypto_hash/sha256/hacl_star/sha256-mb4  gcc
+66.30, crypto_hash/sha256/hacl_star/sha256-mb4  gcc

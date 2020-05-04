@@ -1,0 +1,16 @@
+11.67, crypto_hash/blake2b/blake2_reference/neon  clang
+11.79, crypto_hash/blake2b/blake2_reference/neon  clang
+12.78, crypto_hash/blake2b/blake2_reference/neon  gcc
+12.82, crypto_hash/blake2b/blake2_reference/neon  gcc
+5.46, crypto_hash/blake2b/regs  gcc
+5.47, crypto_hash/blake2b/regs  gcc
+5.80, crypto_hash/blake2b/regs  clang
+5.85, crypto_hash/blake2b/regs  clang
+6.68, crypto_hash/blake2b/ref  gcc
+6.70, crypto_hash/blake2b/ref  gcc
+7.33, crypto_hash/blake2b/ref  clang
+7.33, crypto_hash/blake2b/ref  clang
+9.47, crypto_hash/blake2b/hacl_star/scalar  clang
+9.48, crypto_hash/blake2b/hacl_star/scalar  clang
+9.51, crypto_hash/blake2b/hacl_star/scalar  gcc
+9.54, crypto_hash/blake2b/hacl_star/scalar  gcc

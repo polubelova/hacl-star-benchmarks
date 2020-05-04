@@ -1,0 +1,8 @@
+10.61, crypto_hash/sha512/sphlib  clang
+10.66, crypto_hash/sha512/sphlib-small  clang
+10.72, crypto_hash/sha512/sphlib-small  clang
+10.83, crypto_hash/sha512/sphlib  clang
+13.53, crypto_hash/sha512/sphlib  gcc
+13.53, crypto_hash/sha512/sphlib-small  gcc
+17.97, crypto_hash/sha512/sphlib-small  gcc
+18.03, crypto_hash/sha512/sphlib  gcc
