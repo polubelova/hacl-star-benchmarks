@@ -24,7 +24,7 @@
 
 #include "Hacl_SHA2.h"
 #include "kbench-common.h"
-#include "FStar_UInt128_Verified.h"
+// #include "FStar_UInt128_Verified.h"
 #include "kremlib.h"
 #include "target.h"
 #include "LowStar_Endianness.h"
@@ -33,14 +33,10 @@
 
 // // static inline void store128_be(uint8_t *x0, FStar_UInt128_uint128 x1);
 
-static void store128_be(uint8_t *b, FStar_UInt128_uint128 n) {
-  // uint64_t l = FStar_UInt128_uint128_to_uint64 (n);
-
-  store64_be(b, FStar_UInt128_uint128_to_uint64(n) >> 64);
-  store64_be(b + 8, FStar_UInt128_uint128_to_uint64 (n));
-
+inline static void store128_be(uint8_t *b, uint128_t n) {
+  store64_be(b, (uint64_t)(n >> 64));
+  store64_be(b + 8, (uint64_t)n);
 }
-
 
 void Hacl_Hash_SHA2_update_multi_224(uint32_t *s, uint8_t *blocks, uint32_t n_blocks)
 {

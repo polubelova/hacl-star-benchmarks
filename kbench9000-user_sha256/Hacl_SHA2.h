@@ -30,8 +30,10 @@
 #define __Hacl_SHA2_H
 
 // #include "kremlib.h"
-#include "Hacl_Spec.h"
 
+#include "Hacl_Spec.h"
+typedef unsigned __int128 FStar_UInt128_uint128;
+typedef FStar_UInt128_uint128 FStar_UInt128_t, uint128_t;
 
 void Hacl_Hash_SHA2_update_multi_224(uint32_t *s, uint8_t *blocks, uint32_t n_blocks);
 
