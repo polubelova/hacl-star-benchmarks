@@ -256,11 +256,10 @@ sha512_update8(
   ws[13U] = ws13;
   ws[14U] = ws14;
   ws[15U] = ws15;
-  for (uint32_t i0 = (uint32_t)0U; i0 < (uint32_t)5U; i0++)
   {
     for (uint32_t i = (uint32_t)0U; i < (uint32_t)16U; i++)
     {
-      uint64_t k_t = Hacl_Impl_SHA2_Generic_k384_512[(uint32_t)16U * i0 + i];
+      uint64_t k_t = Hacl_Impl_SHA2_Generic_k384_512[(uint32_t)16U * (uint32_t)0U + i];
       Lib_IntVector_Intrinsics_vec512 ws_t = ws[i];
       Lib_IntVector_Intrinsics_vec512 a0 = hash[0U];
       Lib_IntVector_Intrinsics_vec512 b0 = hash[1U];
@@ -318,7 +317,387 @@ sha512_update8(
       hash[6U] = g1;
       hash[7U] = h12;
     }
-    if (i0 < (uint32_t)5U - (uint32_t)1U)
+    if ((uint32_t)0U < (uint32_t)5U - (uint32_t)1U)
+    {
+      for (uint32_t i = (uint32_t)0U; i < (uint32_t)16U; i++)
+      {
+        Lib_IntVector_Intrinsics_vec512 t16 = ws[i];
+        Lib_IntVector_Intrinsics_vec512 t15 = ws[(i + (uint32_t)1U) % (uint32_t)16U];
+        Lib_IntVector_Intrinsics_vec512 t7 = ws[(i + (uint32_t)9U) % (uint32_t)16U];
+        Lib_IntVector_Intrinsics_vec512 t2 = ws[(i + (uint32_t)14U) % (uint32_t)16U];
+        Lib_IntVector_Intrinsics_vec512
+        s1 =
+          Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t2,
+                (uint32_t)64U - (uint32_t)19U),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t2, (uint32_t)19U)),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t2,
+                  (uint32_t)64U - (uint32_t)61U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(t2, (uint32_t)61U)),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t2, (uint32_t)6U)));
+        Lib_IntVector_Intrinsics_vec512
+        s0 =
+          Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t15,
+                (uint32_t)64U - (uint32_t)1U),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t15, (uint32_t)1U)),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t15,
+                  (uint32_t)64U - (uint32_t)8U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(t15, (uint32_t)8U)),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t15, (uint32_t)7U)));
+        ws[i] =
+          Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(s1,
+                t7),
+              s0),
+            t16);
+      }
+    }
+  }
+  {
+    for (uint32_t i = (uint32_t)0U; i < (uint32_t)16U; i++)
+    {
+      uint64_t k_t = Hacl_Impl_SHA2_Generic_k384_512[(uint32_t)16U * (uint32_t)1U + i];
+      Lib_IntVector_Intrinsics_vec512 ws_t = ws[i];
+      Lib_IntVector_Intrinsics_vec512 a0 = hash[0U];
+      Lib_IntVector_Intrinsics_vec512 b0 = hash[1U];
+      Lib_IntVector_Intrinsics_vec512 c0 = hash[2U];
+      Lib_IntVector_Intrinsics_vec512 d0 = hash[3U];
+      Lib_IntVector_Intrinsics_vec512 e0 = hash[4U];
+      Lib_IntVector_Intrinsics_vec512 f0 = hash[5U];
+      Lib_IntVector_Intrinsics_vec512 g0 = hash[6U];
+      Lib_IntVector_Intrinsics_vec512 h02 = hash[7U];
+      Lib_IntVector_Intrinsics_vec512 k_e_t = Lib_IntVector_Intrinsics_vec512_load64(k_t);
+      Lib_IntVector_Intrinsics_vec512
+      t1 =
+        Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(h02,
+                Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(e0,
+                      (uint32_t)64U - (uint32_t)14U),
+                    Lib_IntVector_Intrinsics_vec512_shift_right64(e0, (uint32_t)14U)),
+                  Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(e0,
+                        (uint32_t)64U - (uint32_t)18U),
+                      Lib_IntVector_Intrinsics_vec512_shift_right64(e0, (uint32_t)18U)),
+                    Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(e0,
+                        (uint32_t)64U - (uint32_t)41U),
+                      Lib_IntVector_Intrinsics_vec512_shift_right64(e0, (uint32_t)41U))))),
+              Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_and(e0, f0),
+                Lib_IntVector_Intrinsics_vec512_and(Lib_IntVector_Intrinsics_vec512_lognot(e0), g0))),
+            k_e_t),
+          ws_t);
+      Lib_IntVector_Intrinsics_vec512
+      t2 =
+        Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(a0,
+                (uint32_t)64U - (uint32_t)28U),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(a0, (uint32_t)28U)),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(a0,
+                  (uint32_t)64U - (uint32_t)34U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(a0, (uint32_t)34U)),
+              Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(a0,
+                  (uint32_t)64U - (uint32_t)39U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(a0, (uint32_t)39U)))),
+          Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_and(a0, b0),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_and(a0, c0),
+              Lib_IntVector_Intrinsics_vec512_and(b0, c0))));
+      Lib_IntVector_Intrinsics_vec512 a1 = Lib_IntVector_Intrinsics_vec512_add64(t1, t2);
+      Lib_IntVector_Intrinsics_vec512 b1 = a0;
+      Lib_IntVector_Intrinsics_vec512 c1 = b0;
+      Lib_IntVector_Intrinsics_vec512 d1 = c0;
+      Lib_IntVector_Intrinsics_vec512 e1 = Lib_IntVector_Intrinsics_vec512_add64(d0, t1);
+      Lib_IntVector_Intrinsics_vec512 f1 = e0;
+      Lib_IntVector_Intrinsics_vec512 g1 = f0;
+      Lib_IntVector_Intrinsics_vec512 h12 = g0;
+      hash[0U] = a1;
+      hash[1U] = b1;
+      hash[2U] = c1;
+      hash[3U] = d1;
+      hash[4U] = e1;
+      hash[5U] = f1;
+      hash[6U] = g1;
+      hash[7U] = h12;
+    }
+    if ((uint32_t)1U < (uint32_t)5U - (uint32_t)1U)
+    {
+      for (uint32_t i = (uint32_t)0U; i < (uint32_t)16U; i++)
+      {
+        Lib_IntVector_Intrinsics_vec512 t16 = ws[i];
+        Lib_IntVector_Intrinsics_vec512 t15 = ws[(i + (uint32_t)1U) % (uint32_t)16U];
+        Lib_IntVector_Intrinsics_vec512 t7 = ws[(i + (uint32_t)9U) % (uint32_t)16U];
+        Lib_IntVector_Intrinsics_vec512 t2 = ws[(i + (uint32_t)14U) % (uint32_t)16U];
+        Lib_IntVector_Intrinsics_vec512
+        s1 =
+          Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t2,
+                (uint32_t)64U - (uint32_t)19U),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t2, (uint32_t)19U)),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t2,
+                  (uint32_t)64U - (uint32_t)61U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(t2, (uint32_t)61U)),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t2, (uint32_t)6U)));
+        Lib_IntVector_Intrinsics_vec512
+        s0 =
+          Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t15,
+                (uint32_t)64U - (uint32_t)1U),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t15, (uint32_t)1U)),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t15,
+                  (uint32_t)64U - (uint32_t)8U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(t15, (uint32_t)8U)),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t15, (uint32_t)7U)));
+        ws[i] =
+          Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(s1,
+                t7),
+              s0),
+            t16);
+      }
+    }
+  }
+  {
+    for (uint32_t i = (uint32_t)0U; i < (uint32_t)16U; i++)
+    {
+      uint64_t k_t = Hacl_Impl_SHA2_Generic_k384_512[(uint32_t)16U * (uint32_t)2U + i];
+      Lib_IntVector_Intrinsics_vec512 ws_t = ws[i];
+      Lib_IntVector_Intrinsics_vec512 a0 = hash[0U];
+      Lib_IntVector_Intrinsics_vec512 b0 = hash[1U];
+      Lib_IntVector_Intrinsics_vec512 c0 = hash[2U];
+      Lib_IntVector_Intrinsics_vec512 d0 = hash[3U];
+      Lib_IntVector_Intrinsics_vec512 e0 = hash[4U];
+      Lib_IntVector_Intrinsics_vec512 f0 = hash[5U];
+      Lib_IntVector_Intrinsics_vec512 g0 = hash[6U];
+      Lib_IntVector_Intrinsics_vec512 h02 = hash[7U];
+      Lib_IntVector_Intrinsics_vec512 k_e_t = Lib_IntVector_Intrinsics_vec512_load64(k_t);
+      Lib_IntVector_Intrinsics_vec512
+      t1 =
+        Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(h02,
+                Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(e0,
+                      (uint32_t)64U - (uint32_t)14U),
+                    Lib_IntVector_Intrinsics_vec512_shift_right64(e0, (uint32_t)14U)),
+                  Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(e0,
+                        (uint32_t)64U - (uint32_t)18U),
+                      Lib_IntVector_Intrinsics_vec512_shift_right64(e0, (uint32_t)18U)),
+                    Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(e0,
+                        (uint32_t)64U - (uint32_t)41U),
+                      Lib_IntVector_Intrinsics_vec512_shift_right64(e0, (uint32_t)41U))))),
+              Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_and(e0, f0),
+                Lib_IntVector_Intrinsics_vec512_and(Lib_IntVector_Intrinsics_vec512_lognot(e0), g0))),
+            k_e_t),
+          ws_t);
+      Lib_IntVector_Intrinsics_vec512
+      t2 =
+        Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(a0,
+                (uint32_t)64U - (uint32_t)28U),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(a0, (uint32_t)28U)),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(a0,
+                  (uint32_t)64U - (uint32_t)34U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(a0, (uint32_t)34U)),
+              Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(a0,
+                  (uint32_t)64U - (uint32_t)39U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(a0, (uint32_t)39U)))),
+          Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_and(a0, b0),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_and(a0, c0),
+              Lib_IntVector_Intrinsics_vec512_and(b0, c0))));
+      Lib_IntVector_Intrinsics_vec512 a1 = Lib_IntVector_Intrinsics_vec512_add64(t1, t2);
+      Lib_IntVector_Intrinsics_vec512 b1 = a0;
+      Lib_IntVector_Intrinsics_vec512 c1 = b0;
+      Lib_IntVector_Intrinsics_vec512 d1 = c0;
+      Lib_IntVector_Intrinsics_vec512 e1 = Lib_IntVector_Intrinsics_vec512_add64(d0, t1);
+      Lib_IntVector_Intrinsics_vec512 f1 = e0;
+      Lib_IntVector_Intrinsics_vec512 g1 = f0;
+      Lib_IntVector_Intrinsics_vec512 h12 = g0;
+      hash[0U] = a1;
+      hash[1U] = b1;
+      hash[2U] = c1;
+      hash[3U] = d1;
+      hash[4U] = e1;
+      hash[5U] = f1;
+      hash[6U] = g1;
+      hash[7U] = h12;
+    }
+    if ((uint32_t)2U < (uint32_t)5U - (uint32_t)1U)
+    {
+      for (uint32_t i = (uint32_t)0U; i < (uint32_t)16U; i++)
+      {
+        Lib_IntVector_Intrinsics_vec512 t16 = ws[i];
+        Lib_IntVector_Intrinsics_vec512 t15 = ws[(i + (uint32_t)1U) % (uint32_t)16U];
+        Lib_IntVector_Intrinsics_vec512 t7 = ws[(i + (uint32_t)9U) % (uint32_t)16U];
+        Lib_IntVector_Intrinsics_vec512 t2 = ws[(i + (uint32_t)14U) % (uint32_t)16U];
+        Lib_IntVector_Intrinsics_vec512
+        s1 =
+          Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t2,
+                (uint32_t)64U - (uint32_t)19U),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t2, (uint32_t)19U)),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t2,
+                  (uint32_t)64U - (uint32_t)61U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(t2, (uint32_t)61U)),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t2, (uint32_t)6U)));
+        Lib_IntVector_Intrinsics_vec512
+        s0 =
+          Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t15,
+                (uint32_t)64U - (uint32_t)1U),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t15, (uint32_t)1U)),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t15,
+                  (uint32_t)64U - (uint32_t)8U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(t15, (uint32_t)8U)),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t15, (uint32_t)7U)));
+        ws[i] =
+          Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(s1,
+                t7),
+              s0),
+            t16);
+      }
+    }
+  }
+  {
+    for (uint32_t i = (uint32_t)0U; i < (uint32_t)16U; i++)
+    {
+      uint64_t k_t = Hacl_Impl_SHA2_Generic_k384_512[(uint32_t)16U * (uint32_t)3U + i];
+      Lib_IntVector_Intrinsics_vec512 ws_t = ws[i];
+      Lib_IntVector_Intrinsics_vec512 a0 = hash[0U];
+      Lib_IntVector_Intrinsics_vec512 b0 = hash[1U];
+      Lib_IntVector_Intrinsics_vec512 c0 = hash[2U];
+      Lib_IntVector_Intrinsics_vec512 d0 = hash[3U];
+      Lib_IntVector_Intrinsics_vec512 e0 = hash[4U];
+      Lib_IntVector_Intrinsics_vec512 f0 = hash[5U];
+      Lib_IntVector_Intrinsics_vec512 g0 = hash[6U];
+      Lib_IntVector_Intrinsics_vec512 h02 = hash[7U];
+      Lib_IntVector_Intrinsics_vec512 k_e_t = Lib_IntVector_Intrinsics_vec512_load64(k_t);
+      Lib_IntVector_Intrinsics_vec512
+      t1 =
+        Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(h02,
+                Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(e0,
+                      (uint32_t)64U - (uint32_t)14U),
+                    Lib_IntVector_Intrinsics_vec512_shift_right64(e0, (uint32_t)14U)),
+                  Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(e0,
+                        (uint32_t)64U - (uint32_t)18U),
+                      Lib_IntVector_Intrinsics_vec512_shift_right64(e0, (uint32_t)18U)),
+                    Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(e0,
+                        (uint32_t)64U - (uint32_t)41U),
+                      Lib_IntVector_Intrinsics_vec512_shift_right64(e0, (uint32_t)41U))))),
+              Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_and(e0, f0),
+                Lib_IntVector_Intrinsics_vec512_and(Lib_IntVector_Intrinsics_vec512_lognot(e0), g0))),
+            k_e_t),
+          ws_t);
+      Lib_IntVector_Intrinsics_vec512
+      t2 =
+        Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(a0,
+                (uint32_t)64U - (uint32_t)28U),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(a0, (uint32_t)28U)),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(a0,
+                  (uint32_t)64U - (uint32_t)34U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(a0, (uint32_t)34U)),
+              Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(a0,
+                  (uint32_t)64U - (uint32_t)39U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(a0, (uint32_t)39U)))),
+          Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_and(a0, b0),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_and(a0, c0),
+              Lib_IntVector_Intrinsics_vec512_and(b0, c0))));
+      Lib_IntVector_Intrinsics_vec512 a1 = Lib_IntVector_Intrinsics_vec512_add64(t1, t2);
+      Lib_IntVector_Intrinsics_vec512 b1 = a0;
+      Lib_IntVector_Intrinsics_vec512 c1 = b0;
+      Lib_IntVector_Intrinsics_vec512 d1 = c0;
+      Lib_IntVector_Intrinsics_vec512 e1 = Lib_IntVector_Intrinsics_vec512_add64(d0, t1);
+      Lib_IntVector_Intrinsics_vec512 f1 = e0;
+      Lib_IntVector_Intrinsics_vec512 g1 = f0;
+      Lib_IntVector_Intrinsics_vec512 h12 = g0;
+      hash[0U] = a1;
+      hash[1U] = b1;
+      hash[2U] = c1;
+      hash[3U] = d1;
+      hash[4U] = e1;
+      hash[5U] = f1;
+      hash[6U] = g1;
+      hash[7U] = h12;
+    }
+    if ((uint32_t)3U < (uint32_t)5U - (uint32_t)1U)
+    {
+      for (uint32_t i = (uint32_t)0U; i < (uint32_t)16U; i++)
+      {
+        Lib_IntVector_Intrinsics_vec512 t16 = ws[i];
+        Lib_IntVector_Intrinsics_vec512 t15 = ws[(i + (uint32_t)1U) % (uint32_t)16U];
+        Lib_IntVector_Intrinsics_vec512 t7 = ws[(i + (uint32_t)9U) % (uint32_t)16U];
+        Lib_IntVector_Intrinsics_vec512 t2 = ws[(i + (uint32_t)14U) % (uint32_t)16U];
+        Lib_IntVector_Intrinsics_vec512
+        s1 =
+          Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t2,
+                (uint32_t)64U - (uint32_t)19U),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t2, (uint32_t)19U)),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t2,
+                  (uint32_t)64U - (uint32_t)61U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(t2, (uint32_t)61U)),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t2, (uint32_t)6U)));
+        Lib_IntVector_Intrinsics_vec512
+        s0 =
+          Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t15,
+                (uint32_t)64U - (uint32_t)1U),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t15, (uint32_t)1U)),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(t15,
+                  (uint32_t)64U - (uint32_t)8U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(t15, (uint32_t)8U)),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(t15, (uint32_t)7U)));
+        ws[i] =
+          Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(s1,
+                t7),
+              s0),
+            t16);
+      }
+    }
+  }
+  {
+    for (uint32_t i = (uint32_t)0U; i < (uint32_t)16U; i++)
+    {
+      uint64_t k_t = Hacl_Impl_SHA2_Generic_k384_512[(uint32_t)16U * (uint32_t)4U + i];
+      Lib_IntVector_Intrinsics_vec512 ws_t = ws[i];
+      Lib_IntVector_Intrinsics_vec512 a0 = hash[0U];
+      Lib_IntVector_Intrinsics_vec512 b0 = hash[1U];
+      Lib_IntVector_Intrinsics_vec512 c0 = hash[2U];
+      Lib_IntVector_Intrinsics_vec512 d0 = hash[3U];
+      Lib_IntVector_Intrinsics_vec512 e0 = hash[4U];
+      Lib_IntVector_Intrinsics_vec512 f0 = hash[5U];
+      Lib_IntVector_Intrinsics_vec512 g0 = hash[6U];
+      Lib_IntVector_Intrinsics_vec512 h02 = hash[7U];
+      Lib_IntVector_Intrinsics_vec512 k_e_t = Lib_IntVector_Intrinsics_vec512_load64(k_t);
+      Lib_IntVector_Intrinsics_vec512
+      t1 =
+        Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_add64(h02,
+                Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(e0,
+                      (uint32_t)64U - (uint32_t)14U),
+                    Lib_IntVector_Intrinsics_vec512_shift_right64(e0, (uint32_t)14U)),
+                  Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(e0,
+                        (uint32_t)64U - (uint32_t)18U),
+                      Lib_IntVector_Intrinsics_vec512_shift_right64(e0, (uint32_t)18U)),
+                    Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(e0,
+                        (uint32_t)64U - (uint32_t)41U),
+                      Lib_IntVector_Intrinsics_vec512_shift_right64(e0, (uint32_t)41U))))),
+              Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_and(e0, f0),
+                Lib_IntVector_Intrinsics_vec512_and(Lib_IntVector_Intrinsics_vec512_lognot(e0), g0))),
+            k_e_t),
+          ws_t);
+      Lib_IntVector_Intrinsics_vec512
+      t2 =
+        Lib_IntVector_Intrinsics_vec512_add64(Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(a0,
+                (uint32_t)64U - (uint32_t)28U),
+              Lib_IntVector_Intrinsics_vec512_shift_right64(a0, (uint32_t)28U)),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(a0,
+                  (uint32_t)64U - (uint32_t)34U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(a0, (uint32_t)34U)),
+              Lib_IntVector_Intrinsics_vec512_or(Lib_IntVector_Intrinsics_vec512_shift_left64(a0,
+                  (uint32_t)64U - (uint32_t)39U),
+                Lib_IntVector_Intrinsics_vec512_shift_right64(a0, (uint32_t)39U)))),
+          Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_and(a0, b0),
+            Lib_IntVector_Intrinsics_vec512_xor(Lib_IntVector_Intrinsics_vec512_and(a0, c0),
+              Lib_IntVector_Intrinsics_vec512_and(b0, c0))));
+      Lib_IntVector_Intrinsics_vec512 a1 = Lib_IntVector_Intrinsics_vec512_add64(t1, t2);
+      Lib_IntVector_Intrinsics_vec512 b1 = a0;
+      Lib_IntVector_Intrinsics_vec512 c1 = b0;
+      Lib_IntVector_Intrinsics_vec512 d1 = c0;
+      Lib_IntVector_Intrinsics_vec512 e1 = Lib_IntVector_Intrinsics_vec512_add64(d0, t1);
+      Lib_IntVector_Intrinsics_vec512 f1 = e0;
+      Lib_IntVector_Intrinsics_vec512 g1 = f0;
+      Lib_IntVector_Intrinsics_vec512 h12 = g0;
+      hash[0U] = a1;
+      hash[1U] = b1;
+      hash[2U] = c1;
+      hash[3U] = d1;
+      hash[4U] = e1;
+      hash[5U] = f1;
+      hash[6U] = g1;
+      hash[7U] = h12;
+    }
+    if ((uint32_t)4U < (uint32_t)5U - (uint32_t)1U)
     {
       for (uint32_t i = (uint32_t)0U; i < (uint32_t)16U; i++)
       {
@@ -424,7 +803,7 @@ Hacl_SHA2_Vec512_sha512_8(
     os[i] = x;
   }
   uint32_t rem = len % (uint32_t)128U;
-  uint128_t len_ = (uint128_t)(uint64_t)len;
+  FStar_UInt128_uint128 len_ = FStar_UInt128_uint64_to_uint128((uint64_t)len);
   uint32_t blocks0 = len / (uint32_t)128U;
   for (uint32_t i = (uint32_t)0U; i < blocks0; i++)
   {
@@ -505,7 +884,7 @@ Hacl_SHA2_Vec512_sha512_8(
   uint32_t fin = blocks * (uint32_t)128U;
   uint8_t last[2048U] = { 0U };
   uint8_t totlen_buf[16U] = { 0U };
-  uint128_t total_len_bits = len_ << (uint32_t)3U;
+  FStar_UInt128_uint128 total_len_bits = FStar_UInt128_shift_left(len_, (uint32_t)3U);
   store128_be(totlen_buf, total_len_bits);
   uint8_t *b710 = lb.snd.snd.snd.snd.snd.snd.snd;
   uint8_t *b611 = lb.snd.snd.snd.snd.snd.snd.fst;
