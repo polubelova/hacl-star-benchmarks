@@ -1,7 +1,7 @@
 #include <sodium.h>
 
 void
-blake2b_nacl(
+blake2b_libsodium(
   uint32_t nn,
   uint8_t *output,
   uint32_t ll,

@@ -1193,7 +1193,7 @@ Hacl_Blake2b_32_blake2b(
 }
 
 void
-blake2b_hacl(
+blake2b_hacl_scalar(
   uint32_t nn,
   uint8_t *output,
   uint32_t ll,

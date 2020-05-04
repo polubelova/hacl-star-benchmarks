@@ -312,7 +312,7 @@ int crypto_hash( unsigned char *out, unsigned char *in, unsigned long long inlen
 
 
 void
-blake2b_ref(
+blake2b_reference(
   uint32_t nn,
   uint8_t *output,
   uint32_t ll,

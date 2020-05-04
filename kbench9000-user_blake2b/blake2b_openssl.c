@@ -3,7 +3,7 @@
  #include <stdio.h>
  #include <openssl/evp.h>
 
- void blake2b_openssl(
+ void blake2b_openssl_prov(
   uint32_t nn,
   uint8_t *output,
   uint32_t ll,

@@ -382,7 +382,7 @@ Hacl_Blake2b_256_blake2b(
 
 
 void
-blake2b_hacl256(
+blake2b_hacl_256_vec(
   uint32_t nn,
   uint8_t *output,
   uint32_t ll,
