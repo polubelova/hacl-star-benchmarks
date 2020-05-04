@@ -226,7 +226,6 @@ Hacl_Chacha20_chacha20_decrypt(
   chacha20_update(ctx, len, out, cipher);
 }
 
-
 void chacha20_hacl(
   uint32_t len,
   uint8_t *out,
@@ -236,5 +235,6 @@ void chacha20_hacl(
   uint32_t ctr
 )
 {
+  // printf("%u\n",  len);
   Hacl_Chacha20_chacha20_encrypt (len, out, text, key, n1, ctr);
 }

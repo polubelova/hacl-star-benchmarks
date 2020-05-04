@@ -42,26 +42,13 @@ static inline int name(size_t len) \
 	chacha20_ ## name(len, input_data, input_data, input_key, input_nonce, 1); \
 }
 
-// #define do_it(name) do { \
-// 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) { \
-// 	        trial_times[0] = get_cycles(); \
-// 		for (i = 1; i <= TRIALS; ++i) { \
-// 			ret |= name(STARTING_SIZE); \
-// 		        trial_times[i] = get_cycles(); } \
-// 		for (i = 0; i < TRIALS; ++i) \
-// 		        trial_times[i] = trial_times[i+1] - trial_times[i]; \
-// 		qsort(trial_times, TRIALS, sizeof(cycles_t), compare_cycles); \
-// 		median_ ## name[j] = trial_times[TRIALS/2]; \
-// 	} \
-// } while (0)
-
 #define do_it(name) do { \
 	for (i = 0; i < WARMUP; ++i) \
-		ret |= name(sizeof(input_data)); \
+		ret |= name(vectors[i].input_len); \
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) { \
 	        trial_times[0] = get_cycles(); \
 		for (i = 1; i <= TRIALS; ++i) { \
-			ret |= name(s); \
+			ret |= name(STARTING_SIZE); \
 		        trial_times[i] = get_cycles(); } \
 		for (i = 0; i < TRIALS; ++i) \
 		        trial_times[i] = trial_times[i+1] - trial_times[i]; \
@@ -69,8 +56,6 @@ static inline int name(size_t len) \
 		median_ ## name[j] = trial_times[TRIALS/2]; \
 	} \
 } while (0)
-
-
 
 #define test_it(name, before, after) do { \
 	memset(out, __LINE__, vectors[i].input_len); \
@@ -93,12 +78,9 @@ static inline int name(size_t len) \
 	fprintf(stderr, "\n"); \
 } while (0)
 
-
-
 enum { WARMUP = 50000, TRIALS = 10000, IDLE = 1 * 1000, STARTING_SIZE = 1024, DOUBLING_STEPS = 5 };
-// enum { WARMUP = 50000, TRIALS = 10000, IDLE = 1 * 1000, STARTING_SIZE = 900, DOUBLING_STEPS = 5 };
 
-u8 dummy_out[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
+// u8 dummy_out[123];
 u8 input_key[KEY_LEN];
 u8 input_nonce[NONCE];
 u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
@@ -120,7 +102,7 @@ static int compare_cycles(const void *a, const void *b)
 // {
 // 	int ret;
 // 	size_t i = 0;
-// 	u8 out[LEN];
+// 	u8 out[123];
 
 // 	test_it(hacl, {}, {});
 // 	test_it(hacl32, {}, {});
@@ -150,8 +132,8 @@ int main()
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
 
-	// if (!verify())
-	// 	return -1;
+// ?	if (!verify())
+		// return -1;
 
 	for (i = 0; i < sizeof(input_data); ++i)
 		input_data[i] = i;
