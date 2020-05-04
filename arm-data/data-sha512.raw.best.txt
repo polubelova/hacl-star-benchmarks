@@ -1,0 +1,2 @@
+crypto_hash/sha512/sphlib clang 10.61
+crypto_hash/sha512/sphlib-small clang 10.66
