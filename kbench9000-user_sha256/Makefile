@@ -1,4 +1,4 @@
-objs := main.o sha2_openssl.c hash_sha256_cp.c Hacl_SHA2_Scalar32.c
+objs := main.o sha2_openssl.c hash_sha256_cp.c Hacl_SHA2_Scalar32.c Hacl_SHA2_Vec128.c Hacl_SHA2_Vec256.c
 
 CC = gcc-9
 
