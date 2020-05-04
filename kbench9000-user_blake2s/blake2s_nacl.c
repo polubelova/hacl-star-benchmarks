@@ -179,7 +179,7 @@ blake2s(uint8_t *out, size_t out_len, const uint8_t *in, size_t in_len,
 
 
 void
-blake2s_nacl(
+blake2s_libsodium(
   uint32_t nn,
   uint8_t *output,
   uint32_t ll,

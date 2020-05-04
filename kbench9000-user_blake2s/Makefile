@@ -1,4 +1,4 @@
-objs := main.o Hacl_Blake2s_32.c Hacl_Blake2s_128.c blake2s_nacl.c blake2s_openssl.c
+objs := main.o Hacl_Blake2s_32.c Hacl_Blake2s_128.c blake2s_nacl.c blake2s_openssl.c blake2s_ref.c
 
 CFLAGS += -O3 -g -march=native -mtune=native
 ASFLAGS += -O3 -g -march=native -mtune=native
@@ -16,10 +16,10 @@ Hacl_Blake2s_128.o: CFLAGS +=
 default: build
 
 run: build
-	sudo ./run.sh blake2b_bench.exe
+	sudo ./run.sh blake2s_bench.exe
 
 build: $(objs)
-	$(CC) $(CFLAGS) -o blake2b_bench.exe $(objs) -lsodium  -lssl -lcrypto -L/usr/local/lib 
+	$(CC) $(CFLAGS) -o blake2s_bench.exe $(objs) -lsodium  -lssl -lcrypto -L/usr/local/lib 
 
 clean:
 	rm -f *.o *~ *.exe

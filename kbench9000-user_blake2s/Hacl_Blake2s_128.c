@@ -378,7 +378,7 @@ Hacl_Blake2s_128_blake2s(
 }
 
 void
-blake2s_hacl128(
+blake2s_hacl_128_vec(
   uint32_t nn,
   uint8_t *output,
   uint32_t ll,

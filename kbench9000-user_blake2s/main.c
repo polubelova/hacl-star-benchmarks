@@ -38,7 +38,7 @@ static __inline__ cycles_t get_cycles(void)
 void blake2s_ ## name(const u32 nn,  u8 *output, const u32 ll, const u8 *d, const u32 kk, const u8 *k); \
 static inline int name(size_t len) \
 { \
-	blake2s_ ## name(255, dummy_out, 32, input_data, 32, input_key); \
+	blake2s_ ## name(32, dummy_out, len, input_data, 0, NULL); \
 }
 
 #define do_it(name) do { \
@@ -82,11 +82,11 @@ u8 dummy_out[1000];
 u8 input_key[1000];
 u8 input_data[1000 * (1ULL << DOUBLING_STEPS)];
 
-declare_it(hacl)
-declare_it(hacl128)
-declare_it(nacl)
+declare_it(hacl_scalar)
+declare_it(hacl_128_vec)
+declare_it(libsodium)
 declare_it(openssl)
-// declare_it(ref)
+declare_it(reference)
 
 static int compare_cycles(const void *a, const void *b)
 {
@@ -100,10 +100,11 @@ static bool verify(void)
 	u8 out[1000];
 
 	// NB: Test is done using only one test vector, so I deleted the loop
-	test_it(hacl, {}, {});
-	test_it(hacl128, {}, {});
-	test_it(nacl, {}, {});
+	test_it(hacl_scalar, {}, {});
+	test_it(hacl_128_vec, {}, {});
+	test_it(libsodium, {}, {});
 	test_it(openssl, {}, {});
+	test_it(reference, {}, {});
 	// test_it(ref, {}, {});
 
 	return true;
@@ -113,11 +114,11 @@ int main()
 {
 	size_t s;
 	int ret = 0, i, j;
-	cycles_t median_hacl[DOUBLING_STEPS+1];
-	cycles_t median_hacl128[DOUBLING_STEPS+1];
-	cycles_t median_nacl[DOUBLING_STEPS+1];
+	cycles_t median_hacl_scalar[DOUBLING_STEPS+1];
+	cycles_t median_hacl_128_vec[DOUBLING_STEPS+1];
+	cycles_t median_libsodium[DOUBLING_STEPS+1];
 	cycles_t median_openssl[DOUBLING_STEPS+1];
-	// cycles_t median_ref[DOUBLING_STEPS+1];
+	cycles_t median_reference[DOUBLING_STEPS+1];
 
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
@@ -130,22 +131,23 @@ int main()
 	for (i = 0; i < sizeof(input_key); ++i)
 		input_key[i] = i;
 
-	do_it(hacl);
-	do_it(hacl128);
-	do_it(nacl);
+	do_it(hacl_scalar);
+	do_it(hacl_128_vec);
+	do_it(libsodium);
 	do_it(openssl);
-	// do_it(ref);
+	do_it(reference);
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
 		fprintf(stderr, " \x1b[4m%6zu\x1b[24m", s);
 	fprintf(stderr,"\n");
 
-	report_it(hacl);
-	report_it(hacl128);
-	report_it(nacl);
+	report_it(hacl_scalar);
+	report_it(hacl_128_vec);
+	report_it(libsodium);
 	report_it(openssl);
-
+	report_it(reference);
+	
 	// report_it(ref);
 
 	/* Don't let compiler be too clever. */
