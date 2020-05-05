@@ -22,7 +22,7 @@
  */
 
 
-#include "Hacl_Chacha20_Vec512.h"
+#include "chacha20_vec512.h"
 
 uint32_t
 Hacl_Impl_Chacha20_Vec_chacha20_constants[4U] =
