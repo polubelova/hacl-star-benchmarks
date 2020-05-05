@@ -196,7 +196,7 @@ static void poly1305_emit_generic(void *ctx, u8 mac[16], const u32 nonce[4])
 	store64_le(&mac[8],h1);
 }
 
-void poly1305_donna64(unsigned char *out, const unsigned char *in, unsigned long long inlen, const unsigned char *k)
+void poly1305_libsodium(unsigned char *out, const unsigned char *in, unsigned long long inlen, const unsigned char *k)
 {
 	size_t rem;
 	struct poly1305_ctx ctx;

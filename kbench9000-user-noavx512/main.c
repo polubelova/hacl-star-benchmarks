@@ -88,8 +88,8 @@ declare_it(ossl_c)
 //declare_it(ossl_avx)
 //declare_it(ossl_avx2)
 //declare_it(ossl_avx512)
-declare_it(donna32)
-declare_it(donna64)
+// declare_it(donna32)
+declare_it(libsodium)
 declare_it(hacl32)
 declare_it(hacl64)
 declare_it(hacl32x1)
@@ -115,8 +115,8 @@ static bool verify(void)
 	for (i = 0; i < ARRAY_SIZE(poly1305_testvecs); ++i) {
 	  //		test_it(ref, {}, {});
 		test_it(ossl_c, {}, {});
-		test_it(donna32, {}, {});
-		test_it(donna64, {}, {});
+		// test_it(donna32, {}, {});
+		test_it(libsodium, {}, {});
 		test_it(hacl32, {}, {});
 		test_it(hacl32x1, {}, {});
 		test_it(hacl64, {}, {});
@@ -145,8 +145,8 @@ int main()
 	cycles_t median_ossl_avx[DOUBLING_STEPS + 1];
 	cycles_t median_ossl_avx2[DOUBLING_STEPS + 1];
 	cycles_t median_ossl_avx512[DOUBLING_STEPS + 1];
-	cycles_t median_donna32[DOUBLING_STEPS + 1];
-	cycles_t median_donna64[DOUBLING_STEPS + 1];
+	// cycles_t median_donna32[DOUBLING_STEPS + 1];
+	cycles_t median_libsodium[DOUBLING_STEPS + 1];
 	cycles_t median_hacl32[DOUBLING_STEPS + 1];
 	cycles_t median_hacl32x1[DOUBLING_STEPS + 1];
 	cycles_t median_hacl128[DOUBLING_STEPS + 1];
@@ -170,8 +170,8 @@ int main()
 
 	//	do_it(ref);
 	do_it(ossl_c);
-	do_it(donna32);
-	do_it(donna64);
+	// do_it(donna32);
+	do_it(libsodium);
 	do_it(hacl32);
 	do_it(hacl32x1);
 	do_it(hacl128);
@@ -191,8 +191,8 @@ int main()
 		fprintf(stderr, " \x1b[4m%6zu\x1b[24m", s);
 	fprintf(stderr,"\n");
 	report_it(ossl_c);
-	report_it(donna32);
-	report_it(donna64);
+	// report_it(donna32);
+	report_it(libsodium);
 	report_it(hacl32);
 	report_it(hacl32x1);
 	report_it(hacl64);
