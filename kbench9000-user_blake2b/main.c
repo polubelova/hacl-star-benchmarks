@@ -91,7 +91,7 @@ u8 input_key[1000];
 u8 input_data[1000 * (1ULL << DOUBLING_STEPS)];
 
 declare_it(hacl_scalar)
-declare_it(hacl_256_vec)
+declare_it(hacl_vec256)
 declare_it(libsodium)
 // declare_it(reference)
 declare_it(openssl_prov)
@@ -113,7 +113,7 @@ static bool verify(void)
 
 	// NB: Test is done using only one test vector, so I deleted the loop
 	test_it(hacl_scalar, {}, {});
-	test_it(hacl_256_vec, {}, {});
+	test_it(hacl_vec256, {}, {});
 	test_it(libsodium, {}, {});
 	// test_it(reference, {}, {});
 	test_it(openssl_prov, {}, {});
@@ -130,7 +130,7 @@ int main()
 	size_t s;
 	int ret = 0, i, j;
 	cycles_t median_hacl_scalar[DOUBLING_STEPS+1];
-	cycles_t median_hacl_256_vec[DOUBLING_STEPS+1];
+	cycles_t median_hacl_vec256[DOUBLING_STEPS+1];
 	cycles_t median_libsodium[DOUBLING_STEPS+1];
 	// cycles_t median_reference[DOUBLING_STEPS+1];
 	cycles_t median_openssl_prov[DOUBLING_STEPS+1];
@@ -150,7 +150,7 @@ int main()
 		input_key[i] = i;
 
 	do_it(hacl_scalar);
-	do_it(hacl_256_vec);
+	do_it(hacl_vec256);
 	do_it(libsodium);
 	do_it(reference);
 	// do_it(reference1>);
@@ -165,7 +165,7 @@ int main()
 	fprintf(stderr,"\n");
 
 	report_it(hacl_scalar);
-	report_it(hacl_256_vec);
+	report_it(hacl_vec256);
 	report_it(openssl_prov);
 	report_it(libsodium);
 	report_it(reference);

@@ -1153,7 +1153,7 @@ Hacl_Chacha20_Vec256_chacha20_decrypt_256(
 }
 
 
-void chacha20_hacl_avx2(
+void chacha20_hacl_vec256(
   uint32_t len,
   uint8_t *out,
   uint8_t *text,
