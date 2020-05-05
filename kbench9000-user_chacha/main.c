@@ -110,6 +110,7 @@ declare_it(hacl_vec256)
 declare_it(openssl_prov)
 declare_it(jasmin)
 declare_it(libsodium)
+declare_it(openssl_lib)
 
 static int compare_cycles(const void *a, const void *b)
 {
@@ -128,7 +129,8 @@ static bool verify(void)
 	test_it(openssl_prov, {}, {});
 	test_it(libsodium, {}, {});
 	test_it(jasmin, {}, {});
-	
+	test_it(openssl_lib, {}, {});
+
 	return true;
 }
 
@@ -141,6 +143,7 @@ int main()
 	cycles_t median_hacl_vec128[DOUBLING_STEPS+1];
 	cycles_t median_hacl_vec256[DOUBLING_STEPS+1];
 	cycles_t median_openssl_prov[DOUBLING_STEPS+1];
+	cycles_t median_openssl_lib[DOUBLING_STEPS+1];
 	cycles_t median_libsodium[DOUBLING_STEPS+1];
 	cycles_t median_jasmin[DOUBLING_STEPS+1];
 
@@ -161,7 +164,7 @@ int main()
 	do_it(openssl_prov);
 	do_it(libsodium);
 	do_it(jasmin);
-
+	do_it(openssl_lib);
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
@@ -174,10 +177,10 @@ int main()
 	report_it(openssl_prov);
 	report_it(libsodium);
 	report_it(jasmin);
-	
+	report_it(openssl_lib);
 
 	/* Don't let compiler be too clever. */
-	// Why not? 
+	// Why not?
 	dummy = ret;
 
 	/* We should never actually agree to insert the module. Choosing
@@ -187,4 +190,3 @@ int main()
 	free(trial_times);
 	return -0x1000;
 }
-
