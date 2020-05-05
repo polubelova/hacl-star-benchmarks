@@ -99,6 +99,7 @@ declare_it(jazz256)
 declare_it(hacl256_55)
 declare_it(hacl256_52)
 declare_it(hacl256_53)
+declare_it(openssl_lib)
 //declare_it(hacl512)
 
 static int compare_cycles(const void *a, const void *b)
@@ -126,6 +127,7 @@ static bool verify(void)
 		test_it(hacl256_55, {}, {});
 		test_it(hacl256_52, {}, {});
 		test_it(hacl256_53, {}, {});
+		test_it(openssl_lib, {}, {});
 //		test_it(hacl512, {}, {});
 //		test_it(ossl_amd64, {}, {});
 //		test_it(ossl_avx, {}, {});
@@ -157,6 +159,7 @@ int main()
 	cycles_t median_hacl256_53[DOUBLING_STEPS + 1];
 //	cycles_t median_hacl512[DOUBLING_STEPS + 1];
 	cycles_t median_hacl64[DOUBLING_STEPS + 1];
+	cycles_t median_openssl_lib[DOUBLING_STEPS + 1];	
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
 
@@ -182,6 +185,7 @@ int main()
 	do_it(hacl256_52);
 //	do_it(hacl512);
 	do_it(hacl64);
+	do_it(openssl_lib);
 //	do_it(ossl_amd64);
 //	do_it(ossl_avx);
 //	do_it(ossl_avx2);
@@ -202,6 +206,7 @@ int main()
 	report_it(hacl256_55);
 	report_it(hacl256_53);
 	report_it(hacl256_52);
+	report_it(openssl_lib);
 //	report_it(hacl512);
 //	report_it(ossl_amd64);
 //	report_it(ossl_avx);
