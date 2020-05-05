@@ -1,0 +1,61 @@
+cloc dist --force-lang=OCaml,fst --force-lang=OCaml,fsti  --by-file-by-lang
+      12 text files.
+      12 unique files.                              
+       2 files ignored.
+
+http://cloc.sourceforge.net v 1.60  T=0.04 s (270.5 files/s, 134094.4 lines/s)
+---------------------------------------------------------------------------------------
+File                                     blank        comment           code
+---------------------------------------------------------------------------------------
+dist/Hacl_SHA2_Vec256.c                      7             22           1739
+dist/Hacl_SHA2_Vec512.c                      5             22           1099
+dist/Hacl_SHA2_Scalar32.c                    7             22            842
+dist/Hacl_SHA2_Vec128.c                      5             22            704
+dist/Hacl_SHA2_Generic.h                    12             22             91
+dist/Hacl_SHA2_Vec512.h                     11             22             68
+dist/Hacl_SHA2_Vec128.h                     10             22             47
+dist/Hacl_SHA2_Vec256.h                      7             22             44
+dist/Hacl_SHA2_Scalar32.h                    7             22             13
+--dist/Hacl_Kremlib.h                          9             22             11
+---------------------------------------------------------------------------------------
+SUM:                                        80            220           4658
+---------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+C                                4             24             88           4384
+C/C++ Header                     6             56            132            274
+-------------------------------------------------------------------------------
+SUM:                            10             80            220           4658
+-------------------------------------------------------------------------------
+
+
+
+
+
+ cloc sha2-vec --force-lang=OCaml,fst --force-lang=OCaml,fsti  --by-file   --exclude-dir dist
+      14 text files.
+      14 unique files.                              
+      17 files ignored.
+
+http://cloc.sourceforge.net v 1.60  T=0.03 s (514.6 files/s, 141906.7 lines/s)
+--------------------------------------------------------------------------------------
+File                                               blank        comment           code
+--------------------------------------------------------------------------------------
+sha2-vec/Hacl.Impl.SHA2.Core.fst                     110              0            775
+//sha2-vec/Hacl.Spec.SHA2.Equiv.fst                    121             16            547
+//sha2-vec/Hacl.Spec.SHA2.Vec.fst                       73              0            420
+sha2-vec/Hacl.Impl.SHA2.Generic.fst                   51              1            357
+//sha2-vec/Hacl.Spec.SHA2.fst                           70             23            213
+sha2-vec/Lib.MultiBuffer.fst                          36             87            164
+//sha2-vec/Hacl.Spec.SHA2.Lemmas.fst                    23              0            115
+sha2-vec/Hacl.SHA2.Vec256.fst                         15              0             80
+sha2-vec/Hacl.SHA2.Vec512.fst                         10              0             52
+sha2-vec/Hacl.SHA2.Scalar32.fst                       15              0             52
+sha2-vec/Hacl.SHA2.Vec128.fst                         10              0             44
+//sha2-vec/Lib.IntTuple.fst                             16              0             42
+//sha2-vec/Makefile                                     14              5             28
+--------------------------------------------------------------------------------------
+SUM:                                                 564            132           2889
+--------------------------------------------------------------------------------------

@@ -1,0 +1,144 @@
+http://cloc.sourceforge.net v 1.60  T=0.08 s (580.0 files/s, 176083.0 lines/s)
+-----------------------------------------------------------------------------------
+File                                            blank        comment           code
+-----------------------------------------------------------------------------------
+./Lib.IntTypes.fst                                147              5            990
+./Lib.Buffer.fsti                                 101             81            973
+./Lib.IntTypes.fsti                               218              2            755
+./Lib.ByteSequence.fst                            107             26            593
+./Lib.Sequence.Lemmas.fsti                         96              6            571
+./Lib.Sequence.Lemmas.fst                         149             54            565
+./Lib.Vec.Lemmas.fst                              107             67            555
+./Lib.Buffer.fst                                   66              1            528
+./Lib.IntVector.Transpose.fst                     120              2            525
+./Lib.IntVector.fst                                89             39            465
+./Lib.IntVector.fsti                              131              9            425
+./Lib.Sequence.fsti                                80             47            425
+./Lib.IntVector.Intrinsics.fsti                   115              3            366
+./Lib.Vec.Lemmas.fsti                              37              0            294
+./Lib.Sequence.fst                                 64              9            294
+./Lib.ByteBuffer.fst                               32             17            234
+./Lib.LoopCombinators.fsti                         38             39            214
+./Lib.PrintSequence.fst                            48              0            190
+./Lib.NTuple.fsti                                  59              2            187
+./Lib.NTuple.fst                                   64              1            186
+./Lib.ByteSequence.fsti                            58              4            178
+./Lib.UpdateMulti.fst                              16             10            162
+./Lib.ByteBuffer.fsti                              23              3            157
+./Lib.IntVector.Serialize.fst                      31              0            112
+./Lib.UpdateMulti.Lemmas.fst                       10              7             90
+./Lib.IntVector.Serialize.fsti                     22              0             85
+./Lib.LoopCombinators.fst                          29              4             78
+./Lib.Meta.fst                                     11              2             62
+./Lib.PrintSequence.fsti                           17              0             44
+./Lib.UpdateMulti.Lemmas.fsti                       8              0             43
+./Lib.Loops.fst                                     6              0             42
+./Lib.CreateN.fst                                   8              0             42
+./Lib.IntVector.Transpose.fsti                     17              0             41
+./Lib.IntTypes.Compatibility.fst                    7              0             33
+./Lib.Loops.fsti                                    4              5             31
+./Lib.PrintBuffer.fsti                              7              0             31
+./Lib.RawIntTypes.fsti                              5              4             28
+./Lib.CreateN.fsti                                  7              0             26
+./Lib.Memzero.fsti                                  5              0             25
+./Lib.IntTypes.Intrinsics.fsti                      5              0             22
+./Lib.RawIntTypes.fst                              16              4             16
+./Lib.RandomSequence.fsti                           8              0             13
+./Lib.RandomBuffer.System.fsti                      4              0             10
+./Makefile                                          3              0              4
+-----------------------------------------------------------------------------------
+SUM:                                             2195            453          10710
+-----------------------------------------------------------------------------------
+
+
+
+http://cloc.sourceforge.net v 1.60  T=0.02 s (358.5 files/s, 57245.0 lines/s)
+-----------------------------------------------------------------------------------------
+File                                       blank        comment           code
+-----------------------------------------------------------------------------------------
+./libintvector.h                             250             16            505
+./Lib_PrintBuffer.c                            5              0             51
+./Lib_RandomBuffer_System.c                    8              3             46
+./Lib_Memzero.c                                4              1             16
+./lib_intrinsics.h                            10              5             15
+./evercrypt_targetconfig.h                     4              4             15
+-----------------------------------------------------------------------------------------
+SUM:                                         281             29            648
+-----------------------------------------------------------------------------------------
+
+
+
+
+./Lib.IntTypes.fst                                147              5            990
+./Lib.IntTypes.fsti                               218              2            755
+./Lib.ByteSequence.fst                            107             26            593
+./Lib.Sequence.Lemmas.fsti                         96              6            571
+./Lib.Sequence.Lemmas.fst                         149             54            565
+./Lib.Sequence.fsti                                80             47            425 = 3899
+./Lib.Sequence.fst                                 64              9            294
+./Lib.LoopCombinators.fsti                         38             39            214
+./Lib.PrintSequence.fst                            48              0            190
+./Lib.NTuple.fsti                                  59              2            187
+./Lib.NTuple.fst                                   64              1            186
+./Lib.ByteSequence.fsti                            58              4            178
+./Lib.UpdateMulti.fst                              16             10            162 = 5310
+./Lib.UpdateMulti.Lemmas.fst                       10              7             90
+./Lib.LoopCombinators.fst                          29              4             78
+./Lib.UpdateMulti.Lemmas.fsti                       8              0             43
+./Lib.IntTypes.Compatibility.fst                    7              0             33
+./Lib.Loops.fsti                                    4              5             31
+./Lib.RawIntTypes.fsti                              5              4             28
+./Lib.RawIntTypes.fst                              16              4             16 = 5629
+
+
+./Lib.IntTypes.Intrinsics.fsti                      5              0             22
+./Lib.Memzero.fsti                                  5              0             25
+./Lib.RandomSequence.fsti                           8              0             13
+./Lib.RandomBuffer.System.fsti                      4              0             10
+
+
+
+./Lib.Buffer.fsti                                 101             81            973
+./Lib.Buffer.fst                                   66              1            528
+./Lib.ByteBuffer.fst                               32             17            234
+./Lib.ByteBuffer.fsti                              23              3            157
+./Lib.CreateN.fst                                   8              0             42
+./Lib.Loops.fst                                     6              0             42
+./Lib.PrintBuffer.fsti                              7              0             31
+./Lib.CreateN.fsti                                  7              0             26 = 2033
+
+
+./Lib.IntVector.fst                                89             39            465
+./Lib.IntVector.fsti                              131              9            425
+./Lib.IntVector.Intrinsics.fsti                   115              3            366  = 1256
+
+
+
+./Lib.Vec.Lemmas.fst                              107             67            555
+./Lib.IntVector.Transpose.fst                     120              2            525
+./Lib.Vec.Lemmas.fsti                              37              0            294
+./Lib.IntVector.Serialize.fst                      31              0            112
+./Lib.IntVector.Serialize.fsti                     22              0             85
+./Lib.IntVector.Transpose.fsti                     17              0             41 = 1612
+
+
+
+./Lib.Meta.fst                                     11              2             62
+./Lib.PrintSequence.fsti                           17              0             44
+
+
+
+------------------------------------------------------------------------------------
+File                                  blank        comment           code
+------------------------------------------------------------------------------------
+./Hacl.CTR.Equiv.fst                     81             12            411
+./Hacl.Poly.Lemmas.fst                   54             12            304
+./Hacl.Poly.fsti                         35              0             90
+./Hacl.Poly.Equiv.fst                    22              0             80
+./Hacl.CTR.fsti                          27              0             66
+./Hacl.CTR.Equiv.fsti                     7              0             16
+./Hacl.Poly.Equiv.fsti                    5              0             12
+---./Makefile                                0              0              2
+------------------------------------------------------------------------------------
+SUM:                                    231             24            981
+------------------------------------------------------------------------------------

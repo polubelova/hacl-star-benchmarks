@@ -1,0 +1,89 @@
+http://cloc.sourceforge.net v 1.60  T=0.05 s (180.9 files/s, 149605.6 lines/s)
+-----------------------------------------------------------------------------------
+File                                 blank        comment           code
+-----------------------------------------------------------------------------------
+./Hacl_Poly1305_512.c                   11             22           2819
+./Hacl_Poly1305_256.c                   11             22           2064
+./Hacl_Poly1305_128.c                   11             22           1613
+./Hacl_Poly1305_32.c                     9             22            542
+./Hacl_Poly1305_128.h                   12             22             27
+./Hacl_Poly1305_256.h                   12             22             27
+./Hacl_Poly1305_512.h                   12             22             27
+./Hacl_Poly1305_32.h                    12             22             17
+--./Hacl_Kremlib.h                         8             22             11
+-----------------------------------------------------------------------------------
+SUM:                                    98            198           7147
+-----------------------------------------------------------------------------------
+
+
+
+
+--------------------------------------------------------------------------------------------
+File                                                     blank        comment           code
+--------------------------------------------------------------------------------------------
+./Hacl.Poly1305.Field32xN.Lemmas1.fst                      119             20            951
+./Hacl.Spec.Poly1305.Field32xN.Lemmas.fst                  131             12            780
+./Hacl.Impl.Poly1305.Field32xN.fst                          69              0            764
+./Hacl.Poly1305.Field32xN.Lemmas2.fst                      103             35            684
+./Hacl.Spec.Poly1305.Field32xN.fst                         101              2            590
+./Hacl.Poly1305.Field32xN.Lemmas0.fst                       89             55            589
+./Hacl.Impl.Poly1305.fst                                    97              0            516
+./Hacl.Impl.Poly1305.Fields.fst                             73              0            413
+./Hacl.Spec.Poly1305.Equiv.fst                              64              0            216
+./Hacl.Spec.Poly1305.Lemmas.fst                             31              6            154
+./Hacl.Spec.Poly1305.Vec.fst                                34              2            122
+./Hacl.Impl.Poly1305.fsti                                   32              0            116
+./Hacl.Impl.Poly1305.Field32xN_256.fst                      17              0            106
+./Hacl.Impl.Poly1305.Lemmas.fst                             26              0             99
+./Hacl.Impl.Poly1305.Field32xN_512.fst                      17              0             90
+./Hacl.Impl.Poly1305.Field32xN_128.fst                      19              0             84
+./Hacl.Impl.Poly1305.Field32xN_32.fst                       12              0             52
+./Makefile                                                  12              6             27
+./Hacl.Poly1305_256.fst                                      9              0             14
+./Hacl.Poly1305_512.fst                                      9              0             14
+./Hacl.Poly1305_128.fst                                      9              0             14
+./Hacl.Poly1305_32.fst                                       9              0             14
+./Hacl.Poly1305_32.fsti                                     11              0             14
+./Hacl.Poly1305_128.fsti                                    11              0             14
+./Hacl.Poly1305_256.fsti                                    11              0             14
+./Hacl.Poly1305_512.fsti                                    11              0             14
+./Hacl.Meta.Poly1305.fst                                     6              0              8
+./Hacl.Meta.Poly1305.fsti                                    0              0              1
+--------------------------------------------------------------------------------------------
+SUM:                                                      1132            138           6474
+--------------------------------------------------------------------------------------------
+
+
+
+./Hacl.Poly1305.Field32xN.Lemmas1.fst                      119             20            951
+./Hacl.Spec.Poly1305.Field32xN.Lemmas.fst                  131             12            780
+./Hacl.Poly1305.Field32xN.Lemmas2.fst                      103             35            684
+./Hacl.Poly1305.Field32xN.Lemmas0.fst                       89             55            589
+./Hacl.Spec.Poly1305.Field32xN.fst                         101              2            590
+
+
+./Hacl.Impl.Poly1305.Field32xN.fst                          69              0            764
+./Hacl.Impl.Poly1305.fst                                    97              0            516
+./Hacl.Impl.Poly1305.Fields.fst                             73              0            413
+./Hacl.Impl.Poly1305.fsti                                   32              0            116
+./Hacl.Impl.Poly1305.Field32xN_256.fst                      17              0            106
+./Hacl.Impl.Poly1305.Lemmas.fst                             26              0             99
+./Hacl.Impl.Poly1305.Field32xN_512.fst                      17              0             90
+./Hacl.Impl.Poly1305.Field32xN_128.fst                      19              0             84
+./Hacl.Impl.Poly1305.Field32xN_32.fst                       12              0             52
+./Hacl.Poly1305_256.fst                                      9              0             14
+./Hacl.Poly1305_512.fst                                      9              0             14
+./Hacl.Poly1305_128.fst                                      9              0             14
+./Hacl.Poly1305_32.fst                                       9              0             14
+./Hacl.Poly1305_32.fsti                                     11              0             14
+./Hacl.Poly1305_128.fsti                                    11              0             14
+./Hacl.Poly1305_256.fsti                                    11              0             14
+./Hacl.Poly1305_512.fsti                                    11              0             14
+./Hacl.Meta.Poly1305.fst                                     6              0              8
+./Hacl.Meta.Poly1305.fsti                                    0              0              1
+
+
+./Hacl.Spec.Poly1305.Equiv.fst                              64              0            216
+./Hacl.Spec.Poly1305.Lemmas.fst                             31              6            154
+
+./Hacl.Spec.Poly1305.Vec.fst                                34              2            122

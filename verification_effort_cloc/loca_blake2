@@ -1,0 +1,39 @@
+ cloc blake2 --force-lang=OCaml,fst --force-lang=OCaml,fsti  --by-file   --exclude-dir dist
+      11 text files.
+      11 unique files.                              
+      14 files ignored.
+
+http://cloc.sourceforge.net v 1.60  T=0.02 s (424.8 files/s, 61694.1 lines/s)
+----------------------------------------------------------------------------------------
+File                                                 blank        comment           code
+----------------------------------------------------------------------------------------
+blake2/Hacl.Impl.Blake2.Generic.fst                     88              5            628
+blake2/Hacl.Impl.Blake2.Core.fst                        35              0            214
+blake2/Hacl.Impl.Blake2.Core.fsti                       44              0            181
+--blake2/Makefile                                          8              5             24
+blake2/Hacl.Impl.Blake2.Constants.fst                    9              0             22
+blake2/Hacl.Blake2s_32.fst                               3              0              8
+blake2/Hacl.Blake2s_128.fst                              3              0              8
+blake2/Hacl.Blake2b_256.fst                              3              0              8
+blake2/Hacl.Blake2b_32.fst                               3              0              8
+----------------------------------------------------------------------------------------
+SUM:                                                   196             10           1101
+----------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------
+File                                          blank        comment           code
+---------------------------------------------------------------------------------
+./Hacl_Blake2s_32.c                               5             22           1040
+./Hacl_Blake2b_32.c                               5             22           1040
+./Hacl_Blake2s_128.c                              5             22            293
+./Hacl_Blake2b_256.c                              5             22            293
+./Hacl_Impl_Blake2_Constants.h                   11             22             65
+./Hacl_Blake2b_256.h                              7             22             27
+./Hacl_Blake2b_32.h                               6             22             22
+./Hacl_Blake2s_32.h                               6             22             22
+./Hacl_Blake2s_128.h                              6             22             22
+./Hacl_Kremlib.h                                 10             22             14
+---------------------------------------------------------------------------------
+SUM:                                             66            220           2838
+---------------------------------------------------------------------------------
