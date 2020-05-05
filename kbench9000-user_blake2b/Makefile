@@ -1,4 +1,4 @@
-objs := main.o blake2b_nacl.c Hacl_Blake2b_32.c Hacl_Blake2b_256.c blake2b_openssl.c blake2b.c
+objs := main.o blake2b_nacl.o Hacl_Blake2b_32.o Hacl_Blake2b_256.o blake2b_openssl.o blake2b.o
 CC = gcc-9
 
 CFLAGS += -O3 -g -march=native -mtune=native
