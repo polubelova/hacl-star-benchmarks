@@ -107,6 +107,7 @@ u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 declare_it(hacl_scalar)
 declare_it(hacl_vec128)
 declare_it(hacl_vec256)
+declare_it(hacl_vec512)
 declare_it(openssl_prov)
 declare_it(jasmin)
 declare_it(libsodium)
@@ -125,6 +126,7 @@ static bool verify(void)
 	test_it(hacl_scalar, {}, {});
 	test_it(hacl_vec128, {}, {});
 	test_it(hacl_vec256, {}, {});
+	test_it(hacl_vec512, {}, {});
 	test_it(openssl_prov, {}, {});
 	test_it(libsodium, {}, {});
 	test_it(jasmin, {}, {});
@@ -140,6 +142,7 @@ int main()
 	cycles_t median_hacl_scalar[DOUBLING_STEPS+1];
 	cycles_t median_hacl_vec128[DOUBLING_STEPS+1];
 	cycles_t median_hacl_vec256[DOUBLING_STEPS+1];
+	cycles_t median_hacl_vec512[DOUBLING_STEPS+1];
 	cycles_t median_openssl_prov[DOUBLING_STEPS+1];
 	cycles_t median_libsodium[DOUBLING_STEPS+1];
 	cycles_t median_jasmin[DOUBLING_STEPS+1];
@@ -158,6 +161,7 @@ int main()
 	do_it(hacl_scalar);
 	do_it(hacl_vec128);
 	do_it(hacl_vec256);
+	do_it(hacl_vec512);
 	do_it(openssl_prov);
 	do_it(libsodium);
 	do_it(jasmin);
@@ -171,6 +175,7 @@ int main()
 	report_it(hacl_scalar);
 	report_it(hacl_vec128);
 	report_it(hacl_vec256);
+	report_it(hacl_vec512);
 	report_it(openssl_prov);
 	report_it(libsodium);
 	report_it(jasmin);
