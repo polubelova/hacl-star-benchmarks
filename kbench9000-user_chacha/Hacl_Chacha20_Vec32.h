@@ -21,16 +21,12 @@
  * SOFTWARE.
  */
 
-#include "types.h"
 #include <string.h>
-#include "libintvector.h"
+#include <inttypes.h>
+#include "lowstar_endianness.h"
 
 #ifndef __Hacl_Chacha20_Vec32_H
 #define __Hacl_Chacha20_Vec32_H
-
-#include "Hacl_Chacha20.h"
-#include "kremlib.h"
-
 
 void
 Hacl_Chacha20_Vec32_chacha20_encrypt_32(
@@ -41,6 +37,7 @@ Hacl_Chacha20_Vec32_chacha20_encrypt_32(
   uint8_t *n1,
   uint32_t ctr
 );
+
 
 void
 Hacl_Chacha20_Vec32_chacha20_decrypt_32(

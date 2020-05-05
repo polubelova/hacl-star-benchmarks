@@ -13,23 +13,23 @@ typedef __uint128_t uint128_t;
 //#define load_limb(b_i) le64_to_cpup((__force __le64 *)b_i)
 //#define store_limb(b_o,o) *(__force __le64 *)(b_o) = cpu_to_le64(o)
 
-inline u64 load64_le(const u8* b){
-  uint64_t x;
-  memcpy(&x, b, 8);
-  return x;
-}
-inline void store64_le(u8* b,u64 o) {
-  memcpy(b,&o,8);
-}
+// inline u64 load64_le(const u8* b){
+//   uint64_t x;
+//   memcpy(&x, b, 8);
+//   return x;
+// }
+// inline void store64_le(u8* b,u64 o) {
+//   memcpy(b,&o,8);
+// }
 
-inline u64 load32_le(const u8* b){
-  uint32_t x;
-  memcpy(&x, b, 4);
-  return x;
-}
-inline void store32_le(u8* b, u32 o) {
-  memcpy(b,&o,4);
-}
+// inline u64 load32_le(const u8* b){
+//   uint32_t x;
+//   memcpy(&x, b, 4);
+//   return x;
+// }
+// inline void store32_le(u8* b, u32 o) {
+//   memcpy(b,&o,4);
+// }
 
 #define KRML_CHECK_SIZE(a,b) {}
 #define __always_inline inline

@@ -21,17 +21,13 @@
  * SOFTWARE.
  */
 
-#include "types.h"
-// #include "kremlin/lowstar_endianness.h"
 #include <string.h>
+#include <inttypes.h>
+#include "lowstar_endianness.h"
 #include "libintvector.h"
 
 #ifndef __Hacl_Chacha20_Vec128_H
 #define __Hacl_Chacha20_Vec128_H
-
-#include "Hacl_Chacha20.h"
-#include "kremlib.h"
-
 
 void
 Hacl_Chacha20_Vec128_chacha20_encrypt_128(

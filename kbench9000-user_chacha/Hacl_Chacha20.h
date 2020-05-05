@@ -32,7 +32,7 @@
 #include "kremlib.h"
 
 
-extern const uint32_t Hacl_Impl_Chacha20_Vec_chacha20_constants[4U];
+// extern const uint32_t Hacl_Impl_Chacha20_Vec_chacha20_constants[4U];
 
 void
 Hacl_Chacha20_chacha20_encrypt(
