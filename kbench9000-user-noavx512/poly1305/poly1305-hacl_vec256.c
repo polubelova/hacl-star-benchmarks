@@ -2094,7 +2094,7 @@ Hacl_Poly1305_256_poly1305_finish(
   store64_le(tag + (uint32_t)8U, f31);
 }
 
-void poly1305_hacl256(uint8_t *tag, uint8_t *text, uint32_t len1, uint8_t *key)
+void poly1305_hacl_vec256(uint8_t *tag, uint8_t *text, uint32_t len1, uint8_t *key)
 {
 	Lib_IntVector_Intrinsics_vec256 ctx[25U] = {{ 0 }};
 	Hacl_Poly1305_256_poly1305_init(ctx, key);

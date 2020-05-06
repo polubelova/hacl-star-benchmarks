@@ -401,7 +401,7 @@ void Hacl_Poly1305_32x1_poly1305_finish(uint8_t *tag, uint8_t *key, uint64_t *ct
   store64_le(tag + (uint32_t)8U, f31);
 }
 
-void poly1305_hacl32(uint8_t *tag, uint8_t *text, uint32_t len1, uint8_t *key)
+void poly1305_hacl_scalar(uint8_t *tag, uint8_t *text, uint32_t len1, uint8_t *key)
 {
   KRML_CHECK_SIZE(sizeof (uint64_t), (uint32_t)5U + (uint32_t)20U);
   uint64_t ctx[(uint32_t)5U + (uint32_t)20U];

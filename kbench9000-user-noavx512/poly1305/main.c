@@ -86,9 +86,9 @@ u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 declare_it(ossl_c)
 declare_it(donna32)
 declare_it(donna64)
-declare_it(hacl32)
-declare_it(hacl128)
-declare_it(hacl256)
+declare_it(hacl_scalar)
+declare_it(hacl_vec128)
+declare_it(hacl_vec256)
 declare_it(jazz256)
 declare_it(hacl256_55)
 declare_it(hacl256_52)
@@ -112,9 +112,9 @@ static bool verify(void)
 		test_it(ossl_c, {}, {});
 		test_it(donna32, {}, {});
 		test_it(donna64, {}, {});
-		test_it(hacl32, {}, {});
-		test_it(hacl128, {}, {});
-		test_it(hacl256, {}, {});
+		test_it(hacl_scalar, {}, {});
+		test_it(hacl_vec128, {}, {});
+		test_it(hacl_vec256, {}, {});
 		test_it(jazz256, {}, {});
 		test_it(hacl256_55, {}, {});
 		test_it(hacl256_52, {}, {});
@@ -133,15 +133,15 @@ int main()
 	cycles_t median_ossl_c[DOUBLING_STEPS + 1];
 	cycles_t median_donna32[DOUBLING_STEPS + 1];
 	cycles_t median_donna64[DOUBLING_STEPS + 1];
-	cycles_t median_hacl32[DOUBLING_STEPS + 1];
-	cycles_t median_hacl128[DOUBLING_STEPS + 1];
-	cycles_t median_hacl256[DOUBLING_STEPS + 1];
+	cycles_t median_hacl_scalar[DOUBLING_STEPS + 1];
+	cycles_t median_hacl_vec128[DOUBLING_STEPS + 1];
+	cycles_t median_hacl_vec256[DOUBLING_STEPS + 1];
 	cycles_t median_jazz256[DOUBLING_STEPS + 1];
 	cycles_t median_hacl256_55[DOUBLING_STEPS + 1];
 	cycles_t median_hacl256_52[DOUBLING_STEPS + 1];
 	cycles_t median_hacl256_53[DOUBLING_STEPS + 1];
 	cycles_t median_lossl[DOUBLING_STEPS + 1];
-	cycles_t median_lossl_no_asm[DOUBLING_STEPS + 1];	
+	cycles_t median_lossl_no_asm[DOUBLING_STEPS + 1];
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
 
@@ -157,9 +157,9 @@ int main()
 	do_it(ossl_c);
 	do_it(donna32);
 	do_it(donna64);
-	do_it(hacl32);
-	do_it(hacl128);
-	do_it(hacl256);
+	do_it(hacl_scalar);
+	do_it(hacl_vec128);
+	do_it(hacl_vec256);
 	do_it(jazz256);
 	do_it(hacl256_55);
 	do_it(hacl256_53);
@@ -176,9 +176,9 @@ int main()
 	report_it(ossl_c);
 	report_it(donna32);
 	report_it(donna64); //libsodium?
-	report_it(hacl32);
-	report_it(hacl128);
-	report_it(hacl256);
+	report_it(hacl_scalar);
+	report_it(hacl_vec128);
+	report_it(hacl_vec256);
 	report_it(jazz256);
 	report_it(hacl256_55);
 	report_it(hacl256_53);

@@ -1466,7 +1466,7 @@ Hacl_Poly1305_128_poly1305_finish(
   Lib_IntVector_Intrinsics_vec128_store_le(tag, r00);
 }
 
-void poly1305_hacl128(uint8_t *tag, uint8_t *text, uint32_t len1, uint8_t *key)
+void poly1305_hacl_vec128(uint8_t *tag, uint8_t *text, uint32_t len1, uint8_t *key)
 {
   KRML_CHECK_SIZE(sizeof (Lib_IntVector_Intrinsics_vec128), (uint32_t)5U + (uint32_t)20U);
   Lib_IntVector_Intrinsics_vec128 ctx[(uint32_t)5U + (uint32_t)20U];
