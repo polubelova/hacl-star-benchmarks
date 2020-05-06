@@ -1,23 +1,22 @@
-objs := main.o chacha20_hacl32.o chacha20_vec128.o chacha20_vec256.o chacha20_openssl.o chacha20_nacl.o chacha20.s chacha20_jazz.o chacha20_openssl_lib.o
+objs := main.o chacha20-hacl_scalar.o chacha20-hacl_vec128.o chacha20-hacl_vec256.o chacha20-lossl.o chacha20-lossl_no_asm.o chacha20-libsodium.o chacha20-jazz256-asm.o chacha20-jazz256.o
 
 CFLAGS += -O3 -g -march=native -mtune=native
 ASFLAGS += -O3 -g -march=native -mtune=native
 
-OPENSSL_HOME ?=../../openssl
-chacha20_hacl.o: CFLAGS +=
-chacha20_hacl32.o: CFLAGS +=
-chacha20_vec128.o: CFLAGS +=
-chacha20_vec256.o: CFLAGS +=
-chacha20_jazz.o : CFLAGS +=
-chacha20_jazz_asm.o: ASFLAGS +=
-chacha20_openssl_lib.o: CFLAGS += -I $(OPENSSL_HOME)/include/crypto -I $(OPENSSL_HOME)/crypto
+OPENSSL_HOME ?=../../../openssl
+chacha20-hacl_vec128.o: CFLAGS +=
+chacha20-hacl_vec256.o: CFLAGS +=
+chacha20-jazz256-asm.o: ASFLAGS =
+chacha20-lossl.o: CFLAGS += -L. -lossl_asm
+chacha20-lossl_no_asm.o: CFLAGS += -L. -lossl_no_asm
+
 default: build
 
 run: build
 	sudo ./run.sh chacha20_bench.exe
 
 build: $(objs)
-	$(CC) $(CFLAGS) -o chacha20_bench.exe $(objs) -lsodium  $(OPENSSL_HOME)/libcrypto.a -lpthread -ldl
+	$(CC) $(CFLAGS) -o chacha20_bench.exe $(objs) -lsodium -L . -lossl_no_asm -lossl_asm
 
 clean:
 	rm -f *.o *~ *.exe
