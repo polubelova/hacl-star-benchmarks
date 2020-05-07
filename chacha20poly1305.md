@@ -1,7 +1,7 @@
-chacha20poly1305
-================
 
 on Skylake laptop (model name: Intel(R) Core(TM) i7-7560U CPU @ 2.40GHz)
+
+chacha20poly1305:
 ```
           1024   2048   4096   8192  16384  32768
   lossl   6.04   3.85   2.75   2.22   1.95   1.86
