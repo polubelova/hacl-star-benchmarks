@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include <endian.h>
 
 typedef uint32_t u32;
 typedef uint64_t u64;
