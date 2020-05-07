@@ -17,10 +17,10 @@
 #include <string.h>
 #include <stdio.h>
 
-#include "blake2.h"
-#include "blake2-impl.h"
+#include "ref/blake2.h"
+#include "ref/blake2-impl.h"
 
-#include "blake2-config.h"
+#include "ref/blake2-config.h"
 
 #ifdef _MSC_VER
 #include <intrin.h> /* for _mm_set_epi64x */
@@ -39,7 +39,7 @@
 #include <x86intrin.h>
 #endif
 
-#include "blake2b-round.h"
+#include "ref/blake2b-round.h"
 
 static const uint64_t blake2b_IV[8] =
 {
@@ -384,6 +384,4 @@ blake2b_reference(
 )
 {
   blake2b_ref1(output, nn, d, ll, k, kk);
-  // int blake2b_ref1( void *out, size_t outlen, const void *in, size_t inlen, const void *key, size_t keylen )
-// {
 }

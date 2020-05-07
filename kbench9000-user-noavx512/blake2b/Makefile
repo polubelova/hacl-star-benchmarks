@@ -1,19 +1,7 @@
-objs := main.o blake2b_nacl.o Hacl_Blake2b_32.o Hacl_Blake2b_256.o blake2b_openssl.o blake2b.o
-CC = gcc-9
+objs := main.o blake2b-hacl_scalar.o blake2b-hacl_vec256.o blake2b-libsodium.o blake2b-lossl.o blake2b-reference.o
 
 CFLAGS += -O3 -g -march=native -mtune=native
 ASFLAGS += -O3 -g -march=native -mtune=native
-blake2b_ref.o: CFLAGS += 
-blake2b_nacl.o: CFLAGS += 
-Hacl_Blake2b_32.o: CFLAGS += 
-Hacl_Blake2b_256.o: CFLAGS += 
-blake2b_openssl.o: CFLAGS +=  
-# poly1305-hacl128.o: CFLAGS +=
-# poly1305-hacl256.o: CFLAGS +=
-# poly1305-hacl256_52.o: CFLAGS +=
-# poly1305-hacl256_53.o: CFLAGS +=
-# poly1305-hacl256_55.o: CFLAGS +=
-# poly1305-jazz256-asm.o: ASFLAGS =
 
 default: build
 
@@ -21,7 +9,7 @@ run: build
 	sudo ./run.sh blake2b_bench.exe
 
 build: $(objs)
-	$(CC) $(CFLAGS) -o blake2b_bench.exe $(objs) -lsodium -lssl -lcrypto -L/usr/local/lib 
+	$(CC) $(CFLAGS) -o blake2b_bench.exe $(objs) -lsodium -lcrypto -L/usr/local/lib
 
 clean:
 	rm -f *.o *~ *.exe

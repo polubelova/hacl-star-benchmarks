@@ -3,9 +3,6 @@
  * Copyright (C) 2018 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
  */
 
-// ln -s libcrypto.so.3 libcrypto.so
-// ln -s libssl.so.3 libssl.so
-
 #include <inttypes.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -86,18 +83,14 @@ static inline int name(size_t len) \
 
 
 enum { WARMUP = 50000, TRIALS = 10000, IDLE = 1 * 1000, STARTING_SIZE = 1024, DOUBLING_STEPS = 5 };
-u8 dummy_out[1000];
-u8 input_key[1000];
-u8 input_data[1000 * (1ULL << DOUBLING_STEPS)];
+u8 dummy_out[64];
+u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 
 declare_it(hacl_scalar)
 declare_it(hacl_vec256)
 declare_it(libsodium)
-// declare_it(reference)
-declare_it(openssl_prov)
+declare_it(lossl)
 declare_it(reference)
-// declare_it(optimized_reference)
-// declare_it(optimized)
 
 
 static int compare_cycles(const void *a, const void *b)
@@ -109,19 +102,13 @@ static bool verify(void)
 {
 	int ret;
 	size_t i = 0;
-	u8 out[1000];
+	u8 out[64];
 
-	// NB: Test is done using only one test vector, so I deleted the loop
 	test_it(hacl_scalar, {}, {});
 	test_it(hacl_vec256, {}, {});
 	test_it(libsodium, {}, {});
-	// test_it(reference, {}, {});
-	test_it(openssl_prov, {}, {});
+	test_it(lossl, {}, {});
 	test_it(reference, {}, {});
-	// test_it(optimized, {}, {});
-	// test_it(optimized_reference, {}, {});
-	
-
 	return true;
 }
 
@@ -132,11 +119,8 @@ int main()
 	cycles_t median_hacl_scalar[DOUBLING_STEPS+1];
 	cycles_t median_hacl_vec256[DOUBLING_STEPS+1];
 	cycles_t median_libsodium[DOUBLING_STEPS+1];
-	// cycles_t median_reference[DOUBLING_STEPS+1];
-	cycles_t median_openssl_prov[DOUBLING_STEPS+1];
+	cycles_t median_lossl[DOUBLING_STEPS+1];
 	cycles_t median_reference[DOUBLING_STEPS+1];
-	// cycles_t median_optimized_reference[DOUBLING_STEPS+1];
-	// cycles_t median_optimized[DOUBLING_STEPS+1];
 
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
@@ -146,18 +130,12 @@ int main()
 
 	for (i = 0; i < sizeof(input_data); ++i)
 		input_data[i] = i;
-	for (i = 0; i < sizeof(input_key); ++i)
-		input_key[i] = i;
 
 	do_it(hacl_scalar);
 	do_it(hacl_vec256);
 	do_it(libsodium);
+	do_it(lossl);
 	do_it(reference);
-	// do_it(reference1>);
-	do_it(openssl_prov);
-	// do_it(optimized_reference);
-	// do_it(optimized);
-
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
@@ -166,16 +144,12 @@ int main()
 
 	report_it(hacl_scalar);
 	report_it(hacl_vec256);
-	report_it(openssl_prov);
 	report_it(libsodium);
+	report_it(lossl);
 	report_it(reference);
-	// report_it(reference1);
-	// report_it(optimized_reference);
-	// report_it(optimized);
 
 
 	/* Don't let compiler be too clever. */
-	// Why not? 
 	dummy = ret;
 
 	/* We should never actually agree to insert the module. Choosing
@@ -185,4 +159,3 @@ int main()
 	free(trial_times);
 	return -0x1000;
 }
-

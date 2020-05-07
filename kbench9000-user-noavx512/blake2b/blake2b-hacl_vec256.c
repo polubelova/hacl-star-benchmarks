@@ -22,7 +22,7 @@
  */
 
 
-#include "Hacl_Blake2b_256.h"
+#include "Hacl_Impl_Blake2_Constants.h"
 
 static inline void
 blake2b_update_block(

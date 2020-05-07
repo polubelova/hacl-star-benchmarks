@@ -10,7 +10,5 @@ blake2b_libsodium(
   uint8_t *k
 )
 {
-  crypto_generichash(output, nn,
-                   d, ll,
-                   k, kk);
+  crypto_generichash(output, nn, d, ll, k, kk);
 }
