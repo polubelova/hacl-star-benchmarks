@@ -22,7 +22,7 @@
  */
 
 #include "kbench-common.h"
-#include "vec-intrin.h"
+#include "libintvector.h"
 
 
 uint32_t

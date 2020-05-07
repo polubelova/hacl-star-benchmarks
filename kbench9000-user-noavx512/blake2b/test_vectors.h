@@ -22,7 +22,7 @@ static uint8_t input2b1[44] = {
   0x28U, 0x29U, 0x2aU, 0x2bU
 };
 
-static uint8_t key2b1[0] = {0};
+static uint8_t key2b1[0] = {};
 
 static uint8_t expected2b1[64] = {
   0xc7, 0x4a, 0x77, 0x39, 0x5f, 0xb8, 0xbc, 0x12,

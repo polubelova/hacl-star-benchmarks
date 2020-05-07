@@ -1,5 +1,5 @@
 #include "kbench-common.h"
-#include "vec-intrin.h"
+#include "libintvector.h"
 
 void
 Hacl_Impl_Poly1305_Field32xN_256_load_acc4_53(Lib_IntVector_Intrinsics_vec256 *acc, uint8_t *b)

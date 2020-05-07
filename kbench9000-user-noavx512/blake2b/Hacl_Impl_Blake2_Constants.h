@@ -23,7 +23,7 @@
 
 
 #include "kbench-common.h"
-#include "vec-intrin.h"
+#include "libintvector.h"
 
 
 #ifndef __Hacl_Impl_Blake2_Constants_H

@@ -17,7 +17,7 @@ uint8_t test1_plaintext[3U] = {
 };
 
 
-uint8_t test1_expected256[32] = {
+uint8_t test1_expected512[64] = {
       0xddU, 0xafU, 0x35U, 0xa1U, 0x93U, 0x61U, 0x7aU, 0xbaU,
       0xccU, 0x41U, 0x73U, 0x49U, 0xaeU, 0x20U, 0x41U, 0x31U,
       0x12U, 0xe6U, 0xfaU, 0x4eU, 0x89U, 0xa9U, 0x7eU, 0xa2U,
@@ -34,7 +34,7 @@ static blake2_test_vector vectors2b[] = {
   {
     .input = test1_plaintext,
     .input_len = sizeof(test1_plaintext)/sizeof(uint8_t),
-    .expected = test1_expected256,
-    .expected_len = sizeof(test1_expected256)/sizeof(uint8_t),
+    .expected = test1_expected512,
+    .expected_len = sizeof(test1_expected512)/sizeof(uint8_t),
   }
 };

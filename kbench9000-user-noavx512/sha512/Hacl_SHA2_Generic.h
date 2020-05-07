@@ -22,7 +22,7 @@
  */
 
 #include"kbench-common.h"
-#include "vec-intrin.h"
+#include "libintvector.h"
 #ifndef __Hacl_SHA2_Generic_H
 #define __Hacl_SHA2_Generic_H
 

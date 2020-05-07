@@ -23,7 +23,7 @@
 
 
 #include "kbench-common.h"
-#include "vec-intrin.h"
+#include "libintvector.h"
 
 uint32_t
 Hacl_Impl_Chacha20_Vec_chacha20_constants2[4U] =
