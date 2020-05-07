@@ -8,8 +8,11 @@ default: build
 run: build
 	sudo ./run.sh chacha20poly1305_bench.exe
 
-build: $(objs)
-	$(CC) $(CFLAGS) -o chacha20poly1305_bench.exe $(objs) -lcrypto  -L/usr/local/lib  -L ./libjc -ljc_avx2
+libjc/libjc_avx2.a:
+	make -C libjc/
+
+build: $(objs) libjc/libjc_avx2.a
+	$(CC) $(CFLAGS) -o chacha20poly1305_bench.exe $^ -lcrypto  -L/usr/local/lib
 
 clean:
 	rm -f *.o *~ *.exe
