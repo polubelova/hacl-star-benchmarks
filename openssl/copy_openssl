@@ -1,0 +1,22 @@
+#!/bin/bash
+
+nm libcrypto.a | grep " T " | awk -v name="no_asm" '{print $3" "name"_"$3}' > symbols_to_rename && \
+objcopy --redefine-syms=symbols_to_rename libcrypto.a libossl_no_asm.a && \
+    rm symbols_to_rename && \
+    cp libossl_asm.a ../kbench9000-user-noavx512/chacha/libossl_asm.a && \
+    cp libossl_asm.a ../kbench9000-user-noavx512/poly1305/libossl_asm.a && \
+    cp libossl_asm.a ../kbench9000-user-noavx512/sha256/libossl_asm.a && \
+    cp libossl_asm.a ../kbench9000-user-noavx512/sha512/libossl_asm.a && \
+
+    cp libossl_no_asm.a ../kbench9000-user-noavx512/chacha/libossl_no_asm.a && \
+    cp libossl_no_asm.a ../kbench9000-user-noavx512/poly1305/libossl_no_asm.a && \
+    cp libossl_no_asm.a ../kbench9000-user-noavx512/sha256/libossl_no_asm.a && \
+    cp libossl_no_asm.a ../kbench9000-user-noavx512/sha512/libossl_no_asm.a && \
+
+    cp libossl_asm.a ../kbench9000-user-avx512/chacha/libossl_asm.a && \
+    cp libossl_asm.a ../kbench9000-user-avx512/poly1305/libossl_asm.a && \
+    cp libossl_asm.a ../kbench9000-user-avx512/sha512/libossl_asm.a && \
+
+    cp libossl_no_asm.a ../kbench9000-user-avx512/chacha/libossl_no_asm.a && \
+    cp libossl_no_asm.a ../kbench9000-user-avx512/poly1305/libossl_no_asm.a && \
+    cp libossl_no_asm.a ../kbench9000-user-avx512/sha512/libossl_no_asm.a
