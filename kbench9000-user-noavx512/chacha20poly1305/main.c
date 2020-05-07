@@ -91,6 +91,7 @@ u8 input_nonce[NONCE];
 u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 
 declare_it(lossl)
+declare_it(jazz256)
 
 static int compare_cycles(const void *a, const void *b)
 {
@@ -105,6 +106,7 @@ static bool verify(void)
 	u8 tag[16];
 
 	test_it(lossl, {}, {});
+	test_it(jazz256, {}, {});
 	return true;
 }
 
@@ -113,7 +115,7 @@ int main()
 	size_t s;
 	int ret = 0, i, j;
 	cycles_t median_lossl[DOUBLING_STEPS+1];
-	cycles_t median_lossl_no_asm[DOUBLING_STEPS+1];
+	cycles_t median_jazz256[DOUBLING_STEPS+1];
 
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
@@ -129,6 +131,7 @@ int main()
 		input_aad[i] = i;
 
 	do_it(lossl);
+	do_it(jazz256);
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
@@ -136,6 +139,7 @@ int main()
 	fprintf(stderr,"\n");
 
 	report_it(lossl);
+	report_it(jazz256);
 
 	/* Don't let compiler be too clever. */
 	dummy = ret;
