@@ -9,7 +9,7 @@ run: build
 	sudo ./run.sh sha512_bench.exe
 
 build: $(objs)
-	$(CC) $(CFLAGS) -o sha512_bench.exe $(objs) -L . -lossl_no_asm -lossl_asm -lsodium_local
+	$(CC) $(CFLAGS) -o sha512_bench.exe $(objs) -lsodium -L . -lossl_no_asm -lossl_asm
 
 clean:
 	rm -f *.o *~ *.exe

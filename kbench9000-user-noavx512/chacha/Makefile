@@ -12,7 +12,7 @@ run: build
 	sudo ./run.sh chacha20_bench.exe
 
 build: $(objs)
-	$(CC) $(CFLAGS) -o chacha20_bench.exe $(objs) -L . -lossl_no_asm -lossl_asm -lsodium_local
+	$(CC) $(CFLAGS) -o chacha20_bench.exe $(objs) -lsodium -L . -lossl_no_asm -lossl_asm
 
 clean:
 	rm -f *.o *~ *.exe
