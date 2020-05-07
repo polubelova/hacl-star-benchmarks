@@ -22,10 +22,8 @@
  */
 
 
-#include <string.h>
-#include <inttypes.h>
-#include "lowstar_endianness.h"
-#include <stdbool.h>
+#include "kbench-common.h"
+#include "vec-intrin.h"
 
 #ifndef __Hacl_Impl_Blake2_Constants_H
 #define __Hacl_Impl_Blake2_Constants_H

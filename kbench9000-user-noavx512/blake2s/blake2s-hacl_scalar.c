@@ -22,7 +22,7 @@
  */
 
 
-#include "Hacl_Blake2s_32.h"
+#include "Hacl_Impl_Blake2_Constants.h"
 
 static inline void
 blake2s_update_block(uint32_t *wv, uint32_t *hash, bool flag, uint64_t totlen, uint8_t *d)

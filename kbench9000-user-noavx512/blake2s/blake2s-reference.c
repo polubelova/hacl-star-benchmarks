@@ -17,10 +17,10 @@
 #include <string.h>
 #include <stdio.h>
 
-#include "blake2.h"
-#include "blake2-impl.h"
+#include "ref/blake2.h"
+#include "ref/blake2-impl.h"
 
-#include "blake2-config.h"
+#include "ref/blake2-config.h"
 
 
 #include <emmintrin.h>
@@ -37,7 +37,7 @@
 #include <x86intrin.h>
 #endif
 
-#include "blake2s-round.h"
+#include "ref/blake2s-round.h"
 
 static const uint32_t blake2s_IV[8] =
 {
@@ -374,6 +374,4 @@ blake2s_reference(
 )
 {
   blake2s_ref(output, nn, d, ll, k, kk);
-  // int blake2b_ref1( void *out, size_t outlen, const void *in, size_t inlen, const void *key, size_t keylen )
-// {
 }

@@ -78,14 +78,13 @@ static inline int name(size_t len) \
 } while (0)
 
 enum { WARMUP = 50000, TRIALS = 10000, IDLE = 1 * 1000, STARTING_SIZE = 1024, DOUBLING_STEPS = 5 };
-u8 dummy_out[1000];
-u8 input_key[1000];
-u8 input_data[1000 * (1ULL << DOUBLING_STEPS)];
+u8 dummy_out[32];
+u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 
 declare_it(hacl_scalar)
 declare_it(hacl_vec128)
 declare_it(libsodium)
-declare_it(openssl_prov)
+declare_it(lossl)
 declare_it(reference)
 
 static int compare_cycles(const void *a, const void *b)
@@ -97,15 +96,13 @@ static bool verify(void)
 {
 	int ret;
 	size_t i = 0;
-	u8 out[1000];
+	u8 out[32];
 
-	// NB: Test is done using only one test vector, so I deleted the loop
 	test_it(hacl_scalar, {}, {});
 	test_it(hacl_vec128, {}, {});
 	test_it(libsodium, {}, {});
-	test_it(openssl_prov, {}, {});
+	test_it(lossl, {}, {});
 	test_it(reference, {}, {});
-	// test_it(ref, {}, {});
 
 	return true;
 }
@@ -117,7 +114,7 @@ int main()
 	cycles_t median_hacl_scalar[DOUBLING_STEPS+1];
 	cycles_t median_hacl_vec128[DOUBLING_STEPS+1];
 	cycles_t median_libsodium[DOUBLING_STEPS+1];
-	cycles_t median_openssl_prov[DOUBLING_STEPS+1];
+	cycles_t median_lossl[DOUBLING_STEPS+1];
 	cycles_t median_reference[DOUBLING_STEPS+1];
 
 	unsigned long flags;
@@ -128,13 +125,11 @@ int main()
 
 	for (i = 0; i < sizeof(input_data); ++i)
 		input_data[i] = i;
-	for (i = 0; i < sizeof(input_key); ++i)
-		input_key[i] = i;
 
 	do_it(hacl_scalar);
 	do_it(hacl_vec128);
 	do_it(libsodium);
-	do_it(openssl_prov);
+	do_it(lossl);
 	do_it(reference);
 
 	fprintf(stderr,"%11s","");
@@ -145,13 +140,10 @@ int main()
 	report_it(hacl_scalar);
 	report_it(hacl_vec128);
 	report_it(libsodium);
-	report_it(openssl_prov);
+	report_it(lossl);
 	report_it(reference);
-	
-	// report_it(ref);
 
 	/* Don't let compiler be too clever. */
-	// Why not? 
 	dummy = ret;
 
 	/* We should never actually agree to insert the module. Choosing
@@ -161,4 +153,3 @@ int main()
 	free(trial_times);
 	return -0x1000;
 }
-
