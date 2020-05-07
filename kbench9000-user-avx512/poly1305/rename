@@ -1,0 +1,6 @@
+#!/bin/bash
+
+nm libcrypto.a | grep " T " | awk -v name="no_asm" '{print $3" "name"_"$3}' > symbols_to_rename && \
+objcopy --redefine-syms=symbols_to_rename libcrypto.a libossl_no_asm.a && \
+rm symbols_to_rename
+

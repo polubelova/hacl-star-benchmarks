@@ -39,23 +39,11 @@ enum {KEY_LEN = 32, NONCE = 12};
 void chacha20_ ## name(u32 len,  u8 *out, const u8 *text, const u8 *key, const u8 *n1, u32 ctr); \
 static inline int name(size_t len) \
 { \
-	chacha20_ ## name(len, input_data, input_data, input_key, input_nonce, 1); \
+	chacha20_ ## name(len, dummy_out, input_data, input_key, input_nonce, 1); \
 }
 
-// #define do_it(name) do { \
-// 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) { \
-// 	        trial_times[0] = get_cycles(); \
-// 		for (i = 1; i <= TRIALS; ++i) { \
-// 			ret |= name(STARTING_SIZE); \
-// 		        trial_times[i] = get_cycles(); } \
-// 		for (i = 0; i < TRIALS; ++i) \
-// 		        trial_times[i] = trial_times[i+1] - trial_times[i]; \
-// 		qsort(trial_times, TRIALS, sizeof(cycles_t), compare_cycles); \
-// 		median_ ## name[j] = trial_times[TRIALS/2]; \
-// 	} \
-// } while (0)
 
-#define do_it(name) do { \
+#define do_it(name) do {	     \
 	for (i = 0; i < WARMUP; ++i) \
 		ret |= name(sizeof(input_data)); \
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) { \
@@ -96,20 +84,18 @@ static inline int name(size_t len) \
 
 
 enum { WARMUP = 50000, TRIALS = 10000, IDLE = 1 * 1000, STARTING_SIZE = 1024, DOUBLING_STEPS = 5 };
-// enum { WARMUP = 50000, TRIALS = 10000, IDLE = 1 * 1000, STARTING_SIZE = 900, DOUBLING_STEPS = 5 };
-
 u8 dummy_out[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 u8 input_key[KEY_LEN];
 u8 input_nonce[NONCE];
 u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 
-// declare_it(hacl)
 declare_it(hacl_scalar)
 declare_it(hacl_vec128)
 declare_it(hacl_vec256)
 declare_it(hacl_vec512)
-declare_it(openssl_prov)
-declare_it(jasmin)
+declare_it(lossl)
+declare_it(lossl_no_asm)
+declare_it(jazz256)
 declare_it(libsodium)
 
 static int compare_cycles(const void *a, const void *b)
@@ -127,25 +113,25 @@ static bool verify(void)
 	test_it(hacl_vec128, {}, {});
 	test_it(hacl_vec256, {}, {});
 	test_it(hacl_vec512, {}, {});
-	test_it(openssl_prov, {}, {});
+	test_it(jazz256, {}, {});
 	test_it(libsodium, {}, {});
-	test_it(jasmin, {}, {});
-	
+	test_it(lossl, {}, {});
+	test_it(lossl_no_asm, {}, {});
 	return true;
 }
 
 int main()
 {
-	// u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 	size_t s;
 	int ret = 0, i, j;
 	cycles_t median_hacl_scalar[DOUBLING_STEPS+1];
 	cycles_t median_hacl_vec128[DOUBLING_STEPS+1];
 	cycles_t median_hacl_vec256[DOUBLING_STEPS+1];
 	cycles_t median_hacl_vec512[DOUBLING_STEPS+1];
-	cycles_t median_openssl_prov[DOUBLING_STEPS+1];
+	cycles_t median_lossl[DOUBLING_STEPS+1];
+	cycles_t median_lossl_no_asm[DOUBLING_STEPS+1];
+	cycles_t median_jazz256[DOUBLING_STEPS+1];
 	cycles_t median_libsodium[DOUBLING_STEPS+1];
-	cycles_t median_jasmin[DOUBLING_STEPS+1];
 
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
@@ -162,10 +148,10 @@ int main()
 	do_it(hacl_vec128);
 	do_it(hacl_vec256);
 	do_it(hacl_vec512);
-	do_it(openssl_prov);
+	do_it(lossl);
+	do_it(lossl_no_asm);
+	do_it(jazz256);
 	do_it(libsodium);
-	do_it(jasmin);
-
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
@@ -176,13 +162,12 @@ int main()
 	report_it(hacl_vec128);
 	report_it(hacl_vec256);
 	report_it(hacl_vec512);
-	report_it(openssl_prov);
+	report_it(jazz256);
 	report_it(libsodium);
-	report_it(jasmin);
-	
+	report_it(lossl);
+	report_it(lossl_no_asm);
 
 	/* Don't let compiler be too clever. */
-	// Why not? 
 	dummy = ret;
 
 	/* We should never actually agree to insert the module. Choosing
@@ -192,4 +177,3 @@ int main()
 	free(trial_times);
 	return -0x1000;
 }
-

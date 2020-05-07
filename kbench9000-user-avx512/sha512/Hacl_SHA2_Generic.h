@@ -21,9 +21,8 @@
  * SOFTWARE.
  */
 
-#include <string.h>
-#include <inttypes.h>
-
+#include"kbench-common.h"
+#include "libintvector.h"
 #ifndef __Hacl_SHA2_Generic_H
 #define __Hacl_SHA2_Generic_H
 
