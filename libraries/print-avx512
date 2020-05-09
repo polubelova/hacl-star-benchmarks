@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo $'CHACHA20' > results-no-avx512.txt && \
+cd ./../kbench9000-user-avx512/chacha && \
+    make clean && CC=gcc-9 CFLAGS=-w make run 2>> ../../libraries/results-no-avx512.txt && \
+echo $'\n\nPOLY1305' >> ../../libraries/results-no-avx512.txt && \
+cd ../poly1305 && \
+    make clean && CC=gcc-9 CFLAGS=-w make run 2>> ../../libraries/results-no-avx512.txt && \
+echo $'\n\nSHA512' >> ../../libraries/results-no-avx512.txt && \
+cd ../sha512 && \
+    make clean && CC=gcc-9 CFLAGS=-w make run 2>> ../../libraries/results-no-avx512.txt
+
+echo $'\n\nBLAKE2B' >> ../../libraries/results-no-avx512.txt && \
+cd ../../kbench9000-user-no-avx512/blake2b && \
+    make clean && CC=gcc-9 CFLAGS=-w make run 2>> ../../libraries/results-no-avx512.txt && \
+echo $'\n\nBLAKE2S' >> ../../libraries/results-no-avx512.txt && \
+cd ../blake2s && \
+    make clean && CC=gcc-9 CFLAGS=-w make run 2>> ../../libraries/results-no-avx512.txt && \
+echo $'\n\nSHA256' >> ../../libraries/results-no-avx512.txt && \
+cd ../sha256 && \
+    make clean && CC=gcc-9 CFLAGS=-w make run 2>> ../../libraries/results-no-avx512.txt && \
