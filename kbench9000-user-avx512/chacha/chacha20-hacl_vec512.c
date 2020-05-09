@@ -26,7 +26,7 @@
 #include "libintvector.h"
 
 uint32_t
-Hacl_Impl_Chacha20_Vec_chacha20_constants[4U] =
+Hacl_Impl_Chacha20_Vec_chacha20_constants4[4U] =
   { (uint32_t)0x61707865U, (uint32_t)0x3320646eU, (uint32_t)0x79622d32U, (uint32_t)0x6b206574U };
 
 
@@ -241,22 +241,22 @@ chacha20_init_512(Lib_IntVector_Intrinsics_vec512 *ctx, uint8_t *k, uint8_t *n1,
   uint32_t *uu____0 = ctx1;
   {
     uint32_t *os = uu____0;
-    uint32_t x = Hacl_Impl_Chacha20_Vec_chacha20_constants[0U];
+    uint32_t x = Hacl_Impl_Chacha20_Vec_chacha20_constants4[0U];
     os[0U] = x;
   }
   {
     uint32_t *os = uu____0;
-    uint32_t x = Hacl_Impl_Chacha20_Vec_chacha20_constants[1U];
+    uint32_t x = Hacl_Impl_Chacha20_Vec_chacha20_constants4[1U];
     os[1U] = x;
   }
   {
     uint32_t *os = uu____0;
-    uint32_t x = Hacl_Impl_Chacha20_Vec_chacha20_constants[2U];
+    uint32_t x = Hacl_Impl_Chacha20_Vec_chacha20_constants4[2U];
     os[2U] = x;
   }
   {
     uint32_t *os = uu____0;
-    uint32_t x = Hacl_Impl_Chacha20_Vec_chacha20_constants[3U];
+    uint32_t x = Hacl_Impl_Chacha20_Vec_chacha20_constants4[3U];
     os[3U] = x;
   }
   uint32_t *uu____1 = ctx1 + (uint32_t)4U;
