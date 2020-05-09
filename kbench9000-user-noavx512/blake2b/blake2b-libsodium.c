@@ -1,4 +1,10 @@
-#include <sodium.h>
+#include "kbench-common.h"
+//#include <sodium.h>
+
+extern int libsodium_crypto_generichash(unsigned char *out, size_t outlen,
+                       const unsigned char *in, unsigned long long inlen,
+                       const unsigned char *key, size_t keylen);
+
 
 void
 blake2b_libsodium(
@@ -10,5 +16,5 @@ blake2b_libsodium(
   uint8_t *k
 )
 {
-  crypto_generichash(output, nn, d, ll, k, kk);
+  libsodium_crypto_generichash(output, nn, d, ll, k, kk);
 }

@@ -9,7 +9,7 @@ run: build
 	sudo ./run.sh blake2b_bench.exe
 
 build: $(objs)
-	$(CC) $(CFLAGS) -o blake2b_bench.exe $^ -lcrypto -lsodium -L/usr/local/lib
+	$(CC) $(CFLAGS) -o blake2b_bench.exe $^ -L ./../../libraries -lossl_asm -lsodium -lpthread -ldl
 
 clean:
 	rm -f *.o *~ *.exe
