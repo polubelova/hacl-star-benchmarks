@@ -84,8 +84,7 @@ u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 
 //declare_it(ref)
 declare_it(ossl_c)
-declare_it(donna32)
-declare_it(donna64)
+declare_it(libsodium)
 declare_it(hacl_scalar)
 declare_it(hacl_vec128)
 declare_it(hacl_vec256)
@@ -111,8 +110,7 @@ static bool verify(void)
 	for (i = 0; i < ARRAY_SIZE(poly1305_testvecs); ++i) {
 	  //test_it(ref, {}, {});
 		test_it(ossl_c, {}, {});
-		test_it(donna32, {}, {});
-		test_it(donna64, {}, {});
+		test_it(libsodium, {}, {});
 		test_it(hacl_scalar, {}, {});
 		test_it(hacl_vec128, {}, {});
 		test_it(hacl_vec256, {}, {});
@@ -133,8 +131,7 @@ int main()
 	int ret = 0, i, j;
 	//cycles_t median_ref[DOUBLING_STEPS+1];
 	cycles_t median_ossl_c[DOUBLING_STEPS + 1];
-	cycles_t median_donna32[DOUBLING_STEPS + 1];
-	cycles_t median_donna64[DOUBLING_STEPS + 1];
+	cycles_t median_libsodium[DOUBLING_STEPS + 1];
 	cycles_t median_hacl_scalar[DOUBLING_STEPS + 1];
 	cycles_t median_hacl_vec128[DOUBLING_STEPS + 1];
 	cycles_t median_hacl_vec256[DOUBLING_STEPS + 1];
@@ -158,8 +155,7 @@ int main()
 
 	//do_it(ref);
 	do_it(ossl_c);
-	do_it(donna32);
-	do_it(donna64);
+	do_it(libsodium);
 	do_it(hacl_scalar);
 	do_it(hacl_vec128);
 	do_it(hacl_vec256);
@@ -178,8 +174,7 @@ int main()
 
 	//report_it(ref);
 	report_it(ossl_c);
-	report_it(donna32);
-	report_it(donna64); //libsodium?
+	report_it(libsodium);
 	report_it(hacl_scalar);
 	report_it(hacl_vec128);
 	report_it(hacl_vec256);
