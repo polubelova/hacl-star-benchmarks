@@ -5,25 +5,25 @@ Required libraries
 - libcrypto.a (compiled with the `no-asm` flag)
 
 
-To get `libossl_no_asm.a`, one needs to run ./rename
+To get `libossl_no_asm.a`, one needs to run `./rename`
 
 
 INSTALL
 =======
 
--libsodium
+- libsodium
 ```
 git clone https://github.com/jedisct1/libsodium --branch stable
 env CC=gcc-9 CFLAGS="-O3 -march=native -mtune=native" ./configure && make check
 ```
 
--openssl
+- openssl
 ```
 git clone https://github.com/openssl/openssl
 ./config && make
 ```
 
--openssl-no-asm
+- openssl-no-asm
 ```
 git clone https://github.com/openssl/openssl
 ./config no-asm && make
