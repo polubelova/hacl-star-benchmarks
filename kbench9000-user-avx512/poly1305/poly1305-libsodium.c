@@ -1,7 +1,7 @@
 #include "kbench-common.h"
-#include <sodium.h>
+//#include <sodium.h>
 
-extern int crypto_onetimeauth(
+extern int libsodium_crypto_onetimeauth(
    unsigned char *out,
    const unsigned char *in,
    unsigned long long inlen,
@@ -14,5 +14,5 @@ void poly1305_libsodium(
   const unsigned char *k
 )
 {
-  crypto_onetimeauth(out, in, inlen, k);
+  libsodium_crypto_onetimeauth(out, in, inlen, k);
 }
