@@ -90,7 +90,7 @@ int blake2s_init_param( blake2s_state *S, const blake2s_param *P )
 
 
 /* Some sort of default parameter block initialization, for sequential blake2s */
-int blake2s_init( blake2s_state *S, size_t outlen )
+int blake2s_init_ref( blake2s_state *S, size_t outlen )
 {
   blake2s_param P[1];
 
@@ -114,7 +114,7 @@ int blake2s_init( blake2s_state *S, size_t outlen )
 }
 
 
-int blake2s_init_key( blake2s_state *S, size_t outlen, const void *key, size_t keylen )
+int blake2s_init_key_ref( blake2s_state *S, size_t outlen, const void *key, size_t keylen )
 {
   blake2s_param P[1];
 
@@ -143,7 +143,7 @@ int blake2s_init_key( blake2s_state *S, size_t outlen, const void *key, size_t k
     uint8_t block[BLAKE2S_BLOCKBYTES];
     memset( block, 0, BLAKE2S_BLOCKBYTES );
     memcpy( block, key, keylen );
-    blake2s_update( S, block, BLAKE2S_BLOCKBYTES );
+    blake2s_update_ref( S, block, BLAKE2S_BLOCKBYTES );
     secure_zero_memory( block, BLAKE2S_BLOCKBYTES ); /* Burn the key from stack */
   }
   return 0;
@@ -206,7 +206,7 @@ static void blake2s_compress( blake2s_state *S, const uint8_t block[BLAKE2S_BLOC
   STOREU( &S->h[4], _mm_xor_si128( ff1, _mm_xor_si128( row2, row4 ) ) );
 }
 
-int blake2s_update( blake2s_state *S, const void *pin, size_t inlen )
+int blake2s_update_ref( blake2s_state *S, const void *pin, size_t inlen )
 {
   const unsigned char * in = (const unsigned char *)pin;
   if( inlen > 0 )
@@ -233,7 +233,7 @@ int blake2s_update( blake2s_state *S, const void *pin, size_t inlen )
   return 0;
 }
 
-int blake2s_final( blake2s_state *S, void *out, size_t outlen )
+int blake2s_final_ref( blake2s_state *S, void *out, size_t outlen )
 {
   uint8_t buffer[BLAKE2S_OUTBYTES] = {0};
   size_t i;
@@ -275,15 +275,15 @@ int blake2s_ref( void *out, size_t outlen, const void *in, size_t inlen, const v
 
   if( keylen > 0 )
   {
-    if( blake2s_init_key( S, outlen, key, keylen ) < 0 ) return -1;
+    if( blake2s_init_key_ref( S, outlen, key, keylen ) < 0 ) return -1;
   }
   else
   {
-    if( blake2s_init( S, outlen ) < 0 ) return -1;
+    if( blake2s_init_ref( S, outlen ) < 0 ) return -1;
   }
 
-  blake2s_update( S, ( const uint8_t * )in, inlen );
-  blake2s_final( S, out, outlen );
+  blake2s_update_ref( S, ( const uint8_t * )in, inlen );
+  blake2s_final_ref( S, out, outlen );
   return 0;
 }
 
@@ -330,21 +330,21 @@ int main( void )
       size_t mlen = i;
       int err = 0;
 
-      if( (err = blake2s_init_key(&S, BLAKE2S_OUTBYTES, key, BLAKE2S_KEYBYTES)) < 0 ) {
+      if( (err = blake2s_init_key_ref(&S, BLAKE2S_OUTBYTES, key, BLAKE2S_KEYBYTES)) < 0 ) {
         goto fail;
       }
 
       while (mlen >= step) {
-        if ( (err = blake2s_update(&S, p, step)) < 0 ) {
+        if ( (err = blake2s_update_ref(&S, p, step)) < 0 ) {
           goto fail;
         }
         mlen -= step;
         p += step;
       }
-      if ( (err = blake2s_update(&S, p, mlen)) < 0) {
+      if ( (err = blake2s_update_ref(&S, p, mlen)) < 0) {
         goto fail;
       }
-      if ( (err = blake2s_final(&S, hash, BLAKE2S_OUTBYTES)) < 0) {
+      if ( (err = blake2s_final_ref(&S, hash, BLAKE2S_OUTBYTES)) < 0) {
         goto fail;
       }
 
