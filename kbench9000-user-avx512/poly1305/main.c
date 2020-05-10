@@ -72,7 +72,7 @@ static inline int name(size_t len) \
 	size_t l; \
 	fprintf(stderr,"%11s",#name); \
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) { \
-	        fprintf(stderr, " %6.2f", (double)(median_ ## name[j]) / s); \
+	        fprintf(stderr, "\t%6.2f", (double)(median_ ## name[j]) / s); \
 	} \
 	fprintf(stderr, "\n"); \
 } while (0)
