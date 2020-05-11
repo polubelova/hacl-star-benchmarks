@@ -1,0 +1,5 @@
+crypto_hash/sha512/openssl-new/asm gcc 9.77
+crypto_hash/sha512/openssl-new/no-asm gcc 10.07
+crypto_hash/sha512/hacl_star/scalar gcc 11.27
+crypto_hash/sha512/sphlib gcc 12.40
+crypto_hash/sha512/sphlib-small gcc 12.40
