@@ -8,7 +8,7 @@ extern void chacha20_avx2(
   const unsigned char *n,
   unsigned int counter);
 
-void chacha20_jazz256(
+void chacha20_jasmin_avx2(
   uint32_t len,
   uint8_t *out,
   uint8_t *text,

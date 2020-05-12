@@ -83,18 +83,17 @@ u8 input_key[POLY1305_KEY_SIZE];
 u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 
 //declare_it(ref)
-declare_it(ossl_c)
 declare_it(libsodium)
 declare_it(hacl_scalar)
 declare_it(hacl_vec128)
 declare_it(hacl_vec256)
 declare_it(hacl_vec512)
-declare_it(jazz256)
+declare_it(jasmin_avx2)
 declare_it(hacl256_55)
 declare_it(hacl256_52)
 declare_it(hacl256_53)
-declare_it(lossl)
-declare_it(lossl_no_asm)
+declare_it(openssl)
+declare_it(openssl_c)
 
 static int compare_cycles(const void *a, const void *b)
 {
@@ -109,18 +108,17 @@ static bool verify(void)
 
 	for (i = 0; i < ARRAY_SIZE(poly1305_testvecs); ++i) {
 	  //test_it(ref, {}, {});
-		test_it(ossl_c, {}, {});
 		test_it(libsodium, {}, {});
 		test_it(hacl_scalar, {}, {});
 		test_it(hacl_vec128, {}, {});
 		test_it(hacl_vec256, {}, {});
 		test_it(hacl_vec512, {}, {});
-		test_it(jazz256, {}, {});
+		test_it(jasmin_avx2, {}, {});
 		test_it(hacl256_55, {}, {});
 		test_it(hacl256_52, {}, {});
 		test_it(hacl256_53, {}, {});
-		test_it(lossl, {}, {});
-		test_it(lossl_no_asm, {}, {});
+		test_it(openssl, {}, {});
+		test_it(openssl_c, {}, {});
 	}
 	return true;
 }
@@ -130,18 +128,17 @@ int main()
 	size_t s;
 	int ret = 0, i, j;
 	//cycles_t median_ref[DOUBLING_STEPS+1];
-	cycles_t median_ossl_c[DOUBLING_STEPS + 1];
 	cycles_t median_libsodium[DOUBLING_STEPS + 1];
 	cycles_t median_hacl_scalar[DOUBLING_STEPS + 1];
 	cycles_t median_hacl_vec128[DOUBLING_STEPS + 1];
 	cycles_t median_hacl_vec256[DOUBLING_STEPS + 1];
 	cycles_t median_hacl_vec512[DOUBLING_STEPS + 1];
-	cycles_t median_jazz256[DOUBLING_STEPS + 1];
+	cycles_t median_jasmin_avx2[DOUBLING_STEPS + 1];
 	cycles_t median_hacl256_55[DOUBLING_STEPS + 1];
 	cycles_t median_hacl256_52[DOUBLING_STEPS + 1];
 	cycles_t median_hacl256_53[DOUBLING_STEPS + 1];
-	cycles_t median_lossl[DOUBLING_STEPS + 1];
-	cycles_t median_lossl_no_asm[DOUBLING_STEPS + 1];
+	cycles_t median_openssl[DOUBLING_STEPS + 1];
+	cycles_t median_openssl_c[DOUBLING_STEPS + 1];
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
 
@@ -154,18 +151,17 @@ int main()
 		input_key[i] = i;
 
 	//do_it(ref);
-	do_it(ossl_c);
 	do_it(libsodium);
 	do_it(hacl_scalar);
 	do_it(hacl_vec128);
 	do_it(hacl_vec256);
 	do_it(hacl_vec512);
-	do_it(jazz256);
+	do_it(jasmin_avx2);
 	do_it(hacl256_55);
 	do_it(hacl256_53);
 	do_it(hacl256_52);
-	do_it(lossl);
-	do_it(lossl_no_asm);
+	do_it(openssl);
+	do_it(openssl_c);
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
@@ -173,18 +169,17 @@ int main()
 	fprintf(stderr,"\n");
 
 	//report_it(ref);
-	report_it(ossl_c);
 	report_it(libsodium);
 	report_it(hacl_scalar);
 	report_it(hacl_vec128);
 	report_it(hacl_vec256);
 	report_it(hacl_vec512);
-	report_it(jazz256);
+	report_it(jasmin_avx2);
 	report_it(hacl256_55);
 	report_it(hacl256_53);
 	report_it(hacl256_52);
-	report_it(lossl);
-	report_it(lossl_no_asm);
+	report_it(openssl);
+	report_it(openssl_c);
 
 	/* Don't let compiler be too clever. */
 	dummy = ret;

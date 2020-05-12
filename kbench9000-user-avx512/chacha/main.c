@@ -93,9 +93,9 @@ declare_it(hacl_scalar)
 declare_it(hacl_vec128)
 declare_it(hacl_vec256)
 declare_it(hacl_vec512)
-declare_it(lossl)
-declare_it(lossl_no_asm)
-declare_it(jazz256)
+declare_it(openssl)
+declare_it(openssl_c)
+declare_it(jasmin_avx2)
 declare_it(libsodium)
 
 static int compare_cycles(const void *a, const void *b)
@@ -112,11 +112,11 @@ static bool verify(void)
 	test_it(hacl_scalar, {}, {});
 	test_it(hacl_vec128, {}, {});
 	test_it(hacl_vec256, {}, {});
-	test_it(hacl_vec512, {}, {});
-	test_it(jazz256, {}, {});
+	test_it(hacl_vec512, {}, {});	
+	test_it(jasmin_avx2, {}, {});
 	test_it(libsodium, {}, {});
-	test_it(lossl, {}, {});
-	test_it(lossl_no_asm, {}, {});
+	test_it(openssl, {}, {});
+	test_it(openssl_c, {}, {});
 	return true;
 }
 
@@ -127,10 +127,10 @@ int main()
 	cycles_t median_hacl_scalar[DOUBLING_STEPS+1];
 	cycles_t median_hacl_vec128[DOUBLING_STEPS+1];
 	cycles_t median_hacl_vec256[DOUBLING_STEPS+1];
-	cycles_t median_hacl_vec512[DOUBLING_STEPS+1];
-	cycles_t median_lossl[DOUBLING_STEPS+1];
-	cycles_t median_lossl_no_asm[DOUBLING_STEPS+1];
-	cycles_t median_jazz256[DOUBLING_STEPS+1];
+	cycles_t median_hacl_vec512[DOUBLING_STEPS+1];	
+	cycles_t median_openssl[DOUBLING_STEPS+1];
+	cycles_t median_openssl_c[DOUBLING_STEPS+1];
+	cycles_t median_jasmin_avx2[DOUBLING_STEPS+1];
 	cycles_t median_libsodium[DOUBLING_STEPS+1];
 
 	unsigned long flags;
@@ -147,10 +147,10 @@ int main()
 	do_it(hacl_scalar);
 	do_it(hacl_vec128);
 	do_it(hacl_vec256);
-	do_it(hacl_vec512);
-	do_it(lossl);
-	do_it(lossl_no_asm);
-	do_it(jazz256);
+	do_it(hacl_vec512);	
+	do_it(openssl);
+	do_it(openssl_c);
+	do_it(jasmin_avx2);
 	do_it(libsodium);
 
 	fprintf(stderr,"%11s","");
@@ -161,12 +161,12 @@ int main()
 	report_it(hacl_scalar);
 	report_it(hacl_vec128);
 	report_it(hacl_vec256);
-	report_it(hacl_vec512);
-	report_it(jazz256);
+	report_it(hacl_vec512);	
+	report_it(jasmin_avx2);
 	report_it(libsodium);
-	report_it(lossl);
-	report_it(lossl_no_asm);
-
+	report_it(openssl);
+	report_it(openssl_c);
+	
 	/* Don't let compiler be too clever. */
 	dummy = ret;
 

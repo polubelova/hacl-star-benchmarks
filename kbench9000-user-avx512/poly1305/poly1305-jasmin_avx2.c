@@ -7,7 +7,7 @@ extern void poly1305_avx2(
   const unsigned char *k
 );
 
-void poly1305_jazz256(
+void poly1305_jasmin_avx2(
   unsigned char *out,
   const unsigned char *in,
   unsigned long long inlen,
