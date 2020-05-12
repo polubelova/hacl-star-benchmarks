@@ -1,0 +1,7 @@
+crypto_hash/sha512/openssl-new/asm gcc-9 4.19
+crypto_hash/sha512/sphlib gcc-9 5.63
+crypto_hash/sha512/sphlib-small gcc-9 5.64
+crypto_hash/sha512/hacl_star/scalar gcc-9 6.19
+crypto_hash/sha512/hacl_star/sha512-mb4 gcc-9 6.89
+crypto_hash/sha512/openssl-new/no-asm gcc-9 7.56
+crypto_hash/sha512/hacl_star/sha512-mb8 clang 11.11
