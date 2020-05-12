@@ -1,0 +1,6 @@
+crypto_onetimeauth/poly1305/openssl/asm clang 1.16
+crypto_onetimeauth/poly1305/hacl_star/vec128 clang 1.98
+crypto_onetimeauth/poly1305/openssl/no_asm clang 3.08
+crypto_onetimeauth/poly1305/53 clang 3.74
+crypto_onetimeauth/poly1305/hacl_star/scalar gcc 5.13
+crypto_onetimeauth/poly1305/ref gcc 66.77
