@@ -1,0 +1,82 @@
+crypto_stream/chacha20/jazz/avx2:jasmin/avx2 assembly AVX2
+crypto_stream/chacha20/openssl/asm:openssl assembly AVX2
+crypto_stream/chacha20/dolbeau/amd64-avx2:dolbeau/amd64-avx2 C AVX2
+crypto_stream/chacha20/hacl_star/vec256:hacl-star/vec256 C AVX2
+crypto_stream/chacha20/dolbeau/generic-gccsimd256:dolbeau/generic-gccsimd256 C AVX2
+crypto_stream/chacha20/goll_gueron:goll-gueron C AVX2
+crypto_stream/chacha20/krovetz/avx2:krovetz/avx2 C AVX2
+crypto_stream/chacha20/jazz/avx:jasmin/avx assembly AVX
+crypto_stream/chacha20/hacl_star/vec128:hacl-star/vec128 C AVX
+crypto_stream/chacha20/dolbeau/generic-gccsimd128:dolbeau/generic-gccsimd128 C AVX
+crypto_stream/chacha20/krovetz/vec128:krovetz/vec128 C SSSE3
+crypto_stream/chacha20/amd64-ssse3:remove remove remove
+crypto_stream/chacha20/e/amd64-xmm6:bernstein/e/amd64-xmm6 assembly SSE2
+crypto_stream/chacha20/e/merged:remove remove remove
+crypto_stream/chacha20/jazz/ref:jasmin/ref assembly ?
+crypto_stream/chacha20/e/amd64-3:remove remove remove
+crypto_stream/chacha20/hacl_star/scalar1:hacl-star/scalar1 C ?
+crypto_stream/chacha20/hacl_star/scalar:hacl-star/scalar C ?
+crypto_stream/chacha20/e/ref:bernstein/e/ref C ?
+crypto_stream/chacha20/openssl/no_asm:openssl-portable C ?
+crypto_stream/chacha20/e/regs:remove remove remove
+
+
+crypto_onetimeauth/poly1305/jazz/avx2:jasmin/avx2 assembly AVX2
+crypto_onetimeauth/poly1305/openssl/asm:openssl assembly AVX2
+crypto_onetimeauth/poly1305/hacl_star/vec256:hacl-star/vec256 C AVX2
+crypto_onetimeauth/poly1305/moon/avx2/64:moon/avx2/64 assembly AVX2
+crypto_onetimeauth/poly1305/jazz/avx:jasmin/avx assembly AVX
+crypto_onetimeauth/poly1305/moon/sse2/64:moon/sse2/64 assembly SSE2
+crypto_onetimeauth/poly1305/moon/avx/64:moon/avx/64 assembly AVX
+crypto_onetimeauth/poly1305/jazz/ref3:jasmin/ref3 assembly ?
+crypto_onetimeauth/poly1305/hacl_star/vec128:hacl-star/vec128 C AVX
+crypto_onetimeauth/poly1305/avx:remove remove remove
+crypto_onetimeauth/poly1305/openssl/no_asm:openssl-portable C ?
+crypto_onetimeauth/poly1305/hacl_star/scalar:hacl-star/scalar C ?
+crypto_onetimeauth/poly1305/amd64:bernstein/amd64 assembly SSE2
+crypto_onetimeauth/poly1305/53:bernstein/53 C ?
+crypto_onetimeauth/poly1305/ref:remove remove remove
+
+
+crypto_hash/blake2b/avx2-3:neves/avx2 C AVX2
+crypto_hash/blake2b/avx2-2:remove remove remove
+crypto_hash/blake2b/avxicc:neves/avxicc assembly AVX
+crypto_hash/blake2b/moon/avx2/64:moon/avx2/64 assembly AVX2
+crypto_hash/blake2b/moon/avx/64:moon/avx/64 assembly AVX
+crypto_hash/blake2b/hacl_star/vec256:hacl-star/vec256 C AVX2
+crypto_hash/blake2b/avx2-1:remove remove remove
+crypto_hash/blake2b/regs:neves/regs C ?
+crypto_hash/blake2b/xmm:remove remove remove
+crypto_hash/blake2b/ref:neves/ref C ?
+crypto_hash/blake2b/hacl_star/scalar:hacl-star/scalar C ?
+
+
+crypto_hash/blake2s/avxicc:neves/avxicc assembly AVX
+crypto_hash/blake2s/xmm:neves/xmm C AVX
+crypto_hash/blake2s/moon/avx/64:moon/avx/64 assembly AVX
+crypto_hash/blake2s/hacl_star/vec128:hacl-star/vec128 C AVX
+crypto_hash/blake2s/regs:neves/regs C ?
+crypto_hash/blake2s/moon/sse2/64:moon/sse2/64 assembly SSE2
+crypto_hash/blake2s/moon/ssse3/64:moon/ssse3/64 assembly SSSE3
+crypto_hash/blake2s/ref:neves/ref C ?
+crypto_hash/blake2s/hacl_star/scalar:hacl-star/scalar C ?
+
+
+crypto_hash/sha256/openssl :openssl assembly AVX2 
+crypto_hash/sha256/openssl-new/asm :remove remove remove 
+crypto_hash/sha256/sphlib :sphlib C ? 
+crypto_hash/sha256/sphlib-small :sphlib-small C ? 
+crypto_hash/sha256/hacl_star/scalar:hacl-star/scalar C ?
+crypto_hash/sha256/openssl-new/no-asm:openssl-portable C ?
+crypto_hash/sha256/openssl-mb/sha256-mb4:remove remove remove
+crypto_hash/sha256/hacl_star/sha256-mb4:hacl-star/sha256-mb4 C AVX
+crypto_hash/sha256/hacl_star/sha256-mb8:hacl-star/sha256-mb8 C AVX2
+
+
+crypto_hash/sha512/openssl :openssl assembly AVX2 
+crypto_hash/sha512/openssl-new/asm :remove remove remove
+crypto_hash/sha512/sphlib :sphlib C ? 
+crypto_hash/sha512/sphlib-small :sphlib-small C ? 
+crypto_hash/sha512/hacl_star/scalar:hacl-star/scalar C ?
+crypto_hash/sha512/openssl-new/no-asm:openssl-portable C ?
+crypto_hash/sha512/hacl_star/sha512-mb4:hacl-star/sha512-mb4 C AVX2
