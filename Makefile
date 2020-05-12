@@ -18,14 +18,14 @@ kbench-avx512:
 	cp $(LIB_HOME)/results-avx512.txt $(RES_HOME)/results-avx512.txt
 
 refresh-libs-supercop:
-	cp $(LIB_HOME)/libcrypto.a $(SUPERCOP_HOME)/crypto_hash/sha256/openssl-new/no-asm/libcrypto.a && \
-	cp $(LIB_HOME)/libcrypto.a $(SUPERCOP_HOME)/crypto_hash/sha512/openssl-new/no-asm/libcrypto.a && \
-	cp $(LIB_HOME)/libcrypto.a $(SUPERCOP_HOME)/crypto_onetimeauth/poly1305/openssl/no_asm/libcrypto.a && \
-	cp $(LIB_HOME)/libcrypto.a $(SUPERCOP_HOME)/crypto_stream/chacha20/openssl/no_asm/libcrypto.a && \
-	cp $(LIB_HOME)/libossl_asm.a $(SUPERCOP_HOME)/crypto_hash/sha256/openssl-new/asm/libcrypto.a && \
-	cp $(LIB_HOME)/libossl_asm.a $(SUPERCOP_HOME)/crypto_hash/sha512/openssl-new/asm/libcrypto.a && \
-	cp $(LIB_HOME)/libossl_asm.a $(SUPERCOP_HOME)/crypto_onetimeauth/poly1305/openssl/asm/libcrypto.a && \
-	cp $(LIB_HOME)/libossl_asm.a $(SUPERCOP_HOME)/crypto_stream/chacha20/openssl/asm/libcrypto.a
+	cp $(LIB_HOME)/libcrypto_no_asm.a $(SUPERCOP_HOME)/crypto_hash/sha256/openssl-new/no-asm/libcrypto.a && \
+	cp $(LIB_HOME)/libcrypto_no_asm.a $(SUPERCOP_HOME)/crypto_hash/sha512/openssl-new/no-asm/libcrypto.a && \
+	cp $(LIB_HOME)/libcrypto_no_asm.a $(SUPERCOP_HOME)/crypto_onetimeauth/poly1305/openssl/no_asm/libcrypto.a && \
+	cp $(LIB_HOME)/libcrypto_no_asm.a $(SUPERCOP_HOME)/crypto_stream/chacha20/openssl/no_asm/libcrypto.a && \
+	cp $(LIB_HOME)/libcrypto_asm.a $(SUPERCOP_HOME)/crypto_hash/sha256/openssl-new/asm/libcrypto.a && \
+	cp $(LIB_HOME)/libcrypto_asm.a $(SUPERCOP_HOME)/crypto_hash/sha512/openssl-new/asm/libcrypto.a && \
+	cp $(LIB_HOME)/libcrypto_asm.a $(SUPERCOP_HOME)/crypto_onetimeauth/poly1305/openssl/asm/libcrypto.a && \
+	cp $(LIB_HOME)/libcrypto_asm.a $(SUPERCOP_HOME)/crypto_stream/chacha20/openssl/asm/libcrypto.a
 
 do-init:
 	cd $(SUPERCOP_HOME) && ./do-part init

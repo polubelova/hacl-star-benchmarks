@@ -1,11 +1,11 @@
 Required libraries
 ==================
 - libsodium.a (compiled with `env CC=gcc-9 CFLAGS="-O3 -march=native -mtune=native" ./configure && make check`)
-- libossl_asm.a
-- libcrypto.a (compiled with the `no-asm` flag)
+- libcrypto_asm.a
+- libcrypto_no_asm.a (compiled with the `no-asm` flag)
 
 
-To get `libossl_no_asm.a`, one needs to run `./rename`
+To get `libcrypto_no_asm_pre.a` and `libsodium_pre.a`, one needs to run `./rename-libs`
 
 
 INSTALL
@@ -34,8 +34,8 @@ Example
 ======
 ```
 cp /home/marina/libsodium/src/libsodium/.libs/libsodium.a libsodium.a
-cp /home/marina/openssl/libcrypto.a libossl_asm.a
-cp /home/marina/openssl-no-asm/openssl/libcrypto.a libcrypto.a
-./rename
+cp /home/marina/openssl/libcrypto.a libcrypto_asm.a
+cp /home/marina/openssl-no-asm/openssl/libcrypto.a libcrypto_no_asm.a
+./rename-libs
 ./print-avx512
 ```
