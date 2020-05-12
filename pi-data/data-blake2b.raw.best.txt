@@ -1,0 +1,5 @@
+crypto_hash/blake2b/regs gcc 6.02
+crypto_hash/blake2b/reference_package/ref gcc 6.70
+crypto_hash/blake2b/hacl_star/scalar clang 6.99
+crypto_hash/blake2b/ref gcc 7.35
+crypto_hash/blake2b/reference_package/neon gcc 10.27

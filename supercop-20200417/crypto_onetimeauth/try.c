@@ -58,7 +58,7 @@ void predoit(void)
 void doit(void)
 {
   crypto_onetimeauth(h,m,TUNE_BYTES,k);
-  crypto_onetimeauth_verify(h,m,TUNE_BYTES,k);
+  //crypto_onetimeauth_verify(h,m,TUNE_BYTES,k);
 }
 
 void test(void)

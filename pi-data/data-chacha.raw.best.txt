@@ -1,0 +1,12 @@
+crypto_stream/chacha20/openssl/asm clang 4.49
+crypto_stream/chacha20/hacl_star/vec128 gcc 5.19
+crypto_stream/chacha20/dolbeau/arm-neon clang 5.50
+crypto_stream/chacha20/krovetz/vec128 gcc 6.22
+crypto_stream/chacha20/dolbeau/generic-gccsimd128 clang 7.01
+crypto_stream/chacha20/hacl_star/scalar gcc 7.98
+crypto_stream/chacha20/dolbeau/generic-gccsimd256 clang 8.53
+crypto_stream/chacha20/e/merged gcc 8.68
+crypto_stream/chacha20/hacl_star/scalar1 gcc 8.69
+crypto_stream/chacha20/openssl/no_asm gcc 8.84
+crypto_stream/chacha20/e/regs gcc 9.07
+crypto_stream/chacha20/e/ref gcc 9.08

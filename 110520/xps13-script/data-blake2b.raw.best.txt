@@ -1,0 +1,11 @@
+crypto_hash/blake2b/avx2-3 clang 3.19
+crypto_hash/blake2b/avx2-2 clang-10 3.20
+crypto_hash/blake2b/avxicc clang-10 3.36
+crypto_hash/blake2b/moon/avx2/64 clang 3.49
+crypto_hash/blake2b/moon/avx/64 gcc 3.50
+crypto_hash/blake2b/hacl_star/vec256 clang 3.58
+crypto_hash/blake2b/avx2-1 clang 3.64
+crypto_hash/blake2b/regs gcc-9 3.71
+crypto_hash/blake2b/xmm gcc 3.83
+crypto_hash/blake2b/hacl_star/scalar gcc 4.05
+crypto_hash/blake2b/ref gcc 4.12
