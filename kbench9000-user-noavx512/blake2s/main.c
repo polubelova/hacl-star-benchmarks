@@ -84,7 +84,7 @@ u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 declare_it(hacl_scalar)
 declare_it(hacl_vec128)
 declare_it(libsodium)
-declare_it(lossl)
+declare_it(openssl)
 declare_it(reference)
 
 static int compare_cycles(const void *a, const void *b)
@@ -101,7 +101,7 @@ static bool verify(void)
 	test_it(hacl_scalar, {}, {});
 	test_it(hacl_vec128, {}, {});
 	test_it(libsodium, {}, {});
-	test_it(lossl, {}, {});
+	test_it(openssl, {}, {});
 	test_it(reference, {}, {});
 
 	return true;
@@ -114,7 +114,7 @@ int main()
 	cycles_t median_hacl_scalar[DOUBLING_STEPS+1];
 	cycles_t median_hacl_vec128[DOUBLING_STEPS+1];
 	cycles_t median_libsodium[DOUBLING_STEPS+1];
-	cycles_t median_lossl[DOUBLING_STEPS+1];
+	cycles_t median_openssl[DOUBLING_STEPS+1];
 	cycles_t median_reference[DOUBLING_STEPS+1];
 
 	unsigned long flags;
@@ -129,7 +129,7 @@ int main()
 	do_it(hacl_scalar);
 	do_it(hacl_vec128);
 	do_it(libsodium);
-	do_it(lossl);
+	do_it(openssl);
 	do_it(reference);
 
 	fprintf(stderr,"%11s","");
@@ -140,7 +140,7 @@ int main()
 	report_it(hacl_scalar);
 	report_it(hacl_vec128);
 	report_it(libsodium);
-	report_it(lossl);
+	report_it(openssl);
 	report_it(reference);
 
 	/* Don't let compiler be too clever. */

@@ -1,7 +1,7 @@
 #include "kbench-common.h"
 #include <openssl/evp.h>
 
-void blake2b_lossl(
+void blake2b_openssl(
   uint32_t nn,
   uint8_t *output,
   uint32_t ll,

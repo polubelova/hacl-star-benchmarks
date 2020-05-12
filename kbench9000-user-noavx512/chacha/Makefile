@@ -1,10 +1,6 @@
-objs := main.o chacha20-hacl_scalar.o chacha20-hacl_vec128.o chacha20-hacl_vec256.o chacha20-lossl.o chacha20-lossl_no_asm.o chacha20-libsodium.o chacha20-jazz256-asm.o chacha20-jazz256.o
+objs := main.o chacha20-hacl_scalar.o chacha20-hacl_vec128.o chacha20-hacl_vec256.o chacha20-openssl.o chacha20-openssl_c.o chacha20-libsodium.o chacha20-jasmin_avx2-asm.o chacha20-jasmin_avx2.o
 
 CFLAGS += -O3 -g -march=native -mtune=native
-ASFLAGS += -O3 -g -march=native -mtune=native
-
-OPENSSL_HOME ?=../../../openssl
-chacha20-jazz256-asm.o: ASFLAGS =
 
 default: build
 
@@ -12,7 +8,7 @@ run: build
 	sudo ./run.sh chacha20_bench.exe
 
 build: $(objs)
-	$(CC) $(CFLAGS) -o chacha20_bench.exe $^ -L ./../../libraries -lossl_no_asm -lossl_asm -lsodium
+	$(CC) $(CFLAGS) -o chacha20_bench.exe $^ -L ./../../libraries -lcrypto_asm -lcrypto_no_asm_pre -lsodium
 
 clean:
 	rm -f *.o *~ *.exe
