@@ -21,15 +21,17 @@ crypto_onetimeauth/poly1305/ref:remove remove remove
 
 
 crypto_hash/blake2b/regs:neves/regs C ?
-crypto_hash/blake2b/ref:neves/ref C ?
+crypto_hash/blake2b/reference_package/ref:blake2-reference/ref C ?
+crypto_hash/blake2b/reference_package/neon:blake2-reference/neon C NEON
+crypto_hash/blake2b/ref :neves/ref C ? 
 crypto_hash/blake2b/hacl_star/scalar:hacl-star/scalar C ?
-crypto_hash/blake2b/blake2_reference/neon:blake2-reference/neon C NEON
 
 
 crypto_hash/blake2s/regs:neves/regs C ?
-crypto_hash/blake2s/ref:neves/ref C ?
 crypto_hash/blake2s/hacl_star/scalar:hacl-star/scalar C ?
-crypto_hash/blake2s/blake2_reference/neon:blake2-reference/neon C NEON
+crypto_hash/blake2s/reference_package/ref:blake2-reference/ref C ?
+crypto_hash/blake2s/reference_package/neon:blake2-reference/neon C NEON
+crypto_hash/blake2s/ref :neves/ref C ? 
 crypto_hash/blake2s/hacl_star/vec128:hacl-star/vec128 C NEON
 
 

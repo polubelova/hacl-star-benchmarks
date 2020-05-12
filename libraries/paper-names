@@ -47,7 +47,9 @@ crypto_hash/blake2b/hacl_star/vec256:hacl-star/vec256 C AVX2
 crypto_hash/blake2b/avx2-1:remove remove remove
 crypto_hash/blake2b/regs:neves/regs C ?
 crypto_hash/blake2b/xmm:remove remove remove
-crypto_hash/blake2b/ref:neves/ref C ?
+crypto_hash/blake2b/reference_package/sse:blake2-reference/sse C AVX
+crypto_hash/blake2b/reference_package/ref:blake2-reference/ref C ?
+crypto_hash/blake2b/ref :neves/ref C ? 
 crypto_hash/blake2b/hacl_star/scalar:hacl-star/scalar C ?
 
 
@@ -58,7 +60,9 @@ crypto_hash/blake2s/hacl_star/vec128:hacl-star/vec128 C AVX
 crypto_hash/blake2s/regs:neves/regs C ?
 crypto_hash/blake2s/moon/sse2/64:moon/sse2/64 assembly SSE2
 crypto_hash/blake2s/moon/ssse3/64:moon/ssse3/64 assembly SSSE3
-crypto_hash/blake2s/ref:neves/ref C ?
+crypto_hash/blake2s/reference_package/sse:blake2-reference/sse C AVX
+crypto_hash/blake2s/reference_package/ref:blake2-reference/ref C ?
+crypto_hash/blake2s/ref :neves/ref C ? 
 crypto_hash/blake2s/hacl_star/scalar:hacl-star/scalar C ?
 
 
