@@ -1,0 +1,50 @@
+crypto_stream/chacha20/openssl/asm:openssl assembly NEON
+crypto_stream/chacha20/hacl_star/vec128:hacl-star/vec128 C NEON
+crypto_stream/chacha20/dolbeau/arm-neon:dolbeau/arm-neon C NEON
+crypto_stream/chacha20/hacl_star/scalar1:hacl-star/scalar1 C ?
+crypto_stream/chacha20/hacl_star/scalar:hacl-star/scalar C ?
+crypto_stream/chacha20/dolbeau/generic-gccsimd128:dolbeau/generic-gccsimd128 C NEON
+crypto_stream/chacha20/krovetz/vec128:krovetz/vec128 C NEON
+crypto_stream/chacha20/dolbeau/generic-gccsimd256:dolbeau/generic-gccsimd256 C ?
+crypto_stream/chacha20/openssl/no_asm:openssl-portable C ?
+crypto_stream/chacha20/e/ref:bernstein/e/ref C ?
+crypto_stream/chacha20/e/merged:remove remove remove
+crypto_stream/chacha20/e/regs:remove remove remove
+
+
+crypto_onetimeauth/poly1305/openssl/asm:openssl assembly NEON
+crypto_onetimeauth/poly1305/hacl_star/vec128:hacl-star/vec128 C NEON
+crypto_onetimeauth/poly1305/openssl/no_asm:openssl-portable C ?
+crypto_onetimeauth/poly1305/53:bernstein/53 C ?
+crypto_onetimeauth/poly1305/hacl_star/scalar:hacl-star/scalar C ?
+crypto_onetimeauth/poly1305/ref:remove remove remove
+
+
+crypto_hash/blake2b/regs:neves/regs C ?
+crypto_hash/blake2b/ref:neves/ref C ?
+crypto_hash/blake2b/hacl_star/scalar:hacl-star/scalar C ?
+crypto_hash/blake2b/blake2_reference/neon:blake2-reference/neon C NEON
+
+
+crypto_hash/blake2s/regs:neves/regs C ?
+crypto_hash/blake2s/ref:neves/ref C ?
+crypto_hash/blake2s/hacl_star/scalar:hacl-star/scalar C ?
+crypto_hash/blake2s/blake2_reference/neon:blake2-reference/neon C NEON
+crypto_hash/blake2s/hacl_star/vec128:hacl-star/vec128 C NEON
+
+
+crypto_hash/sha256/openssl :openssl assembly NEON 
+crypto_hash/sha256/openssl-new/asm :remove remove remove 
+crypto_hash/sha256/sphlib :sphlib C NEON 
+crypto_hash/sha256/sphlib-small :sphlib-small C NEON 
+crypto_hash/sha256/openssl-new/no-asm:openssl-portable C ?
+crypto_hash/sha256/hacl_star/scalar:hacl-star/scalar C ?
+crypto_hash/sha256/hacl_star/sha256-mb4:hacl-star/sha256-mb4 C NEON
+
+
+crypto_hash/sha512/openssl :openssl assembly NEON 
+crypto_hash/sha512/openssl-new/asm :remove remove remove 
+crypto_hash/sha512/openssl-new/no-asm:openssl-portable C ?
+crypto_hash/sha512/sphlib :sphlib C NEON 
+crypto_hash/sha512/sphlib-small :sphlib-small C NEON 
+crypto_hash/sha512/hacl_star/scalar:hacl-star/scalar C ?
