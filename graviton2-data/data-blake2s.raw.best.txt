@@ -1,6 +1,6 @@
 crypto_hash/blake2s/regs gcc 6.26
 crypto_hash/blake2s/reference_package/ref gcc 6.45
-crypto_hash/blake2s/ref gcc 6.53
-crypto_hash/blake2s/hacl_star/scalar gcc 6.58
+crypto_hash/blake2s/ref gcc 6.54
+crypto_hash/blake2s/hacl_star/scalar gcc 6.60
+crypto_hash/blake2s/hacl_star/vec128 clang 10.44
 crypto_hash/blake2s/reference_package/neon clang 11.16
-crypto_hash/blake2s/hacl_star/vec128 gcc 11.69
