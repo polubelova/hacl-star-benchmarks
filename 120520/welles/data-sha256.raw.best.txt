@@ -1,0 +1,9 @@
+crypto_hash/sha256/openssl gcc 7.42
+crypto_hash/sha256/openssl-new/asm clang-10 7.50
+crypto_hash/sha256/sphlib-small gcc 11.04
+crypto_hash/sha256/sphlib gcc 11.25
+crypto_hash/sha256/hacl_star/scalar gcc-9 11.37
+crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9 12.90
+crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9 13.52
+crypto_hash/sha256/openssl-new/no-asm gcc-9 15.35
+crypto_hash/sha256/openssl-mb/sha256-mb4 clang 17.46
