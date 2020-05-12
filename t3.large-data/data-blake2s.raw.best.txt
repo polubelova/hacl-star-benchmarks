@@ -1,11 +1,11 @@
-crypto_hash/blake2s/reference_package/sse clang-9 3.62
-crypto_hash/blake2s/xmm clang-9 3.64
+crypto_hash/blake2s/reference_package/sse clang 3.33
+crypto_hash/blake2s/xmm clang 3.37
 crypto_hash/blake2s/hacl_star/vec128 gcc-9 3.76
 crypto_hash/blake2s/avxicc gcc-9 3.91
 crypto_hash/blake2s/moon/ssse3/64 gcc-9 4.20
-crypto_hash/blake2s/moon/avx/64 gcc 4.32
+crypto_hash/blake2s/moon/avx/64 gcc-9 4.32
 crypto_hash/blake2s/moon/sse2/64 gcc-9 4.85
 crypto_hash/blake2s/regs gcc-9 5.11
 crypto_hash/blake2s/reference_package/ref gcc-9 5.35
 crypto_hash/blake2s/ref gcc-9 5.45
-crypto_hash/blake2s/hacl_star/scalar gcc-9 5.51
+crypto_hash/blake2s/hacl_star/scalar gcc-9 5.49
