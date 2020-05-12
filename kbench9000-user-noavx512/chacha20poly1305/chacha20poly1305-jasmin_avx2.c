@@ -149,7 +149,7 @@ void chacha20_aead_encrypt(
   #undef align16
 }
 
-void chacha20poly1305_jazz256(u32 mlen, u8 *c, u8 *tag, u8 *m, u8 *ad, u32 adlen, u8 *n, u8 *k){
+void chacha20poly1305_jasmin_avx2(u32 mlen, u8 *c, u8 *tag, u8 *m, u8 *ad, u32 adlen, u8 *n, u8 *k){
   /* nonce = constant | iv */
   chacha20_aead_encrypt(c,tag,ad,adlen,k,n,12,NULL,0,m,mlen);
 }

@@ -1,7 +1,7 @@
 #include "kbench-common.h"
 #include <openssl/evp.h>
 
-int chacha20poly1305_lossl(u32 mlen, u8 *c, u8 *tag, u8 *m, u8 *ad, u32 adlen, u8 *n, u8 *k){
+int chacha20poly1305_openssl(u32 mlen, u8 *c, u8 *tag, u8 *m, u8 *ad, u32 adlen, u8 *n, u8 *k){
   EVP_CIPHER_CTX *x;
   x = EVP_CIPHER_CTX_new();
   int outlen = 0;

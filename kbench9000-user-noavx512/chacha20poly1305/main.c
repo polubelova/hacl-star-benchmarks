@@ -90,8 +90,8 @@ u8 input_key[KEY_LEN];
 u8 input_nonce[NONCE];
 u8 input_data[STARTING_SIZE * (1ULL << DOUBLING_STEPS)];
 
-declare_it(lossl)
-declare_it(jazz256)
+declare_it(openssl)
+declare_it(jasmin_avx2)
 
 static int compare_cycles(const void *a, const void *b)
 {
@@ -105,8 +105,8 @@ static bool verify(void)
 	u8 out[114];
 	u8 tag[16];
 
-	test_it(lossl, {}, {});
-	test_it(jazz256, {}, {});
+	test_it(openssl, {}, {});
+	test_it(jasmin_avx2, {}, {});
 	return true;
 }
 
@@ -114,8 +114,8 @@ int main()
 {
 	size_t s;
 	int ret = 0, i, j;
-	cycles_t median_lossl[DOUBLING_STEPS+1];
-	cycles_t median_jazz256[DOUBLING_STEPS+1];
+	cycles_t median_openssl[DOUBLING_STEPS+1];
+	cycles_t median_jasmin_avx2[DOUBLING_STEPS+1];
 
 	unsigned long flags;
 	cycles_t* trial_times = calloc(TRIALS + 1, sizeof(cycles_t));
@@ -130,16 +130,16 @@ int main()
 	for (i = 0; i < sizeof(input_aad); ++i)
 		input_aad[i] = i;
 
-	do_it(lossl);
-	do_it(jazz256);
+	do_it(openssl);
+	do_it(jasmin_avx2);
 
 	fprintf(stderr,"%11s","");
 	for (j = 0, s = STARTING_SIZE; j <= DOUBLING_STEPS; ++j, s *= 2) \
 		fprintf(stderr, " \x1b[4m%6zu\x1b[24m", s);
 	fprintf(stderr,"\n");
 
-	report_it(lossl);
-	report_it(jazz256);
+	report_it(openssl);
+	report_it(jasmin_avx2);
 
 	/* Don't let compiler be too clever. */
 	dummy = ret;
