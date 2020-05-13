@@ -1,0 +1,5 @@
+openssl & assembly & NEON & clang & 1.16 \\
+hacl-star/vec128 & C & NEON & clang & 1.98 \\
+openssl-portable & C & ? & clang & 3.08 \\
+bernstein/53 & C & ? & clang & 3.74 \\
+hacl-star/scalar & C & ? & gcc & 5.13

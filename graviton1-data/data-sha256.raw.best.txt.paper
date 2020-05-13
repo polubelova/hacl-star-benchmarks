@@ -1,0 +1,7 @@
+openssl & assembly & NEON & clang & 2.01 \\
+openssl & assembly & NEON & gcc & 2.02 \\
+sphlib-small & C & NEON & clang & 12.08 \\
+hacl-star/scalar & C & ? & gcc & 12.15 \\
+sphlib & C & NEON & gcc & 12.31 \\
+openssl-portable & C & ? & gcc & 14.58 \\
+hacl-star/sha256-mb4 & C & NEON & clang & 40.46

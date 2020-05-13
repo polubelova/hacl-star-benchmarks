@@ -1,0 +1,6 @@
+neves/regs & C & ? &  & gcc & 9.10 \\
+blake2-reference/ref & C & ? & gcc & 9.34 \\
+hacl-star/scalar & C & ? & gcc & 9.78 \\
+neves/ref & C & ? & gcc & 10.06 \\
+blake2-reference/neon & C & NEON & clang & 17.15 \\
+hacl-star/vec128 & C & NEON & gcc & 19.15
