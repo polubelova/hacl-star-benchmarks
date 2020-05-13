@@ -1,0 +1,5 @@
+openssl & assembly & NEON & gcc & 6.03 \\
+openssl-portable & C & ? & gcc & 6.31 \\
+hacl-star/scalar & C & ? & gcc & 7.00 \\
+sphlib-small & C & NEON & clang & 7.96 \\
+sphlib & C & NEON & clang & 7.99

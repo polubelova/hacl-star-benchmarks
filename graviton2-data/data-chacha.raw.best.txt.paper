@@ -1,0 +1,10 @@
+openssl & assembly & NEON & gcc & 2.36 \\
+hacl-star/vec128 & C & NEON & gcc & 2.95 \\
+dolbeau/arm-neon & C & NEON & gcc & 3.16 \\
+krovetz/vec128 & C & NEON & gcc & 3.58 \\
+hacl-star/scalar & C & ? & gcc & 3.66 \\
+hacl-star/scalar1 & C & ? & gcc & 3.66 \\
+dolbeau/generic-gccsimd128 & C & NEON & gcc & 3.74 \\
+dolbeau/generic-gccsimd256 & C & ? & clang & 3.97 \\
+openssl-portable & C & ? & gcc & 5.78 \\
+bernstein/e/ref & C & ? & clang & 5.98
