@@ -1,0 +1,17 @@
+hacl-star/vec512 & C & AVX512 & gcc-9 & 0.44 \\
+dolbeau/amd64-avx2 & C & AVX512 & clang-9 & 0.44 \\
+openssl & assembly & AVX2 & gcc-9 & 0.61 \\
+hacl-star/vec256 & C & AVX2 & gcc-9 & 0.67 \\
+dolbeau/generic-gccsimd256 & C & AVX2 & clang-9 & 0.81 \\
+jasmin/avx2 & assembly & AVX2 & gcc-9 & 0.89 \\
+krovetz/avx2 & C & AVX2 & gcc-9 & 1.08 \\
+hacl-star/vec128 & C & AVX & gcc-9 & 1.21 \\
+dolbeau/generic-gccsimd128 & C & AVX & clang-9 & 1.44 \\
+krovetz/vec128 & C & SSSE3 & clang-9 & 1.61 \\
+jasmin/avx & assembly & AVX & gcc-9 & 1.74 \\
+bernstein/e/amd64-xmm6 & assembly & SSE2 & gcc-9 & 2.22 \\
+jasmin/ref & assembly & ? & gcc-9 & 4.40 \\
+hacl-star/scalar & C & ? & gcc-9 & 4.49 \\
+hacl-star/scalar1 & C & ? & gcc-9 & 4.54 \\
+bernstein/e/ref & C & ? & gcc-9 & 4.72 \\
+openssl-portable & C & ? & gcc-9 & 4.75

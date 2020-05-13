@@ -1,0 +1,10 @@
+neves/avx2 & C & AVX2 & clang-9 & 2.74 \\
+moon/avx2/64 & assembly & AVX2 & clang-9 & 2.75 \\
+hacl-star/vec256 & C & AVX2 & clang-9 & 2.85 \\
+blake2-reference/sse & C & AVX & clang-9 & 3.06 \\
+moon/avx/64 & assembly & AVX & clang-9 & 3.28 \\
+neves/avxicc & assembly & AVX & clang-9 & 3.35 \\
+hacl-star/scalar & C & ? & clang-9 & 3.85 \\
+neves/regs & C & ? & clang-9 & 4.48 \\
+blake2-reference/ref & C & ? & clang-9 & 4.58 \\
+neves/ref & C & ? & clang-9 & 4.68
