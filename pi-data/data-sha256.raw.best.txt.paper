@@ -1,0 +1,6 @@
+openssl & assembly & NEON & clang & 15.09 \\
+hacl-star/scalar & C & ? & clang & 15.70 \\
+sphlib-small & C & NEON & gcc & 15.97 \\
+sphlib & C & NEON & gcc & 16.40 \\
+openssl-portable & C & ? & gcc & 19.85 \\
+hacl-star/sha256-mb4 & C & NEON & gcc & 51.66
