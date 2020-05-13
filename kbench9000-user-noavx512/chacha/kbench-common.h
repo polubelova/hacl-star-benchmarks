@@ -54,7 +54,7 @@ inline static void store64(uint8_t *b, uint64_t i) { memcpy(b, &i, 8); }
 
 
 #define KRML_CHECK_SIZE(a,b) {}
-#define __always_inline inline
+//#define __always_inline inline
 #define __aligned(x) __attribute__((aligned(x)))
 
 __always_inline static uint64_t FStar_UInt64_eq_mask(uint64_t a, uint64_t b)
@@ -78,4 +78,3 @@ __always_inline static uint64_t FStar_UInt64_gte_mask(uint64_t a, uint64_t b)
   uint64_t x_xor_q_ = x_xor_q >> (uint32_t)63U;
   return x_xor_q_ - (uint64_t)1U;
 }
-

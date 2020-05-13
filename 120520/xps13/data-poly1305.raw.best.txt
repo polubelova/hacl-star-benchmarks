@@ -1,0 +1,15 @@
+crypto_onetimeauth/poly1305/openssl/asm clang 0.35
+crypto_onetimeauth/poly1305/jazz/avx2 clang 0.35
+crypto_onetimeauth/poly1305/hacl_star/vec256 clang 0.37
+crypto_onetimeauth/poly1305/moon/avx2/64 clang-10 0.37
+crypto_onetimeauth/poly1305/jazz/avx clang-10 0.56
+crypto_onetimeauth/poly1305/moon/sse2/64 clang 0.58
+crypto_onetimeauth/poly1305/moon/avx/64 clang-10 0.60
+crypto_onetimeauth/poly1305/jazz/ref3 gcc-9 0.65
+crypto_onetimeauth/poly1305/hacl_star/vec128 clang-10 0.72
+crypto_onetimeauth/poly1305/avx gcc 1.10
+crypto_onetimeauth/poly1305/openssl/no_asm clang 1.19
+crypto_onetimeauth/poly1305/hacl_star/scalar gcc-9 1.59
+crypto_onetimeauth/poly1305/amd64 gcc 1.65
+crypto_onetimeauth/poly1305/53 gcc 1.79
+crypto_onetimeauth/poly1305/ref gcc-9 27.14

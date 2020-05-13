@@ -1,0 +1,10 @@
+#!/bin/bash
+
+nm libcrypto_no_asm.a | grep " T " | awk -v name="no_asm" '{print $3" "name"_"$3}' > symbols_to_rename && \
+objcopy --redefine-syms=symbols_to_rename libcrypto_no_asm.a libcrypto_no_asm_pre.a && \
+rm symbols_to_rename && \
+
+
+nm libsodium.a | grep " T " | awk -v name="libsodium" '{print $3" "name"_"$3}' > symbols_to_rename && \
+objcopy --redefine-syms=symbols_to_rename libsodium.a libsodium_pre.a && \
+rm symbols_to_rename
