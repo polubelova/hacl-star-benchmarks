@@ -1,0 +1,11 @@
+neves/xmm & C & AVX & clang & 4.11 \\
+blake2-reference/sse & C & AVX & clang & 4.12 \\
+hacl-star/vec128 & C & AVX & gcc & 4.52 \\
+neves/avxicc & assembly & AVX & gcc-9 & 4.72 \\
+moon/ssse3/64 & assembly & SSSE3 & gcc-9 & 5.06 \\
+moon/avx/64 & assembly & AVX & gcc-9 & 5.21 \\
+moon/sse2/64 & assembly & SSE2 & gcc-9 & 5.85 \\
+neves/regs & C & ? & gcc-9 & 6.17 \\
+blake2-reference/ref & C & ? & gcc-9 & 6.45 \\
+neves/ref & C & ? & gcc-9 & 6.57 \\
+hacl-star/scalar & C & ? & gcc-9 & 6.63

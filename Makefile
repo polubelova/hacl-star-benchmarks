@@ -1,6 +1,6 @@
 BENCH_HOME ?= /home/mpolubel/work/hacl-star-benchmarks
 LIB_HOME = $(BENCH_HOME)/libraries
-RES_HOME ?= $(BENCH_HOME)/110520/xps13-original
+RES_HOME ?= $(BENCH_HOME)/120520/welles
 
 SUPERCOP_HOME = $(BENCH_HOME)/supercop-20200417
 DATA_HOME ?= $(SUPERCOP_HOME)/bench/pl28pro
@@ -65,3 +65,15 @@ print-paper:
 	cp $(LIB_HOME)/paper-names $(RES_HOME)/paper-names && \
 	cp $(LIB_HOME)/print-paper.sh $(RES_HOME)/print-paper.sh && \
 	cd $(RES_HOME) && ./print-best.sh && ./print-paper.sh
+
+print-paper-avx512:
+	cp $(LIB_HOME)/print-best.sh $(RES_HOME)/print-best.sh && \
+	cp $(LIB_HOME)/paper-names-avx512 $(RES_HOME)/paper-names-avx512 && \
+	cp $(LIB_HOME)/print-paper-avx512.sh $(RES_HOME)/print-paper-avx512.sh && \
+	cd $(RES_HOME) && ./print-best.sh && ./print-paper-avx512.sh
+
+print-paper-arm:
+	cp $(LIB_HOME)/print-best.sh $(RES_HOME)/print-best.sh && \
+	cp $(LIB_HOME)/paper-names-arm $(RES_HOME)/paper-names-arm && \
+	cp $(LIB_HOME)/print-paper-arm.sh $(RES_HOME)/print-paper-arm.sh && \
+	cd $(RES_HOME) && ./print-best.sh && ./print-paper-arm.sh
