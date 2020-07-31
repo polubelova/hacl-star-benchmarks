@@ -1,0 +1,4 @@
+crypto_hash/sha512/hacl_star/sha512-mb4 & 9.24 & 8.88 & 8.71 & 140.24 & 8.31 & 8.30 & 8.27 \\
+crypto_hash/sha512/hacl_star/scalar & 8.19 & 7.67 & 7.67 & 37.93 & 7.45 & 7.46 & 7.46 \\
+crypto_hash/sha512/hacl_star/ccomp_O3 & 12.65 & 12.72 & 12.68 & 12.66 & 12.66 & 12.72 & 12.75 \\
+crypto_hash/sha512/hacl_star/sha512-mb8 & 11.99 & 11.50 & 11.51 & 477.04 & 18.64 & 18.83 & 18.49

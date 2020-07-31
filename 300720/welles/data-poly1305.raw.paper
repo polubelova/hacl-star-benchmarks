@@ -1,0 +1,5 @@
+crypto_onetimeauth/poly1305/hacl_star/vec512 & 0.74 & 0.69 & 0.69 & 4.77 & 0.41 & 0.39 & 0.40 \\
+crypto_onetimeauth/poly1305/hacl_star/vec128 & 1.42 & 1.25 & 1.26 & 15.63 & 1.19 & 1.06 & 1.06 \\
+crypto_onetimeauth/poly1305/hacl_star/vec256 & 0.74 & 0.67 & 0.67 & 8.48 & 0.63 & 0.53 & 0.53 \\
+crypto_onetimeauth/poly1305/hacl_star/scalar & 2.81 & 2.52 & 2.52 & 12.02 & 2.63 & 2.32 & 2.31 \\
+crypto_onetimeauth/poly1305/hacl_star/ccomp_O3 & 3.82 & 3.84 & 3.84 & 3.84 & 3.84 & 3.84 & 3.75
