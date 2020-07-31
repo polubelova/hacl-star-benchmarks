@@ -1,0 +1,17 @@
+crypto_hash/blake2b/hacl_star/vec256 clang-10_-O2 3.14
+crypto_hash/blake2b/hacl_star/vec256 clang-10_-O3 3.15
+crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O2 3.39
+crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O3 3.61
+crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O1 3.68
+crypto_hash/blake2b/hacl_star/scalar gcc-9_-O3 3.97
+crypto_hash/blake2b/hacl_star/scalar gcc-9_-O2 3.97
+crypto_hash/blake2b/hacl_star/scalar gcc-9_-O1 4.04
+crypto_hash/blake2b/hacl_star/scalar clang-10_-O2 4.23
+crypto_hash/blake2b/hacl_star/scalar clang-10_-O3 4.23
+crypto_hash/blake2b/hacl_star/vec256 clang-10_-O1 4.35
+crypto_hash/blake2b/hacl_star/ccomp_O3 clang-10_-O2 11.97
+crypto_hash/blake2b/hacl_star/ccomp_O3 clang-10_-O3 12.01
+crypto_hash/blake2b/hacl_star/ccomp_O3 clang-10_-O1 12.03
+crypto_hash/blake2b/hacl_star/scalar clang-10_-O1 14.40
+crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O0 46.94
+crypto_hash/blake2b/hacl_star/scalar gcc-9_-O0 93.89
