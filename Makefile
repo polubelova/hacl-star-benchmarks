@@ -5,6 +5,12 @@ RES_HOME ?= $(BENCH_HOME)/120520/welles
 SUPERCOP_HOME = $(BENCH_HOME)/supercop-20200417
 DATA_HOME ?= $(SUPERCOP_HOME)/bench/pl28pro
 
+SNAPSHOT_HOME = $(BENCH_HOME)/hacl-snapshot-ccomp
+CC_CCOMP ?= ccomp
+CFLAGS_CCOMP ?= -O3 -S -fstruct-passing -D_BSD_SOURCE -D_DEFAULT_SOURCE -DKRML_VERIFIED_UINT128 \
+	-I $(SNAPSHOT_HOME) -I $(SNAPSHOT_HOME)/kremlin/include/ -I $(SNAPSHOT_HOME)/kremlin/kremlib/dist/minimal/
+
+
 #run as "make -i supercop"
 supercop: refresh-libs-supercop do-init do-blake2b do-blake2s do-sha256 do-sha512 print-best
 #refresh-libs-supercop do-init do-chacha20 do-poly1305 do-blake2b do-blake2s do-sha256 do-sha512 print-best
@@ -26,6 +32,20 @@ refresh-libs-supercop:
 	cp $(LIB_HOME)/libcrypto_asm.a $(SUPERCOP_HOME)/crypto_hash/sha512/openssl-new/asm/libcrypto.a && \
 	cp $(LIB_HOME)/libcrypto_asm.a $(SUPERCOP_HOME)/crypto_onetimeauth/poly1305/openssl/asm/libcrypto.a && \
 	cp $(LIB_HOME)/libcrypto_asm.a $(SUPERCOP_HOME)/crypto_stream/chacha20/openssl/asm/libcrypto.a
+
+refresh-ccomp-supercop:
+	cd $(SNAPSHOT_HOME) && \
+	$(CC_CCOMP) $(CFLAGS_CCOMP) Hacl_Chacha20_Vec32.c && \
+	$(CC_CCOMP) $(CFLAGS_CCOMP) Hacl_Poly1305_32.c && \
+	$(CC_CCOMP) $(CFLAGS_CCOMP) Hacl_Blake2b_32.c && \
+	$(CC_CCOMP) $(CFLAGS_CCOMP) Hacl_Blake2s_32.c && \
+	$(CC_CCOMP) $(CFLAGS_CCOMP) Hacl_SHA2_Scalar32.c && \
+	cp $(SNAPSHOT_HOME)/Hacl_Chacha20_Vec32.s $(SUPERCOP_HOME)/crypto_stream/chacha20/hacl_star/ccomp_O3/Hacl_Chacha20_Vec32.s && \
+	cp $(SNAPSHOT_HOME)/Hacl_Poly1305_32.s $(SUPERCOP_HOME)/crypto_onetimeauth/poly1305/hacl_star/ccomp_O3/Hacl_Poly1305_32.s && \
+	cp $(SNAPSHOT_HOME)/Hacl_Blake2b_32.s $(SUPERCOP_HOME)/crypto_hash/blake2b/hacl_star/ccomp_O3/Hacl_Blake2b_32.s && \
+	cp $(SNAPSHOT_HOME)/Hacl_Blake2s_32.s $(SUPERCOP_HOME)/crypto_hash/blake2s/hacl_star/ccomp_O3/Hacl_Blake2b_32.s && \
+	cp $(SNAPSHOT_HOME)/Hacl_SHA2_Scalar32.s $(SUPERCOP_HOME)/crypto_hash/sha256/hacl_star/ccomp_O3/Hacl_SHA2_Scalar32.s && \
+	cp $(SNAPSHOT_HOME)/Hacl_SHA2_Scalar32.s $(SUPERCOP_HOME)/crypto_hash/sha512/hacl_star/ccomp_O3/Hacl_SHA2_Scalar32.s
 
 do-init:
 	cd $(SUPERCOP_HOME) && ./do-part init
