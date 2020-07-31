@@ -48,7 +48,10 @@ refresh-ccomp-supercop:
 	cp $(SNAPSHOT_HOME)/Hacl_SHA2_Scalar32.s $(SUPERCOP_HOME)/crypto_hash/sha512/hacl_star/ccomp_O3/Hacl_SHA2_Scalar32.s
 
 do-init:
-	cd $(SUPERCOP_HOME) && ./do-part init && ./do-part crypto_verify 16
+	cd $(SUPERCOP_HOME) && ./do-part init
+
+do-verify:
+	cd $(SUPERCOP_HOME) && ./do-part crypto_verify 16
 
 do-chacha20:
 	cd $(SUPERCOP_HOME) && ./do-part crypto_stream chacha20 && \
