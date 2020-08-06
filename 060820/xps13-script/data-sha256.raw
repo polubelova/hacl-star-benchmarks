@@ -1,0 +1,184 @@
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 336050 342223832 2400000000 crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w 121477 724 768 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w 110193 4 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w 107 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 336686 150982062 2400000000 crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w 120172 732 808 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w 110193 4 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w 76 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 339846 134638582 2400000000 crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w 120116 732 808 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w 110193 4 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w 73 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 338454 79440896 2400000000 crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w_
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w_ 122836 732 808 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w_ 110193 4 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w_ 73 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w_ Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w_ Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 332150 420578890 2400000000 crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O0_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O0_-march=native_-mtune=native_-w 122192 772 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O0_-march=native_-mtune=native_-w 110193 4 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O0_-march=native_-mtune=native_-w 103 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O0_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O0_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 337834 145324582 2400000000 crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O1_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O1_-march=native_-mtune=native_-w 119974 772 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O1_-march=native_-mtune=native_-w 110193 4 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O1_-march=native_-mtune=native_-w 66 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O1_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O1_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 337902 138783262 2400000000 crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O2_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O2_-march=native_-mtune=native_-w 123188 772 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O2_-march=native_-mtune=native_-w 110193 4 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O2_-march=native_-mtune=native_-w 66 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O2_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O2_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 337662 89411914 2400000000 crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O3_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O3_-march=native_-mtune=native_-w 123812 772 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O3_-march=native_-mtune=native_-w 110193 4 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O3_-march=native_-mtune=native_-w 66 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O3_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/ccomp_O3 clang-11_-O3_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 931634 471830100 2400000000 crypto_hash/sha256/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w 135213 720 768 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w 122760 0 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w 1195 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 196390 125137158 2400000000 crypto_hash/sha256/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w 37138 728 808 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w 27152 0 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w 76 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 191336 107876056 2400000000 crypto_hash/sha256/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w 36522 728 808 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w 26591 0 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w 73 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 193168 50196098 2400000000 crypto_hash/sha256/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w_
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w_ 39219 736 808 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w_ 26498 0 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w_ 73 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w_ Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w_ Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 1423626 627650842 2400000000 crypto_hash/sha256/hacl_star/scalar clang-11_-O0_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar clang-11_-O0_-march=native_-mtune=native_-w 137504 768 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar clang-11_-O0_-march=native_-mtune=native_-w 125465 0 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar clang-11_-O0_-march=native_-mtune=native_-w 103 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar clang-11_-O0_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar clang-11_-O0_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 221536 122218962 2400000000 crypto_hash/sha256/hacl_star/scalar clang-11_-O1_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar clang-11_-O1_-march=native_-mtune=native_-w 36870 768 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar clang-11_-O1_-march=native_-mtune=native_-w 27012 0 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar clang-11_-O1_-march=native_-mtune=native_-w 66 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar clang-11_-O1_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar clang-11_-O1_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 207924 65326058 2400000000 crypto_hash/sha256/hacl_star/scalar clang-11_-O2_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar clang-11_-O2_-march=native_-mtune=native_-w 38836 768 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar clang-11_-O2_-march=native_-mtune=native_-w 25814 0 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar clang-11_-O2_-march=native_-mtune=native_-w 66 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar clang-11_-O2_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar clang-11_-O2_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 207950 63469700 2400000000 crypto_hash/sha256/hacl_star/scalar clang-11_-O3_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar clang-11_-O3_-march=native_-mtune=native_-w 39444 768 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar clang-11_-O3_-march=native_-mtune=native_-w 25814 0 0 Hacl_SHA2_Scalar32.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/scalar clang-11_-O3_-march=native_-mtune=native_-w 66 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar clang-11_-O3_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha256 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/scalar clang-11_-O3_-march=native_-mtune=native_-w Hacl_SHA2_Scalar32.o Hacl_SHA2_Scalar32_sha512 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 5209700 1244021902 2400000000 crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O0_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O0_-march=native_-mtune=native_-w 237789 720 768 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O0_-march=native_-mtune=native_-w 225237 0 0 Hacl_SHA2_Vec128.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O0_-march=native_-mtune=native_-w 1366 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O0_-march=native_-mtune=native_-w Hacl_SHA2_Vec128.o Hacl_SHA2_Vec128_sha256_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 329158 148311478 2400000000 crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O1_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O1_-march=native_-mtune=native_-w 32162 728 808 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O1_-march=native_-mtune=native_-w 21994 0 0 Hacl_SHA2_Vec128.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O1_-march=native_-mtune=native_-w 269 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O1_-march=native_-mtune=native_-w Hacl_SHA2_Vec128.o Hacl_SHA2_Vec128_sha256_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 326256 143387836 2400000000 crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O2_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O2_-march=native_-mtune=native_-w 32130 728 808 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O2_-march=native_-mtune=native_-w 22090 0 0 Hacl_SHA2_Vec128.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O2_-march=native_-mtune=native_-w 193 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O2_-march=native_-mtune=native_-w Hacl_SHA2_Vec128.o Hacl_SHA2_Vec128_sha256_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 326364 76345210 2400000000 crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O3_-march=native_-mtune=native_-w_
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O3_-march=native_-mtune=native_-w_ 34915 736 808 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O3_-march=native_-mtune=native_-w_ 22090 0 0 Hacl_SHA2_Vec128.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O3_-march=native_-mtune=native_-w_ 193 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb4 gcc-9_-O3_-march=native_-mtune=native_-w_ Hacl_SHA2_Vec128.o Hacl_SHA2_Vec128_sha256_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 4987586 1336546302 2400000000 crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O0_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O0_-march=native_-mtune=native_-w 227152 768 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O0_-march=native_-mtune=native_-w 214921 0 0 Hacl_SHA2_Vec128.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O0_-march=native_-mtune=native_-w 333 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O0_-march=native_-mtune=native_-w Hacl_SHA2_Vec128.o Hacl_SHA2_Vec128_sha256_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 331476 143982088 2400000000 crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O1_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O1_-march=native_-mtune=native_-w 31006 768 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O1_-march=native_-mtune=native_-w 21164 0 0 Hacl_SHA2_Vec128.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O1_-march=native_-mtune=native_-w 142 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O1_-march=native_-mtune=native_-w Hacl_SHA2_Vec128.o Hacl_SHA2_Vec128_sha256_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 327726 87891752 2400000000 crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O2_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O2_-march=native_-mtune=native_-w 33084 768 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O2_-march=native_-mtune=native_-w 20022 0 0 Hacl_SHA2_Vec128.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O2_-march=native_-mtune=native_-w 142 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O2_-march=native_-mtune=native_-w Hacl_SHA2_Vec128.o Hacl_SHA2_Vec128_sha256_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 327586 87508132 2400000000 crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O3_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O3_-march=native_-mtune=native_-w 33708 768 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O3_-march=native_-mtune=native_-w 20022 0 0 Hacl_SHA2_Vec128.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O3_-march=native_-mtune=native_-w 142 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb4 clang-11_-O3_-march=native_-mtune=native_-w Hacl_SHA2_Vec128.o Hacl_SHA2_Vec128_sha256_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 7416832 1778352832 2400000000 crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O0_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O0_-march=native_-mtune=native_-w 604005 720 768 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O0_-march=native_-mtune=native_-w 591160 0 0 Hacl_SHA2_Vec256.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O0_-march=native_-mtune=native_-w 1607 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O0_-march=native_-mtune=native_-w Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha256_8 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O0_-march=native_-mtune=native_-w Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha512_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 338588 157777664 2400000000 crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O1_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O1_-march=native_-mtune=native_-w 64315 736 808 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O1_-march=native_-mtune=native_-w 53781 0 0 Hacl_SHA2_Vec256.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O1_-march=native_-mtune=native_-w 536 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O1_-march=native_-mtune=native_-w Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha256_8 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O1_-march=native_-mtune=native_-w Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha512_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 338604 213706818 2400000000 crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O2_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O2_-march=native_-mtune=native_-w 64379 736 808 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O2_-march=native_-mtune=native_-w 54087 0 0 Hacl_SHA2_Vec256.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O2_-march=native_-mtune=native_-w 343 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O2_-march=native_-mtune=native_-w Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha256_8 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O2_-march=native_-mtune=native_-w Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha512_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 338926 79042272 2400000000 crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O3_-march=native_-mtune=native_-w_
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O3_-march=native_-mtune=native_-w_ 67059 736 808 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O3_-march=native_-mtune=native_-w_ 54071 0 0 Hacl_SHA2_Vec256.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O3_-march=native_-mtune=native_-w_ 343 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O3_-march=native_-mtune=native_-w_ Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha256_8 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 gcc-9_-O3_-march=native_-mtune=native_-w_ Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha512_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 9211162 2179753998 2400000000 crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O0_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O0_-march=native_-mtune=native_-w 632144 768 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O0_-march=native_-mtune=native_-w 619566 0 0 Hacl_SHA2_Vec256.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O0_-march=native_-mtune=native_-w 652 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O0_-march=native_-mtune=native_-w Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha256_8 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O0_-march=native_-mtune=native_-w Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha512_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 340192 145237482 2400000000 crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O1_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O1_-march=native_-mtune=native_-w 59894 768 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O1_-march=native_-mtune=native_-w 50015 0 0 Hacl_SHA2_Vec256.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O1_-march=native_-mtune=native_-w 222 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O1_-march=native_-mtune=native_-w Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha256_8 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O1_-march=native_-mtune=native_-w Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha512_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 335586 145300108 2400000000 crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O2_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O2_-march=native_-mtune=native_-w 60500 768 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O2_-march=native_-mtune=native_-w 47401 0 0 Hacl_SHA2_Vec256.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O2_-march=native_-mtune=native_-w 222 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O2_-march=native_-mtune=native_-w Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha256_8 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O2_-march=native_-mtune=native_-w Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha512_4 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 try 0fb5122d471d9310c4ff212c64a73cc985f0826484c24f34b56cb1d39534ba24/55ff5e29282c4d7d192a20b427c000ec121fcda33dd96d53aa8857e3f2dd1469 ok 335352 89209590 2400000000 crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O3_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O3_-march=native_-mtune=native_-w 61108 768 744 try
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O3_-march=native_-mtune=native_-w 47401 0 0 Hacl_SHA2_Vec256.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 objsize crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O3_-march=native_-mtune=native_-w 222 0 0 hash.o
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O3_-march=native_-mtune=native_-w Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha256_8 T
+20200417 pl28pro amd64 20200806 crypto_hash sha256 namespace crypto_hash/sha256/hacl_star/sha256-mb8 clang-11_-O3_-march=native_-mtune=native_-w Hacl_SHA2_Vec256.o Hacl_SHA2_Vec256_sha512_4 T
