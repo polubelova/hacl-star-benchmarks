@@ -1,0 +1,5 @@
+crypto_stream/chacha20/hacl_star/vec256 & 33.85 & 1.41 & 1.03 & 1.02 & 23.73 & 1.02 & 1.01 & 0.79 \\
+crypto_stream/chacha20/hacl_star/ccomp_O3 & 8.06 & 8.13 & 8.43 & 8.66 & 7.74 & 7.80 & 7.91 & 7.71 \\
+crypto_stream/chacha20/hacl_star/scalar1 & 46.91 & 8.28 & 7.95 & 7.95 & 64.70 & 4.36 & 4.34 & 3.88 \\
+crypto_stream/chacha20/hacl_star/scalar & 5.08 & 4.81 & 3.88 \\
+crypto_stream/chacha20/hacl_star/vec128 & 32.01 & 1.97 & 1.56 & 1.56 & 30.63 & 1.84 & 2.65 & 1.46
