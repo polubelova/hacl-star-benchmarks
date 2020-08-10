@@ -1,0 +1,120 @@
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 354408 889389308 2400000000 crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w 68285 720 768 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w 57005 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w 127 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 350450 164114544 2400000000 crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w 66964 728 808 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w 57005 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w 90 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 347910 137874178 2400000000 crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w 66908 728 808 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w 57005 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w 81 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 348812 84143172 2400000000 crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w 69628 728 808 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w 57005 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w 81 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 351518 410201994 2400000000 crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O0_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O0_-march=native_-mtune=native_-w 69048 768 736 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O0_-march=native_-mtune=native_-w 57005 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O0_-march=native_-mtune=native_-w 124 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O0_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 353526 145733806 2400000000 crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O1_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O1_-march=native_-mtune=native_-w 66886 768 736 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O1_-march=native_-mtune=native_-w 57005 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O1_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O1_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 354280 150360982 2400000000 crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O2_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O2_-march=native_-mtune=native_-w 70180 768 752 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O2_-march=native_-mtune=native_-w 57005 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O2_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O2_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 354166 95303964 2400000000 crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O3_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O3_-march=native_-mtune=native_-w 70780 768 752 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O3_-march=native_-mtune=native_-w 57005 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O3_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/ccomp_O3 clang-9_-O3_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 2568056 789688042 2400000000 crypto_hash/blake2s/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w 127757 720 768 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w 115668 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w 895 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 113036 111007872 2400000000 crypto_hash/blake2s/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w 16546 728 808 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w 6570 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w 90 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 112194 90172026 2400000000 crypto_hash/blake2s/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w 16282 728 808 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w 6353 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w 81 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 112074 34452290 2400000000 crypto_hash/blake2s/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w 19027 736 808 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w 6307 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w 81 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 2740542 875025862 2400000000 crypto_hash/blake2s/hacl_star/scalar clang-9_-O0_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar clang-9_-O0_-march=native_-mtune=native_-w 125640 768 736 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar clang-9_-O0_-march=native_-mtune=native_-w 113550 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar clang-9_-O0_-march=native_-mtune=native_-w 124 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/scalar clang-9_-O0_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 135218 104084406 2400000000 crypto_hash/blake2s/hacl_star/scalar clang-9_-O1_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar clang-9_-O1_-march=native_-mtune=native_-w 17246 768 736 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar clang-9_-O1_-march=native_-mtune=native_-w 7291 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar clang-9_-O1_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/scalar clang-9_-O1_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 122170 47422108 2400000000 crypto_hash/blake2s/hacl_star/scalar clang-9_-O2_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar clang-9_-O2_-march=native_-mtune=native_-w 20292 768 752 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar clang-9_-O2_-march=native_-mtune=native_-w 7074 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar clang-9_-O2_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/scalar clang-9_-O2_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 122178 47181256 2400000000 crypto_hash/blake2s/hacl_star/scalar clang-9_-O3_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar clang-9_-O3_-march=native_-mtune=native_-w 20892 768 752 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar clang-9_-O3_-march=native_-mtune=native_-w 7074 0 0 Hacl_Blake2s_32.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/scalar clang-9_-O3_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/scalar clang-9_-O3_-march=native_-mtune=native_-w Hacl_Blake2s_32.o Hacl_Blake2s_32_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 1418598 544266766 2400000000 crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O0_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O0_-march=native_-mtune=native_-w 22861 720 768 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O0_-march=native_-mtune=native_-w 10784 0 0 Hacl_Blake2s_128.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O0_-march=native_-mtune=native_-w 895 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O0_-march=native_-mtune=native_-w Hacl_Blake2s_128.o Hacl_Blake2s_128_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 95708 102905748 2400000000 crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O1_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O1_-march=native_-mtune=native_-w 13890 728 808 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O1_-march=native_-mtune=native_-w 3901 0 0 Hacl_Blake2s_128.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O1_-march=native_-mtune=native_-w 90 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O1_-march=native_-mtune=native_-w Hacl_Blake2s_128.o Hacl_Blake2s_128_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 90584 84876538 2400000000 crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O2_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O2_-march=native_-mtune=native_-w 13690 728 808 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O2_-march=native_-mtune=native_-w 3748 0 0 Hacl_Blake2s_128.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O2_-march=native_-mtune=native_-w 81 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O2_-march=native_-mtune=native_-w Hacl_Blake2s_128.o Hacl_Blake2s_128_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 86654 29539940 2400000000 crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O3_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O3_-march=native_-mtune=native_-w 16235 736 808 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O3_-march=native_-mtune=native_-w 3521 0 0 Hacl_Blake2s_128.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O3_-march=native_-mtune=native_-w 81 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/vec128 gcc-9_-O3_-march=native_-mtune=native_-w Hacl_Blake2s_128.o Hacl_Blake2s_128_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 1449310 617719982 2400000000 crypto_hash/blake2s/hacl_star/vec128 clang-9_-O0_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 clang-9_-O0_-march=native_-mtune=native_-w 22224 768 736 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 clang-9_-O0_-march=native_-mtune=native_-w 10150 0 0 Hacl_Blake2s_128.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 clang-9_-O0_-march=native_-mtune=native_-w 124 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/vec128 clang-9_-O0_-march=native_-mtune=native_-w Hacl_Blake2s_128.o Hacl_Blake2s_128_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 129824 107121838 2400000000 crypto_hash/blake2s/hacl_star/vec128 clang-9_-O1_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 clang-9_-O1_-march=native_-mtune=native_-w 12158 768 736 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 clang-9_-O1_-march=native_-mtune=native_-w 2235 0 0 Hacl_Blake2s_128.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 clang-9_-O1_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/vec128 clang-9_-O1_-march=native_-mtune=native_-w Hacl_Blake2s_128.o Hacl_Blake2s_128_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 94890 42636090 2400000000 crypto_hash/blake2s/hacl_star/vec128 clang-9_-O2_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 clang-9_-O2_-march=native_-mtune=native_-w 16532 768 752 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 clang-9_-O2_-march=native_-mtune=native_-w 3351 0 0 Hacl_Blake2s_128.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 clang-9_-O2_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/vec128 clang-9_-O2_-march=native_-mtune=native_-w Hacl_Blake2s_128.o Hacl_Blake2s_128_blake2s T
+20200417 pl28pro amd64 20200810 crypto_hash blake2s try 714b4f3bc990419e765cf0f125d92db516835b7d571b15ec65d45221844429b8/e7966f9260e2b2c51a811627741b4d6c4069317dd30bf1efe00ec66256d7dd59 ok 96836 42208502 2400000000 crypto_hash/blake2s/hacl_star/vec128 clang-9_-O3_-march=native_-mtune=native_-w
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 clang-9_-O3_-march=native_-mtune=native_-w 17132 768 752 try
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 clang-9_-O3_-march=native_-mtune=native_-w 3351 0 0 Hacl_Blake2s_128.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s objsize crypto_hash/blake2s/hacl_star/vec128 clang-9_-O3_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 pl28pro amd64 20200810 crypto_hash blake2s namespace crypto_hash/blake2s/hacl_star/vec128 clang-9_-O3_-march=native_-mtune=native_-w Hacl_Blake2s_128.o Hacl_Blake2s_128_blake2s T
