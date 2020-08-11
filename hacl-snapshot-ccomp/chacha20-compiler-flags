@@ -1,0 +1,125 @@
+-O0
+91 -fno-asynchronous-unwind-tables
+36 -fno-plt
+======================
+-01
+86 -fno-asynchronous-unwind-tables
+46 -fno-cprop-registers
+26 -fno-dce
+5938 -fno-dse
+4298 -fno-forward-propagate
+5142 -fno-guess-branch-probability
+5282 -fno-inline
+1900 -fno-ira-share-spill-slots
+8721 -fno-ivopts
+144 -fno-move-loop-invariants
+9100 -fno-omit-frame-pointer
+16 -fno-plt
+229 -fno-reorder-blocks
+144 -fno-shrink-wrap
+136 -fno-split-wide-types
+802 -fno-tree-ch
+8548 -fno-tree-dominator-opts
+2771 -fno-tree-dse
+6490 -fno-tree-forwprop
+4106 -fno-tree-fre
+32 -fno-tree-loop-ivcanon
+5615 -fno-tree-loop-optimize
+28 -fno-tree-ter
+======================
+-O2
+4 -fno-align-functions
+6 -fno-align-jumps
+15 -fno-align-loops
+49 -fno-asynchronous-unwind-tables
+1975 -fno-caller-saves
+21 -fno-cprop-registers
+4 -fno-cse-follow-jumps
+2192 -fno-dce
+3526 -fno-dse
+1929 -fno-forward-propagate
+2529 -fno-gcse
+235 -fno-gcse-lm
+2876 -fno-guess-branch-probability
+2867 -fno-inline
+2439 -fno-ipa-icf
+2439 -fno-ipa-icf-functions
+1064 -fno-ira-share-spill-slots
+4591 -fno-ivopts
+48 -fno-move-loop-invariants
+4640 -fno-omit-frame-pointer
+219 -fno-peephole2
+8 -fno-plt
+1279 -fno-sched-critical-path-heuristic
+68 -fno-sched-dep-count-heuristic
+20 -fno-sched-last-insn-heuristic
+2795 -fno-schedule-insns2
+48 -fno-shrink-wrap
+19 -fno-store-merging
+293 -fno-tree-ch
+2314 -fno-tree-dse
+3625 -fno-tree-forwprop
+1893 -fno-tree-fre
+3292 -fno-tree-loop-optimize
+182 -fno-tree-pre
+247 -fno-tree-pta
+102 -fno-tree-tail-merge
+4 -fno-tree-ter
+627 -fno-tree-vrp
+======================
+-O3
+4 -fno-align-functions
+3 -fno-align-jumps
+3 -fno-align-loops
+49 -fno-asynchronous-unwind-tables
+58 -fno-caller-saves
+106 -fno-cprop-registers
+103 -fno-cse-follow-jumps
+711 -fno-dce
+4154 -fno-dse
+1497 -fno-forward-propagate
+4566 -fno-gcse
+13 -fno-gcse-after-reload
+278 -fno-gcse-lm
+4725 -fno-guess-branch-probability
+2996 -fno-inline
+2490 -fno-ipa-icf
+2490 -fno-ipa-icf-functions
+1127 -fno-ira-share-spill-slots
+3051 -fno-ivopts
+4910 -fno-omit-frame-pointer
+239 -fno-peephole2
+8 -fno-plt
+103 -fno-rerun-cse-after-loop
+1429 -fno-sched-critical-path-heuristic
+101 -fno-sched-dep-count-heuristic
+35 -fno-sched-last-insn-heuristic
+2759 -fno-schedule-insns2
+32 -fno-shrink-wrap
+1115 -fno-split-paths
+17 -fno-store-merging
+35 -fno-tree-ccp
+3026 -fno-tree-ch
+278 -fno-tree-copy-prop
+1865 -fno-tree-dce
+35 -fno-tree-dominator-opts
+4610 -fno-tree-dse
+2786 -fno-tree-forwprop
+1852 -fno-tree-fre
+104 -fno-tree-loop-distribute-patterns
+35 -fno-tree-loop-ivcanon
+4795 -fno-tree-loop-optimize
+4172 -fno-tree-loop-vectorize
+35 -fno-tree-partial-pre
+141 -fno-tree-pre
+3002 -fno-tree-pta
+2522 -fno-tree-reassoc
+73 -fno-tree-slp-vectorize
+147 -fno-tree-tail-merge
+4272 -fno-tree-ter
+78 -fno-tree-vrp
+=====
+-00: 2 out of 60 optimizations
+-01: 23 out of 95 optimizations
+-02: 38 out of 135 optimizations
+-03: 50 out of 151 optimizations
