@@ -1,0 +1,120 @@
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 203060 329506774 3600000000 crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie 86508 716 768 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie 75039 4 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie 127 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 201652 144922494 3600000000 crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie 85163 724 808 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie 75039 4 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie 90 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 202450 112258548 3600000000 crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie 85227 724 808 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie 75039 4 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie 81 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 202032 54501764 3600000000 crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie 87915 724 808 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie 75039 4 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie 81 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/ccomp_O3 gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 202310 385222620 3600000000 crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O0_-march=native_-mtune=native_-w
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O0_-march=native_-mtune=native_-w 86947 764 736 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O0_-march=native_-mtune=native_-w 75039 4 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O0_-march=native_-mtune=native_-w 124 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O0_-march=native_-mtune=native_-w Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 201898 129690490 3600000000 crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O1_-march=native_-mtune=native_-w
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O1_-march=native_-mtune=native_-w 84745 764 736 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O1_-march=native_-mtune=native_-w 75039 4 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O1_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O1_-march=native_-mtune=native_-w Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 201366 76050384 3600000000 crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O2_-march=native_-mtune=native_-w
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O2_-march=native_-mtune=native_-w 87599 764 752 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O2_-march=native_-mtune=native_-w 75039 4 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O2_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O2_-march=native_-mtune=native_-w Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 201084 76194518 3600000000 crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O3_-march=native_-mtune=native_-w
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O3_-march=native_-mtune=native_-w 88399 764 752 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O3_-march=native_-mtune=native_-w 75039 4 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O3_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/ccomp_O3 clang-9_-O3_-march=native_-mtune=native_-w Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 1587808 604432028 3600000000 crypto_hash/blake2b/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie 163876 712 768 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie 151583 0 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie 895 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/scalar gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 67562 118382594 3600000000 crypto_hash/blake2b/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie 18553 720 808 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie 8424 0 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie 90 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/scalar gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 66828 83369568 3600000000 crypto_hash/blake2b/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie 18473 720 808 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie 8267 0 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie 81 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/scalar gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 66870 26906946 3600000000 crypto_hash/blake2b/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie 21154 728 808 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie 8185 0 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie 81 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/scalar gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 1620702 666089614 3600000000 crypto_hash/blake2b/hacl_star/scalar clang-9_-O0_-march=native_-mtune=native_-w
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar clang-9_-O0_-march=native_-mtune=native_-w 158267 760 736 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar clang-9_-O0_-march=native_-mtune=native_-w 146321 0 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar clang-9_-O0_-march=native_-mtune=native_-w 124 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/scalar clang-9_-O0_-march=native_-mtune=native_-w Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 89668 105755672 3600000000 crypto_hash/blake2b/hacl_star/scalar clang-9_-O1_-march=native_-mtune=native_-w
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar clang-9_-O1_-march=native_-mtune=native_-w 19801 760 736 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar clang-9_-O1_-march=native_-mtune=native_-w 10052 0 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar clang-9_-O1_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/scalar clang-9_-O1_-march=native_-mtune=native_-w Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 73624 49412198 3600000000 crypto_hash/blake2b/hacl_star/scalar clang-9_-O2_-march=native_-mtune=native_-w
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar clang-9_-O2_-march=native_-mtune=native_-w 21527 760 752 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar clang-9_-O2_-march=native_-mtune=native_-w 8956 0 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar clang-9_-O2_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/scalar clang-9_-O2_-march=native_-mtune=native_-w Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 73614 49733162 3600000000 crypto_hash/blake2b/hacl_star/scalar clang-9_-O3_-march=native_-mtune=native_-w
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar clang-9_-O3_-march=native_-mtune=native_-w 22327 760 752 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar clang-9_-O3_-march=native_-mtune=native_-w 8956 0 0 Hacl_Blake2b_32.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/scalar clang-9_-O3_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/scalar clang-9_-O3_-march=native_-mtune=native_-w Hacl_Blake2b_32.o Hacl_Blake2b_32_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 794050 441380244 3600000000 crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie 22196 712 768 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie 9912 0 0 Hacl_Blake2b_256.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie 895 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O0_-march=native_-mtune=native_-w_-no-pie Hacl_Blake2b_256.o Hacl_Blake2b_256_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 61938 116631864 3600000000 crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie 14473 720 808 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie 4324 0 0 Hacl_Blake2b_256.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie 90 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O1_-march=native_-mtune=native_-w_-no-pie Hacl_Blake2b_256.o Hacl_Blake2b_256_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 56160 81331836 3600000000 crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie 14585 720 808 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie 4373 0 0 Hacl_Blake2b_256.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie 81 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O2_-march=native_-mtune=native_-w_-no-pie Hacl_Blake2b_256.o Hacl_Blake2b_256_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 60722 25217758 3600000000 crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie 17498 728 808 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie 4550 0 0 Hacl_Blake2b_256.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie 81 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/vec256 gcc-9_-O3_-march=native_-mtune=native_-w_-no-pie Hacl_Blake2b_256.o Hacl_Blake2b_256_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 795678 496529336 3600000000 crypto_hash/blake2b/hacl_star/vec256 clang-9_-O0_-march=native_-mtune=native_-w
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 clang-9_-O0_-march=native_-mtune=native_-w 21435 760 736 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 clang-9_-O0_-march=native_-mtune=native_-w 9497 0 0 Hacl_Blake2b_256.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 clang-9_-O0_-march=native_-mtune=native_-w 124 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/vec256 clang-9_-O0_-march=native_-mtune=native_-w Hacl_Blake2b_256.o Hacl_Blake2b_256_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 74092 100662446 3600000000 crypto_hash/blake2b/hacl_star/vec256 clang-9_-O1_-march=native_-mtune=native_-w
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 clang-9_-O1_-march=native_-mtune=native_-w 12169 760 736 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 clang-9_-O1_-march=native_-mtune=native_-w 2428 0 0 Hacl_Blake2b_256.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 clang-9_-O1_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/vec256 clang-9_-O1_-march=native_-mtune=native_-w Hacl_Blake2b_256.o Hacl_Blake2b_256_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 53996 45501938 3600000000 crypto_hash/blake2b/hacl_star/vec256 clang-9_-O2_-march=native_-mtune=native_-w
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 clang-9_-O2_-march=native_-mtune=native_-w 16375 760 752 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 clang-9_-O2_-march=native_-mtune=native_-w 3802 0 0 Hacl_Blake2b_256.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 clang-9_-O2_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/vec256 clang-9_-O2_-march=native_-mtune=native_-w Hacl_Blake2b_256.o Hacl_Blake2b_256_blake2b T
+20200417 welles amd64 20200818 crypto_hash blake2b try 32f7429ae7e28c7f760e1f3390997b446d6d1634455411888f84ab2429c5b951/057ccc64b8fce421289c6677c128140dcd73504ea3bc13fb6f8e2f0c9b537755 ok 55246 45953568 3600000000 crypto_hash/blake2b/hacl_star/vec256 clang-9_-O3_-march=native_-mtune=native_-w
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 clang-9_-O3_-march=native_-mtune=native_-w 17175 760 752 try
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 clang-9_-O3_-march=native_-mtune=native_-w 3802 0 0 Hacl_Blake2b_256.o
+20200417 welles amd64 20200818 crypto_hash blake2b objsize crypto_hash/blake2b/hacl_star/vec256 clang-9_-O3_-march=native_-mtune=native_-w 75 0 0 crypto_hash.o
+20200417 welles amd64 20200818 crypto_hash blake2b namespace crypto_hash/blake2b/hacl_star/vec256 clang-9_-O3_-march=native_-mtune=native_-w Hacl_Blake2b_256.o Hacl_Blake2b_256_blake2b T
