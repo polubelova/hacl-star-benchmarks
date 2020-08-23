@@ -1,0 +1,3 @@
+crypto_hash/sha384/openssl gcc-9 3.24
+crypto_hash/sha384/hacl_star/scalar gcc-9 4.81
+crypto_hash/sha384/hacl_star/sha384-mb4 clang 7.81

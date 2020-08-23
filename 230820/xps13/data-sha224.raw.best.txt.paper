@@ -1,0 +1,4 @@
+crypto_hash/sha224/openssl & clang & 5.11 \\
+crypto_hash/sha224/hacl_star/scalar & gcc & 7.39 \\
+crypto_hash/sha224/hacl_star/sha224-mb4 & gcc-9 & 12.58 \\
+crypto_hash/sha224/hacl_star/sha224-mb8 & clang & 12.96
