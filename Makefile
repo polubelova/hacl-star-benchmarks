@@ -1,6 +1,6 @@
 BENCH_HOME ?= /home/mpolubel/work/hacl-star-benchmarks
 LIB_HOME = $(BENCH_HOME)/libraries
-RES_HOME ?= $(BENCH_HOME)/300720/xps13
+RES_HOME ?= $(BENCH_HOME)/230820/xps13
 
 SUPERCOP_HOME = $(BENCH_HOME)/supercop-20200417
 DATA_HOME ?= $(SUPERCOP_HOME)/bench/pl28pro
@@ -70,9 +70,17 @@ do-blake2s:
 	cd $(SUPERCOP_HOME) && ./do-part crypto_hash blake2s && \
 	cp $(DATA_HOME)/data $(RES_HOME)/data-blake2s.raw
 
+do-sha224:
+	cd $(SUPERCOP_HOME) && ./do-part crypto_hash sha224 && \
+	cp $(DATA_HOME)/data $(RES_HOME)/data-sha224.raw
+
 do-sha256:
 	cd $(SUPERCOP_HOME) && ./do-part crypto_hash sha256 && \
 	cp $(DATA_HOME)/data $(RES_HOME)/data-sha256.raw
+
+do-sha384:
+	cd $(SUPERCOP_HOME) && ./do-part crypto_hash sha384 && \
+	cp $(DATA_HOME)/data $(RES_HOME)/data-sha384.raw
 
 do-sha512:
 	cd $(SUPERCOP_HOME) && ./do-part crypto_hash sha512 && \
