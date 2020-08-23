@@ -1,0 +1,5 @@
+crypto_hash/sha384/openssl & clang & 3.34 \\
+crypto_hash/sha384/openssl-new/asm & clang & 3.35 \\
+crypto_hash/sha384/hacl_star/scalar & gcc & 4.79 \\
+crypto_hash/sha384/openssl-new/no-asm & clang & 6.06 \\
+crypto_hash/sha384/hacl_star/sha384-mb4 & gcc & 8.05
