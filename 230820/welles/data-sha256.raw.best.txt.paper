@@ -1,9 +1,9 @@
-openssl-portable & C & ? & clang-10 & 7.42 \\
-openssl & assembly & AVX2 & clang-10 & 7.42 \\
+openssl & assembly & AVX2 & gcc-9 & 7.43 \\
 sphlib-small & C & ? & gcc & 11.04 \\
 sphlib & C & ? & gcc & 11.25 \\
 hacl-star/scalar & C & ? & gcc-9 & 11.36 \\
-hacl-star/sha256-mb4 & C & AVX & gcc-9 & 12.90 \\
-hacl-star/sha256-mb8 & C & AVX2 & gcc-9 & 13.50 \\
+hacl-star/sha256-mb4 & C & AVX & gcc-9 & 12.89 \\
+hacl-star/sha256-mb8 & C & AVX2 & gcc-9 & 13.53 \\
+openssl-portable & C & ? & gcc-9 & 15.35 \\
 openssl/sha256-mb4 & asssembly & AVX & clang-10 & 17.46 \\
-openssl/sha256-mb8 & asssembly & AVX2 & gcc & 18.32
+openssl/sha256-mb8 & asssembly & AVX2 & gcc-9 & 18.31
