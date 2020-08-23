@@ -1,0 +1,6 @@
+crypto_hash/sha224/openssl clang-10 7.44
+crypto_hash/sha224/openssl-new/asm gcc 7.51
+crypto_hash/sha224/hacl_star/scalar gcc-9 11.43
+crypto_hash/sha224/hacl_star/sha224-mb4 gcc-9 12.90
+crypto_hash/sha224/hacl_star/sha224-mb8 gcc-9 13.53
+crypto_hash/sha224/openssl-new/no-asm gcc-9 15.36
