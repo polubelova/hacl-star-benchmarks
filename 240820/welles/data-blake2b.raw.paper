@@ -1,0 +1,3 @@
+crypto_hash/blake2b/hacl_star/ccomp_O3 & 12.02 & 12.00 & 11.97 & 11.95 \\
+crypto_hash/blake2b/hacl_star/vec256 & 47.25 & 4.56 & 3.32 & 3.38 & 47.48 & 3.68 & 3.39 & 3.63 \\
+crypto_hash/blake2b/hacl_star/scalar & 98.20 & 5.51 & 4.49 & 4.50 & 94.05 & 4.04 & 3.97 & 3.97
