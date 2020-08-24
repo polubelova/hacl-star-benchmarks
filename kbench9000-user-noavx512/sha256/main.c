@@ -59,9 +59,9 @@ static inline int name(size_t len) \
 #define test_it(name, before, after) do { \
 	memset(out, __LINE__, vectors2b[i].expected_len); \
 	before; \
-	sha256_ ## name(vectors2b[i].input, vectors2b[i].input_len, out); \
+	sha256_ ## name(vectors_sha256[i].input, vectors_sha256[i].input_len, out); \
 	after; \
-	if (memcmp(out, vectors2b[i].expected, vectors2b[i].expected_len)) { \
+	if (memcmp(out, vectors_sha256[i].expected, vectors_sha256[i].expected_len)) { \
 		fprintf(stderr,#name " self-test %zu: FAIL\n", i + 1); \
 		return false; \
 	} \
