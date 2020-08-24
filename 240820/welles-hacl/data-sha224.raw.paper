@@ -1,3 +1,4 @@
-crypto_hash/sha224/hacl_star/sha224-mb8 & 272.41 & 15.16 & 14.95 & 15.43 & 231.33 & 13.41 & 13.53 & 13.54 \\
-crypto_hash/sha224/hacl_star/scalar & 73.84 & 13.15 & 12.41 & 12.41 & 56.39 & 11.56 & 11.37 & 11.43 \\
-crypto_hash/sha224/hacl_star/sha224-mb4 & 189.92 & 14.08 & 14.03 & 14.07 & 195.88 & 12.99 & 12.90 & 12.89
+crypto_hash/sha224/hacl_star/sha224-mb8 & 272.04 & 15.13 & 14.90 & 15.42 & 231.51 & 13.65 & 13.58 & 13.54 \\
+crypto_hash/sha224/hacl_star/scalar & 74.35 & 13.16 & 12.41 & 12.75 & 56.38 & 11.55 & 11.37 & 11.43 \\
+crypto_hash/sha224/hacl_star/ccomp_O3 & 20.35 & 20.35 & 20.35 & 20.51 \\
+crypto_hash/sha224/hacl_star/sha224-mb4 & 189.95 & 14.08 & 14.03 & 14.09 & 195.94 & 13.00 & 12.98 & 12.90
