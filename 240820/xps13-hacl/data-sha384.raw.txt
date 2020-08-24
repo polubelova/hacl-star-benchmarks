@@ -1,0 +1,16 @@
+crypto_hash/sha384/hacl_star/scalar gcc-9_-O2_ 4.85
+crypto_hash/sha384/hacl_star/scalar gcc-9_-O1_ 4.87
+crypto_hash/sha384/hacl_star/scalar gcc-9_-O3_ 4.93
+crypto_hash/sha384/hacl_star/scalar clang-9_-O3_ 4.99
+crypto_hash/sha384/hacl_star/scalar clang-9_-O2_ 5.13
+crypto_hash/sha384/hacl_star/scalar clang-9_-O1_ 5.33
+crypto_hash/sha384/hacl_star/sha384-mb4 clang-9_-O2_ 7.85
+crypto_hash/sha384/hacl_star/sha384-mb4 gcc-9_-O1_ 7.98
+crypto_hash/sha384/hacl_star/sha384-mb4 gcc-9_-O3_ 8.01
+crypto_hash/sha384/hacl_star/sha384-mb4 gcc-9_-O2_ 8.03
+crypto_hash/sha384/hacl_star/sha384-mb4 clang-9_-O1_ 8.08
+crypto_hash/sha384/hacl_star/sha384-mb4 clang-9_-O3_ 8.52
+crypto_hash/sha384/hacl_star/scalar gcc-9_-O0_ 23.84
+crypto_hash/sha384/hacl_star/scalar clang-9_-O0_ 34.83
+crypto_hash/sha384/hacl_star/sha384-mb4 gcc-9_-O0_ 204.18
+crypto_hash/sha384/hacl_star/sha384-mb4 clang-9_-O0_ 235.12
