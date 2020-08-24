@@ -1,0 +1,15 @@
+crypto_hash/sha224/openssl :openssl assembly AVX2 
+crypto_hash/sha224/openssl-new/asm:remove remove remove
+crypto_hash/sha224/hacl_star/scalar:hacl-star/scalar C ?
+crypto_hash/sha224/openssl-new/no-asm:openssl-portable C ?
+crypto_hash/sha224/hacl_star/sha224-mb4:hacl-star/sha224-mb4 C AVX
+crypto_hash/sha224/hacl_star/sha224-mb8:hacl-star/sha224-mb8 C AVX2
+
+
+crypto_hash/sha384/openssl :openssl assembly AVX2 
+crypto_hash/sha384/openssl-new/asm:remove remove remove
+crypto_hash/sha384/hacl_star/scalar:hacl-star/scalar C ?
+crypto_hash/sha384/openssl-new/no-asm:openssl-portable C ?
+crypto_hash/sha384/hacl_star/sha384-mb4:hacl-star/sha384-mb4 C AVX2
+crypto_hash/sha384/hacl_star/sha384-mb8:hacl-star/sha384-mb8 C AVX512
+

@@ -1,0 +1,5 @@
+openssl & assembly & AVX2 & clang-10 & 4.99 \\
+hacl-star/scalar & C & ? & gcc & 7.29 \\
+hacl-star/sha384-mb4 & C & AVX2 & gcc-9 & 8.28 \\
+openssl-portable & C & ? & clang-10 & 9.11 \\
+hacl-star/sha384-mb8 & C & AVX512 & clang-10 & 11.49
