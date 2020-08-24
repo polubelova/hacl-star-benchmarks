@@ -57,7 +57,7 @@ static inline int name(size_t len) \
 } while (0)
 
 #define test_it(name, before, after) do { \
-	memset(out, __LINE__, vectors2b[i].expected_len); \
+	memset(out, __LINE__, vectors_sha256[i].expected_len); \
 	before; \
 	sha256_ ## name(vectors_sha256[i].input, vectors_sha256[i].input_len, out); \
 	after; \
