@@ -8,7 +8,7 @@ typedef struct {
   size_t input_len;
   uint8_t *expected;
   size_t expected_len;
-} blake2_test_vector;
+} sha512_test_vector;
 
 
 
@@ -30,7 +30,7 @@ uint8_t test1_expected512[64] = {
 
 
 
-static blake2_test_vector vectors2b[] = {
+static sha512_test_vector vectors_sha512[] = {
   {
     .input = test1_plaintext,
     .input_len = sizeof(test1_plaintext)/sizeof(uint8_t),

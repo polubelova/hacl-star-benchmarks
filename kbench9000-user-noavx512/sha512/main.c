@@ -57,11 +57,11 @@ static inline int name(size_t len) \
 } while (0)
 
 #define test_it(name, before, after) do { \
-	memset(out, __LINE__, vectors2b[i].expected_len); \
+	memset(out, __LINE__, vectors_sha512[i].expected_len); \
 	before; \
-	sha512_ ## name(vectors2b[i].input, vectors2b[i].input_len, out); \
+	sha512_ ## name(vectors_sha512[i].input, vectors_sha512[i].input_len, out); \
 	after; \
-	if (memcmp(out, vectors2b[i].expected, vectors2b[i].expected_len)) { \
+	if (memcmp(out, vectors_sha512[i].expected, vectors_sha512[i].expected_len)) { \
 		fprintf(stderr,#name " self-test %zu: FAIL\n", i + 1); \
 		return false; \
 	} \
