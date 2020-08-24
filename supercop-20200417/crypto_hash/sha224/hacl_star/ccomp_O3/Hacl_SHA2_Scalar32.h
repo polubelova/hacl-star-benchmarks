@@ -21,22 +21,16 @@
  * SOFTWARE.
  */
 
-#include "kremlin/internal/types.h"
-#include "kremlin/lowstar_endianness.h"
 #include <string.h>
+#include <inttypes.h>
+#include <stdbool.h>
+#include "stdint.h"
+
+
+#define KRML_CHECK_SIZE(a,b) {}
 
 #ifndef __Hacl_SHA2_Scalar32_H
 #define __Hacl_SHA2_Scalar32_H
-
-#include "Hacl_SHA2_Generic.h"
-
-typedef struct K____uint8_t___uint8_t__s
-{
-  uint8_t *fst;
-  uint8_t *snd;
-}
-K____uint8_t___uint8_t_;
-
 
 void Hacl_SHA2_Scalar32_sha224(uint8_t *h, uint32_t len, uint8_t *b);
 

@@ -1,6 +1,6 @@
 BENCH_HOME ?= /home/mpolubel/work/hacl-star-benchmarks
 LIB_HOME = $(BENCH_HOME)/libraries
-RES_HOME ?= $(BENCH_HOME)/230820/xps13
+RES_HOME ?= $(BENCH_HOME)/240820/xps13-hacl
 
 SUPERCOP_HOME = $(BENCH_HOME)/supercop-20200417
 DATA_HOME ?= $(SUPERCOP_HOME)/bench/pl28pro
@@ -48,7 +48,9 @@ refresh-ccomp-supercop:
 	cp $(SNAPSHOT_HOME)/Hacl_Poly1305_32.s $(SUPERCOP_HOME)/crypto_onetimeauth/poly1305/hacl_star/ccomp_O3/Hacl_Poly1305_32.s && \
 	cp $(SNAPSHOT_HOME)/Hacl_Blake2b_32.s $(SUPERCOP_HOME)/crypto_hash/blake2b/hacl_star/ccomp_O3/Hacl_Blake2b_32.s && \
 	cp $(SNAPSHOT_HOME)/Hacl_Blake2s_32.s $(SUPERCOP_HOME)/crypto_hash/blake2s/hacl_star/ccomp_O3/Hacl_Blake2s_32.s && \
+	cp $(SNAPSHOT_HOME)/Hacl_SHA2_Scalar32.s $(SUPERCOP_HOME)/crypto_hash/sha224/hacl_star/ccomp_O3/Hacl_SHA2_Scalar32.s && \
 	cp $(SNAPSHOT_HOME)/Hacl_SHA2_Scalar32.s $(SUPERCOP_HOME)/crypto_hash/sha256/hacl_star/ccomp_O3/Hacl_SHA2_Scalar32.s && \
+	cp $(SNAPSHOT_HOME)/Hacl_SHA2_Scalar32.s $(SUPERCOP_HOME)/crypto_hash/sha384/hacl_star/ccomp_O3/Hacl_SHA2_Scalar32.s && \
 	cp $(SNAPSHOT_HOME)/Hacl_SHA2_Scalar32.s $(SUPERCOP_HOME)/crypto_hash/sha512/hacl_star/ccomp_O3/Hacl_SHA2_Scalar32.s
 
 do-init:
