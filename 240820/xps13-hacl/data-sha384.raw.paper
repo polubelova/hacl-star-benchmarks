@@ -1,2 +1,3 @@
-crypto_hash/sha384/hacl_star/scalar & 34.83 & 5.33 & 5.13 & 4.99 & 23.84 & 4.87 & 4.85 & 4.93 \\
-crypto_hash/sha384/hacl_star/sha384-mb4 & 235.12 & 8.08 & 7.85 & 8.52 & 204.18 & 7.98 & 8.03 & 8.01
+crypto_hash/sha384/hacl_star/scalar & 35.89 & 5.33 & 4.99 & 4.99 & 23.88 & 4.87 & 4.85 & 4.80 \\
+crypto_hash/sha384/hacl_star/sha384-mb4 & 236.35 & 8.06 & 9.62 & 8.78 & 198.02 & 8.21 & 8.02 & 8.02 \\
+crypto_hash/sha384/hacl_star/ccomp_O3 & 8.23 & 8.21 & 8.21 & 8.21 & 8.21 & 8.21 & 8.21 & 8.35
