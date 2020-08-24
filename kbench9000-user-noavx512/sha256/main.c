@@ -86,6 +86,8 @@ declare_it(hacl_vec128)
 declare_it(hacl_vec256)
 declare_it(openssl)
 declare_it(openssl_c)
+declare_it(openssl_mb4)
+declare_it(openssl_mb8)
 declare_it(libsodium)
 
 
@@ -105,6 +107,8 @@ static bool verify(void)
 	test_it(hacl_vec256, {}, {});
 	test_it(openssl, {}, {});
 	test_it(openssl_c, {}, {});
+	test_it(openssl_mb4, {}, {});
+	test_it(openssl_mb8, {}, {});
 	test_it(libsodium, {}, {});
 
 	return true;
@@ -119,6 +123,8 @@ int main()
 	cycles_t median_hacl_vec256[DOUBLING_STEPS+1];
 	cycles_t median_openssl[DOUBLING_STEPS+1];
 	cycles_t median_openssl_c[DOUBLING_STEPS+1];
+	cycles_t median_openssl_mb4[DOUBLING_STEPS+1];
+	cycles_t median_openssl_mb8[DOUBLING_STEPS+1];
 	cycles_t median_libsodium[DOUBLING_STEPS+1];
 
 	unsigned long flags;
@@ -135,6 +141,8 @@ int main()
 	do_it(hacl_vec256);
 	do_it(openssl);
 	do_it(openssl_c);
+	do_it(openssl_mb4);
+	do_it(openssl_mb8);
 	do_it(libsodium);
 
 
@@ -148,6 +156,8 @@ int main()
 	report_it(hacl_vec256);
 	report_it(openssl);
 	report_it(openssl_c);
+	report_it(openssl_mb4);
+	report_it(openssl_mb8);
 	report_it(libsodium);
 
 	/* Don't let compiler be too clever. */
